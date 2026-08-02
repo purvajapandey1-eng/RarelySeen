@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The clothing factory - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">The clothing factory</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/lavender-houndstooth-overcoat', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture2111.jpg?v=1700050367" alt="Emily in Paris: Lavender Houndstooth Overcoat">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Lavender Houndstooth Overcoat</div>
+                <div class="product-price">₹3815.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/lavender-houndstooth-overcoat', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/lavender-houndstooth-overcoat', 'Emily in Paris: Lavender Houndstooth Overcoat', '3815.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture2111.jpg?v=1700050367')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/plaid-denim-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture1366.jpg?v=1698301306" alt="Emily in Paris: Distressed Plaid Denim Skirt">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Distressed Plaid Denim Skirt</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/plaid-denim-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/plaid-denim-skirt', 'Emily in Paris: Distressed Plaid Denim Skirt', '4590.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture1366.jpg?v=1698301306')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/abstract-print-wrap-bralette', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture1570.jpg?v=1700110001" alt="Emily in Paris: Abstract Print Wrap Bralette Top">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Abstract Print Wrap Bralette Top</div>
+                <div class="product-price">₹1490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/abstract-print-wrap-bralette', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/abstract-print-wrap-bralette', 'Emily in Paris: Abstract Print Wrap Bralette Top', '1490.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture1570.jpg?v=1700110001')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/emily-in-paris-floral-printed-midi-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/7_6.jpg?v=1724045547" alt="Emily in Paris: Floral Printed Midi Skirt">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Floral Printed Midi Skirt</div>
+                <div class="product-price">₹795.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/emily-in-paris-floral-printed-midi-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/emily-in-paris-floral-printed-midi-skirt', 'Emily in Paris: Floral Printed Midi Skirt', '795.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/7_6.jpg?v=1724045547')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/la-vie-roses-oversized-tshirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture3007.jpg?v=1700124480" alt="Emily in Paris: La Vie &amp; Roses Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: La Vie &amp; Roses Oversized T-shirt</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/la-vie-roses-oversized-tshirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/la-vie-roses-oversized-tshirt', 'Emily in Paris: La Vie &amp; Roses Oversized T-shirt', '1290.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture3007.jpg?v=1700124480')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/did-you-say-amour-oversized-tshirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture3164.jpg?v=1700126929" alt="Emily in Paris: Did You Say Amour Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Did You Say Amour Oversized T-shirt</div>
+                <div class="product-price">₹645.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/did-you-say-amour-oversized-tshirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/did-you-say-amour-oversized-tshirt', 'Emily in Paris: Did You Say Amour Oversized T-shirt', '645.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture3164.jpg?v=1700126929')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/emily-in-paris-flower-applique-oversized-jacket-lilac', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/5_8_fef09a0e-5808-4092-93c9-cd53e54c07d4.jpg?v=1724046423" alt="Emily in Paris: Flower Applique Oversized Jacket-Lilac">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Flower Applique Oversized Jacket-Lilac</div>
+                <div class="product-price">₹3815.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/emily-in-paris-flower-applique-oversized-jacket-lilac', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/emily-in-paris-flower-applique-oversized-jacket-lilac', 'Emily in Paris: Flower Applique Oversized Jacket-Lilac', '3815.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/5_8_fef09a0e-5808-4092-93c9-cd53e54c07d4.jpg?v=1724046423')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/plaid-denim-blazer', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/imgonline-com-ua-compressed-5QOEkVMaOF.jpg?v=1699953216" alt="Emily in Paris: Distressed Plaid Denim Blazer">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Distressed Plaid Denim Blazer</div>
+                <div class="product-price">₹5335.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/plaid-denim-blazer', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/plaid-denim-blazer', 'Emily in Paris: Distressed Plaid Denim Blazer', '5335.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/imgonline-com-ua-compressed-5QOEkVMaOF.jpg?v=1699953216')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/frilled-side-seam-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture2393.jpg?v=1700114782" alt="Emily in Paris: Frilled Side Seam Pants">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Frilled Side Seam Pants</div>
+                <div class="product-price">₹2590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/frilled-side-seam-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/frilled-side-seam-pants', 'Emily in Paris: Frilled Side Seam Pants', '2590.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture2393.jpg?v=1700114782')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/frilled-bell-sleeves-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture2377.jpg?v=1700114454" alt="Emily in Paris: Frilled Bell Sleeves Top">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Frilled Bell Sleeves Top</div>
+                <div class="product-price">₹1990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/frilled-bell-sleeves-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/frilled-bell-sleeves-top', 'Emily in Paris: Frilled Bell Sleeves Top', '1990.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture2377.jpg?v=1700114454')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/asymmetric-plaid-waistcoat', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture1943.jpg?v=1700052880" alt="Emily in Paris: Asymmetric Plaid Woollen Waistcoat">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Asymmetric Plaid Woollen Waistcoat</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/asymmetric-plaid-waistcoat', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/asymmetric-plaid-waistcoat', 'Emily in Paris: Asymmetric Plaid Woollen Waistcoat', '2490.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture1943.jpg?v=1700052880')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/plaid-pleated-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture1949.jpg?v=1700052581" alt="Emily in Paris: Plaid Pleated Woollen Skirt">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Plaid Pleated Woollen Skirt</div>
+                <div class="product-price">₹2190.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/plaid-pleated-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/plaid-pleated-skirt', 'Emily in Paris: Plaid Pleated Woollen Skirt', '2190.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture1949.jpg?v=1700052581')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/tie-dye-wide-leg-jeans', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture3099.jpg?v=1700047312" alt="Emily in Paris: Tie Dye Wide Leg Jeans">
+            <div class="product-details">
+                <div class="product-name">Emily in Paris: Tie Dye Wide Leg Jeans</div>
+                <div class="product-price">₹3290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/tie-dye-wide-leg-jeans', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/tie-dye-wide-leg-jeans', 'Emily in Paris: Tie Dye Wide Leg Jeans', '3290.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/UntitledCapture3099.jpg?v=1700047312')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/garfield-high-on-love-mens-oversized-t-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-2410414.jpg?v=1708500242" alt="Garfield:High on Love Men&#x27;s Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Garfield:High on Love Men&#x27;s Oversized T-shirt</div>
+                <div class="product-price">₹740.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/garfield-high-on-love-mens-oversized-t-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/garfield-high-on-love-mens-oversized-t-shirt', 'Garfield:High on Love Men&#x27;s Oversized T-shirt', '740.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-2410414.jpg?v=1708500242')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/garfield-cool-down-mens-oversized-t-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-249972.jpg?v=1708499669" alt="Garfield:Cool Down Men&#x27;s Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Garfield:Cool Down Men&#x27;s Oversized T-shirt</div>
+                <div class="product-price">₹695.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/garfield-cool-down-mens-oversized-t-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/garfield-cool-down-mens-oversized-t-shirt', 'Garfield:Cool Down Men&#x27;s Oversized T-shirt', '695.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-249972.jpg?v=1708499669')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/garfield-athletic-deparment-crop-t-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-2410735.jpg?v=1708495168" alt="Garfield:Athletic Deparment Crop T-shirt">
+            <div class="product-details">
+                <div class="product-name">Garfield:Athletic Deparment Crop T-shirt</div>
+                <div class="product-price">₹475.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/garfield-athletic-deparment-crop-t-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/garfield-athletic-deparment-crop-t-shirt', 'Garfield:Athletic Deparment Crop T-shirt', '475.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-2410735.jpg?v=1708495168')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/spongebob-the-secret-recipe-oversized-t-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-249530.jpg?v=1708424176" alt="Spongebob:The Secret Recipe Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Spongebob:The Secret Recipe Oversized T-shirt</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/spongebob-the-secret-recipe-oversized-t-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/spongebob-the-secret-recipe-oversized-t-shirt', 'Spongebob:The Secret Recipe Oversized T-shirt', '990.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-249530.jpg?v=1708424176')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/spongebob-sponge-script-frycook-oversized-t-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-2410249.jpg?v=1708417811" alt="Spongebob: Sponge Script Frycook Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Spongebob: Sponge Script Frycook Oversized T-shirt</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/spongebob-sponge-script-frycook-oversized-t-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/spongebob-sponge-script-frycook-oversized-t-shirt', 'Spongebob: Sponge Script Frycook Oversized T-shirt', '990.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-2410249.jpg?v=1708417811')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/garfield-shout-out-loud-oversized-t-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-249990.jpg?v=1708503750" alt="Garfield: Shout Out Loud Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Garfield: Shout Out Loud Oversized T-shirt</div>
+                <div class="product-price">₹1245.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/garfield-shout-out-loud-oversized-t-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/garfield-shout-out-loud-oversized-t-shirt', 'Garfield: Shout Out Loud Oversized T-shirt', '1245.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-249990.jpg?v=1708503750')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/garfield-moody-mondays-oversized-t-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-2410654.jpg?v=1708503387" alt="Garfield:Moody Mondays Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Garfield:Moody Mondays Oversized T-shirt</div>
+                <div class="product-price">₹775.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/garfield-moody-mondays-oversized-t-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/garfield-moody-mondays-oversized-t-shirt', 'Garfield:Moody Mondays Oversized T-shirt', '775.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-2410654.jpg?v=1708503387')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/garfield-shout-out-loud-mens-oversized-t-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-249905.jpg?v=1743590158" alt="Garfield: Shout Out Loud Men&#x27;s Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Garfield: Shout Out Loud Men&#x27;s Oversized T-shirt</div>
+                <div class="product-price">₹1245.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/garfield-shout-out-loud-mens-oversized-t-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/garfield-shout-out-loud-mens-oversized-t-shirt', 'Garfield: Shout Out Loud Men&#x27;s Oversized T-shirt', '1245.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-249905.jpg?v=1743590158')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/garfield-comic-collage-printed-mens-bomber-jacket', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/18_3_fa8e2acb-a758-4a93-8aa6-f72a2c341214.jpg?v=1728041109" alt="Garfield: Comic Collage Printed Men&#x27;s Bomber Jacket">
+            <div class="product-details">
+                <div class="product-name">Garfield: Comic Collage Printed Men&#x27;s Bomber Jacket</div>
+                <div class="product-price">₹2275.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/garfield-comic-collage-printed-mens-bomber-jacket', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/garfield-comic-collage-printed-mens-bomber-jacket', 'Garfield: Comic Collage Printed Men&#x27;s Bomber Jacket', '2275.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/18_3_fa8e2acb-a758-4a93-8aa6-f72a2c341214.jpg?v=1728041109')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/spongebob-be-the-change-printed-oversized-hoodie', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/17_1_2f998a02-c7a9-4170-9b75-060aecb31734.jpg?v=1726042424" alt="SpongeBob: Be the Change Printed Oversized Hoodie">
+            <div class="product-details">
+                <div class="product-name">SpongeBob: Be the Change Printed Oversized Hoodie</div>
+                <div class="product-price">₹1895.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/spongebob-be-the-change-printed-oversized-hoodie', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/spongebob-be-the-change-printed-oversized-hoodie', 'SpongeBob: Be the Change Printed Oversized Hoodie', '1895.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/17_1_2f998a02-c7a9-4170-9b75-060aecb31734.jpg?v=1726042424')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/spongebob-be-the-change-printed-oversized-t-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-248218.jpg?v=1708421982" alt="Spongebob:Be the Change Printed Oversized T-shirt">
+            <div class="product-details">
+                <div class="product-name">Spongebob:Be the Change Printed Oversized T-shirt</div>
+                <div class="product-price">₹995.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/spongebob-be-the-change-printed-oversized-t-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/spongebob-be-the-change-printed-oversized-t-shirt', 'Spongebob:Be the Change Printed Oversized T-shirt', '995.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-248218.jpg?v=1708421982')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/crystal-mist-denim-jeans', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/AAA_0484.jpg?v=1765953428" alt="Crystal Mist Denim Jeans">
+            <div class="product-details">
+                <div class="product-name">Crystal Mist Denim Jeans</div>
+                <div class="product-price">₹8990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/crystal-mist-denim-jeans', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/crystal-mist-denim-jeans', 'Crystal Mist Denim Jeans', '8990.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/AAA_0484.jpg?v=1765953428')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/red-gingham-smocked-bodice-dress-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/red.jpg?v=1755077834" alt="Red Gingham Smocked Bodice Dress">
+            <div class="product-details">
+                <div class="product-name">Red Gingham Smocked Bodice Dress</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/red-gingham-smocked-bodice-dress-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/red-gingham-smocked-bodice-dress-1', 'Red Gingham Smocked Bodice Dress', '4590.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/red.jpg?v=1755077834')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/red-gingham-bubble-hem-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/34.jpg?v=1742452582" alt="Red Gingham Bubble Hem Mini Dress">
+            <div class="product-details">
+                <div class="product-name">Red Gingham Bubble Hem Mini Dress</div>
+                <div class="product-price">₹5840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/red-gingham-bubble-hem-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/red-gingham-bubble-hem-mini-dress', 'Red Gingham Bubble Hem Mini Dress', '5840.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/34.jpg?v=1742452582')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/brown-animal-print-tube-top-maxi-skirt-with-scarf', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/29_1.png?v=1764927992" alt="Brown Animal Print Tube Top &amp; Maxi Skirt with Scarf">
+            <div class="product-details">
+                <div class="product-name">Brown Animal Print Tube Top &amp; Maxi Skirt with Scarf</div>
+                <div class="product-price">₹3890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/brown-animal-print-tube-top-maxi-skirt-with-scarf', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/brown-animal-print-tube-top-maxi-skirt-with-scarf', 'Brown Animal Print Tube Top &amp; Maxi Skirt with Scarf', '3890.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/29_1.png?v=1764927992')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/leopard-print-cowl-neck-maxi-dress-with-scarf', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/IMG_5383.heic?v=1767611190" alt="Leopard Print Cowl Neck Maxi Dress With Scarf">
+            <div class="product-details">
+                <div class="product-name">Leopard Print Cowl Neck Maxi Dress With Scarf</div>
+                <div class="product-price">₹3990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/leopard-print-cowl-neck-maxi-dress-with-scarf', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/leopard-print-cowl-neck-maxi-dress-with-scarf', 'Leopard Print Cowl Neck Maxi Dress With Scarf', '3990.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/IMG_5383.heic?v=1767611190')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://theclothingfactory.in/products/buttercup-stripe-co-ord-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/4195/6677/files/DGP_9485_66ce91e8-98df-4f7f-84b7-6eed8a9fc6f3.jpg?v=1780141869" alt="Buttercup Stripe Co-Ord Set">
+            <div class="product-details">
+                <div class="product-name">Buttercup Stripe Co-Ord Set</div>
+                <div class="product-price">₹5180.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://theclothingfactory.in/products/buttercup-stripe-co-ord-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://theclothingfactory.in/products/buttercup-stripe-co-ord-set-1', 'Buttercup Stripe Co-Ord Set', '5180.00', 'https://cdn.shopify.com/s/files/1/0555/4195/6677/files/DGP_9485_66ce91e8-98df-4f7f-84b7-6eed8a9fc6f3.jpg?v=1780141869')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

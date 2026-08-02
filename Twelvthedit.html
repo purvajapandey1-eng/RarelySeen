@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twelvthedit - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Twelvthedit</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-maroon', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720145copy.jpg?v=1776353244" alt="Wide-Leg Sweatpants in Maroon">
+            <div class="product-details">
+                <div class="product-name">Wide-Leg Sweatpants in Maroon</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-maroon', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/wide-leg-sweatpants-in-maroon', 'Wide-Leg Sweatpants in Maroon', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720145copy.jpg?v=1776353244')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/oversized-striped-tee-in-pink-navy-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/CopyofTWELETHEDITECOMM_BR_2026_04_0719852copy.jpg?v=1776419184" alt="Oversized Striped Unisex Tee in Pink/Navy">
+            <div class="product-details">
+                <div class="product-name">Oversized Striped Unisex Tee in Pink/Navy</div>
+                <div class="product-price">₹1990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/oversized-striped-tee-in-pink-navy-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/oversized-striped-tee-in-pink-navy-men', 'Oversized Striped Unisex Tee in Pink/Navy', '1990.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/CopyofTWELETHEDITECOMM_BR_2026_04_0719852copy.jpg?v=1776419184')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/oversized-striped-tee-in-pink-navy-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr17_2026_08_25_26PM.png?v=1776437764" alt="Oversized Striped Unisex Tee in Pink/Navy">
+            <div class="product-details">
+                <div class="product-name">Oversized Striped Unisex Tee in Pink/Navy</div>
+                <div class="product-price">₹1990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/oversized-striped-tee-in-pink-navy-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/oversized-striped-tee-in-pink-navy-women', 'Oversized Striped Unisex Tee in Pink/Navy', '1990.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr17_2026_08_25_26PM.png?v=1776437764')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-dark-olive-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/Screenshot2026-04-17at2.54.08PM.png?v=1776417920" alt="Balança Unisex Tee in Dark Olive">
+            <div class="product-details">
+                <div class="product-name">Balança Unisex Tee in Dark Olive</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-dark-olive-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-dark-olive-women', 'Balança Unisex Tee in Dark Olive', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/Screenshot2026-04-17at2.54.08PM.png?v=1776417920')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-dark-olive-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/CopyofTWELETHEDITECOMM_BR_2026_04_0720416copy.jpg?v=1776417324" alt="Balança Unisex Tee in Dark Olive">
+            <div class="product-details">
+                <div class="product-name">Balança Unisex Tee in Dark Olive</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-dark-olive-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-dark-olive-men', 'Balança Unisex Tee in Dark Olive', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/CopyofTWELETHEDITECOMM_BR_2026_04_0720416copy.jpg?v=1776417324')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/oversized-striped-tee-in-blue-green-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/CopyofTWELETHEDITECOMM_BR_2026_04_0720242copy.jpg?v=1776651240" alt="Oversized Striped Unisex Tee in Blue/Green">
+            <div class="product-details">
+                <div class="product-name">Oversized Striped Unisex Tee in Blue/Green</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/oversized-striped-tee-in-blue-green-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/oversized-striped-tee-in-blue-green-men', 'Oversized Striped Unisex Tee in Blue/Green', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/CopyofTWELETHEDITECOMM_BR_2026_04_0720242copy.jpg?v=1776651240')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/oversized-striped-tee-in-blue-green-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr17_2026_12_12_37PM.png?v=1776408230" alt="Oversized Striped Unisex Tee in Blue/Green">
+            <div class="product-details">
+                <div class="product-name">Oversized Striped Unisex Tee in Blue/Green</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/oversized-striped-tee-in-blue-green-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/oversized-striped-tee-in-blue-green-women', 'Oversized Striped Unisex Tee in Blue/Green', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr17_2026_12_12_37PM.png?v=1776408230')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/oversized-striped-polo-tee-in-navy-white-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718831copy.jpg?v=1776407738" alt="Oversized Striped Unisex Polo Tee in Navy/White">
+            <div class="product-details">
+                <div class="product-name">Oversized Striped Unisex Polo Tee in Navy/White</div>
+                <div class="product-price">₹2250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/oversized-striped-polo-tee-in-navy-white-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/oversized-striped-polo-tee-in-navy-white-men', 'Oversized Striped Unisex Polo Tee in Navy/White', '2250.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718831copy.jpg?v=1776407738')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/oversized-striped-polo-tee-in-navy-white-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr16_2026_09_55_04PM.png?v=1776407238" alt="Oversized Striped Unisex Polo Tee in Navy/White">
+            <div class="product-details">
+                <div class="product-name">Oversized Striped Unisex Polo Tee in Navy/White</div>
+                <div class="product-price">₹2250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/oversized-striped-polo-tee-in-navy-white-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/oversized-striped-polo-tee-in-navy-white-women', 'Oversized Striped Unisex Polo Tee in Navy/White', '2250.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr16_2026_09_55_04PM.png?v=1776407238')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/denim-look-baggy-pants-in-medium-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718700copy.jpg?v=1776406169" alt="Denim-Look Baggy Pants in Medium Blue">
+            <div class="product-details">
+                <div class="product-name">Denim-Look Baggy Pants in Medium Blue</div>
+                <div class="product-price">₹3250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/denim-look-baggy-pants-in-medium-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/denim-look-baggy-pants-in-medium-blue', 'Denim-Look Baggy Pants in Medium Blue', '3250.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718700copy.jpg?v=1776406169')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/denim-look-pants-in-dark-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719881copy_2f72b39a-bc03-412f-a285-45845d04e938.jpg?v=1776359218" alt="Denim-Look Pants in Dark Blue">
+            <div class="product-details">
+                <div class="product-name">Denim-Look Pants in Dark Blue</div>
+                <div class="product-price">₹3250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/denim-look-pants-in-dark-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/denim-look-pants-in-dark-blue', 'Denim-Look Pants in Dark Blue', '3250.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719881copy_2f72b39a-bc03-412f-a285-45845d04e938.jpg?v=1776359218')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/denim-look-pants-in-medium-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718932copy.jpg?v=1776358301" alt="Denim-Look Pants in Medium Blue">
+            <div class="product-details">
+                <div class="product-name">Denim-Look Pants in Medium Blue</div>
+                <div class="product-price">₹3250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/denim-look-pants-in-medium-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/denim-look-pants-in-medium-blue', 'Denim-Look Pants in Medium Blue', '3250.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718932copy.jpg?v=1776358301')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/cropped-striped-off-shoulder-tee-in-pink-navy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr16_2026_09_51_32PM.png?v=1776407367" alt="Cropped Striped Off-shoulder Tee in Pink/Navy">
+            <div class="product-details">
+                <div class="product-name">Cropped Striped Off-shoulder Tee in Pink/Navy</div>
+                <div class="product-price">₹1990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/cropped-striped-off-shoulder-tee-in-pink-navy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/cropped-striped-off-shoulder-tee-in-pink-navy', 'Cropped Striped Off-shoulder Tee in Pink/Navy', '1990.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr16_2026_09_51_32PM.png?v=1776407367')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/cropped-striped-polo-tee-in-yellow-navy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr16_2026_09_48_15PM.png?v=1776407462" alt="Cropped Striped Polo Tee in Yellow/Navy">
+            <div class="product-details">
+                <div class="product-name">Cropped Striped Polo Tee in Yellow/Navy</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/cropped-striped-polo-tee-in-yellow-navy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/cropped-striped-polo-tee-in-yellow-navy', 'Cropped Striped Polo Tee in Yellow/Navy', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/ChatGPTImageApr16_2026_09_48_15PM.png?v=1776407462')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/three-way-poncho-in-buttercream-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720540copy_9a6cc333-678b-439f-b29e-da90f6aa76ba.jpg?v=1776351554" alt="Three-way Poncho in Buttercream">
+            <div class="product-details">
+                <div class="product-name">Three-way Poncho in Buttercream</div>
+                <div class="product-price">₹1490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/three-way-poncho-in-buttercream-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/three-way-poncho-in-buttercream-1', 'Three-way Poncho in Buttercream', '1490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720540copy_9a6cc333-678b-439f-b29e-da90f6aa76ba.jpg?v=1776351554')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/linen-blend-wrap-top-in-ecru', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719628copy.jpg?v=1776352252" alt="Linen-blend Wrap Top in Ecru">
+            <div class="product-details">
+                <div class="product-name">Linen-blend Wrap Top in Ecru</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/linen-blend-wrap-top-in-ecru', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/linen-blend-wrap-top-in-ecru', 'Linen-blend Wrap Top in Ecru', '2450.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719628copy.jpg?v=1776352252')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/linen-blend-pants-in-ecru', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719659copy.jpg?v=1776330117" alt="Linen-blend Pants in Ecru">
+            <div class="product-details">
+                <div class="product-name">Linen-blend Pants in Ecru</div>
+                <div class="product-price">₹2850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/linen-blend-pants-in-ecru', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/linen-blend-pants-in-ecru', 'Linen-blend Pants in Ecru', '2850.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719659copy.jpg?v=1776330117')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/three-way-poncho-in-ice-blue-cream', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720709copy.jpg?v=1776323757" alt="Three-way Poncho in Ice-blue/Cream">
+            <div class="product-details">
+                <div class="product-name">Three-way Poncho in Ice-blue/Cream</div>
+                <div class="product-price">₹1490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/three-way-poncho-in-ice-blue-cream', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/three-way-poncho-in-ice-blue-cream', 'Three-way Poncho in Ice-blue/Cream', '1490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720709copy.jpg?v=1776323757')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/three-way-poncho-in-black-cream', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719357copy.jpg?v=1776319671" alt="Three-way Poncho in Black/Cream">
+            <div class="product-details">
+                <div class="product-name">Three-way Poncho in Black/Cream</div>
+                <div class="product-price">₹1490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/three-way-poncho-in-black-cream', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/three-way-poncho-in-black-cream', 'Three-way Poncho in Black/Cream', '1490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719357copy.jpg?v=1776319671')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-khaki-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720519copy_f3d32791-6d87-42dd-9609-44db7c55dd65.jpg?v=1776307534" alt="Wide Leg Utility Unisex Sweatpants in Khaki">
+            <div class="product-details">
+                <div class="product-name">Wide Leg Utility Unisex Sweatpants in Khaki</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-khaki-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-khaki-women', 'Wide Leg Utility Unisex Sweatpants in Khaki', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720519copy_f3d32791-6d87-42dd-9609-44db7c55dd65.jpg?v=1776307534')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-khaki-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719237copy.jpg?v=1776306995" alt="Wide Leg Utility Unisex Sweatpants in Khaki">
+            <div class="product-details">
+                <div class="product-name">Wide Leg Utility Unisex Sweatpants in Khaki</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-khaki-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-khaki-men', 'Wide Leg Utility Unisex Sweatpants in Khaki', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0719237copy.jpg?v=1776306995')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-midnight-black-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720265copy.jpg?v=1776315834" alt="Wide Leg Utility Unisex Sweatpants in Midnight Black">
+            <div class="product-details">
+                <div class="product-name">Wide Leg Utility Unisex Sweatpants in Midnight Black</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-midnight-black-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-midnight-black-men', 'Wide Leg Utility Unisex Sweatpants in Midnight Black', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720265copy.jpg?v=1776315834')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-midnight-black-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720933copy.jpg?v=1776316213" alt="Wide Leg Utility Unisex Sweatpants in Midnight Black">
+            <div class="product-details">
+                <div class="product-name">Wide Leg Utility Unisex Sweatpants in Midnight Black</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-midnight-black-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/wide-leg-utility-sweatpants-in-midnight-black-women', 'Wide Leg Utility Unisex Sweatpants in Midnight Black', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720933copy.jpg?v=1776316213')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-slate-grey-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718921copy.jpg?v=1776272195" alt="Balança Unisex Tee in Slate Grey">
+            <div class="product-details">
+                <div class="product-name">Balança Unisex Tee in Slate Grey</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-slate-grey-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-slate-grey-men', 'Balança Unisex Tee in Slate Grey', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718921copy.jpg?v=1776272195')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-slate-grey-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720903copy.jpg?v=1776271856" alt="Balança Unisex Tee in Slate Grey">
+            <div class="product-details">
+                <div class="product-name">Balança Unisex Tee in Slate Grey</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-slate-grey-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-slate-grey-women', 'Balança Unisex Tee in Slate Grey', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720903copy.jpg?v=1776271856')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-dark-navy-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720077copy.jpg?v=1776270799" alt="Balança Unisex Tee in Dark Navy">
+            <div class="product-details">
+                <div class="product-name">Balança Unisex Tee in Dark Navy</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-dark-navy-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-dark-navy-women', 'Balança Unisex Tee in Dark Navy', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0720077copy.jpg?v=1776270799')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-dark-navy-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718730copy.jpg?v=1776269296" alt="Balança Unisex Tee in Dark Navy">
+            <div class="product-details">
+                <div class="product-name">Balança Unisex Tee in Dark Navy</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-dark-navy-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-dark-navy-men', 'Balança Unisex Tee in Dark Navy', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELETHEDITECOMM_BR_2026_04_0718730copy.jpg?v=1776269296')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/club-la-plage-tee-in-beacon-blue-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512329copy.jpg?v=1754313495" alt="Club la Plage Tee in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Club la Plage Tee in Beacon Blue</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/club-la-plage-tee-in-beacon-blue-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/club-la-plage-tee-in-beacon-blue-women', 'Club la Plage Tee in Beacon Blue', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512329copy.jpg?v=1754313495')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/lion-crest-raquette-hoodie-in-chocolate-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513048copy_b83a74d4-f6e8-49b2-9acc-f3a540758491.jpg?v=1760426920" alt="Lion Crest Raquette Hoodie in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Lion Crest Raquette Hoodie in Chocolate Brown</div>
+                <div class="product-price">₹2840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/lion-crest-raquette-hoodie-in-chocolate-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/lion-crest-raquette-hoodie-in-chocolate-brown', 'Lion Crest Raquette Hoodie in Chocolate Brown', '2840.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513048copy_b83a74d4-f6e8-49b2-9acc-f3a540758491.jpg?v=1760426920')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/monogram-crest-raquette-hoodie-in-marshmallow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/AM-F-HO-MR-MR_1copy.jpg?v=1757331467" alt="Monogram Crest Raquette Hoodie in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Monogram Crest Raquette Hoodie in Marshmallow</div>
+                <div class="product-price">₹2485.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/monogram-crest-raquette-hoodie-in-marshmallow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/monogram-crest-raquette-hoodie-in-marshmallow', 'Monogram Crest Raquette Hoodie in Marshmallow', '2485.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/AM-F-HO-MR-MR_1copy.jpg?v=1757331467')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/distressed-raquette-hoodie-in-jet-black-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2407copy.jpg?v=1757931514" alt="Distressed Raquette Hoodie in Jet Black">
+            <div class="product-details">
+                <div class="product-name">Distressed Raquette Hoodie in Jet Black</div>
+                <div class="product-price">₹2680.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/distressed-raquette-hoodie-in-jet-black-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/distressed-raquette-hoodie-in-jet-black-men', 'Distressed Raquette Hoodie in Jet Black', '2680.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2407copy.jpg?v=1757931514')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/distressed-raquette-hoodie-in-jet-black-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202512627_copy.jpg?v=1758870021" alt="Distressed Raquette Hoodie in Jet Black">
+            <div class="product-details">
+                <div class="product-name">Distressed Raquette Hoodie in Jet Black</div>
+                <div class="product-price">₹2680.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/distressed-raquette-hoodie-in-jet-black-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/distressed-raquette-hoodie-in-jet-black-women', 'Distressed Raquette Hoodie in Jet Black', '2680.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202512627_copy.jpg?v=1758870021')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/distressed-raquette-tee-in-marshmallow-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/AM-U-GT-DR-MR_1copy.jpg?v=1757931269" alt="Distressed Raquette Tee in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Distressed Raquette Tee in Marshmallow</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/distressed-raquette-tee-in-marshmallow-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/distressed-raquette-tee-in-marshmallow-women', 'Distressed Raquette Tee in Marshmallow', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/AM-U-GT-DR-MR_1copy.jpg?v=1757931269')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/distressed-raquette-tee-in-marshmallow-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2036copy.jpg?v=1757314860" alt="Distressed Raquette Tee in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Distressed Raquette Tee in Marshmallow</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/distressed-raquette-tee-in-marshmallow-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/distressed-raquette-tee-in-marshmallow-men', 'Distressed Raquette Tee in Marshmallow', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2036copy.jpg?v=1757314860')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/club-la-plage-tee-in-marshmallow-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202511240_copy_1.jpg?v=1763795719" alt="Club la Plage Tee in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Club la Plage Tee in Marshmallow</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/club-la-plage-tee-in-marshmallow-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/club-la-plage-tee-in-marshmallow-women', 'Club la Plage Tee in Marshmallow', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202511240_copy_1.jpg?v=1763795719')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/club-la-plage-tee-in-marshmallow-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0032copy.jpg?v=1757930654" alt="Club la Plage Tee in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Club la Plage Tee in Marshmallow</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/club-la-plage-tee-in-marshmallow-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/club-la-plage-tee-in-marshmallow-men', 'Club la Plage Tee in Marshmallow', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0032copy.jpg?v=1757930654')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/regatta-stamp-tee-in-pastel-yellow-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202512093_copy.jpg?v=1758869314" alt="Regatta Stamp Tee in Pastel Yellow">
+            <div class="product-details">
+                <div class="product-name">Regatta Stamp Tee in Pastel Yellow</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/regatta-stamp-tee-in-pastel-yellow-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/regatta-stamp-tee-in-pastel-yellow-women', 'Regatta Stamp Tee in Pastel Yellow', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202512093_copy.jpg?v=1758869314')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/monogram-crest-raquette-tee-in-beacon-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511013copy.jpg?v=1754383834" alt="Monogram Crest Raquette Tee in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Monogram Crest Raquette Tee in Beacon Blue</div>
+                <div class="product-price">₹2150.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/monogram-crest-raquette-tee-in-beacon-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/monogram-crest-raquette-tee-in-beacon-blue', 'Monogram Crest Raquette Tee in Beacon Blue', '2150.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511013copy.jpg?v=1754383834')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/ti-punch-tee-in-pastel-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511152copy.jpg?v=1754378299" alt="Ti&#x27; Punch Tee in Pastel Yellow">
+            <div class="product-details">
+                <div class="product-name">Ti&#x27; Punch Tee in Pastel Yellow</div>
+                <div class="product-price">₹1990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/ti-punch-tee-in-pastel-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/ti-punch-tee-in-pastel-yellow', 'Ti&#x27; Punch Tee in Pastel Yellow', '1990.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511152copy.jpg?v=1754378299')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/lion-crest-raquette-tee-in-pastel-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511306copy.jpg?v=1754377526" alt="Lion Crest Raquette Tee in Pastel Yellow">
+            <div class="product-details">
+                <div class="product-name">Lion Crest Raquette Tee in Pastel Yellow</div>
+                <div class="product-price">₹2150.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/lion-crest-raquette-tee-in-pastel-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/lion-crest-raquette-tee-in-pastel-yellow', 'Lion Crest Raquette Tee in Pastel Yellow', '2150.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511306copy.jpg?v=1754377526')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/regatta-stamp-tee-in-pastel-yellow-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2325copy.jpg?v=1754374216" alt="Regatta Stamp Tee in Pastel Yellow">
+            <div class="product-details">
+                <div class="product-name">Regatta Stamp Tee in Pastel Yellow</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/regatta-stamp-tee-in-pastel-yellow-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/regatta-stamp-tee-in-pastel-yellow-men', 'Regatta Stamp Tee in Pastel Yellow', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2325copy.jpg?v=1754374216')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/ti-punch-tee-in-chocolate-brown-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/AM-U-GT-TP-CB_2_copy.jpg?v=1754373349" alt="Ti’ Punch Tee in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Ti’ Punch Tee in Chocolate Brown</div>
+                <div class="product-price">₹1990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/ti-punch-tee-in-chocolate-brown-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/ti-punch-tee-in-chocolate-brown-women', 'Ti’ Punch Tee in Chocolate Brown', '1990.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/AM-U-GT-TP-CB_2_copy.jpg?v=1754373349')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/ti-punch-tee-in-chocolate-brown-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1380copy.jpg?v=1757930746" alt="Ti’ Punch Tee in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Ti’ Punch Tee in Chocolate Brown</div>
+                <div class="product-price">₹1990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/ti-punch-tee-in-chocolate-brown-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/ti-punch-tee-in-chocolate-brown-men', 'Ti’ Punch Tee in Chocolate Brown', '1990.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1380copy.jpg?v=1757930746')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/club-la-plage-tee-in-pastel-yellow-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511886copy.jpg?v=1754369582" alt="Club la Plage Tee in Pastel Yellow">
+            <div class="product-details">
+                <div class="product-name">Club la Plage Tee in Pastel Yellow</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/club-la-plage-tee-in-pastel-yellow-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/club-la-plage-tee-in-pastel-yellow-women', 'Club la Plage Tee in Pastel Yellow', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511886copy.jpg?v=1754369582')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/club-la-plage-tee-in-pastel-yellow-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1526copy.jpg?v=1757930576" alt="Club la Plage Tee in Pastel Yellow">
+            <div class="product-details">
+                <div class="product-name">Club la Plage Tee in Pastel Yellow</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/club-la-plage-tee-in-pastel-yellow-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/club-la-plage-tee-in-pastel-yellow-men', 'Club la Plage Tee in Pastel Yellow', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1526copy.jpg?v=1757930576')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/club-la-plage-tee-in-beacon-blue-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0323copy.jpg?v=1754313293" alt="Club la Plage Tee in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Club la Plage Tee in Beacon Blue</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/club-la-plage-tee-in-beacon-blue-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/club-la-plage-tee-in-beacon-blue-men', 'Club la Plage Tee in Beacon Blue', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0323copy.jpg?v=1754313293')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-beacon-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513162copy.jpg?v=1758002452" alt="Wide Leg Sweatpants in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Wide Leg Sweatpants in Beacon Blue</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-beacon-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/wide-leg-sweatpants-in-beacon-blue', 'Wide Leg Sweatpants in Beacon Blue', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513162copy.jpg?v=1758002452')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-brushed-nickel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512189copy.jpg?v=1758003211" alt="Wide Leg Sweatpants in Brushed Nickel">
+            <div class="product-details">
+                <div class="product-name">Wide Leg Sweatpants in Brushed Nickel</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-brushed-nickel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/wide-leg-sweatpants-in-brushed-nickel', 'Wide Leg Sweatpants in Brushed Nickel', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512189copy.jpg?v=1758003211')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-chocolate-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513127copy.jpg?v=1758001622" alt="Wide Leg Sweatpants in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Wide Leg Sweatpants in Chocolate Brown</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-chocolate-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/wide-leg-sweatpants-in-chocolate-brown', 'Wide Leg Sweatpants in Chocolate Brown', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513127copy.jpg?v=1758001622')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-jet-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511755copy.jpg?v=1758000972" alt="Wide Leg Sweatpants in Jet Black">
+            <div class="product-details">
+                <div class="product-name">Wide Leg Sweatpants in Jet Black</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/wide-leg-sweatpants-in-jet-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/wide-leg-sweatpants-in-jet-black', 'Wide Leg Sweatpants in Jet Black', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511755copy.jpg?v=1758000972')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/n012-studio-tee-in-marshmallow-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0527copy_36ff02d1-fa48-4bd0-b8e2-fa15b08ef1b2.jpg?v=1757930723" alt="N012 Studio Tee in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">N012 Studio Tee in Marshmallow</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/n012-studio-tee-in-marshmallow-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/n012-studio-tee-in-marshmallow-men', 'N012 Studio Tee in Marshmallow', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0527copy_36ff02d1-fa48-4bd0-b8e2-fa15b08ef1b2.jpg?v=1757930723')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/n012-studio-tee-in-marshmallow-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511541copy.jpg?v=1757075902" alt="N012 Studio Tee in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">N012 Studio Tee in Marshmallow</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/n012-studio-tee-in-marshmallow-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/n012-studio-tee-in-marshmallow-women', 'N012 Studio Tee in Marshmallow', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511541copy.jpg?v=1757075902')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/laced-hoodie-in-marshmallow-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/LO-U-HO-LA-MR_1copy.jpg?v=1757931555" alt="Laced Hoodie in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Laced Hoodie in Marshmallow</div>
+                <div class="product-price">₹2485.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/laced-hoodie-in-marshmallow-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/laced-hoodie-in-marshmallow-men', 'Laced Hoodie in Marshmallow', '2485.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/LO-U-HO-LA-MR_1copy.jpg?v=1757931555')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/laced-hoodie-in-marshmallow-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513325copy.jpg?v=1757322223" alt="Laced Hoodie in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Laced Hoodie in Marshmallow</div>
+                <div class="product-price">₹2485.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/laced-hoodie-in-marshmallow-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/laced-hoodie-in-marshmallow-women', 'Laced Hoodie in Marshmallow', '2485.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513325copy.jpg?v=1757322223')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/laced-hoodie-in-chocolate-brown-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/LO-U-HO-LA-CB_1copy.jpg?v=1757321471" alt="Laced Hoodie in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Laced Hoodie in Chocolate Brown</div>
+                <div class="product-price">₹2840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/laced-hoodie-in-chocolate-brown-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/laced-hoodie-in-chocolate-brown-women', 'Laced Hoodie in Chocolate Brown', '2840.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/LO-U-HO-LA-CB_1copy.jpg?v=1757321471')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/laced-hoodie-in-chocolate-brown-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT1932_copy.jpg?v=1758885312" alt="Laced Hoodie in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Laced Hoodie in Chocolate Brown</div>
+                <div class="product-price">₹2840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/laced-hoodie-in-chocolate-brown-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/laced-hoodie-in-chocolate-brown-men', 'Laced Hoodie in Chocolate Brown', '2840.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT1932_copy.jpg?v=1758885312')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/n012-studio-hoodie-in-marshmallow-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2765copy.jpg?v=1757320463" alt="N012 Studio Hoodie in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">N012 Studio Hoodie in Marshmallow</div>
+                <div class="product-price">₹2485.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/n012-studio-hoodie-in-marshmallow-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/n012-studio-hoodie-in-marshmallow-men', 'N012 Studio Hoodie in Marshmallow', '2485.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2765copy.jpg?v=1757320463')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/n012-studio-hoodie-in-marshmallow-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513000copy.jpg?v=1757320146" alt="N012 Studio Hoodie in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">N012 Studio Hoodie in Marshmallow</div>
+                <div class="product-price">₹2485.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/n012-studio-hoodie-in-marshmallow-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/n012-studio-hoodie-in-marshmallow-women', 'N012 Studio Hoodie in Marshmallow', '2485.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513000copy.jpg?v=1757320146')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/n012-studio-hoodie-in-brushed-nickel-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512684copy.jpg?v=1757316515" alt="N012 Studio Hoodie in Brushed Nickel">
+            <div class="product-details">
+                <div class="product-name">N012 Studio Hoodie in Brushed Nickel</div>
+                <div class="product-price">₹2840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/n012-studio-hoodie-in-brushed-nickel-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/n012-studio-hoodie-in-brushed-nickel-women', 'N012 Studio Hoodie in Brushed Nickel', '2840.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512684copy.jpg?v=1757316515')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-brushed-nickel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513727copy.jpg?v=1756986046" alt="A-line Front-seam Sweatshorts in Brushed Nickel">
+            <div class="product-details">
+                <div class="product-name">A-line Front-seam Sweatshorts in Brushed Nickel</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-brushed-nickel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-brushed-nickel', 'A-line Front-seam Sweatshorts in Brushed Nickel', '2450.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513727copy.jpg?v=1756986046')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-beacon-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511068copy.jpg?v=1756984115" alt="A-line Front-seam Sweatshorts in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">A-line Front-seam Sweatshorts in Beacon Blue</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-beacon-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-beacon-blue', 'A-line Front-seam Sweatshorts in Beacon Blue', '2450.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511068copy.jpg?v=1756984115')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-chocolate-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511989copy.jpg?v=1757933279" alt="A-line Front-seam Sweatshorts in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">A-line Front-seam Sweatshorts in Chocolate Brown</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-chocolate-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-chocolate-brown', 'A-line Front-seam Sweatshorts in Chocolate Brown', '2450.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511989copy.jpg?v=1757933279')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-jet-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511633copy.jpg?v=1757933211" alt="A-line Front-seam Sweatshorts in Jet Black">
+            <div class="product-details">
+                <div class="product-name">A-line Front-seam Sweatshorts in Jet Black</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-jet-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/a-line-front-seam-sweatshorts-in-jet-black', 'A-line Front-seam Sweatshorts in Jet Black', '2450.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511633copy.jpg?v=1757933211')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-chocolate-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1501copy.jpg?v=1759936061" alt="Straight Front-seam Sweatshorts in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Straight Front-seam Sweatshorts in Chocolate Brown</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-chocolate-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-chocolate-brown', 'Straight Front-seam Sweatshorts in Chocolate Brown', '2450.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1501copy.jpg?v=1759936061')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-beacon-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0486copy.jpg?v=1756971152" alt="Straight Front-seam Sweatshorts in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Straight Front-seam Sweatshorts in Beacon Blue</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-beacon-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-beacon-blue', 'Straight Front-seam Sweatshorts in Beacon Blue', '2450.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0486copy.jpg?v=1756971152')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-brushed-nickel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT2082_copy.jpg?v=1756970050" alt="Straight Front-seam Sweatshorts in Brushed Nickel">
+            <div class="product-details">
+                <div class="product-name">Straight Front-seam Sweatshorts in Brushed Nickel</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-brushed-nickel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-brushed-nickel', 'Straight Front-seam Sweatshorts in Brushed Nickel', '2450.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT2082_copy.jpg?v=1756970050')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-jet-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0651copy.jpg?v=1756968072" alt="Straight Front-seam Sweatshorts in Jet Black">
+            <div class="product-details">
+                <div class="product-name">Straight Front-seam Sweatshorts in Jet Black</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-jet-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/straight-front-seam-sweatshorts-in-jet-black', 'Straight Front-seam Sweatshorts in Jet Black', '2450.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0651copy.jpg?v=1756968072')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/straight-front-seam-sweatpants-in-brushed-nickel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT2378_copy.jpg?v=1758886090" alt="Straight Front-seam Sweatpants in Brushed Nickel">
+            <div class="product-details">
+                <div class="product-name">Straight Front-seam Sweatpants in Brushed Nickel</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/straight-front-seam-sweatpants-in-brushed-nickel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/straight-front-seam-sweatpants-in-brushed-nickel', 'Straight Front-seam Sweatpants in Brushed Nickel', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT2378_copy.jpg?v=1758886090')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/straight-front-seam-sweatpants-in-jet-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2490copy.jpg?v=1757932224" alt="Straight Front-seam Sweatpants in Jet Black">
+            <div class="product-details">
+                <div class="product-name">Straight Front-seam Sweatpants in Jet Black</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/straight-front-seam-sweatpants-in-jet-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/straight-front-seam-sweatpants-in-jet-black', 'Straight Front-seam Sweatpants in Jet Black', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2490copy.jpg?v=1757932224')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/straight-front-seam-sweatpants-in-chocolate-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1773copy.jpg?v=1757932238" alt="Straight Front-seam Sweatpants in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Straight Front-seam Sweatpants in Chocolate Brown</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/straight-front-seam-sweatpants-in-chocolate-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/straight-front-seam-sweatpants-in-chocolate-brown', 'Straight Front-seam Sweatpants in Chocolate Brown', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1773copy.jpg?v=1757932238')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/straight-front-seam-sweatpants-in-beacon-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0119copy_738f0217-e196-447a-beab-d47b0e987ebe.jpg?v=1754969285" alt="Straight Front-seam Sweatpants in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Straight Front-seam Sweatpants in Beacon Blue</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/straight-front-seam-sweatpants-in-beacon-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/straight-front-seam-sweatpants-in-beacon-blue', 'Straight Front-seam Sweatpants in Beacon Blue', '3550.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0119copy_738f0217-e196-447a-beab-d47b0e987ebe.jpg?v=1754969285')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-marshmallow-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0363copy.jpg?v=1754627784" alt="Balança Tee in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Balança Tee in Marshmallow</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-marshmallow-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-marshmallow-men', 'Balança Tee in Marshmallow', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0363copy.jpg?v=1754627784')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-marshmallow-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512491copy.jpg?v=1757931030" alt="Balança Tee in Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Balança Tee in Marshmallow</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-marshmallow-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-marshmallow-women', 'Balança Tee in Marshmallow', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512491copy.jpg?v=1757931030')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/twelvth-studio-hoodie-in-brushed-nickel-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512945copy.jpg?v=1757931757" alt="Twelvth Studio Hoodie in Brushed Nickel">
+            <div class="product-details">
+                <div class="product-name">Twelvth Studio Hoodie in Brushed Nickel</div>
+                <div class="product-price">₹3320.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/twelvth-studio-hoodie-in-brushed-nickel-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/twelvth-studio-hoodie-in-brushed-nickel-women', 'Twelvth Studio Hoodie in Brushed Nickel', '3320.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512945copy.jpg?v=1757931757')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/twelvth-studio-hoodie-in-brushed-nickel-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2129copy.jpg?v=1754460727" alt="Twelvth Studio Hoodie in Brushed Nickel">
+            <div class="product-details">
+                <div class="product-name">Twelvth Studio Hoodie in Brushed Nickel</div>
+                <div class="product-price">₹3320.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/twelvth-studio-hoodie-in-brushed-nickel-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/twelvth-studio-hoodie-in-brushed-nickel-men', 'Twelvth Studio Hoodie in Brushed Nickel', '3320.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2129copy.jpg?v=1754460727')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/twelvth-studio-hoodie-in-jet-black-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202512576_copy.jpg?v=1758869898" alt="Twelvth Studio Hoodie in Jet Black">
+            <div class="product-details">
+                <div class="product-name">Twelvth Studio Hoodie in Jet Black</div>
+                <div class="product-price">₹3320.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/twelvth-studio-hoodie-in-jet-black-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/twelvth-studio-hoodie-in-jet-black-women', 'Twelvth Studio Hoodie in Jet Black', '3320.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202512576_copy.jpg?v=1758869898')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/twelvth-studio-hoodie-in-jet-black-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2946copy.jpg?v=1757931650" alt="Twelvth Studio Hoodie in Jet Black">
+            <div class="product-details">
+                <div class="product-name">Twelvth Studio Hoodie in Jet Black</div>
+                <div class="product-price">₹3320.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/twelvth-studio-hoodie-in-jet-black-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/twelvth-studio-hoodie-in-jet-black-men', 'Twelvth Studio Hoodie in Jet Black', '3320.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2946copy.jpg?v=1757931650')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/n012-studio-hoodie-in-brushed-nickel-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT3007copy.jpg?v=1754397284" alt="N012 Studio Hoodie in Brushed Nickel">
+            <div class="product-details">
+                <div class="product-name">N012 Studio Hoodie in Brushed Nickel</div>
+                <div class="product-price">₹2840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/n012-studio-hoodie-in-brushed-nickel-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/n012-studio-hoodie-in-brushed-nickel-men', 'N012 Studio Hoodie in Brushed Nickel', '2840.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT3007copy.jpg?v=1754397284')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-hoodie-in-beacon-blue-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512905copy.jpg?v=1754396765" alt="Balança Hoodie in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Balança Hoodie in Beacon Blue</div>
+                <div class="product-price">₹3560.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-hoodie-in-beacon-blue-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-hoodie-in-beacon-blue-women', 'Balança Hoodie in Beacon Blue', '3560.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512905copy.jpg?v=1754396765')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-hoodie-in-beacon-blue-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT3216copy.jpg?v=1754396615" alt="Balança Hoodie in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Balança Hoodie in Beacon Blue</div>
+                <div class="product-price">₹3560.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-hoodie-in-beacon-blue-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-hoodie-in-beacon-blue-men', 'Balança Hoodie in Beacon Blue', '3560.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT3216copy.jpg?v=1754396615')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/lannee93-hoodie-in-chocolate-brown-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513192copy.jpg?v=1754395719" alt="L&#x27;année93 Hoodie in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">L&#x27;année93 Hoodie in Chocolate Brown</div>
+                <div class="product-price">₹2840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/lannee93-hoodie-in-chocolate-brown-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/lannee93-hoodie-in-chocolate-brown-women', 'L&#x27;année93 Hoodie in Chocolate Brown', '2840.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513192copy.jpg?v=1754395719')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/lannee93-hoodie-in-chocolate-brown-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1842copy.jpg?v=1754395456" alt="L&#x27;année93 Hoodie in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">L&#x27;année93 Hoodie in Chocolate Brown</div>
+                <div class="product-price">₹2840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/lannee93-hoodie-in-chocolate-brown-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/lannee93-hoodie-in-chocolate-brown-men', 'L&#x27;année93 Hoodie in Chocolate Brown', '2840.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1842copy.jpg?v=1754395456')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/lannee93-hoodie-in-winery-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/LO-U-HO-LN-WN_1_copy.jpg?v=1754395092" alt="L&#x27;année93 Hoodie in Winery">
+            <div class="product-details">
+                <div class="product-name">L&#x27;année93 Hoodie in Winery</div>
+                <div class="product-price">₹2840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/lannee93-hoodie-in-winery-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/lannee93-hoodie-in-winery-women', 'L&#x27;année93 Hoodie in Winery', '2840.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/LO-U-HO-LN-WN_1_copy.jpg?v=1754395092')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/lannee93-hoodie-in-winery-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT2202_copy.jpg?v=1758885612" alt="L&#x27;année93 Hoodie in Winery">
+            <div class="product-details">
+                <div class="product-name">L&#x27;année93 Hoodie in Winery</div>
+                <div class="product-price">₹2840.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/lannee93-hoodie-in-winery-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/lannee93-hoodie-in-winery-men', 'L&#x27;année93 Hoodie in Winery', '2840.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT2202_copy.jpg?v=1758885612')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/script-hoodie-in-beacon-blue-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2748copy.jpg?v=1754393727" alt="Script Hoodie in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Script Hoodie in Beacon Blue</div>
+                <div class="product-price">₹3192.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/script-hoodie-in-beacon-blue-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/script-hoodie-in-beacon-blue-men', 'Script Hoodie in Beacon Blue', '3192.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT2748copy.jpg?v=1754393727')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/script-hoodie-in-beacon-blue-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513269copy.jpg?v=1754393339" alt="Script Hoodie in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Script Hoodie in Beacon Blue</div>
+                <div class="product-price">₹3192.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/script-hoodie-in-beacon-blue-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/script-hoodie-in-beacon-blue-women', 'Script Hoodie in Beacon Blue', '3192.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202513269copy.jpg?v=1754393339')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/script-hoodie-in-winery-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202512797_copy.jpg?v=1758884747" alt="Script Hoodie in Winery">
+            <div class="product-details">
+                <div class="product-name">Script Hoodie in Winery</div>
+                <div class="product-price">₹3192.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/script-hoodie-in-winery-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/script-hoodie-in-winery-women', 'Script Hoodie in Winery', '3192.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT_12_07_202512797_copy.jpg?v=1758884747')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/basic-tee-in-beacon-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202510814copy_0a167ab3-8c91-4c4b-ac23-2647414f4587.jpg?v=1758869084" alt="Basic Tee in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Basic Tee in Beacon Blue</div>
+                <div class="product-price">₹1250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/basic-tee-in-beacon-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/basic-tee-in-beacon-blue', 'Basic Tee in Beacon Blue', '1250.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202510814copy_0a167ab3-8c91-4c4b-ac23-2647414f4587.jpg?v=1758869084')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/basic-tee-in-chocolate-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512010copy.jpg?v=1754382714" alt="Basic Tee in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Basic Tee in Chocolate Brown</div>
+                <div class="product-price">₹1250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/basic-tee-in-chocolate-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/basic-tee-in-chocolate-brown', 'Basic Tee in Chocolate Brown', '1250.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512010copy.jpg?v=1754382714')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/basic-tee-in-pastel-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512411copy.jpg?v=1754378585" alt="Basic Tee in Pastel Yellow">
+            <div class="product-details">
+                <div class="product-name">Basic Tee in Pastel Yellow</div>
+                <div class="product-price">₹1250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/basic-tee-in-pastel-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/basic-tee-in-pastel-yellow', 'Basic Tee in Pastel Yellow', '1250.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512411copy.jpg?v=1754378585')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/script-hoodie-in-winery-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT3131copy.jpg?v=1754388004" alt="Script Hoodie in Winery">
+            <div class="product-details">
+                <div class="product-name">Script Hoodie in Winery</div>
+                <div class="product-price">₹3192.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/script-hoodie-in-winery-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/script-hoodie-in-winery-men', 'Script Hoodie in Winery', '3192.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT3131copy.jpg?v=1754388004')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/lannee93-tee-in-chocolate-brown-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512250copy_91676aa8-cd40-4185-96ec-8d461f34d148.jpg?v=1758869450" alt="L&#x27;année93 Tee in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">L&#x27;année93 Tee in Chocolate Brown</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/lannee93-tee-in-chocolate-brown-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/lannee93-tee-in-chocolate-brown-women', 'L&#x27;année93 Tee in Chocolate Brown', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512250copy_91676aa8-cd40-4185-96ec-8d461f34d148.jpg?v=1758869450')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/lannee93-tee-in-chocolate-brown-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1391copy.jpg?v=1754312381" alt="L&#x27;année93 Tee in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">L&#x27;année93 Tee in Chocolate Brown</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/lannee93-tee-in-chocolate-brown-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/lannee93-tee-in-chocolate-brown-men', 'L&#x27;année93 Tee in Chocolate Brown', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT1391copy.jpg?v=1754312381')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/n012-studio-tee-in-jet-black-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512499copy_f59cc126-6da3-48f8-8f30-f589ba963d06.jpg?v=1758869626" alt="N012 Studio Tee in Jet Black">
+            <div class="product-details">
+                <div class="product-name">N012 Studio Tee in Jet Black</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/n012-studio-tee-in-jet-black-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/n012-studio-tee-in-jet-black-women', 'N012 Studio Tee in Jet Black', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512499copy_f59cc126-6da3-48f8-8f30-f589ba963d06.jpg?v=1758869626')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/n012-studio-tee-in-jet-black-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0720copy.jpg?v=1754300396" alt="N012 Studio Tee in Jet Black">
+            <div class="product-details">
+                <div class="product-name">N012 Studio Tee in Jet Black</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/n012-studio-tee-in-jet-black-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/n012-studio-tee-in-jet-black-men', 'N012 Studio Tee in Jet Black', '1890.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0720copy.jpg?v=1754300396')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-beacon-blue-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512376copy.jpg?v=1754298202" alt="Balança Tee in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Balança Tee in Beacon Blue</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-beacon-blue-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-beacon-blue-women', 'Balança Tee in Beacon Blue', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202512376copy.jpg?v=1754298202')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/balanca-tee-in-beacon-blue-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT3524_copy.jpg?v=1754283757" alt="Balança Tee in Beacon Blue">
+            <div class="product-details">
+                <div class="product-name">Balança Tee in Beacon Blue</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/balanca-tee-in-beacon-blue-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/balanca-tee-in-beacon-blue-men', 'Balança Tee in Beacon Blue', '2490.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTH_EDIT3524_copy.jpg?v=1754283757')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/script-tee-in-chocolate-brown-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511805copy.jpg?v=1754299743" alt="Script Tee in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Script Tee in Chocolate Brown</div>
+                <div class="product-price">₹2350.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/script-tee-in-chocolate-brown-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/script-tee-in-chocolate-brown-women', 'Script Tee in Chocolate Brown', '2350.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT_12_07_202511805copy.jpg?v=1754299743')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/script-tee-in-jet-black-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/LO-U-GT-SC-JB_2copy.jpg?v=1754299681" alt="Script Tee in Jet Black">
+            <div class="product-details">
+                <div class="product-name">Script Tee in Jet Black</div>
+                <div class="product-price">₹2350.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/script-tee-in-jet-black-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/script-tee-in-jet-black-women', 'Script Tee in Jet Black', '2350.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/LO-U-GT-SC-JB_2copy.jpg?v=1754299681')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/script-tee-in-chocolate-brown-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT3058copy.jpg?v=1754285225" alt="Script Tee in Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Script Tee in Chocolate Brown</div>
+                <div class="product-price">₹2350.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/script-tee-in-chocolate-brown-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/script-tee-in-chocolate-brown-men', 'Script Tee in Chocolate Brown', '2350.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT3058copy.jpg?v=1754285225')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://twelvthedit.com/products/script-tee-in-jet-black-men', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0843copy.jpg?v=1757930706" alt="Script Tee in Jet Black">
+            <div class="product-details">
+                <div class="product-name">Script Tee in Jet Black</div>
+                <div class="product-price">₹2350.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://twelvthedit.com/products/script-tee-in-jet-black-men', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://twelvthedit.com/products/script-tee-in-jet-black-men', 'Script Tee in Jet Black', '2350.00', 'https://cdn.shopify.com/s/files/1/0889/6230/2318/files/TWELTHEDIT0843copy.jpg?v=1757930706')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

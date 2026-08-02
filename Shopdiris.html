@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopdiris - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Shopdiris</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lola-mint-tank-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00020_f9683098-590c-4f61-b17c-80ec1357588e.jpg?v=1777111190" alt="Lola MINT tank top">
+            <div class="product-details">
+                <div class="product-name">Lola MINT tank top</div>
+                <div class="product-price">₹850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lola-mint-tank-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lola-mint-tank-top', 'Lola MINT tank top', '850.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00020_f9683098-590c-4f61-b17c-80ec1357588e.jpg?v=1777111190')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/mint-beaded-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00034_cae621f4-b072-47f6-b2d7-58a6cc04903a.jpg?v=1777112328" alt="MINT beaded top">
+            <div class="product-details">
+                <div class="product-name">MINT beaded top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/mint-beaded-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/mint-beaded-top', 'MINT beaded top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00034_cae621f4-b072-47f6-b2d7-58a6cc04903a.jpg?v=1777112328')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/hazel-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_1303.webp?v=1716639466" alt="Hazel shorts">
+            <div class="product-details">
+                <div class="product-name">Hazel shorts</div>
+                <div class="product-price">₹650.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/hazel-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/hazel-shorts', 'Hazel shorts', '650.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_1303.webp?v=1716639466')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/hazel-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/42FDC289-6352-405A-B8B0-F1918AD549C9.webp?v=1716639808" alt="Hazel shirt">
+            <div class="product-details">
+                <div class="product-name">Hazel shirt</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/hazel-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/hazel-shirt', 'Hazel shirt', '1199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/42FDC289-6352-405A-B8B0-F1918AD549C9.webp?v=1716639808')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/sara-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8839.webp?v=1753517620" alt="SARA MINI DRESS">
+            <div class="product-details">
+                <div class="product-name">SARA MINI DRESS</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/sara-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/sara-mini-dress', 'SARA MINI DRESS', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8839.webp?v=1753517620')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/vixen-mini-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00009_6dbcdd46-3865-4f25-9071-50b80a0e5bcc.jpg?v=1765535014" alt="Vixen mini skirt">
+            <div class="product-details">
+                <div class="product-name">Vixen mini skirt</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/vixen-mini-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/vixen-mini-skirt', 'Vixen mini skirt', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00009_6dbcdd46-3865-4f25-9071-50b80a0e5bcc.jpg?v=1765535014')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/darla-satin-dress-with-cape', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00092_fa6dfc50-c7c2-4650-999b-305567d3a281.jpg?v=1774005791" alt="Darla satin dress with cape">
+            <div class="product-details">
+                <div class="product-name">Darla satin dress with cape</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/darla-satin-dress-with-cape', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/darla-satin-dress-with-cape', 'Darla satin dress with cape', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00092_fa6dfc50-c7c2-4650-999b-305567d3a281.jpg?v=1774005791')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/demi-strawberry-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00003_5335fb78-7852-4c90-86b7-2977ea33cf27.jpg?v=1757759407" alt="Demi strawberry top">
+            <div class="product-details">
+                <div class="product-name">Demi strawberry top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/demi-strawberry-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/demi-strawberry-top', 'Demi strawberry top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00003_5335fb78-7852-4c90-86b7-2977ea33cf27.jpg?v=1757759407')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/dove-yellow-satin-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4377.webp?v=1734179006" alt="Dove yellow satin top">
+            <div class="product-details">
+                <div class="product-name">Dove yellow satin top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/dove-yellow-satin-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/dove-yellow-satin-top', 'Dove yellow satin top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4377.webp?v=1734179006')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/sunny-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/sunny3.webp?v=1757439794" alt="Sunny skirt">
+            <div class="product-details">
+                <div class="product-name">Sunny skirt</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/sunny-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/sunny-skirt', 'Sunny skirt', '950.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/sunny3.webp?v=1757439794')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/vixen-dress-mini', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00066_5082ab2b-ade3-4fde-adab-199d9a7236cb.jpg?v=1777112548" alt="Vixen dress MINI">
+            <div class="product-details">
+                <div class="product-name">Vixen dress MINI</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/vixen-dress-mini', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/vixen-dress-mini', 'Vixen dress MINI', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00066_5082ab2b-ade3-4fde-adab-199d9a7236cb.jpg?v=1777112548')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/sugar-beaded-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00044_3e0b3f6a-9649-41f3-a80e-908e23574d7b.jpg?v=1777112285" alt="SUGAR beaded top">
+            <div class="product-details">
+                <div class="product-name">SUGAR beaded top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/sugar-beaded-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/sugar-beaded-top', 'SUGAR beaded top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00044_3e0b3f6a-9649-41f3-a80e-908e23574d7b.jpg?v=1777112285')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/butter-beaded-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00051_6053a8f8-ee3f-4d71-bd64-b176e7fa121f.jpg?v=1777112088" alt="BUTTER beaded top">
+            <div class="product-details">
+                <div class="product-name">BUTTER beaded top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/butter-beaded-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/butter-beaded-top', 'BUTTER beaded top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00051_6053a8f8-ee3f-4d71-bd64-b176e7fa121f.jpg?v=1777112088')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/jollie-top-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00057_89820077-96bc-4398-9702-f9af42874d14.jpg?v=1777112093" alt="Jollie top YELLOW">
+            <div class="product-details">
+                <div class="product-name">Jollie top YELLOW</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/jollie-top-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/jollie-top-yellow', 'Jollie top YELLOW', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00057_89820077-96bc-4398-9702-f9af42874d14.jpg?v=1777112093')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/jollie-top-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00058_20fcedd6-ebb9-4f87-b61c-026f5c3345f3.jpg?v=1777111447" alt="Jollie top BROWN">
+            <div class="product-details">
+                <div class="product-name">Jollie top BROWN</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/jollie-top-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/jollie-top-brown', 'Jollie top BROWN', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00058_20fcedd6-ebb9-4f87-b61c-026f5c3345f3.jpg?v=1777111447')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lola-brown-tank-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00015_214ab94b-385a-4c72-b48f-d35f4e2ef783.jpg?v=1777110653" alt="Lola BROWN tank top">
+            <div class="product-details">
+                <div class="product-name">Lola BROWN tank top</div>
+                <div class="product-price">₹850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lola-brown-tank-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lola-brown-tank-top', 'Lola BROWN tank top', '850.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00015_214ab94b-385a-4c72-b48f-d35f4e2ef783.jpg?v=1777110653')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lexi-cutout-dress-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00070_83910b2c-9207-4b5b-9c96-36eca836d259.jpg?v=1777110377" alt="Lexi cutout dress BROWN">
+            <div class="product-details">
+                <div class="product-name">Lexi cutout dress BROWN</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lexi-cutout-dress-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lexi-cutout-dress-brown', 'Lexi cutout dress BROWN', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00070_83910b2c-9207-4b5b-9c96-36eca836d259.jpg?v=1777110377')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lexi-cutout-dress-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00077_d6a8853f-3116-47ca-87d4-4df380fd43ea.jpg?v=1777110225" alt="Lexi cutout dress BLACK">
+            <div class="product-details">
+                <div class="product-name">Lexi cutout dress BLACK</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lexi-cutout-dress-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lexi-cutout-dress-black', 'Lexi cutout dress BLACK', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00077_d6a8853f-3116-47ca-87d4-4df380fd43ea.jpg?v=1777110225')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/cara-blue-satin-lace-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00013_2609a60a-415d-4c38-90c6-e2fa8f0119d9.jpg?v=1777109790" alt="Cara BLUE satin lace dress">
+            <div class="product-details">
+                <div class="product-name">Cara BLUE satin lace dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/cara-blue-satin-lace-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/cara-blue-satin-lace-dress', 'Cara BLUE satin lace dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00013_2609a60a-415d-4c38-90c6-e2fa8f0119d9.jpg?v=1777109790')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/nyx-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2048.webp?v=1723804763" alt="Nyx Set">
+            <div class="product-details">
+                <div class="product-name">Nyx Set</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/nyx-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/nyx-set', 'Nyx Set', '1999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2048.webp?v=1723804763')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/nyx-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2067_ba063119-b954-4c20-930d-5a8b514927fc.webp?v=1723805091" alt="Nyx Shirt">
+            <div class="product-details">
+                <div class="product-name">Nyx Shirt</div>
+                <div class="product-price">₹1099.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/nyx-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/nyx-shirt', 'Nyx Shirt', '1099.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2067_ba063119-b954-4c20-930d-5a8b514927fc.webp?v=1723805091')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/nyx-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2062_fa36ef05-e9de-4c1b-b5cb-94f67834efef.webp?v=1723805534" alt="Nyx Skirt">
+            <div class="product-details">
+                <div class="product-name">Nyx Skirt</div>
+                <div class="product-price">₹1299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/nyx-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/nyx-skirt', 'Nyx Skirt', '1299.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2062_fa36ef05-e9de-4c1b-b5cb-94f67834efef.webp?v=1723805534')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/georgia-panelled-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00069.jpg?v=1743819583" alt="Georgia panelled dress">
+            <div class="product-details">
+                <div class="product-name">Georgia panelled dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/georgia-panelled-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/georgia-panelled-dress', 'Georgia panelled dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00069.jpg?v=1743819583')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/luna-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00002_7c7044b3-359f-42d4-8cfd-26c89aef3ed7.jpg?v=1774009378" alt="Luna skirt">
+            <div class="product-details">
+                <div class="product-name">Luna skirt</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/luna-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/luna-skirt', 'Luna skirt', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00002_7c7044b3-359f-42d4-8cfd-26c89aef3ed7.jpg?v=1774009378')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/betty-yellow-polka-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00007_a917cc7b-ba9e-485d-bf42-1ae7c194fe4c.jpg?v=1774094920" alt="Betty yellow polka Skirt">
+            <div class="product-details">
+                <div class="product-name">Betty yellow polka Skirt</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/betty-yellow-polka-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/betty-yellow-polka-skirt', 'Betty yellow polka Skirt', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00007_a917cc7b-ba9e-485d-bf42-1ae7c194fe4c.jpg?v=1774094920')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/betty-yellow-polka-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00009_8f88fd03-5598-4482-acc2-2fd9190e08e9.jpg?v=1774094934" alt="Betty yellow polka Top">
+            <div class="product-details">
+                <div class="product-name">Betty yellow polka Top</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/betty-yellow-polka-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/betty-yellow-polka-top', 'Betty yellow polka Top', '1199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00009_8f88fd03-5598-4482-acc2-2fd9190e08e9.jpg?v=1774094934')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/tara-small-polka-dot-cape', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00063_e0c03438-fa43-4120-b42b-69e609b4a5cf.jpg?v=1774007931" alt="Tara small polka dot cape">
+            <div class="product-details">
+                <div class="product-name">Tara small polka dot cape</div>
+                <div class="product-price">₹850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/tara-small-polka-dot-cape', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/tara-small-polka-dot-cape', 'Tara small polka dot cape', '850.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00063_e0c03438-fa43-4120-b42b-69e609b4a5cf.jpg?v=1774007931')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/crystal-pant', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00043_219ddf71-54f6-4aaf-81a2-e721c54cde8d.jpg?v=1774007768" alt="Crystal pant">
+            <div class="product-details">
+                <div class="product-name">Crystal pant</div>
+                <div class="product-price">₹1699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/crystal-pant', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/crystal-pant', 'Crystal pant', '1699.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00043_219ddf71-54f6-4aaf-81a2-e721c54cde8d.jpg?v=1774007768')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/crystal-peplum-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00044_17dbbee9-4390-430b-bd6b-834df07de869.jpg?v=1774007582" alt="Crystal peplum top">
+            <div class="product-details">
+                <div class="product-name">Crystal peplum top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/crystal-peplum-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/crystal-peplum-top', 'Crystal peplum top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00044_17dbbee9-4390-430b-bd6b-834df07de869.jpg?v=1774007582')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/bella-yellow-off-shoulder-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00049_d0044626-2561-410c-ae43-e325335d6edd.jpg?v=1774007382" alt="Bella Yellow off shoulder top">
+            <div class="product-details">
+                <div class="product-name">Bella Yellow off shoulder top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/bella-yellow-off-shoulder-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/bella-yellow-off-shoulder-top', 'Bella Yellow off shoulder top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00049_d0044626-2561-410c-ae43-e325335d6edd.jpg?v=1774007382')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/bella-pink-off-shoulder-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00065_1332a662-75e2-40a0-9070-f7f76efba6a8.jpg?v=1774007339" alt="Bella Pink off shoulder top">
+            <div class="product-details">
+                <div class="product-name">Bella Pink off shoulder top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/bella-pink-off-shoulder-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/bella-pink-off-shoulder-top', 'Bella Pink off shoulder top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00065_1332a662-75e2-40a0-9070-f7f76efba6a8.jpg?v=1774007339')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lumi-pink-satin-lace-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00040_956d8896-bee7-4560-86da-2c081ef43fb3.jpg?v=1774008287" alt="Lumi Pink satin lace top">
+            <div class="product-details">
+                <div class="product-name">Lumi Pink satin lace top</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lumi-pink-satin-lace-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lumi-pink-satin-lace-top', 'Lumi Pink satin lace top', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00040_956d8896-bee7-4560-86da-2c081ef43fb3.jpg?v=1774008287')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/jollie-top-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00068_bf290a45-c0e0-402d-8c0b-bf011c632b4a.jpg?v=1774006848" alt="Jollie top Blue">
+            <div class="product-details">
+                <div class="product-name">Jollie top Blue</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/jollie-top-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/jollie-top-blue', 'Jollie top Blue', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00068_bf290a45-c0e0-402d-8c0b-bf011c632b4a.jpg?v=1774006848')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/jollie-top-pink', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00073.jpg?v=1774006763" alt="Jollie top Pink">
+            <div class="product-details">
+                <div class="product-name">Jollie top Pink</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/jollie-top-pink', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/jollie-top-pink', 'Jollie top Pink', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00073.jpg?v=1774006763')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lola-yellow-tank-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00087_97388d1f-d233-4a29-8cb2-8b38f31265a4.jpg?v=1774006404" alt="Lola Yellow tank top">
+            <div class="product-details">
+                <div class="product-name">Lola Yellow tank top</div>
+                <div class="product-price">₹850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lola-yellow-tank-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lola-yellow-tank-top', 'Lola Yellow tank top', '850.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00087_97388d1f-d233-4a29-8cb2-8b38f31265a4.jpg?v=1774006404')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lola-blue-tank-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00086_ec70db49-3f87-405e-965c-84038ce017ff.jpg?v=1774006312" alt="Lola Blue tank top">
+            <div class="product-details">
+                <div class="product-name">Lola Blue tank top</div>
+                <div class="product-price">₹850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lola-blue-tank-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lola-blue-tank-top', 'Lola Blue tank top', '850.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00086_ec70db49-3f87-405e-965c-84038ce017ff.jpg?v=1774006312')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/ivana-yellow-satin-dress-with-dupatta', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00100.jpg?v=1774005549" alt="Ivana yellow satin dress with dupatta">
+            <div class="product-details">
+                <div class="product-name">Ivana yellow satin dress with dupatta</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/ivana-yellow-satin-dress-with-dupatta', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/ivana-yellow-satin-dress-with-dupatta', 'Ivana yellow satin dress with dupatta', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00100.jpg?v=1774005549')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lucy-pink-halter-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00103.jpg?v=1774005130" alt="Lucy Pink halter dress">
+            <div class="product-details">
+                <div class="product-name">Lucy Pink halter dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lucy-pink-halter-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lucy-pink-halter-dress', 'Lucy Pink halter dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00103.jpg?v=1774005130')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/cara-satin-lace-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00114.jpg?v=1774004896" alt="Cara satin lace dress">
+            <div class="product-details">
+                <div class="product-name">Cara satin lace dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/cara-satin-lace-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/cara-satin-lace-dress', 'Cara satin lace dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00114.jpg?v=1774004896')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/kimmie-polka-halter-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00115.jpg?v=1774004667" alt="Kimmie polka halter dress">
+            <div class="product-details">
+                <div class="product-name">Kimmie polka halter dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/kimmie-polka-halter-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/kimmie-polka-halter-dress', 'Kimmie polka halter dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00115.jpg?v=1774004667')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/maya-strawberry-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00006_3c8cb3f2-265e-4706-b381-6cd5a46f5014.jpg?v=1757759172" alt="Maya strawberry dress">
+            <div class="product-details">
+                <div class="product-name">Maya strawberry dress</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/maya-strawberry-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/maya-strawberry-dress', 'Maya strawberry dress', '2199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00006_3c8cb3f2-265e-4706-b381-6cd5a46f5014.jpg?v=1757759172')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/taffy-sequin-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00014_9072b400-4086-419c-9678-dd234b93f37b.jpg?v=1765534616" alt="Taffy sequin top">
+            <div class="product-details">
+                <div class="product-name">Taffy sequin top</div>
+                <div class="product-price">₹1549.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/taffy-sequin-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/taffy-sequin-top', 'Taffy sequin top', '1549.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00014_9072b400-4086-419c-9678-dd234b93f37b.jpg?v=1765534616')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/vanilla-bean-polka-dot-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/3FA11AF9-B42B-450A-A18F-CAD9033D3BB9.jpg?v=1754083659" alt="VANILLA BEAN POLKA DOT TOP">
+            <div class="product-details">
+                <div class="product-name">VANILLA BEAN POLKA DOT TOP</div>
+                <div class="product-price">₹999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/vanilla-bean-polka-dot-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/vanilla-bean-polka-dot-top', 'VANILLA BEAN POLKA DOT TOP', '999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/3FA11AF9-B42B-450A-A18F-CAD9033D3BB9.jpg?v=1754083659')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/gabby-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00003_97188719-f51c-42b7-af17-fcef11cd890b.jpg?v=1765533461" alt="Vixen midi dress">
+            <div class="product-details">
+                <div class="product-name">Vixen midi dress</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/gabby-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/gabby-dress', 'Vixen midi dress', '3499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00003_97188719-f51c-42b7-af17-fcef11cd890b.jpg?v=1765533461')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/anna-powder-blue-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2464.webp?v=1723806345" alt="Anna Powder Blue Dress">
+            <div class="product-details">
+                <div class="product-name">Anna Powder Blue Dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/anna-powder-blue-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/anna-powder-blue-dress', 'Anna Powder Blue Dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2464.webp?v=1723806345')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/ella-ruffle-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00055.jpg?v=1743821365" alt="Ella ruffle top">
+            <div class="product-details">
+                <div class="product-name">Ella ruffle top</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/ella-ruffle-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/ella-ruffle-top', 'Ella ruffle top', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00055.jpg?v=1743821365')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/ella-ruffle-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00002.jpg?v=1743821464" alt="Ella ruffle skirt">
+            <div class="product-details">
+                <div class="product-name">Ella ruffle skirt</div>
+                <div class="product-price">₹1399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/ella-ruffle-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/ella-ruffle-skirt', 'Ella ruffle skirt', '1399.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00002.jpg?v=1743821464')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/eliza-mini-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00004_1cd67fb4-4b75-4bc3-9f7b-afe8f05b6224.jpg?v=1765617385" alt="Eliza MINI skirt">
+            <div class="product-details">
+                <div class="product-name">Eliza MINI skirt</div>
+                <div class="product-price">₹1399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/eliza-mini-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/eliza-mini-skirt', 'Eliza MINI skirt', '1399.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00004_1cd67fb4-4b75-4bc3-9f7b-afe8f05b6224.jpg?v=1765617385')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/eliza-sequin-maxi-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00006_87dde84b-bf49-47fd-ad8e-67af52f6b021.jpg?v=1765617432" alt="Eliza sequin maxi skirt">
+            <div class="product-details">
+                <div class="product-name">Eliza sequin maxi skirt</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/eliza-sequin-maxi-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/eliza-sequin-maxi-skirt', 'Eliza sequin maxi skirt', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00006_87dde84b-bf49-47fd-ad8e-67af52f6b021.jpg?v=1765617432')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/eliza-sequin-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00007_231bca55-f75e-4d0a-a275-52b9a36aacc9.jpg?v=1765617450" alt="Eliza sequin top">
+            <div class="product-details">
+                <div class="product-name">Eliza sequin top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/eliza-sequin-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/eliza-sequin-top', 'Eliza sequin top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00007_231bca55-f75e-4d0a-a275-52b9a36aacc9.jpg?v=1765617450')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/black-shell-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00004_b665d32b-24c1-4165-9266-9b1c55654747.jpg?v=1765536063" alt="black shell pants">
+            <div class="product-details">
+                <div class="product-name">black shell pants</div>
+                <div class="product-price">₹1699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/black-shell-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/black-shell-pants', 'black shell pants', '1699.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00004_b665d32b-24c1-4165-9266-9b1c55654747.jpg?v=1765536063')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/blackshell-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00001_2f2b9d4d-5cb9-4c68-89e1-a9de08237287.jpg?v=1765535884" alt="black shell top">
+            <div class="product-details">
+                <div class="product-name">black shell top</div>
+                <div class="product-price">₹1050.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/blackshell-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/blackshell-top', 'black shell top', '1050.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00001_2f2b9d4d-5cb9-4c68-89e1-a9de08237287.jpg?v=1765535884')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/thea-tube-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00006_19a6fd18-11a1-4178-b86f-10af7f75c40f.jpg?v=1765629083" alt="Thea tube dress">
+            <div class="product-details">
+                <div class="product-name">Thea tube dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/thea-tube-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/thea-tube-dress', 'Thea tube dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00006_19a6fd18-11a1-4178-b86f-10af7f75c40f.jpg?v=1765629083')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/ivana-black-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00018_3b739ca8-6bb2-4c3a-bc0d-6f5f1c8310fc.jpg?v=1765532956" alt="Ivana black dress">
+            <div class="product-details">
+                <div class="product-name">Ivana black dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/ivana-black-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/ivana-black-dress', 'Ivana black dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00018_3b739ca8-6bb2-4c3a-bc0d-6f5f1c8310fc.jpg?v=1765532956')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/carla-lace-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00012_542bfa60-57c6-41b2-97f2-b0851c004a97.jpg?v=1765532751" alt="Carla lace dress">
+            <div class="product-details">
+                <div class="product-name">Carla lace dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/carla-lace-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/carla-lace-dress', 'Carla lace dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00012_542bfa60-57c6-41b2-97f2-b0851c004a97.jpg?v=1765532751')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/sydney-dress-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00007_d165a078-0ec1-4964-97d6-956a9f4bcfd9.jpg?v=1765532387" alt="Sydney black dress">
+            <div class="product-details">
+                <div class="product-name">Sydney black dress</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/sydney-dress-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/sydney-dress-black', 'Sydney black dress', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00007_d165a078-0ec1-4964-97d6-956a9f4bcfd9.jpg?v=1765532387')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/noa-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00004_10ab540c-87d4-4a72-af90-f4b77adcabc2.jpg?v=1765531959" alt="Blush dress">
+            <div class="product-details">
+                <div class="product-name">Blush dress</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/noa-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/noa-top', 'Blush dress', '1899.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00004_10ab540c-87d4-4a72-af90-f4b77adcabc2.jpg?v=1765531959')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/maya-tube-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2182.webp?v=1716819289" alt="Maya Tube Dress">
+            <div class="product-details">
+                <div class="product-name">Maya Tube Dress</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/maya-tube-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/maya-tube-dress', 'Maya Tube Dress', '2199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2182.webp?v=1716819289')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/elsa-tube-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_1892.webp?v=1716819143" alt="Elsa Tube Dress">
+            <div class="product-details">
+                <div class="product-name">Elsa Tube Dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/elsa-tube-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/elsa-tube-dress', 'Elsa Tube Dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_1892.webp?v=1716819143')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/jasmin-ice-blue-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00018.jpg?v=1743820540" alt="Jasmin ice blue dress">
+            <div class="product-details">
+                <div class="product-name">Jasmin ice blue dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/jasmin-ice-blue-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/jasmin-ice-blue-dress', 'Jasmin ice blue dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00018.jpg?v=1743820540')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/sylvie-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00068_81b77dd0-543a-440c-a0eb-09a980c8c785.jpg?v=1758290327" alt="SYLVIE TOP">
+            <div class="product-details">
+                <div class="product-name">SYLVIE TOP</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/sylvie-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/sylvie-top', 'SYLVIE TOP', '950.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00068_81b77dd0-543a-440c-a0eb-09a980c8c785.jpg?v=1758290327')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/bianca-polka-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00041_b9206a6e-a525-44fe-8b6e-8319e16cb7d3.jpg?v=1758294280" alt="BIANCA POLKA DRESS">
+            <div class="product-details">
+                <div class="product-name">BIANCA POLKA DRESS</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/bianca-polka-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/bianca-polka-dress', 'BIANCA POLKA DRESS', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00041_b9206a6e-a525-44fe-8b6e-8319e16cb7d3.jpg?v=1758294280')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/chloe-dress-burgundy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00031_79c1e5ef-45c8-45de-bd7e-9a1de20c8c14.jpg?v=1758293842" alt="CHLOE DRESS BURGUNDY">
+            <div class="product-details">
+                <div class="product-name">CHLOE DRESS BURGUNDY</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/chloe-dress-burgundy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/chloe-dress-burgundy', 'CHLOE DRESS BURGUNDY', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00031_79c1e5ef-45c8-45de-bd7e-9a1de20c8c14.jpg?v=1758293842')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/adele-polka-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00025-Copy_10326ab6-52d2-4cd6-9c41-1736c7de7228.jpg?v=1758293429" alt="ADELE POLKA SKIRT">
+            <div class="product-details">
+                <div class="product-name">ADELE POLKA SKIRT</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/adele-polka-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/adele-polka-skirt', 'ADELE POLKA SKIRT', '1199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00025-Copy_10326ab6-52d2-4cd6-9c41-1736c7de7228.jpg?v=1758293429')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/marina-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00008_b45dbf7c-4af0-49fc-901e-416e0bac646c.jpg?v=1758290778" alt="MARINA TOP">
+            <div class="product-details">
+                <div class="product-name">MARINA TOP</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/marina-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/marina-top', 'MARINA TOP', '950.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00008_b45dbf7c-4af0-49fc-901e-416e0bac646c.jpg?v=1758290778')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/nina-white-polka-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image01083.jpg?v=1758291188" alt="NINA WHITE POLKA TOP">
+            <div class="product-details">
+                <div class="product-name">NINA WHITE POLKA TOP</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/nina-white-polka-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/nina-white-polka-top', 'NINA WHITE POLKA TOP', '1199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image01083.jpg?v=1758291188')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/apple-backless-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00084.jpg?v=1743819293" alt="Apple backless top">
+            <div class="product-details">
+                <div class="product-name">Apple backless top</div>
+                <div class="product-price">₹750.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/apple-backless-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/apple-backless-top', 'Apple backless top', '750.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00084.jpg?v=1743819293')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/sofia-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2636.webp?v=1728725305" alt="Sofia Mini Dress">
+            <div class="product-details">
+                <div class="product-name">Sofia Mini Dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/sofia-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/sofia-mini-dress', 'Sofia Mini Dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2636.webp?v=1728725305')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/dolly-polka-tube-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00093.jpg?v=1743819160" alt="Dolly polka tube top">
+            <div class="product-details">
+                <div class="product-name">Dolly polka tube top</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/dolly-polka-tube-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/dolly-polka-tube-top', 'Dolly polka tube top', '1199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00093.jpg?v=1743819160')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/dolly-polka-dot-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/2482EF63-71B0-426A-9FBF-55D4198C65F4.jpg?v=1754083548" alt="DOLLY POLKA DOT PANTS">
+            <div class="product-details">
+                <div class="product-name">DOLLY POLKA DOT PANTS</div>
+                <div class="product-price">₹1699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/dolly-polka-dot-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/dolly-polka-dot-pants', 'DOLLY POLKA DOT PANTS', '1699.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/2482EF63-71B0-426A-9FBF-55D4198C65F4.jpg?v=1754083548')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/mocha-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00014.webp?v=1740166039" alt="Mocha top">
+            <div class="product-details">
+                <div class="product-name">Mocha top</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/mocha-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/mocha-top', 'Mocha top', '950.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00014.webp?v=1740166039')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/mocha-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00016.webp?v=1740166625" alt="Mocha skirt">
+            <div class="product-details">
+                <div class="product-name">Mocha skirt</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/mocha-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/mocha-skirt', 'Mocha skirt', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00016.webp?v=1740166625')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/strawberry-shortcake-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8092.webp?v=1753472797" alt="STRAWBERRY SHORTCAKE DRESS">
+            <div class="product-details">
+                <div class="product-name">STRAWBERRY SHORTCAKE DRESS</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/strawberry-shortcake-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/strawberry-shortcake-dress', 'STRAWBERRY SHORTCAKE DRESS', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8092.webp?v=1753472797')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/blueberry-beaded-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8286.webp?v=1753472569" alt="BLUEBERRY BEADED DRESS">
+            <div class="product-details">
+                <div class="product-name">BLUEBERRY BEADED DRESS</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/blueberry-beaded-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/blueberry-beaded-dress', 'BLUEBERRY BEADED DRESS', '1899.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8286.webp?v=1753472569')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/avo-halter-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8394.webp?v=1753472402" alt="AVO HALTER DRESS">
+            <div class="product-details">
+                <div class="product-name">AVO HALTER DRESS</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/avo-halter-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/avo-halter-dress', 'AVO HALTER DRESS', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8394.webp?v=1753472402')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lemon-tart-tube-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_9556.webp?v=1753518019" alt="LEMONTINI TUBE TOP">
+            <div class="product-details">
+                <div class="product-name">LEMONTINI TUBE TOP</div>
+                <div class="product-price">₹999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lemon-tart-tube-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lemon-tart-tube-top', 'LEMONTINI TUBE TOP', '999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_9556.webp?v=1753518019')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/sprinkles-ibiza-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4423.webp?v=1753546406" alt="SPRINKLES IBIZA TOP">
+            <div class="product-details">
+                <div class="product-name">SPRINKLES IBIZA TOP</div>
+                <div class="product-price">₹999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/sprinkles-ibiza-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/sprinkles-ibiza-top', 'SPRINKLES IBIZA TOP', '999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4423.webp?v=1753546406')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/strawberry-milk-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8590.webp?v=1753471588" alt="STRAWBERRY MILK SKIRT">
+            <div class="product-details">
+                <div class="product-name">STRAWBERRY MILK SKIRT</div>
+                <div class="product-price">₹1449.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/strawberry-milk-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/strawberry-milk-skirt', 'STRAWBERRY MILK SKIRT', '1449.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8590.webp?v=1753471588')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/strawberry-milk-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8999.webp?v=1753477096" alt="STRAWBERRY MILK TOP">
+            <div class="product-details">
+                <div class="product-name">STRAWBERRY MILK TOP</div>
+                <div class="product-price">₹1050.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/strawberry-milk-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/strawberry-milk-top', 'STRAWBERRY MILK TOP', '1050.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8999.webp?v=1753477096')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/matcha-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8456.webp?v=1753471164" alt="MATCHA TOP">
+            <div class="product-details">
+                <div class="product-name">MATCHA TOP</div>
+                <div class="product-price">₹1050.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/matcha-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/matcha-top', 'MATCHA TOP', '1050.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8456.webp?v=1753471164')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/matcha-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8469.webp?v=1753470862" alt="MATCHA SKIRT">
+            <div class="product-details">
+                <div class="product-name">MATCHA SKIRT</div>
+                <div class="product-price">₹1449.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/matcha-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/matcha-skirt', 'MATCHA SKIRT', '1449.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8469.webp?v=1753470862')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/martini-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8487.webp?v=1753470766" alt="MARTINI SKIRT">
+            <div class="product-details">
+                <div class="product-name">MARTINI SKIRT</div>
+                <div class="product-price">₹1449.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/martini-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/martini-skirt', 'MARTINI SKIRT', '1449.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8487.webp?v=1753470766')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/martini-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8484.webp?v=1753470476" alt="MARTINI TOP">
+            <div class="product-details">
+                <div class="product-name">MARTINI TOP</div>
+                <div class="product-price">₹1050.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/martini-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/martini-top', 'MARTINI TOP', '1050.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8484.webp?v=1753470476')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/pistachio-beaded-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8946_5b83766c-e956-43e2-8a6b-e47a06930e0e.webp?v=1753470208" alt="PISTACHIO BEADED TOP">
+            <div class="product-details">
+                <div class="product-name">PISTACHIO BEADED TOP</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/pistachio-beaded-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/pistachio-beaded-top', 'PISTACHIO BEADED TOP', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8946_5b83766c-e956-43e2-8a6b-e47a06930e0e.webp?v=1753470208')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lychee-beaded-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8571.webp?v=1753524049" alt="LYCHEE BEADED TOP">
+            <div class="product-details">
+                <div class="product-name">LYCHEE BEADED TOP</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lychee-beaded-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lychee-beaded-top', 'LYCHEE BEADED TOP', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8571.webp?v=1753524049')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/chocolate-beaded-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8619.webp?v=1753469909" alt="CHOCOLATE BEADED TOP">
+            <div class="product-details">
+                <div class="product-name">CHOCOLATE BEADED TOP</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/chocolate-beaded-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/chocolate-beaded-top', 'CHOCOLATE BEADED TOP', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_8619.webp?v=1753469909')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/darcy-tube-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00027.jpg?v=1743820455" alt="Darcy tube dress">
+            <div class="product-details">
+                <div class="product-name">Darcy tube dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/darcy-tube-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/darcy-tube-dress', 'Darcy tube dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00027.jpg?v=1743820455')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/darcy-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00051.jpg?v=1743819876" alt="Darcy skirt">
+            <div class="product-details">
+                <div class="product-name">Darcy skirt</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/darcy-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/darcy-skirt', 'Darcy skirt', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00051.jpg?v=1743819876')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/demi-peplum-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_1640.webp?v=1718362843" alt="Demi peplum top blue">
+            <div class="product-details">
+                <div class="product-name">Demi peplum top blue</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/demi-peplum-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/demi-peplum-top', 'Demi peplum top blue', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_1640.webp?v=1718362843')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/sydney-pink-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00021.jpg?v=1743821254" alt="Sydney pink mini dress">
+            <div class="product-details">
+                <div class="product-name">Sydney pink mini dress</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/sydney-pink-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/sydney-pink-mini-dress', 'Sydney pink mini dress', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00021.jpg?v=1743821254')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/sydney-blue-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00058.jpg?v=1743821161" alt="Sydney blue mini dress">
+            <div class="product-details">
+                <div class="product-name">Sydney blue mini dress</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/sydney-blue-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/sydney-blue-mini-dress', 'Sydney blue mini dress', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00058.jpg?v=1743821161')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/stef-reversible-tube-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00076.jpg?v=1743819731" alt="Stef reversible tube top">
+            <div class="product-details">
+                <div class="product-name">Stef reversible tube top</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/stef-reversible-tube-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/stef-reversible-tube-top', 'Stef reversible tube top', '950.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00076.jpg?v=1743819731')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/chilli-tiered-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00071.jpg?v=1743819454" alt="Chilli tiered dress">
+            <div class="product-details">
+                <div class="product-name">Chilli tiered dress</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/chilli-tiered-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/chilli-tiered-dress', 'Chilli tiered dress', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00071.jpg?v=1743819454')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/midnight-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00003-scaled.jpg?v=1757439745" alt="Midnight set">
+            <div class="product-details">
+                <div class="product-name">Midnight set</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/midnight-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/midnight-set', 'Midnight set', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00003-scaled.jpg?v=1757439745')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/shell-tube-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00030.webp?v=1740166920" alt="Shell Tube Top">
+            <div class="product-details">
+                <div class="product-name">Shell Tube Top</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/shell-tube-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/shell-tube-top', 'Shell Tube Top', '950.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00030.webp?v=1740166920')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/shell-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00031.webp?v=1740166901" alt="Shell Pants">
+            <div class="product-details">
+                <div class="product-name">Shell Pants</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/shell-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/shell-pants', 'Shell Pants', '1599.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00031.webp?v=1740166901')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/chloe-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00022.webp?v=1740164834" alt="Chloe Dress">
+            <div class="product-details">
+                <div class="product-name">Chloe Dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/chloe-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/chloe-dress', 'Chloe Dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/image00022.webp?v=1740164834')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/ivana-blue-satin-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4862-Copy.webp?v=1734176785" alt="Ivana blue satin dress">
+            <div class="product-details">
+                <div class="product-name">Ivana blue satin dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/ivana-blue-satin-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/ivana-blue-satin-dress', 'Ivana blue satin dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4862-Copy.webp?v=1734176785')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/scarlet-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4564.webp?v=1734175532" alt="Scarlet dress">
+            <div class="product-details">
+                <div class="product-name">Scarlet dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/scarlet-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/scarlet-dress', 'Scarlet dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4564.webp?v=1734175532')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/leah-backless-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_5027.webp?v=1734174695" alt="Leah backless dress">
+            <div class="product-details">
+                <div class="product-name">Leah backless dress</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/leah-backless-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/leah-backless-dress', 'Leah backless dress', '2199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_5027.webp?v=1734174695')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/lucy-wine-halter-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/BD5B48F1-49D8-497D-B28A-9607E2CB42EA.jpg?v=1739783459" alt="Lucy wine halter dress">
+            <div class="product-details">
+                <div class="product-name">Lucy wine halter dress</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/lucy-wine-halter-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/lucy-wine-halter-dress', 'Lucy wine halter dress', '2199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/BD5B48F1-49D8-497D-B28A-9607E2CB42EA.jpg?v=1739783459')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/flower-slim-fit-tshirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4225.webp?v=1766426305" alt="flower slim fit tshirt">
+            <div class="product-details">
+                <div class="product-name">flower slim fit tshirt</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/flower-slim-fit-tshirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/flower-slim-fit-tshirt', 'flower slim fit tshirt', '950.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4225.webp?v=1766426305')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/tomato-slim-fit-tshirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4184.webp?v=1766426443" alt="Tomato slim fit tshirt">
+            <div class="product-details">
+                <div class="product-name">Tomato slim fit tshirt</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/tomato-slim-fit-tshirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/tomato-slim-fit-tshirt', 'Tomato slim fit tshirt', '950.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4184.webp?v=1766426443')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/doodle-oversize-tshirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4146.webp?v=1766426492" alt="Doodle oversize tshirt">
+            <div class="product-details">
+                <div class="product-name">Doodle oversize tshirt</div>
+                <div class="product-price">₹1150.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/doodle-oversize-tshirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/doodle-oversize-tshirt', 'Doodle oversize tshirt', '1150.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4146.webp?v=1766426492')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/orange-slice-oversize-tshirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4099.webp?v=1732360925" alt="Orange slice oversize tshirt">
+            <div class="product-details">
+                <div class="product-name">Orange slice oversize tshirt</div>
+                <div class="product-price">₹1150.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/orange-slice-oversize-tshirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/orange-slice-oversize-tshirt', 'Orange slice oversize tshirt', '1150.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_4099.webp?v=1732360925')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/milo-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2737.webp?v=1723806826" alt="Milo Dress">
+            <div class="product-details">
+                <div class="product-name">Milo Dress</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/milo-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/milo-dress', 'Milo Dress', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2737.webp?v=1723806826')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/jade-white-coord-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_5651.webp?v=1716819235" alt="Jade white Coord set">
+            <div class="product-details">
+                <div class="product-name">Jade white Coord set</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/jade-white-coord-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/jade-white-coord-set', 'Jade white Coord set', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_5651.webp?v=1716819235')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/jade-bow-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_5680.webp?v=1716819219" alt="Jade bow top">
+            <div class="product-details">
+                <div class="product-name">Jade bow top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/jade-bow-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/jade-bow-top', 'Jade bow top', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_5680.webp?v=1716819219')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/gisele-frill-bodycon-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_6866.webp?v=1716819181" alt="Gisele Frill bodycon dress">
+            <div class="product-details">
+                <div class="product-name">Gisele Frill bodycon dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/gisele-frill-bodycon-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/gisele-frill-bodycon-dress', 'Gisele Frill bodycon dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_6866.webp?v=1716819181')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/demi-top-pink', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/9E73C6BE-2532-4AAB-A9AD-890624F53AC9.jpg?v=1731413851" alt="Demi top pink">
+            <div class="product-details">
+                <div class="product-name">Demi top pink</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/demi-top-pink', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/demi-top-pink', 'Demi top pink', '1199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/9E73C6BE-2532-4AAB-A9AD-890624F53AC9.jpg?v=1731413851')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/azzura-pleated-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2127.webp?v=1723804385" alt="Azzura Pleated Dress">
+            <div class="product-details">
+                <div class="product-name">Azzura Pleated Dress</div>
+                <div class="product-price">₹1699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/azzura-pleated-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/azzura-pleated-dress', 'Azzura Pleated Dress', '1699.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_2127.webp?v=1723804385')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/demi-top-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/D15AC568-8178-48D7-B37B-2C8B002B8A9E.jpg?v=1731413654" alt="Demi top Black">
+            <div class="product-details">
+                <div class="product-name">Demi top Black</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/demi-top-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/demi-top-black', 'Demi top Black', '1199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/D15AC568-8178-48D7-B37B-2C8B002B8A9E.jpg?v=1731413654')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/astrid-maxi-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_6337.webp?v=1716819065" alt="Astrid Maxi Dress">
+            <div class="product-details">
+                <div class="product-name">Astrid Maxi Dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/astrid-maxi-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/astrid-maxi-dress', 'Astrid Maxi Dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_6337.webp?v=1716819065')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/bubblegum-top-yellow-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_0644.webp?v=1716642169" alt="Bubblegum top Black">
+            <div class="product-details">
+                <div class="product-name">Bubblegum top Black</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/bubblegum-top-yellow-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/bubblegum-top-yellow-copy', 'Bubblegum top Black', '1199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_0644.webp?v=1716642169')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/apple-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_0818.webp?v=1716640789" alt="Apple dress">
+            <div class="product-details">
+                <div class="product-name">Apple dress</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/apple-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/apple-dress', 'Apple dress', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_0818.webp?v=1716640789')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/ada-bodycon-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_6092.webp?v=1716819023" alt="Ada Bodycon Dress">
+            <div class="product-details">
+                <div class="product-name">Ada Bodycon Dress</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/ada-bodycon-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/ada-bodycon-dress', 'Ada Bodycon Dress', '1899.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_6092.webp?v=1716819023')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/coastal-breeze-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2778_50ac87e8-2539-4264-9b5b-56561cb94009.webp?v=1728728812" alt="Coastal Breeze Shirt">
+            <div class="product-details">
+                <div class="product-name">Coastal Breeze Shirt</div>
+                <div class="product-price">₹999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/coastal-breeze-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/coastal-breeze-shirt', 'Coastal Breeze Shirt', '999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2778_50ac87e8-2539-4264-9b5b-56561cb94009.webp?v=1728728812')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/coastal-breeze-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2788_e0519934-666b-4a1b-9f5b-49ca6531ed96.webp?v=1728728676" alt="Coastal Breeze Shorts">
+            <div class="product-details">
+                <div class="product-name">Coastal Breeze Shorts</div>
+                <div class="product-price">₹650.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/coastal-breeze-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/coastal-breeze-shorts', 'Coastal Breeze Shorts', '650.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2788_e0519934-666b-4a1b-9f5b-49ca6531ed96.webp?v=1728728676')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/coastal-breeze-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2773.webp?v=1728728454" alt="Coastal Breeze Set">
+            <div class="product-details">
+                <div class="product-name">Coastal Breeze Set</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/coastal-breeze-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/coastal-breeze-set', 'Coastal Breeze Set', '1999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2773.webp?v=1728728454')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/millie-skort', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2814.webp?v=1728727071" alt="Millie Skort">
+            <div class="product-details">
+                <div class="product-name">Millie Skort</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/millie-skort', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/millie-skort', 'Millie Skort', '950.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2814.webp?v=1728727071')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/millie-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2800_541eaaa5-b578-4fb6-8d34-c41725863eb7.webp?v=1728726864" alt="Millie Top">
+            <div class="product-details">
+                <div class="product-name">Millie Top</div>
+                <div class="product-price">₹999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/millie-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/millie-top', 'Millie Top', '999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2800_541eaaa5-b578-4fb6-8d34-c41725863eb7.webp?v=1728726864')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/millie-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2813.webp?v=1728726670" alt="Millie Set">
+            <div class="product-details">
+                <div class="product-name">Millie Set</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/millie-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/millie-set', 'Millie Set', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2813.webp?v=1728726670')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/bubblegum-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2933.webp?v=1728725766" alt="Bubblegum Dress">
+            <div class="product-details">
+                <div class="product-name">Bubblegum Dress</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/bubblegum-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/bubblegum-dress', 'Bubblegum Dress', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2933.webp?v=1728725766')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/coastal-breeze-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2574.webp?v=1728724864" alt="Coastal Breeze Dress">
+            <div class="product-details">
+                <div class="product-name">Coastal Breeze Dress</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/coastal-breeze-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/coastal-breeze-dress', 'Coastal Breeze Dress', '2199.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2574.webp?v=1728724864')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/leni-maxi-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2703.webp?v=1728724588" alt="Leni Maxi Dress">
+            <div class="product-details">
+                <div class="product-name">Leni Maxi Dress</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/leni-maxi-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/leni-maxi-dress', 'Leni Maxi Dress', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2703.webp?v=1728724588')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/serena-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2607.webp?v=1728724383" alt="Serena Mini Dress">
+            <div class="product-details">
+                <div class="product-name">Serena Mini Dress</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/serena-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/serena-mini-dress', 'Serena Mini Dress', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2607.webp?v=1728724383')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/black-maya-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2506.webp?v=1728724030" alt="Black Maya Dress">
+            <div class="product-details">
+                <div class="product-name">Black Maya Dress</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/black-maya-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/black-maya-dress', 'Black Maya Dress', '1899.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2506.webp?v=1728724030')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/maria-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2823.webp?v=1728723830" alt="Maria Dress">
+            <div class="product-details">
+                <div class="product-name">Maria Dress</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/maria-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/maria-dress', 'Maria Dress', '1499.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2823.webp?v=1728723830')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/faith-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2579_8a1e17bf-1dcf-4a1b-83c3-53042f3b4a2a.webp?v=1728723630" alt="Faith Mini Dress">
+            <div class="product-details">
+                <div class="product-name">Faith Mini Dress</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/faith-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/faith-mini-dress', 'Faith Mini Dress', '1799.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/1A7A2579_8a1e17bf-1dcf-4a1b-83c3-53042f3b4a2a.webp?v=1728723630')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/faith-tank-style-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/970D5337-404E-4EA9-A783-BA9D09AEF6A2.jpg?v=1728735787" alt="Faith Tank Style Dress">
+            <div class="product-details">
+                <div class="product-name">Faith Tank Style Dress</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/faith-tank-style-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/faith-tank-style-dress', 'Faith Tank Style Dress', '1899.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/970D5337-404E-4EA9-A783-BA9D09AEF6A2.jpg?v=1728735787')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://shopdiris.com/products/faith-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0877/5145/9104/files/91BFD31E-6C57-4A1F-958E-A17C983C6E5B.webp?v=1716819153" alt="Faith dress">
+            <div class="product-details">
+                <div class="product-name">Faith dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://shopdiris.com/products/faith-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://shopdiris.com/products/faith-dress', 'Faith dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0877/5145/9104/files/91BFD31E-6C57-4A1F-958E-A17C983C6E5B.webp?v=1716819153')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orange at eight - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Orange at eight</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/blush-fruity-jacket-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_5415.jpg?v=1781084796" alt="Blush fruity jacket top">
+            <div class="product-details">
+                <div class="product-name">Blush fruity jacket top</div>
+                <div class="product-price">₹8400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/blush-fruity-jacket-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/blush-fruity-jacket-top', 'Blush fruity jacket top', '8400.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_5415.jpg?v=1781084796')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/blush-pleated-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_5387_393860d7-755c-45c6-876e-df99d4f4e800.jpg?v=1780981570" alt="Blush Pleated Shorts">
+            <div class="product-details">
+                <div class="product-name">Blush Pleated Shorts</div>
+                <div class="product-price">₹2850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/blush-pleated-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/blush-pleated-shorts', 'Blush Pleated Shorts', '2850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_5387_393860d7-755c-45c6-876e-df99d4f4e800.jpg?v=1780981570')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/blush-fruity-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_5415.jpg?v=1781084796" alt="Blush Fruity Set">
+            <div class="product-details">
+                <div class="product-name">Blush Fruity Set</div>
+                <div class="product-price">₹11000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/blush-fruity-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/blush-fruity-set', 'Blush Fruity Set', '11000.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_5415.jpg?v=1781084796')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-shorts-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_5085.jpg?v=1780981179" alt="Limoncello shorts">
+            <div class="product-details">
+                <div class="product-name">Limoncello shorts</div>
+                <div class="product-price">₹4850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-shorts-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-shorts-1', 'Limoncello shorts', '4850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_5085.jpg?v=1780981179')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/coral-beach-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Coral-beach-shirt.png?v=1779264994" alt="Coral Beach Shirt">
+            <div class="product-details">
+                <div class="product-name">Coral Beach Shirt</div>
+                <div class="product-price">₹6250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/coral-beach-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/coral-beach-shirt', 'Coral Beach Shirt', '6250.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Coral-beach-shirt.png?v=1779264994')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-short-skirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Lemon-Halter-top_a56229aa-9548-4468-b9dc-f725e7c1b493.jpg?v=1773825526" alt="Limoncello Top- short Skirt Set">
+            <div class="product-details">
+                <div class="product-name">Limoncello Top- short Skirt Set</div>
+                <div class="product-price">₹9190.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-short-skirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-short-skirt-copy', 'Limoncello Top- short Skirt Set', '9190.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Lemon-Halter-top_a56229aa-9548-4468-b9dc-f725e7c1b493.jpg?v=1773825526')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/green-pleated-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_4584.png?v=1777095420" alt="Green Pleated Shorts">
+            <div class="product-details">
+                <div class="product-name">Green Pleated Shorts</div>
+                <div class="product-price">₹2850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/green-pleated-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/green-pleated-shorts', 'Green Pleated Shorts', '2850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_4584.png?v=1777095420')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-short-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Lemon-Halter-top_555cd688-8986-448d-b92c-4f3e45d42e36.jpg?v=1773825526" alt="Limoncello Short Skirt">
+            <div class="product-details">
+                <div class="product-name">Limoncello Short Skirt</div>
+                <div class="product-price">₹6190.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-short-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-short-skirt', 'Limoncello Short Skirt', '6190.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Lemon-Halter-top_555cd688-8986-448d-b92c-4f3e45d42e36.jpg?v=1773825526')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-halter-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/beachhalte.jpg?v=1776937541" alt="Summer Halter Set">
+            <div class="product-details">
+                <div class="product-name">Summer Halter Set</div>
+                <div class="product-price">₹10500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-halter-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-halter-set', 'Summer Halter Set', '10500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/beachhalte.jpg?v=1776937541')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-skort', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/beachhalter3.jpg?v=1776937558" alt="Summer Skort">
+            <div class="product-details">
+                <div class="product-name">Summer Skort</div>
+                <div class="product-price">₹2850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-skort', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-skort', 'Summer Skort', '2850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/beachhalter3.jpg?v=1776937558')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/palm-stripe-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/palmstripecoord5.png?v=1776713272" alt="Palm Stripe Shorts">
+            <div class="product-details">
+                <div class="product-name">Palm Stripe Shorts</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/palm-stripe-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/palm-stripe-shorts', 'Palm Stripe Shorts', '3550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/palmstripecoord5.png?v=1776713272')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/palm-stripe-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/palmstripecoord5.jpg?v=1776713339" alt="Palm Stripe Shirt">
+            <div class="product-details">
+                <div class="product-name">Palm Stripe Shirt</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/palm-stripe-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/palm-stripe-shirt', 'Palm Stripe Shirt', '5200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/palmstripecoord5.jpg?v=1776713339')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/palm-stripe-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/palmstripecoord.jpg?v=1776713152" alt="Palm Stripe Co-ord">
+            <div class="product-details">
+                <div class="product-name">Palm Stripe Co-ord</div>
+                <div class="product-price">₹8550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/palm-stripe-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/palm-stripe-co-ord', 'Palm Stripe Co-ord', '8550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/palmstripecoord.jpg?v=1776713152')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruity-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruityhimset3.png?v=1776713072" alt="Fruity Shorts">
+            <div class="product-details">
+                <div class="product-name">Fruity Shorts</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruity-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruity-shorts', 'Fruity Shorts', '3550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruityhimset3.png?v=1776713072')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruity-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruityhimset3.jpg?v=1776712382" alt="Fruity Shirt">
+            <div class="product-details">
+                <div class="product-name">Fruity Shirt</div>
+                <div class="product-price">₹6550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruity-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruity-shirt', 'Fruity Shirt', '6550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruityhimset3.jpg?v=1776712382')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruity-him-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Fruityhimset.jpg?v=1776712381" alt="Fruity Him Set">
+            <div class="product-details">
+                <div class="product-name">Fruity Him Set</div>
+                <div class="product-price">₹9900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruity-him-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruity-him-set', 'Fruity Him Set', '9900.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Fruityhimset.jpg?v=1776712381')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/tropical-shacket-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalshacket.jpg?v=1776711949" alt="Tropical Shacket Set">
+            <div class="product-details">
+                <div class="product-name">Tropical Shacket Set</div>
+                <div class="product-price">₹11150.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/tropical-shacket-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/tropical-shacket-set', 'Tropical Shacket Set', '11150.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalshacket.jpg?v=1776711949')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/tropical-shacket-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalshacket2.jpg?v=1776711949" alt="Tropical Shacket">
+            <div class="product-details">
+                <div class="product-name">Tropical Shacket</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/tropical-shacket-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/tropical-shacket-1', 'Tropical Shacket', '7500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalshacket2.jpg?v=1776711949')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/bubble-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalsummerset.png?v=1776711806" alt="Bubble Skirt">
+            <div class="product-details">
+                <div class="product-name">Bubble Skirt</div>
+                <div class="product-price">₹4550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/bubble-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/bubble-skirt', 'Bubble Skirt', '4550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalsummerset.png?v=1776711806')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/tropical-corset', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalsummerset3.jpg?v=1776711499" alt="Tropical Corset">
+            <div class="product-details">
+                <div class="product-name">Tropical Corset</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/tropical-corset', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/tropical-corset', 'Tropical Corset', '6500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalsummerset3.jpg?v=1776711499')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/green-fruity-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalsummerset.jpg?v=1776711417" alt="Tropical Summer Set">
+            <div class="product-details">
+                <div class="product-name">Tropical Summer Set</div>
+                <div class="product-price">₹10850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/green-fruity-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/green-fruity-set-copy', 'Tropical Summer Set', '10850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/tropicalsummerset.jpg?v=1776711417')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/cherry-blossom-shirt-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/cherryblossomdress.jpg?v=1776711310" alt="Cherry Blossom Shirt Dress">
+            <div class="product-details">
+                <div class="product-name">Cherry Blossom Shirt Dress</div>
+                <div class="product-price">₹7850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/cherry-blossom-shirt-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/cherry-blossom-shirt-dress', 'Cherry Blossom Shirt Dress', '7850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/cherryblossomdress.jpg?v=1776711310')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruity-jacket-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/greenfruityset3.jpg?v=1776711015" alt="Fruity Jacket Top">
+            <div class="product-details">
+                <div class="product-name">Fruity Jacket Top</div>
+                <div class="product-price">₹8400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruity-jacket-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruity-jacket-top', 'Fruity Jacket Top', '8400.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/greenfruityset3.jpg?v=1776711015')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/green-fruity-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/greenfruityset.jpg?v=1776710906" alt="Green Fruity Set">
+            <div class="product-details">
+                <div class="product-name">Green Fruity Set</div>
+                <div class="product-price">₹11050.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/green-fruity-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/green-fruity-set', 'Green Fruity Set', '11050.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/greenfruityset.jpg?v=1776710906')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/reversible-top-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Reversibletopset.jpg3.jpg?v=1776710799" alt="Reversible Top Set">
+            <div class="product-details">
+                <div class="product-name">Reversible Top Set</div>
+                <div class="product-price">₹9850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/reversible-top-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/reversible-top-set-1', 'Reversible Top Set', '9850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Reversibletopset.jpg3.jpg?v=1776710799')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/reversible-top-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Reversibletopset.jpg2.jpg?v=1776710799" alt="Gingham Reversible Top">
+            <div class="product-details">
+                <div class="product-name">Gingham Reversible Top</div>
+                <div class="product-price">₹4850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/reversible-top-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/reversible-top-set', 'Gingham Reversible Top', '4850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Reversibletopset.jpg2.jpg?v=1776710799')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/gingham-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Melontietopset.png?v=1776710799" alt="Gingham Skirt">
+            <div class="product-details">
+                <div class="product-name">Gingham Skirt</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/gingham-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/gingham-skirt', 'Gingham Skirt', '5200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Melontietopset.png?v=1776710799')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/melon-tie-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Melontietopset.jpg4.jpg?v=1776710111" alt="Melon Tie Top">
+            <div class="product-details">
+                <div class="product-name">Melon Tie Top</div>
+                <div class="product-price">₹6200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/melon-tie-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/melon-tie-top', 'Melon Tie Top', '6200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Melontietopset.jpg4.jpg?v=1776710111')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/melon-tie-top-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Melontietopset.jpg?v=1776710111" alt="Melon Tie Top Set">
+            <div class="product-details">
+                <div class="product-name">Melon Tie Top Set</div>
+                <div class="product-price">₹11200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/melon-tie-top-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/melon-tie-top-set', 'Melon Tie Top Set', '11200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Melontietopset.jpg?v=1776710111')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/strawberry-sorbet-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Strawberrysorbetset3.jpg?v=1776709881" alt="Strawberry Sorbet Set">
+            <div class="product-details">
+                <div class="product-name">Strawberry Sorbet Set</div>
+                <div class="product-price">₹12380.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/strawberry-sorbet-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/strawberry-sorbet-set', 'Strawberry Sorbet Set', '12380.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Strawberrysorbetset3.jpg?v=1776709881')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/sorbet-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Strawberrysorbetset.jpg?v=1776709881" alt="Sorbet Skirt">
+            <div class="product-details">
+                <div class="product-name">Sorbet Skirt</div>
+                <div class="product-price">₹7180.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/sorbet-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/sorbet-skirt', 'Sorbet Skirt', '7180.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Strawberrysorbetset.jpg?v=1776709881')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/sorbet-tie-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Strawberrysorbetset6_c64a1ac5-54a6-42cb-bf89-55b69136eb38.jpg?v=1776709945" alt="Sorbet Tie Top">
+            <div class="product-details">
+                <div class="product-name">Sorbet Tie Top</div>
+                <div class="product-price">₹5400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/sorbet-tie-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/sorbet-tie-top', 'Sorbet Tie Top', '5400.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Strawberrysorbetset6_c64a1ac5-54a6-42cb-bf89-55b69136eb38.jpg?v=1776709945')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/tropical-strawberry-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinklady1_57c8a66e-3c0f-438a-801e-63e3c2e03290.jpg?v=1776632749" alt="Tropical Strawberry Set">
+            <div class="product-details">
+                <div class="product-name">Tropical Strawberry Set</div>
+                <div class="product-price">₹14070.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/tropical-strawberry-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/tropical-strawberry-set', 'Tropical Strawberry Set', '14070.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinklady1_57c8a66e-3c0f-438a-801e-63e3c2e03290.jpg?v=1776632749')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/pop-bralette', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinklady4_e77c95a7-89db-49db-a80b-5cf766d10ea7.jpg?v=1776632592" alt="Pop Bralette">
+            <div class="product-details">
+                <div class="product-name">Pop Bralette</div>
+                <div class="product-price">₹3500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/pop-bralette', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/pop-bralette', 'Pop Bralette', '3500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinklady4_e77c95a7-89db-49db-a80b-5cf766d10ea7.jpg?v=1776632592')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/strawberry-skort', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinklady4_3bc336c0-fb25-481a-aba9-f5969eac6b70.jpg?v=1776632383" alt="Strawberry Skort">
+            <div class="product-details">
+                <div class="product-name">Strawberry Skort</div>
+                <div class="product-price">₹2880.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/strawberry-skort', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/strawberry-skort', 'Strawberry Skort', '2880.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinklady4_3bc336c0-fb25-481a-aba9-f5969eac6b70.jpg?v=1776632383')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/tropical-shacket', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinklady3.jpg?v=1776631458" alt="Tropical Jacket">
+            <div class="product-details">
+                <div class="product-name">Tropical Jacket</div>
+                <div class="product-price">₹7890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/tropical-shacket', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/tropical-shacket', 'Tropical Jacket', '7890.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinklady3.jpg?v=1776631458')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-white-embroidered-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Copy_of_345A5200_resized.jpg?v=1776414817" alt="Chic White Embroidered Set">
+            <div class="product-details">
+                <div class="product-name">Chic White Embroidered Set</div>
+                <div class="product-price">₹9850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-white-embroidered-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-white-embroidered-set-1', 'Chic White Embroidered Set', '9850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Copy_of_345A5200_resized.jpg?v=1776414817')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/blush-orange-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/blushorangedress.jpg2.jpg?v=1776405684" alt="Blush Orange Dress">
+            <div class="product-details">
+                <div class="product-name">Blush Orange Dress</div>
+                <div class="product-price">₹8850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/blush-orange-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/blush-orange-dress', 'Blush Orange Dress', '8850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/blushorangedress.jpg2.jpg?v=1776405684')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/classic-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/sliced-orng4.jpg?v=1775123326" alt="Classic Pants">
+            <div class="product-details">
+                <div class="product-name">Classic Pants</div>
+                <div class="product-price">₹3850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/classic-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/classic-pants', 'Classic Pants', '3850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/sliced-orng4.jpg?v=1775123326')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/tropical-patch-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/sliced-orng2.jpg?v=1775122257" alt="Tropical Patch Shirt">
+            <div class="product-details">
+                <div class="product-name">Tropical Patch Shirt</div>
+                <div class="product-price">₹6250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/tropical-patch-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/tropical-patch-shirt', 'Tropical Patch Shirt', '6250.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/sliced-orng2.jpg?v=1775122257')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/tropical-patch-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/sliced-org.jpg?v=1775123326" alt="Tropical Patch Set">
+            <div class="product-details">
+                <div class="product-name">Tropical Patch Set</div>
+                <div class="product-price">₹9900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/tropical-patch-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/tropical-patch-set', 'Tropical Patch Set', '9900.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/sliced-org.jpg?v=1775123326')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruit-punch-halter-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruit_punch_halter_dress.png?v=1776358951" alt="Fruit Punch Halter Dress">
+            <div class="product-details">
+                <div class="product-name">Fruit Punch Halter Dress</div>
+                <div class="product-price">₹8750.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruit-punch-halter-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruit-punch-halter-dress', 'Fruit Punch Halter Dress', '8750.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruit_punch_halter_dress.png?v=1776358951')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/pinky-pants-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/waterm-coord.jpg?v=1776083825" alt="Blush Pants">
+            <div class="product-details">
+                <div class="product-name">Blush Pants</div>
+                <div class="product-price">₹3850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/pinky-pants-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/pinky-pants-1', 'Blush Pants', '3850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/waterm-coord.jpg?v=1776083825')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/melon-pop-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/waterm-coord4.jpg?v=1776083825" alt="Melon Pop Shirt">
+            <div class="product-details">
+                <div class="product-name">Melon Pop Shirt</div>
+                <div class="product-price">₹5850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/melon-pop-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/melon-pop-shirt', 'Melon Pop Shirt', '5850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/waterm-coord4.jpg?v=1776083825')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/watermelon-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/waterm-coord3.jpg?v=1776083825" alt="Watermelon Co-ord Set">
+            <div class="product-details">
+                <div class="product-name">Watermelon Co-ord Set</div>
+                <div class="product-price">₹9500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/watermelon-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/watermelon-co-ord', 'Watermelon Co-ord Set', '9500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/waterm-coord3.jpg?v=1776083825')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/pinky-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruity-tie-top.jpg?v=1776083799" alt="Candy Crush Pants">
+            <div class="product-details">
+                <div class="product-name">Candy Crush Pants</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/pinky-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/pinky-pants', 'Candy Crush Pants', '4200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruity-tie-top.jpg?v=1776083799')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruity-tie-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruity-tie-top5.jpg?v=1776083799" alt="Fruity Tie Top">
+            <div class="product-details">
+                <div class="product-name">Fruity Tie Top</div>
+                <div class="product-price">₹5600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruity-tie-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruity-tie-top', 'Fruity Tie Top', '5600.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruity-tie-top5.jpg?v=1776083799')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruity-tie-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruity-tie-top4.jpg?v=1776083799" alt="Candy Crush Co-ord">
+            <div class="product-details">
+                <div class="product-name">Candy Crush Co-ord</div>
+                <div class="product-price">₹9600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruity-tie-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruity-tie-co-ord', 'Candy Crush Co-ord', '9600.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruity-tie-top4.jpg?v=1776083799')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruit-market-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/4745_Final_1.jpg?v=1776414403" alt="Fruit Market Shirt">
+            <div class="product-details">
+                <div class="product-name">Fruit Market Shirt</div>
+                <div class="product-price">₹6250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruit-market-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruit-market-shirt', 'Fruit Market Shirt', '6250.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/4745_Final_1.jpg?v=1776414403')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruit-market-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruitmarket-cood2_19c50d0b-cb52-4158-9a47-18ac49233e10.jpg?v=1775120963" alt="Fruit Market Shorts">
+            <div class="product-details">
+                <div class="product-name">Fruit Market Shorts</div>
+                <div class="product-price">₹3580.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruit-market-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruit-market-shorts', 'Fruit Market Shorts', '3580.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruitmarket-cood2_19c50d0b-cb52-4158-9a47-18ac49233e10.jpg?v=1775120963')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/market-crop-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruitmarket-cood2.jpg?v=1776081873" alt="Market Crop Top">
+            <div class="product-details">
+                <div class="product-name">Market Crop Top</div>
+                <div class="product-price">₹4550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/market-crop-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/market-crop-top', 'Market Crop Top', '4550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruitmarket-cood2.jpg?v=1776081873')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fruit-market-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruitmarket-cood4.jpg?v=1776081873" alt="Fruit Market Co-ord">
+            <div class="product-details">
+                <div class="product-name">Fruit Market Co-ord</div>
+                <div class="product-price">₹14200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fruit-market-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fruit-market-co-ord', 'Fruit Market Co-ord', '14200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fruitmarket-cood4.jpg?v=1776081873')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/pinacolada-mini', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinacoladamini.jpg?v=1775120555" alt="Pinacolada Mini">
+            <div class="product-details">
+                <div class="product-name">Pinacolada Mini</div>
+                <div class="product-price">₹9200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/pinacolada-mini', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/pinacolada-mini', 'Pinacolada Mini', '9200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pinacoladamini.jpg?v=1775120555')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/berry-shirt-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/berry-shirtdress.jpg?v=1776413072" alt="Berry Shirt Dress">
+            <div class="product-details">
+                <div class="product-name">Berry Shirt Dress</div>
+                <div class="product-price">₹7690.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/berry-shirt-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/berry-shirt-dress', 'Berry Shirt Dress', '7690.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/berry-shirtdress.jpg?v=1776413072')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-shell-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01457_resized_44a2c409-3733-4175-b0d4-79bdaf4d96bb.jpg?v=1773832322" alt="Summer Shell Co-ord Set">
+            <div class="product-details">
+                <div class="product-name">Summer Shell Co-ord Set</div>
+                <div class="product-price">₹9850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-shell-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-shell-set-1', 'Summer Shell Co-ord Set', '9850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01457_resized_44a2c409-3733-4175-b0d4-79bdaf4d96bb.jpg?v=1773832322')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/beach-coral-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01591_resized_2ae01734-b75a-4b4e-a6e5-c87da476761a.jpg?v=1773832170" alt="Beach Coral Set">
+            <div class="product-details">
+                <div class="product-name">Beach Coral Set</div>
+                <div class="product-price">₹9550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/beach-coral-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/beach-coral-set', 'Beach Coral Set', '9550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01591_resized_2ae01734-b75a-4b4e-a6e5-c87da476761a.jpg?v=1773832170')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-sand-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Copy_of_KAT01423.jpg?v=1773831955" alt="Summer Sea Set">
+            <div class="product-details">
+                <div class="product-name">Summer Sea Set</div>
+                <div class="product-price">₹9850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-sand-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-sand-set-copy', 'Summer Sea Set', '9850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Copy_of_KAT01423.jpg?v=1773831955')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-sand-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT00876_resized.jpg?v=1773831798" alt="Summer Sand Set">
+            <div class="product-details">
+                <div class="product-name">Summer Sand Set</div>
+                <div class="product-price">₹10800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-sand-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-sand-set', 'Summer Sand Set', '10800.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT00876_resized.jpg?v=1773831798')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/lemon-shirt-pant-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/limoncello-set_8f6f0897-957a-4bb3-ac1b-bc90963e4418.jpg?v=1773831561" alt="Limoncello Shirt-Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Limoncello Shirt-Shorts Set</div>
+                <div class="product-price">₹7200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/lemon-shirt-pant-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/lemon-shirt-pant-set-copy', 'Limoncello Shirt-Shorts Set', '7200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/limoncello-set_8f6f0897-957a-4bb3-ac1b-bc90963e4418.jpg?v=1773831561')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/lemon-shirt-pant-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncellopants_e5f302d9-034b-4eae-b817-e5afd1317c56.jpg?v=1773831208" alt="Lemon Shirt-Pant Set">
+            <div class="product-details">
+                <div class="product-name">Lemon Shirt-Pant Set</div>
+                <div class="product-price">₹7850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/lemon-shirt-pant-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/lemon-shirt-pant-set', 'Lemon Shirt-Pant Set', '7850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncellopants_e5f302d9-034b-4eae-b817-e5afd1317c56.jpg?v=1773831208')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-pink-short', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01457_resized_7de96bc9-1c1e-4e17-a5ae-e22bff54bf9c.jpg?v=1773832322" alt="Summer Pink Short">
+            <div class="product-details">
+                <div class="product-name">Summer Pink Short</div>
+                <div class="product-price">₹2550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-pink-short', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-pink-short', 'Summer Pink Short', '2550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01457_resized_7de96bc9-1c1e-4e17-a5ae-e22bff54bf9c.jpg?v=1773832322')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-shell-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01460_resized.jpg?v=1773832322" alt="Summer Shell Shirt">
+            <div class="product-details">
+                <div class="product-name">Summer Shell Shirt</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-shell-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-shell-shirt', 'Summer Shell Shirt', '7500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01460_resized.jpg?v=1773832322')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/beach-coral-shirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01591_resized.jpg?v=1773832170" alt="Beach Coral Pants">
+            <div class="product-details">
+                <div class="product-name">Beach Coral Pants</div>
+                <div class="product-price">₹3500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/beach-coral-shirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/beach-coral-shirt-copy', 'Beach Coral Pants', '3500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01591_resized.jpg?v=1773832170')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-yellow-short-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01583_resized.jpg?v=1773832170" alt="Beach Coral Shirt">
+            <div class="product-details">
+                <div class="product-name">Beach Coral Shirt</div>
+                <div class="product-price">₹6250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-yellow-short-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-yellow-short-copy', 'Beach Coral Shirt', '6250.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01583_resized.jpg?v=1773832170')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-sea-shirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01433_resized.jpg?v=1773831955" alt="Summer Yellow Short">
+            <div class="product-details">
+                <div class="product-name">Summer Yellow Short</div>
+                <div class="product-price">₹2550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-sea-shirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-sea-shirt-copy', 'Summer Yellow Short', '2550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01433_resized.jpg?v=1773831955')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-sea-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01068_resized.jpg?v=1773829822" alt="Summer Sea Shirt">
+            <div class="product-details">
+                <div class="product-name">Summer Sea Shirt</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-sea-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-sea-shirt', 'Summer Sea Shirt', '7500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT01068_resized.jpg?v=1773829822')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-sand-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT00902_resized.jpg?v=1773831798" alt="Summer Sand Pants">
+            <div class="product-details">
+                <div class="product-name">Summer Sand Pants</div>
+                <div class="product-price">₹3500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-sand-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-sand-pants', 'Summer Sand Pants', '3500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT00902_resized.jpg?v=1773831798')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-sand-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT00882_resized.jpg?v=1773827915" alt="Summer Sand Shirt">
+            <div class="product-details">
+                <div class="product-name">Summer Sand Shirt</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-sand-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-sand-shirt', 'Summer Sand Shirt', '7500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/KAT00882_resized.jpg?v=1773827915')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/limoncello-set.jpg?v=1776412662" alt="Limoncello Shorts">
+            <div class="product-details">
+                <div class="product-name">Limoncello Shorts</div>
+                <div class="product-price">₹2550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-shorts', 'Limoncello Shorts', '2550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/limoncello-set.jpg?v=1776412662')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/limoncello-shirt.jpg?v=1773831561" alt="Limoncello Shirt">
+            <div class="product-details">
+                <div class="product-name">Limoncello Shirt</div>
+                <div class="product-price">₹4850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-shirt', 'Limoncello Shirt', '4850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/limoncello-shirt.jpg?v=1773831561')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-pants-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncellopants.jpg?v=1773829286" alt="Lemon Pants">
+            <div class="product-details">
+                <div class="product-name">Lemon Pants</div>
+                <div class="product-price">₹3500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-pants-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-pants-1', 'Lemon Pants', '3500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncellopants.jpg?v=1773829286')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-love', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Lemon-shirt.jpg?v=1773827915" alt="Lemon Shirt">
+            <div class="product-details">
+                <div class="product-name">Lemon Shirt</div>
+                <div class="product-price">₹4550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-love', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-love', 'Lemon Shirt', '4550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Lemon-shirt.jpg?v=1773827915')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/o8-iconic-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/O8-iconic-shirt2.jpg?v=1773827915" alt="O8 Iconic Shirt">
+            <div class="product-details">
+                <div class="product-name">O8 Iconic Shirt</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/o8-iconic-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/o8-iconic-shirt', 'O8 Iconic Shirt', '3550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/O8-iconic-shirt2.jpg?v=1773827915')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/chic-pants.jpg?v=1773828822" alt="Chic Pants">
+            <div class="product-details">
+                <div class="product-name">Chic Pants</div>
+                <div class="product-price">₹3500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-pants', 'Chic Pants', '3500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/chic-pants.jpg?v=1773828822')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-embroidered-shirt-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/chic-embroidered-shirt3.jpg?v=1776412488" alt="Chic Embroidered Shirt">
+            <div class="product-details">
+                <div class="product-name">Chic Embroidered Shirt</div>
+                <div class="product-price">₹6250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-embroidered-shirt-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-embroidered-shirt-1', 'Chic Embroidered Shirt', '6250.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/chic-embroidered-shirt3.jpg?v=1776412488')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-embroidered-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/chic-embroideredset.jpg?v=1776412488" alt="Chic Embroidered Set">
+            <div class="product-details">
+                <div class="product-name">Chic Embroidered Set</div>
+                <div class="product-price">₹9550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-embroidered-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-embroidered-set-1', 'Chic Embroidered Set', '9550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/chic-embroideredset.jpg?v=1776412488')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-shorts-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic_Waffle_Shirt_6c80fd1f-5dcf-49f6-aa9d-81900995f3ff.jpg?v=1773828487" alt="Chic Waffle Set">
+            <div class="product-details">
+                <div class="product-name">Chic Waffle Set</div>
+                <div class="product-price">₹8400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-shorts-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-shorts-copy', 'Chic Waffle Set', '8400.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic_Waffle_Shirt_6c80fd1f-5dcf-49f6-aa9d-81900995f3ff.jpg?v=1773828487')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/chic-shorts2.jpg?v=1773828487" alt="Chic Shorts">
+            <div class="product-details">
+                <div class="product-name">Chic Shorts</div>
+                <div class="product-price">₹2950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-shorts', 'Chic Shorts', '2950.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/chic-shorts2.jpg?v=1773828487')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-waffle-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-waffle-shirt.jpg?v=1773828487" alt="Chic Waffle Shirt">
+            <div class="product-details">
+                <div class="product-name">Chic Waffle Shirt</div>
+                <div class="product-price">₹5650.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-waffle-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-waffle-shirt', 'Chic Waffle Shirt', '5650.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-waffle-shirt.jpg?v=1773828487')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-diana-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncello-diana-dress1.jpg?v=1773825666" alt="Limoncello Diana Dress">
+            <div class="product-details">
+                <div class="product-name">Limoncello Diana Dress</div>
+                <div class="product-price">₹5750.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-diana-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-diana-dress', 'Limoncello Diana Dress', '5750.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncello-diana-dress1.jpg?v=1773825666')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-beach-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncello-beach-dress1.jpg?v=1773825602" alt="Limoncello Beach Dress">
+            <div class="product-details">
+                <div class="product-name">Limoncello Beach Dress</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-beach-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-beach-dress', 'Limoncello Beach Dress', '6500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncello-beach-dress1.jpg?v=1773825602')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-tie-pants-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/craiyon_120120_image.png?v=1775457620" alt="Limoncello Tie-Pants Set">
+            <div class="product-details">
+                <div class="product-name">Limoncello Tie-Pants Set</div>
+                <div class="product-price">₹12950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-tie-pants-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-tie-pants-set', 'Limoncello Tie-Pants Set', '12950.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/craiyon_120120_image.png?v=1775457620')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/lemon-tie-top1_70537e46-f433-4963-bb86-a2a75dd0cefc.jpg?v=1776761712" alt="Limoncello Pants">
+            <div class="product-details">
+                <div class="product-name">Limoncello Pants</div>
+                <div class="product-price">₹8800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-pants', 'Limoncello Pants', '8800.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/lemon-tie-top1_70537e46-f433-4963-bb86-a2a75dd0cefc.jpg?v=1776761712')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/lemon-tie-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/lemon-tie-top1_2e43ecde-4407-4958-adee-85eb060d0a17.jpg?v=1775457620" alt="Lemon Tie Top">
+            <div class="product-details">
+                <div class="product-name">Lemon Tie Top</div>
+                <div class="product-price">₹4350.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/lemon-tie-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/lemon-tie-top', 'Lemon Tie Top', '4350.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/lemon-tie-top1_2e43ecde-4407-4958-adee-85eb060d0a17.jpg?v=1775457620')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-long-skirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pleated-top_627f329a-c7d0-4c0b-be7d-21bcada373e0.jpg?v=1773822300" alt="Limoncello Top-Skirt Set">
+            <div class="product-details">
+                <div class="product-name">Limoncello Top-Skirt Set</div>
+                <div class="product-price">₹11400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-long-skirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-long-skirt-copy', 'Limoncello Top-Skirt Set', '11400.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/pleated-top_627f329a-c7d0-4c0b-be7d-21bcada373e0.jpg?v=1773822300')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-cutsy-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Cutsy-dress1.jpg?v=1773821817" alt="Limoncello Cutsy Dress">
+            <div class="product-details">
+                <div class="product-name">Limoncello Cutsy Dress</div>
+                <div class="product-price">₹6390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-cutsy-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-cutsy-dress', 'Limoncello Cutsy Dress', '6390.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Cutsy-dress1.jpg?v=1773821817')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/limoncello-cinderella-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncello-dress1.jpg?v=1776404885" alt="Limoncello Cinderella Dress">
+            <div class="product-details">
+                <div class="product-name">Limoncello Cinderella Dress</div>
+                <div class="product-price">₹8850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/limoncello-cinderella-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/limoncello-cinderella-dress', 'Limoncello Cinderella Dress', '8850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Limoncello-dress1.jpg?v=1776404885')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-checkered-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-checkered_shorts1.jpg?v=1775458561" alt="Chic Checkered Shorts">
+            <div class="product-details">
+                <div class="product-name">Chic Checkered Shorts</div>
+                <div class="product-price">₹2450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-checkered-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-checkered-shorts', 'Chic Checkered Shorts', '2450.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-checkered_shorts1.jpg?v=1775458561')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-smart-shirt-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/craiyon_122552_image.png?v=1776411541" alt="Chic Smart Shirt Dress">
+            <div class="product-details">
+                <div class="product-name">Chic Smart Shirt Dress</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-smart-shirt-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-smart-shirt-dress', 'Chic Smart Shirt Dress', '6800.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/craiyon_122552_image.png?v=1776411541')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-white-embroidered-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-smart-dress-set.jpg?v=1775458561" alt="Chic Smart Set">
+            <div class="product-details">
+                <div class="product-name">Chic Smart Set</div>
+                <div class="product-price">₹9050.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-white-embroidered-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-white-embroidered-set', 'Chic Smart Set', '9050.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-smart-dress-set.jpg?v=1775458561')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-white-embroidered-shirts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-white-emb-shirt1_4c749a8e-80a8-4f81-a2fc-51f991f36d05.jpg?v=1776414817" alt="Chic White Embroidered Shirt">
+            <div class="product-details">
+                <div class="product-name">Chic White Embroidered Shirt</div>
+                <div class="product-price">₹5100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-white-embroidered-shirts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-white-embroidered-shirts', 'Chic White Embroidered Shirt', '5100.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-white-emb-shirt1_4c749a8e-80a8-4f81-a2fc-51f991f36d05.jpg?v=1776414817')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-vest-skort-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-embroided-vest2.jpg?v=1773817001" alt="Chic vest-skort set">
+            <div class="product-details">
+                <div class="product-name">Chic vest-skort set</div>
+                <div class="product-price">₹9100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-vest-skort-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-vest-skort-set', 'Chic vest-skort set', '9100.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-embroided-vest2.jpg?v=1773817001')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-skort', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-embroided-vest2_13dde5b4-498e-4dbb-bbb6-5893d2893c68.jpg?v=1773816852" alt="Chic Skort">
+            <div class="product-details">
+                <div class="product-name">Chic Skort</div>
+                <div class="product-price">₹4850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-skort', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-skort', 'Chic Skort', '4850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-embroided-vest2_13dde5b4-498e-4dbb-bbb6-5893d2893c68.jpg?v=1773816852')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-embroidered-vest', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-embroided-vest1.jpg?v=1773816658" alt="Chic Embroidered Vest">
+            <div class="product-details">
+                <div class="product-name">Chic Embroidered Vest</div>
+                <div class="product-price">₹4450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-embroidered-vest', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-embroidered-vest', 'Chic Embroidered Vest', '4450.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-embroided-vest1.jpg?v=1773816658')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-coral-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/shorts_tag_removed__1_-removebg-preview.png?v=1775458678" alt="Chic Coral Set">
+            <div class="product-details">
+                <div class="product-name">Chic Coral Set</div>
+                <div class="product-price">₹6140.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-coral-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-coral-set', 'Chic Coral Set', '6140.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/shorts_tag_removed__1_-removebg-preview.png?v=1775458678')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-beach-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-coral-shorts1.jpg?v=1775458678" alt="Chic Coral Shorts">
+            <div class="product-details">
+                <div class="product-name">Chic Coral Shorts</div>
+                <div class="product-price">₹3350.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-beach-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-beach-top-copy', 'Chic Coral Shorts', '3350.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-coral-shorts1.jpg?v=1775458678')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-beach-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-beach-top1.jpg?v=1775458678" alt="Chic Beach Top">
+            <div class="product-details">
+                <div class="product-name">Chic Beach Top</div>
+                <div class="product-price">₹2990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-beach-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-beach-top', 'Chic Beach Top', '2990.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-beach-top1.jpg?v=1775458678')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-embroidered-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-flattering-top-2_c2f8e5d5-22fe-48a8-b9af-d010a0977f29.jpg?v=1773815799" alt="Chic Embroidered Top-Pants">
+            <div class="product-details">
+                <div class="product-name">Chic Embroidered Top-Pants</div>
+                <div class="product-price">₹8730.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-embroidered-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-embroidered-set', 'Chic Embroidered Top-Pants', '8730.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-flattering-top-2_c2f8e5d5-22fe-48a8-b9af-d010a0977f29.jpg?v=1773815799')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-flattering-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-flattering-top-1.jpg?v=1773814843" alt="Chic Flattering Top">
+            <div class="product-details">
+                <div class="product-name">Chic Flattering Top</div>
+                <div class="product-price">₹3980.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-flattering-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-flattering-top', 'Chic Flattering Top', '3980.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-flattering-top-1.jpg?v=1773814843')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-embroidered-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-embroided-pants1.jpg?v=1776414827" alt="Chic Embroidered Pants">
+            <div class="product-details">
+                <div class="product-name">Chic Embroidered Pants</div>
+                <div class="product-price">₹4950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-embroidered-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-embroidered-pants', 'Chic Embroidered Pants', '4950.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-embroided-pants1.jpg?v=1776414827')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/chic-slit-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-slit-dress-3.jpg?v=1776850115" alt="Chic Slit Dress">
+            <div class="product-details">
+                <div class="product-name">Chic Slit Dress</div>
+                <div class="product-price">₹7300.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/chic-slit-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/chic-slit-dress', 'Chic Slit Dress', '7300.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Chic-slit-dress-3.jpg?v=1776850115')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/starfish-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Copy_of_IMG_8605.jpg?v=1776106761" alt="Starfish Set">
+            <div class="product-details">
+                <div class="product-name">Starfish Set</div>
+                <div class="product-price">₹12150.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/starfish-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/starfish-set-1', 'Starfish Set', '12150.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Copy_of_IMG_8605.jpg?v=1776106761')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-fish-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_8603.jpg?v=1776412843" alt="Summer Fish Skirt">
+            <div class="product-details">
+                <div class="product-name">Summer Fish Skirt</div>
+                <div class="product-price">₹6550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-fish-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-fish-skirt', 'Summer Fish Skirt', '6550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/IMG_8603.jpg?v=1776412843')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/starfish-tie-top-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Starfish-top-1.jpg?v=1776412869" alt="Starfish Tie Top">
+            <div class="product-details">
+                <div class="product-name">Starfish Tie Top</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/starfish-tie-top-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/starfish-tie-top-1', 'Starfish Tie Top', '5800.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Starfish-top-1.jpg?v=1776412869')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/starfish-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Summer-beachskirt-2.jpg?v=1776414289" alt="Summer Beach Set">
+            <div class="product-details">
+                <div class="product-name">Summer Beach Set</div>
+                <div class="product-price">₹13950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/starfish-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/starfish-set', 'Summer Beach Set', '13950.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Summer-beachskirt-2.jpg?v=1776414289')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-shell-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summershell2.jpg?v=1776405821" alt="Summer Shell Set">
+            <div class="product-details">
+                <div class="product-name">Summer Shell Set</div>
+                <div class="product-price">₹13850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-shell-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-shell-set', 'Summer Shell Set', '13850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summershell2.jpg?v=1776405821')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-shell-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-shell-set1.jpg?v=1773662628" alt="Summer Shell Skirt">
+            <div class="product-details">
+                <div class="product-name">Summer Shell Skirt</div>
+                <div class="product-price">₹7550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-shell-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-shell-skirt', 'Summer Shell Skirt', '7550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-shell-set1.jpg?v=1773662628')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-shell-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summershell.jpg?v=1776405955" alt="Summer Shell Top">
+            <div class="product-details">
+                <div class="product-name">Summer Shell Top</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-shell-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-shell-top', 'Summer Shell Top', '6500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summershell.jpg?v=1776405955')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-starfish-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/craiyon_120127_image.png?v=1775458157" alt="Summer Starfish Dress">
+            <div class="product-details">
+                <div class="product-name">Summer Starfish Dress</div>
+                <div class="product-price">₹9850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-starfish-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-starfish-dress', 'Summer Starfish Dress', '9850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/craiyon_120127_image.png?v=1775458157')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-resort-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-resort-set1.jpg?v=1773661204" alt="Summer Resort Set">
+            <div class="product-details">
+                <div class="product-name">Summer Resort Set</div>
+                <div class="product-price">₹10000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-resort-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-resort-set', 'Summer Resort Set', '10000.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-resort-set1.jpg?v=1773661204')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-resort-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-resort-top1.jpg?v=1773661204" alt="Summer Resort Top">
+            <div class="product-details">
+                <div class="product-name">Summer Resort Top</div>
+                <div class="product-price">₹1600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-resort-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-resort-top', 'Summer Resort Top', '1600.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-resort-top1.jpg?v=1773661204')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-resort-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-resort-shorts1.jpg?v=1773660760" alt="Summer Resort Shorts">
+            <div class="product-details">
+                <div class="product-name">Summer Resort Shorts</div>
+                <div class="product-price">₹2850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-resort-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-resort-shorts', 'Summer Resort Shorts', '2850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-resort-shorts1.jpg?v=1773660760')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-resort-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-resort-shirt2.jpg?v=1773660760" alt="Summer Resort Shirt">
+            <div class="product-details">
+                <div class="product-name">Summer Resort Shirt</div>
+                <div class="product-price">₹5850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-resort-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-resort-shirt', 'Summer Resort Shirt', '5850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-resort-shirt2.jpg?v=1773660760')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/fish-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fish-dress-1.jpg?v=1773660662" alt="Fish Dress">
+            <div class="product-details">
+                <div class="product-name">Fish Dress</div>
+                <div class="product-price">₹8550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/fish-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/fish-dress', 'Fish Dress', '8550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/fish-dress-1.jpg?v=1773660662')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-beach-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-beach-dress3.jpg?v=1773659666" alt="Summer Beach Dress">
+            <div class="product-details">
+                <div class="product-name">Summer Beach Dress</div>
+                <div class="product-price">₹8550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-beach-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-beach-dress', 'Summer Beach Dress', '8550.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/summer-beach-dress3.jpg?v=1773659666')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-beach-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Summer-beachshirt-2.jpg?v=1773659312" alt="Summer Beach Shirt">
+            <div class="product-details">
+                <div class="product-name">Summer Beach Shirt</div>
+                <div class="product-price">₹3700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-beach-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-beach-shirt', 'Summer Beach Shirt', '3700.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Summer-beachshirt-2.jpg?v=1773659312')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/summer-beach-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Summer_Beach_Skirt.jpg?v=1776630314" alt="Summer Beach Skirt">
+            <div class="product-details">
+                <div class="product-name">Summer Beach Skirt</div>
+                <div class="product-price">₹7850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/summer-beach-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/summer-beach-skirt', 'Summer Beach Skirt', '7850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Summer_Beach_Skirt.jpg?v=1776630314')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/starfish-crop-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Starfish-croptop-1.jpg?v=1776414289" alt="Starfish Crop top">
+            <div class="product-details">
+                <div class="product-name">Starfish Crop top</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/starfish-crop-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/starfish-crop-top', 'Starfish Crop top', '2600.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Starfish-croptop-1.jpg?v=1776414289')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/rosette-mini-co-ord-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Rosette-mini-bottom-2.jpg?v=1773645035" alt="Rosette Mini Co-ord Set">
+            <div class="product-details">
+                <div class="product-name">Rosette Mini Co-ord Set</div>
+                <div class="product-price">₹12200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/rosette-mini-co-ord-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/rosette-mini-co-ord-set', 'Rosette Mini Co-ord Set', '12200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Rosette-mini-bottom-2.jpg?v=1773645035')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/rose-hour-shacket', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Rose-hour-shacket-1.jpg?v=1773644544" alt="Rose Hour Shacket">
+            <div class="product-details">
+                <div class="product-name">Rose Hour Shacket</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/rose-hour-shacket', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/rose-hour-shacket', 'Rose Hour Shacket', '7500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Rose-hour-shacket-1.jpg?v=1773644544')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/bow-in-bloom-mini', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/bow-in-bloom-mini-1.jpg?v=1773644407" alt="Bow in Bloom Mini">
+            <div class="product-details">
+                <div class="product-name">Bow in Bloom Mini</div>
+                <div class="product-price">₹12500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/bow-in-bloom-mini', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/bow-in-bloom-mini', 'Bow in Bloom Mini', '12500.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/bow-in-bloom-mini-1.jpg?v=1773644407')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/rosette-mini-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Rosette-mini-top-1_c7ec24ab-4bbb-4708-ae29-6e4c1c836d87.jpg?v=1773645568" alt="Rosette Mini Corset">
+            <div class="product-details">
+                <div class="product-name">Rosette Mini Corset</div>
+                <div class="product-price">₹8250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/rosette-mini-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/rosette-mini-top', 'Rosette Mini Corset', '8250.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Rosette-mini-top-1_c7ec24ab-4bbb-4708-ae29-6e4c1c836d87.jpg?v=1773645568')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/rosette-mini-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Rosette-mini-bottom-3.jpg?v=1773645035" alt="Rosette Mini Skirt">
+            <div class="product-details">
+                <div class="product-name">Rosette Mini Skirt</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/rosette-mini-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/rosette-mini-skirt', 'Rosette Mini Skirt', '4200.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Rosette-mini-bottom-3.jpg?v=1773645035')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/love-in-bloom', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Love-in-bloom-1.jpg?v=1773643439" alt="Love In Bloom">
+            <div class="product-details">
+                <div class="product-name">Love In Bloom</div>
+                <div class="product-price">₹6250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/love-in-bloom', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/love-in-bloom', 'Love In Bloom', '6250.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Love-in-bloom-1.jpg?v=1773643439')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://orangeateight.com/products/favs-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0739/6818/9485/files/craiyon_120124_image.png?v=1773383511" alt="Summer halter Top">
+            <div class="product-details">
+                <div class="product-name">Summer halter Top</div>
+                <div class="product-price">₹7850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://orangeateight.com/products/favs-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://orangeateight.com/products/favs-1', 'Summer halter Top', '7850.00', 'https://cdn.shopify.com/s/files/1/0739/6818/9485/files/craiyon_120124_image.png?v=1773383511')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

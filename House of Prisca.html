@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Prisca - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">House of Prisca</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/sugar-plum-heel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/895616FD-3AB1-493C-94E7-48EC65155008_dc8b7914-884f-4e41-9730-c2544e57d76d.jpg?v=1781611191" alt="Sugar Plum Mini">
+            <div class="product-details">
+                <div class="product-name">Sugar Plum Mini</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/sugar-plum-heel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/sugar-plum-heel', 'Sugar Plum Mini', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/895616FD-3AB1-493C-94E7-48EC65155008_dc8b7914-884f-4e41-9730-c2544e57d76d.jpg?v=1781611191')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/flower-power-sakura-mini', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/F2BA6A34-D2A6-4D96-818A-A72EC19AD3D9_1.png?v=1776842510" alt="Sakura Mini">
+            <div class="product-details">
+                <div class="product-name">Sakura Mini</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/flower-power-sakura-mini', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/flower-power-sakura-mini', 'Sakura Mini', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/F2BA6A34-D2A6-4D96-818A-A72EC19AD3D9_1.png?v=1776842510')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/flower-power-sakura', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5585_1.jpg?v=1776164706" alt="Flower Power Sakura">
+            <div class="product-details">
+                <div class="product-name">Flower Power Sakura</div>
+                <div class="product-price">₹8000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/flower-power-sakura', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/flower-power-sakura', 'Flower Power Sakura', '8000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5585_1.jpg?v=1776164706')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/sia-wine', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5149_1.jpg?v=1775191498" alt="Sia Wine">
+            <div class="product-details">
+                <div class="product-name">Sia Wine</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/sia-wine', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/sia-wine', 'Sia Wine', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5149_1.jpg?v=1775191498')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/goa', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5180.jpg?v=1775192875" alt="Goa">
+            <div class="product-details">
+                <div class="product-name">Goa</div>
+                <div class="product-price">₹10000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/goa', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/goa', 'Goa', '10000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5180.jpg?v=1775192875')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/azure-petal-heels', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Azure_petal_Heels_2.jpg?v=1775199994" alt="Azure Petal Heels">
+            <div class="product-details">
+                <div class="product-name">Azure Petal Heels</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/azure-petal-heels', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/azure-petal-heels', 'Azure Petal Heels', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Azure_petal_Heels_2.jpg?v=1775199994')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/pineapple-pop-flats', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/PineapplePop_2.jpg?v=1775200800" alt="Pineapple Pop Flats">
+            <div class="product-details">
+                <div class="product-name">Pineapple Pop Flats</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/pineapple-pop-flats', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/pineapple-pop-flats', 'Pineapple Pop Flats', '5000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/PineapplePop_2.jpg?v=1775200800')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/emily-blush', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5139.jpg?v=1775133690" alt="Emily Blush">
+            <div class="product-details">
+                <div class="product-name">Emily Blush</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/emily-blush', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/emily-blush', 'Emily Blush', '6800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5139.jpg?v=1775133690')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/sia-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5127.jpg?v=1775133486" alt="Sia Blue">
+            <div class="product-details">
+                <div class="product-name">Sia Blue</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/sia-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/sia-blue', 'Sia Blue', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5127.jpg?v=1775133486')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/xoxo', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5104_1.jpg?v=1775132984" alt="XOXO">
+            <div class="product-details">
+                <div class="product-name">XOXO</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/xoxo', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/xoxo', 'XOXO', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5104_1.jpg?v=1775132984')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/popsicle-green', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5096.jpg?v=1775132616" alt="Popsicle green">
+            <div class="product-details">
+                <div class="product-name">Popsicle green</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/popsicle-green', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/popsicle-green', 'Popsicle green', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5096.jpg?v=1775132616')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/nexi-blush', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5080.jpg?v=1775131794" alt="Nexi blush">
+            <div class="product-details">
+                <div class="product-name">Nexi blush</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/nexi-blush', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/nexi-blush', 'Nexi blush', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5080.jpg?v=1775131794')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/emily-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5068.jpg?v=1775131565" alt="Emily Brown">
+            <div class="product-details">
+                <div class="product-name">Emily Brown</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/emily-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/emily-brown', 'Emily Brown', '6800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5068.jpg?v=1775131565')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/jade', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Jade_5.jpg?v=1775200351" alt="Jade">
+            <div class="product-details">
+                <div class="product-name">Jade</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/jade', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/jade', 'Jade', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Jade_5.jpg?v=1775200351')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/azure-sculpt-wedges', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5186.jpg?v=1775211357" alt="Azure Sculpt Wedges">
+            <div class="product-details">
+                <div class="product-name">Azure Sculpt Wedges</div>
+                <div class="product-price">₹9500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/azure-sculpt-wedges', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/azure-sculpt-wedges', 'Azure Sculpt Wedges', '9500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5186.jpg?v=1775211357')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/wave-beige', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5051.jpg?v=1775129939" alt="Wave Beige">
+            <div class="product-details">
+                <div class="product-name">Wave Beige</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/wave-beige', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/wave-beige', 'Wave Beige', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5051.jpg?v=1775129939')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/wave-mud', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5049.jpg?v=1775129763" alt="Wave Mud">
+            <div class="product-details">
+                <div class="product-name">Wave Mud</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/wave-mud', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/wave-mud', 'Wave Mud', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5049.jpg?v=1775129763')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/poppy-blush', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5026.jpg?v=1775126231" alt="Poppy Blush">
+            <div class="product-details">
+                <div class="product-name">Poppy Blush</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/poppy-blush', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/poppy-blush', 'Poppy Blush', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5026.jpg?v=1775126231')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/candy-floss', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5013.jpg?v=1775125148" alt="Candy floss">
+            <div class="product-details">
+                <div class="product-name">Candy floss</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/candy-floss', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/candy-floss', 'Candy floss', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5013.jpg?v=1775125148')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/sia-moss', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5011.jpg?v=1775124841" alt="Sia Moss">
+            <div class="product-details">
+                <div class="product-name">Sia Moss</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/sia-moss', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/sia-moss', 'Sia Moss', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5011.jpg?v=1775124841')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/sia-blush', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5006.jpg?v=1775124867" alt="Sia Blush">
+            <div class="product-details">
+                <div class="product-name">Sia Blush</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/sia-blush', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/sia-blush', 'Sia Blush', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_5006.jpg?v=1775124867')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/zizi', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4947.jpg?v=1775047962" alt="Zizi">
+            <div class="product-details">
+                <div class="product-name">Zizi</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/zizi', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/zizi', 'Zizi', '4590.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4947.jpg?v=1775047962')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/baby-bambi', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4940_c8296f83-d207-485b-8a44-3e0f6554ad73.jpg?v=1775047480" alt="Baby Bambi">
+            <div class="product-details">
+                <div class="product-name">Baby Bambi</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/baby-bambi', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/baby-bambi', 'Baby Bambi', '4590.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4940_c8296f83-d207-485b-8a44-3e0f6554ad73.jpg?v=1775047480')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-leopard-heel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4929.jpg?v=1775046323" alt="The Leopard Heel">
+            <div class="product-details">
+                <div class="product-name">The Leopard Heel</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-leopard-heel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-leopard-heel', 'The Leopard Heel', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4929.jpg?v=1775046323')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-dottie-heel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/449BC297-5507-4954-85F9-AA8DFE2ECDA8.png?v=1775040951" alt="The Dottie Heel">
+            <div class="product-details">
+                <div class="product-name">The Dottie Heel</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-dottie-heel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-dottie-heel', 'The Dottie Heel', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/449BC297-5507-4954-85F9-AA8DFE2ECDA8.png?v=1775040951')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-zizi-heel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/zizi-heels1.png?v=1775037526" alt="The Zizi Heel">
+            <div class="product-details">
+                <div class="product-name">The Zizi Heel</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-zizi-heel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-zizi-heel', 'The Zizi Heel', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/zizi-heels1.png?v=1775037526')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/capri', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/PRISCA5453.jpg?v=1680263388" alt="Capri">
+            <div class="product-details">
+                <div class="product-name">Capri</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/capri', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/capri', 'Capri', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/PRISCA5453.jpg?v=1680263388')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/malta', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/55A0140-copy-1-771x1024.jpg?v=1679408803" alt="Malta">
+            <div class="product-details">
+                <div class="product-name">Malta</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/malta', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/malta', 'Malta', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/55A0140-copy-1-771x1024.jpg?v=1679408803')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/devils-ivy-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/HouseOfPrisca-03-42945copy.webp?v=1732021083" alt="Devils Ivy">
+            <div class="product-details">
+                <div class="product-name">Devils Ivy</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/devils-ivy-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/devils-ivy-1', 'Devils Ivy', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/HouseOfPrisca-03-42945copy.webp?v=1732021083')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/lisbon', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/55A0069-1-771x1024.png?v=1679410661" alt="Lisbon">
+            <div class="product-details">
+                <div class="product-name">Lisbon</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/lisbon', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/lisbon', 'Lisbon', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/55A0069-1-771x1024.png?v=1679410661')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/petunia', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/PRISCA5531.jpg?v=1680263864" alt="Petunia">
+            <div class="product-details">
+                <div class="product-name">Petunia</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/petunia', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/petunia', 'Petunia', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/PRISCA5531.jpg?v=1680263864')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/sage', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-43062copy.jpg?v=1680929391" alt="Sage">
+            <div class="product-details">
+                <div class="product-name">Sage</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/sage', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/sage', 'Sage', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-43062copy.jpg?v=1680929391')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/bambi', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4511.jpg?v=1773131678" alt="Bambi">
+            <div class="product-details">
+                <div class="product-name">Bambi</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/bambi', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/bambi', 'Bambi', '4590.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4511.jpg?v=1773131678')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-mint-giraffe', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4468.jpg?v=1773042814" alt="The Mint Giraffe">
+            <div class="product-details">
+                <div class="product-name">The Mint Giraffe</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-mint-giraffe', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-mint-giraffe', 'The Mint Giraffe', '4590.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4468.jpg?v=1773042814')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/dottie', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_3123.png?v=1772872447" alt="Dottie">
+            <div class="product-details">
+                <div class="product-name">Dottie</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/dottie', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/dottie', 'Dottie', '4590.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_3123.png?v=1772872447')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-little-leopard', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4235.png?v=1772696826" alt="The Little Leopard">
+            <div class="product-details">
+                <div class="product-name">The Little Leopard</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-little-leopard', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-little-leopard', 'The Little Leopard', '4590.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_4235.png?v=1772696826')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/flower-mini-lilac', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/37278D38-CDDA-49D2-A9A7-08EB522D492E.jpg?v=1771829815" alt="Flower Mini - Lilac">
+            <div class="product-details">
+                <div class="product-name">Flower Mini - Lilac</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/flower-mini-lilac', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/flower-mini-lilac', 'Flower Mini - Lilac', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/37278D38-CDDA-49D2-A9A7-08EB522D492E.jpg?v=1771829815')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/amora', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_3737.png?v=1770612326" alt="Amora">
+            <div class="product-details">
+                <div class="product-name">Amora</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/amora', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/amora', 'Amora', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_3737.png?v=1770612326')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/candice', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/PRISCA5465.jpg?v=1680263352" alt="Candice">
+            <div class="product-details">
+                <div class="product-name">Candice</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/candice', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/candice', 'Candice', '4500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/PRISCA5465.jpg?v=1680263352')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/brussels', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/Screenshot_3.png?v=1679414174" alt="Brussels">
+            <div class="product-details">
+                <div class="product-name">Brussels</div>
+                <div class="product-price">₹9500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/brussels', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/brussels', 'Brussels', '9500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/Screenshot_3.png?v=1679414174')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/aliza', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/IMG_7362-scaled-1-768x1365.jpg?v=1680262891" alt="Aliza">
+            <div class="product-details">
+                <div class="product-name">Aliza</div>
+                <div class="product-price">₹9000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/aliza', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/aliza', 'Aliza', '9000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/IMG_7362-scaled-1-768x1365.jpg?v=1680262891')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/avril', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/WhatsAppImage2022-07-11at3.56.40PM.jpg?v=1694259274" alt="Avril">
+            <div class="product-details">
+                <div class="product-name">Avril</div>
+                <div class="product-price">₹9000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/avril', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/avril', 'Avril', '9000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/WhatsAppImage2022-07-11at3.56.40PM.jpg?v=1694259274')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/anna', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/image_6487327-1-1860x2048-1-768x846.jpg?v=1679334561" alt="Anna">
+            <div class="product-details">
+                <div class="product-name">Anna</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/anna', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/anna', 'Anna', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/image_6487327-1-1860x2048-1-768x846.jpg?v=1679334561')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-flower-mini', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/6C9ED10B-B5A4-4DED-A6C0-AC6B1D9AE925.jpg?v=1768208077" alt="The Flower Mini">
+            <div class="product-details">
+                <div class="product-name">The Flower Mini</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-flower-mini', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-flower-mini', 'The Flower Mini', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/6C9ED10B-B5A4-4DED-A6C0-AC6B1D9AE925.jpg?v=1768208077')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-bauble-mini', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_2916.jpg?v=1764153547" alt="The Bauble Mini">
+            <div class="product-details">
+                <div class="product-name">The Bauble Mini</div>
+                <div class="product-price">₹8200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-bauble-mini', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-bauble-mini', 'The Bauble Mini', '8200.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_2916.jpg?v=1764153547')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-holiday-bauble', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/420FF3B8-D722-43A4-97C2-34AC3F73CFFD.jpg?v=1764153621" alt="The Holiday Bauble">
+            <div class="product-details">
+                <div class="product-name">The Holiday Bauble</div>
+                <div class="product-price">₹9800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-holiday-bauble', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-holiday-bauble', 'The Holiday Bauble', '9800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/420FF3B8-D722-43A4-97C2-34AC3F73CFFD.jpg?v=1764153621')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/flower-power-daisy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/ADAABDC3-7673-41DA-A663-A534002C94CE.png?v=1758554922" alt="Flower Power Daisy">
+            <div class="product-details">
+                <div class="product-name">Flower Power Daisy</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/flower-power-daisy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/flower-power-daisy', 'Flower Power Daisy', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/ADAABDC3-7673-41DA-A663-A534002C94CE.png?v=1758554922')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/wedge-me-not', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/39E35E0F-010B-4DE8-B979-4B60D4D78FDB.png?v=1750494577" alt="Wedge Me Not">
+            <div class="product-details">
+                <div class="product-name">Wedge Me Not</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/wedge-me-not', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/wedge-me-not', 'Wedge Me Not', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/39E35E0F-010B-4DE8-B979-4B60D4D78FDB.png?v=1750494577')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/aam-so-extra', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/B14E6ADA-770F-407E-AD2C-7A0191843CF1.png?v=1750352582" alt="Aam So Extra">
+            <div class="product-details">
+                <div class="product-name">Aam So Extra</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/aam-so-extra', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/aam-so-extra', 'Aam So Extra', '7500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/B14E6ADA-770F-407E-AD2C-7A0191843CF1.png?v=1750352582')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/miss-coco', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/F06F8977-EB2D-46D0-97E6-A430F3C684CE.png?v=1750352460" alt="Miss Coco">
+            <div class="product-details">
+                <div class="product-name">Miss Coco</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/miss-coco', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/miss-coco', 'Miss Coco', '7500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/F06F8977-EB2D-46D0-97E6-A430F3C684CE.png?v=1750352460')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/flower-power-lilac', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/0ABB9C89-1FB2-468A-BAE8-CEB4CBB1B9F0.png?v=1750352989" alt="Flower Power Lilac">
+            <div class="product-details">
+                <div class="product-name">Flower Power Lilac</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/flower-power-lilac', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/flower-power-lilac', 'Flower Power Lilac', '7500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/0ABB9C89-1FB2-468A-BAE8-CEB4CBB1B9F0.png?v=1750352989')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/flower-power-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_9180.png?v=1750351857" alt="Flower Power Blue">
+            <div class="product-details">
+                <div class="product-name">Flower Power Blue</div>
+                <div class="product-price">₹7000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/flower-power-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/flower-power-blue', 'Flower Power Blue', '7000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_9180.png?v=1750351857')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/holy-guacamole', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_2453.jpg?v=1750352765" alt="Holy Guacamole">
+            <div class="product-details">
+                <div class="product-name">Holy Guacamole</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/holy-guacamole', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/holy-guacamole', 'Holy Guacamole', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_2453.jpg?v=1750352765')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/coral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/15.2.jpg?v=1750359086" alt="Coral">
+            <div class="product-details">
+                <div class="product-name">Coral</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/coral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/coral', 'Coral', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/15.2.jpg?v=1750359086')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/espresso', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/B14E6ADA-770F-407E-AD2C-7A0191843CF1.jpg?v=1750357761" alt="Espresso">
+            <div class="product-details">
+                <div class="product-name">Espresso</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/espresso', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/espresso', 'Espresso', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/B14E6ADA-770F-407E-AD2C-7A0191843CF1.jpg?v=1750357761')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/cappuccino', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/cappuccino_1.png?v=1750353168" alt="Cappuccino">
+            <div class="product-details">
+                <div class="product-name">Cappuccino</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/cappuccino', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/cappuccino', 'Cappuccino', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/cappuccino_1.png?v=1750353168')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/mocha', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/mocha4.png?v=1750353154" alt="Mocha">
+            <div class="product-details">
+                <div class="product-name">Mocha</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/mocha', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/mocha', 'Mocha', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/mocha4.png?v=1750353154')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/marshmallow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Marshmallow_4.png?v=1750353183" alt="Marshmallow">
+            <div class="product-details">
+                <div class="product-name">Marshmallow</div>
+                <div class="product-price">₹9500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/marshmallow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/marshmallow', 'Marshmallow', '9500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Marshmallow_4.png?v=1750353183')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/milk-chocolate', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/2.png?v=1750353198" alt="Milk Chocolate">
+            <div class="product-details">
+                <div class="product-name">Milk Chocolate</div>
+                <div class="product-price">₹9500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/milk-chocolate', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/milk-chocolate', 'Milk Chocolate', '9500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/2.png?v=1750353198')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/new-delhi', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08409_1.jpg?v=1729583469" alt="New Delhi">
+            <div class="product-details">
+                <div class="product-name">New Delhi</div>
+                <div class="product-price">₹12000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/new-delhi', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/new-delhi', 'New Delhi', '12000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08409_1.jpg?v=1729583469')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/mumbai', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08501_1.jpg?v=1729583352" alt="Mumbai">
+            <div class="product-details">
+                <div class="product-name">Mumbai</div>
+                <div class="product-price">₹9000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/mumbai', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/mumbai', 'Mumbai', '9000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08501_1.jpg?v=1729583352')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/lucknow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08350.jpg?v=1729583244" alt="Lucknow">
+            <div class="product-details">
+                <div class="product-name">Lucknow</div>
+                <div class="product-price">₹10000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/lucknow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/lucknow', 'Lucknow', '10000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08350.jpg?v=1729583244')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/kolkata', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08539_2.jpg?v=1729583091" alt="Kolkata">
+            <div class="product-details">
+                <div class="product-name">Kolkata</div>
+                <div class="product-price">₹15000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/kolkata', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/kolkata', 'Kolkata', '15000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08539_2.jpg?v=1729583091')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/jodhpur', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08397_1.jpg?v=1729582972" alt="Jodhpur">
+            <div class="product-details">
+                <div class="product-name">Jodhpur</div>
+                <div class="product-price">₹15000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/jodhpur', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/jodhpur', 'Jodhpur', '15000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08397_1.jpg?v=1729582972')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/jaipur', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08463_1.jpg?v=1729582870" alt="Jaipur">
+            <div class="product-details">
+                <div class="product-name">Jaipur</div>
+                <div class="product-price">₹12500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/jaipur', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/jaipur', 'Jaipur', '12500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08463_1.jpg?v=1729582870')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/agra', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08460_1.jpg?v=1729582392" alt="Agra">
+            <div class="product-details">
+                <div class="product-name">Agra</div>
+                <div class="product-price">₹13000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/agra', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/agra', 'Agra', '13000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Edit_DSC08460_1.jpg?v=1729582392')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/canopy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Canopy_3.jpg?v=1775200120" alt="Canopy">
+            <div class="product-details">
+                <div class="product-name">Canopy</div>
+                <div class="product-price">₹5700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/canopy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/canopy', 'Canopy', '5700.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Canopy_3.jpg?v=1775200120')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/shore', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Shore_3.jpg?v=1775201007" alt="Shore">
+            <div class="product-details">
+                <div class="product-name">Shore</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/shore', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/shore', 'Shore', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/Shore_3.jpg?v=1775201007')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/nexi', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00017_d5bb9951-1045-445e-ad5f-cfad0b38dfed.jpg?v=1750358428" alt="Nexi">
+            <div class="product-details">
+                <div class="product-name">Nexi</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/nexi', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/nexi', 'Nexi', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00017_d5bb9951-1045-445e-ad5f-cfad0b38dfed.jpg?v=1750358428')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/daisy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00012.jpg?v=1768470695" alt="Daisy">
+            <div class="product-details">
+                <div class="product-name">Daisy</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/daisy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/daisy', 'Daisy', '4500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00012.jpg?v=1768470695')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/mermaid', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/23.1.jpg?v=1750358384" alt="Mermaid">
+            <div class="product-details">
+                <div class="product-name">Mermaid</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/mermaid', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/mermaid', 'Mermaid', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/23.1.jpg?v=1750358384')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/popsicle', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/21.1.jpg?v=1750358401" alt="Popsicle">
+            <div class="product-details">
+                <div class="product-name">Popsicle</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/popsicle', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/popsicle', 'Popsicle', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/21.1.jpg?v=1750358401')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/sol', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/22.1.jpg?v=1750358416" alt="Sol">
+            <div class="product-details">
+                <div class="product-name">Sol</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/sol', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/sol', 'Sol', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/22.1.jpg?v=1750358416')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/wave', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/17.1.jpg?v=1750358472" alt="Wave">
+            <div class="product-details">
+                <div class="product-name">Wave</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/wave', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/wave', 'Wave', '5800.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/17.1.jpg?v=1750358472')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/aqua', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/4.1.jpg?v=1750358504" alt="Aqua">
+            <div class="product-details">
+                <div class="product-name">Aqua</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/aqua', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/aqua', 'Aqua', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/4.1.jpg?v=1750358504')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/sea', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00005.jpg?v=1768470746" alt="Sea">
+            <div class="product-details">
+                <div class="product-name">Sea</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/sea', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/sea', 'Sea', '4500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00005.jpg?v=1768470746')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/tide', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/3.1.jpg?v=1750358536" alt="Tide">
+            <div class="product-details">
+                <div class="product-name">Tide</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/tide', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/tide', 'Tide', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/3.1.jpg?v=1750358536')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/marina', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/2.1.jpg?v=1750358548" alt="Marina">
+            <div class="product-details">
+                <div class="product-name">Marina</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/marina', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/marina', 'Marina', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/2.1.jpg?v=1750358548')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/reef', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00013.jpg?v=1768470806" alt="Reef">
+            <div class="product-details">
+                <div class="product-name">Reef</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/reef', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/reef', 'Reef', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00013.jpg?v=1768470806')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/dune', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/13-2.jpg?v=1750358587" alt="Dune">
+            <div class="product-details">
+                <div class="product-name">Dune</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/dune', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/dune', 'Dune', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/13-2.jpg?v=1750358587')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/pebble', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/B14E6ADA-770F-407E-AD2C-7A0191843CF1_3.jpg?v=1750358126" alt="Pebble">
+            <div class="product-details">
+                <div class="product-name">Pebble</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/pebble', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/pebble', 'Pebble', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/B14E6ADA-770F-407E-AD2C-7A0191843CF1_3.jpg?v=1750358126')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/azul', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00007.jpg?v=1768470825" alt="Azul">
+            <div class="product-details">
+                <div class="product-name">Azul</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/azul', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/azul', 'Azul', '4500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00007.jpg?v=1768470825')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/summer-ciel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00009.jpg?v=1768470926" alt="Summer Ciel">
+            <div class="product-details">
+                <div class="product-name">Summer Ciel</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/summer-ciel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/summer-ciel', 'Summer Ciel', '5000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/image00009.jpg?v=1768470926')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/lagoon', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/18.1_6ae860af-9356-4ec0-8d07-285acc56dd5e.jpg?v=1750358631" alt="Lagoon">
+            <div class="product-details">
+                <div class="product-name">Lagoon</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/lagoon', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/lagoon', 'Lagoon', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/18.1_6ae860af-9356-4ec0-8d07-285acc56dd5e.jpg?v=1750358631')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/summer-soleil', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/12.2.jpg?v=1750358939" alt="Summer Soleil">
+            <div class="product-details">
+                <div class="product-name">Summer Soleil</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/summer-soleil', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/summer-soleil', 'Summer Soleil', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/12.2.jpg?v=1750358939')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/alana', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/14.2.jpg?v=1750359008" alt="Alana">
+            <div class="product-details">
+                <div class="product-name">Alana</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/alana', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/alana', 'Alana', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/14.2.jpg?v=1750359008')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/rose', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_1111.jpg?v=1707907418" alt="Rose">
+            <div class="product-details">
+                <div class="product-name">Rose</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/rose', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/rose', 'Rose', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_1111.jpg?v=1707907418')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/lets-kiwi-it-real-flats', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/11_b1a56618-ae60-4f4a-bedb-0ddc5a925d17.jpg?v=1695191036" alt="Let&#x27;s Kiwi It Real Flats">
+            <div class="product-details">
+                <div class="product-name">Let&#x27;s Kiwi It Real Flats</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/lets-kiwi-it-real-flats', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/lets-kiwi-it-real-flats', 'Let&#x27;s Kiwi It Real Flats', '5000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/11_b1a56618-ae60-4f4a-bedb-0ddc5a925d17.jpg?v=1695191036')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/simply-the-zest', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/12_6e545cd1-126c-4b7f-a6cc-c614b2bda97f.jpg?v=1694858204" alt="Simply The Zest">
+            <div class="product-details">
+                <div class="product-name">Simply The Zest</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/simply-the-zest', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/simply-the-zest', 'Simply The Zest', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/12_6e545cd1-126c-4b7f-a6cc-c614b2bda97f.jpg?v=1694858204')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/all-in-due-lime-flats', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/8_2.jpg?v=1694858199" alt="All In Due Lime Flats">
+            <div class="product-details">
+                <div class="product-name">All In Due Lime Flats</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/all-in-due-lime-flats', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/all-in-due-lime-flats', 'All In Due Lime Flats', '5000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/8_2.jpg?v=1694858199')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/orange-you-glad-im-a-catch-flats', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/13_6757ec2f-d9cf-477a-9726-199b29da15c1.jpg?v=1694858195" alt="Orange You Glad I&#x27;m a Catch Flats">
+            <div class="product-details">
+                <div class="product-name">Orange You Glad I&#x27;m a Catch Flats</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/orange-you-glad-im-a-catch-flats', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/orange-you-glad-im-a-catch-flats', 'Orange You Glad I&#x27;m a Catch Flats', '5000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/13_6757ec2f-d9cf-477a-9726-199b29da15c1.jpg?v=1694858195')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/abso-dragon-fruitly-awesome-flats', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/7_6d561ee2-5fb7-489d-b6a9-7a03084c7a96.jpg?v=1695191679" alt="Abso-Dragon-Fruitly Awesome Flats">
+            <div class="product-details">
+                <div class="product-name">Abso-Dragon-Fruitly Awesome Flats</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/abso-dragon-fruitly-awesome-flats', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/abso-dragon-fruitly-awesome-flats', 'Abso-Dragon-Fruitly Awesome Flats', '5000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/7_6d561ee2-5fb7-489d-b6a9-7a03084c7a96.jpg?v=1695191679')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/pom-grenade-flats', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/14_8d6cbf8e-278f-4863-a26c-4dcac29b6a48.jpg?v=1694858186" alt="Pom-Grenade Flats">
+            <div class="product-details">
+                <div class="product-name">Pom-Grenade Flats</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/pom-grenade-flats', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/pom-grenade-flats', 'Pom-Grenade Flats', '5000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/14_8d6cbf8e-278f-4863-a26c-4dcac29b6a48.jpg?v=1694858186')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-grape-escape-flats', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/10_2.jpg?v=1695191568" alt="The Grape Escape Flats">
+            <div class="product-details">
+                <div class="product-name">The Grape Escape Flats</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-grape-escape-flats', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-grape-escape-flats', 'The Grape Escape Flats', '5000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/10_2.jpg?v=1695191568')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/abso-dragon-fruitly-awesome', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_9239.png?v=1750357662" alt="Abso-Dragon-Fruitly Awesome!">
+            <div class="product-details">
+                <div class="product-name">Abso-Dragon-Fruitly Awesome!</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/abso-dragon-fruitly-awesome', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/abso-dragon-fruitly-awesome', 'Abso-Dragon-Fruitly Awesome!', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_9239.png?v=1750357662')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/orange-you-glad-im-a-catch', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_9231.png?v=1750353332" alt="Orange You Glad I&#x27;m a Catch?">
+            <div class="product-details">
+                <div class="product-name">Orange You Glad I&#x27;m a Catch?</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/orange-you-glad-im-a-catch', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/orange-you-glad-im-a-catch', 'Orange You Glad I&#x27;m a Catch?', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_9231.png?v=1750353332')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/all-in-due-lime', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/29AB76EE-54C2-4B35-9694-B61DDC7933FD.png?v=1776758416" alt="All In Due Lime!">
+            <div class="product-details">
+                <div class="product-name">All In Due Lime!</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/all-in-due-lime', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/all-in-due-lime', 'All In Due Lime!', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/29AB76EE-54C2-4B35-9694-B61DDC7933FD.png?v=1776758416')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/lets-kiwi-it-real', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/B14E6ADA-770F-407E-AD2C-7A0191843CF1_2_7314723b-f378-4f7a-b2db-6047613b72d3.jpg?v=1750358218" alt="Let&#x27;s Kiwi It Real!">
+            <div class="product-details">
+                <div class="product-name">Let&#x27;s Kiwi It Real!</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/lets-kiwi-it-real', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/lets-kiwi-it-real', 'Let&#x27;s Kiwi It Real!', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/B14E6ADA-770F-407E-AD2C-7A0191843CF1_2_7314723b-f378-4f7a-b2db-6047613b72d3.jpg?v=1750358218')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/pom-grenade', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_9241.png?v=1750357705" alt="Pom-Grenade">
+            <div class="product-details">
+                <div class="product-name">Pom-Grenade</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/pom-grenade', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/pom-grenade', 'Pom-Grenade', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/IMG_9241.png?v=1750357705')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/the-grape-escape', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/71AFEB73-6ED9-4924-BBB0-8BB4B4E52CD1.png?v=1750357730" alt="The Grape Escape!">
+            <div class="product-details">
+                <div class="product-name">The Grape Escape!</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/the-grape-escape', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/the-grape-escape', 'The Grape Escape!', '6500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/71AFEB73-6ED9-4924-BBB0-8BB4B4E52CD1.png?v=1750357730')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/lily-low', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-43106copy.jpg?v=1693910068" alt="Lily Low">
+            <div class="product-details">
+                <div class="product-name">Lily Low</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/lily-low', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/lily-low', 'Lily Low', '5000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-43106copy.jpg?v=1693910068')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/lily-high', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-43095copy.jpg?v=1750359276" alt="Lily High">
+            <div class="product-details">
+                <div class="product-name">Lily High</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/lily-high', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/lily-high', 'Lily High', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-43095copy.jpg?v=1750359276')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/iris', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-43234copy.jpg?v=1691647438" alt="Iris">
+            <div class="product-details">
+                <div class="product-name">Iris</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/iris', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/iris', 'Iris', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-43234copy.jpg?v=1691647438')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/magnolia-high', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-42987copy.jpg?v=1680894763" alt="Magnolia High">
+            <div class="product-details">
+                <div class="product-name">Magnolia High</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/magnolia-high', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/magnolia-high', 'Magnolia High', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-42987copy.jpg?v=1680894763')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/magnolia-low', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-42913copy.jpg?v=1680894743" alt="Magnolia Low">
+            <div class="product-details">
+                <div class="product-name">Magnolia Low</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/magnolia-low', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/magnolia-low', 'Magnolia Low', '5500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/HouseOfPrisca-03-42913copy.jpg?v=1680894743')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/sylvie', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/p3.jpg?v=1679416164" alt="Sylvie">
+            <div class="product-details">
+                <div class="product-name">Sylvie</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/sylvie', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/sylvie', 'Sylvie', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/p3.jpg?v=1679416164')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/orchid', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/files/unnamed.jpg?v=1706764366" alt="Orchid">
+            <div class="product-details">
+                <div class="product-name">Orchid</div>
+                <div class="product-price">₹12000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/orchid', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/orchid', 'Orchid', '12000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/files/unnamed.jpg?v=1706764366')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/peony', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/peony123.webp?v=1679414348" alt="Peony">
+            <div class="product-details">
+                <div class="product-name">Peony</div>
+                <div class="product-price">₹12000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/peony', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/peony', 'Peony', '12000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/peony123.webp?v=1679414348')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/victoria', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/IMG_2795_1-768x1024.jpg?v=1680264050" alt="Victoria">
+            <div class="product-details">
+                <div class="product-name">Victoria</div>
+                <div class="product-price">₹8500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/victoria', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/victoria', 'Victoria', '8500.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/IMG_2795_1-768x1024.jpg?v=1680264050')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.houseofprisca.com/products/rio', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0732/1432/9126/products/Rio-1_1.jpg?v=1775043043" alt="Rio">
+            <div class="product-details">
+                <div class="product-name">Rio</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.houseofprisca.com/products/rio', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.houseofprisca.com/products/rio', 'Rio', '6000.00', 'https://cdn.shopify.com/s/files/1/0732/1432/9126/products/Rio-1_1.jpg?v=1775043043')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

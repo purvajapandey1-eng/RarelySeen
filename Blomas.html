@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blomas - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Blomas</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-serena-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_9068eaba-9043-4dd8-85f1-f12d6741b80d.jpg?v=1715711258" alt="Serena Top">
+            <div class="product-details">
+                <div class="product-name">Serena Top</div>
+                <div class="product-price">₹1299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-serena-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-serena-top', 'Serena Top', '1299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_9068eaba-9043-4dd8-85f1-f12d6741b80d.jpg?v=1715711258')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/tulum-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03891_73da41b7-0da5-43a2-a38e-8ddb9d044a10.jpg?v=1749731080" alt="Tulum Shorts">
+            <div class="product-details">
+                <div class="product-name">Tulum Shorts</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/tulum-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/tulum-shorts', 'Tulum Shorts', '1799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03891_73da41b7-0da5-43a2-a38e-8ddb9d044a10.jpg?v=1749731080')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/tulum-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03891.jpg?v=1749730910" alt="Tulum Set">
+            <div class="product-details">
+                <div class="product-name">Tulum Set</div>
+                <div class="product-price">₹3099.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/tulum-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/tulum-set', 'Tulum Set', '3099.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03891.jpg?v=1749730910')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/tulum-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03541_be46525d-a06d-4fce-a523-e06f70ead0f1.jpg?v=1749730983" alt="Tulum Shirt">
+            <div class="product-details">
+                <div class="product-name">Tulum Shirt</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/tulum-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/tulum-shirt', 'Tulum Shirt', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03541_be46525d-a06d-4fce-a523-e06f70ead0f1.jpg?v=1749730983')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/carla-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0793_a381db75-f5be-47a9-a872-688fc2f30361.jpg?v=1749730747" alt="Carla Skirt">
+            <div class="product-details">
+                <div class="product-name">Carla Skirt</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/carla-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/carla-skirt', 'Carla Skirt', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0793_a381db75-f5be-47a9-a872-688fc2f30361.jpg?v=1749730747')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/carla-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0793_11fa87a3-c7e2-4fec-859f-74ec1e32ac09.jpg?v=1749730536" alt="Carla Shirt">
+            <div class="product-details">
+                <div class="product-name">Carla Shirt</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/carla-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/carla-shirt', 'Carla Shirt', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0793_11fa87a3-c7e2-4fec-859f-74ec1e32ac09.jpg?v=1749730536')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/carla-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0761.jpg?v=1749730375" alt="Carla Set">
+            <div class="product-details">
+                <div class="product-name">Carla Set</div>
+                <div class="product-price">₹2299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/carla-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/carla-set', 'Carla Set', '2299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0761.jpg?v=1749730375')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/haley-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession06451_35474b27-d87e-465a-b151-d8811232dbea.jpg?v=1749730175" alt="Haley Pants">
+            <div class="product-details">
+                <div class="product-name">Haley Pants</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/haley-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/haley-pants', 'Haley Pants', '2199.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession06451_35474b27-d87e-465a-b151-d8811232dbea.jpg?v=1749730175')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/haley-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession07171.jpg?v=1749730142" alt="Haley Top">
+            <div class="product-details">
+                <div class="product-name">Haley Top</div>
+                <div class="product-price">₹1299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/haley-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/haley-top', 'Haley Top', '1299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession07171.jpg?v=1749730142')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/haley-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession07001.jpg?v=1749729392" alt="Haley Set">
+            <div class="product-details">
+                <div class="product-name">Haley Set</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/haley-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/haley-set', 'Haley Set', '3499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession07001.jpg?v=1749729392')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/mia-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession00191.jpg?v=1749728383" alt="Mia Dress">
+            <div class="product-details">
+                <div class="product-name">Mia Dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/mia-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/mia-dress', 'Mia Dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession00191.jpg?v=1749728383')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/daphne-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0571.jpg?v=1749728242" alt="Daphne Dress">
+            <div class="product-details">
+                <div class="product-name">Daphne Dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/daphne-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/daphne-dress', 'Daphne Dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0571.jpg?v=1749728242')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/sunset-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0165.jpg?v=1749728042" alt="Sunset Dress">
+            <div class="product-details">
+                <div class="product-name">Sunset Dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/sunset-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/sunset-dress', 'Sunset Dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0165.jpg?v=1749728042')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/milano-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/shopify_size_new_11zon.jpg?v=1749795969" alt="Milano Dress">
+            <div class="product-details">
+                <div class="product-name">Milano Dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/milano-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/milano-dress', 'Milano Dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/shopify_size_new_11zon.jpg?v=1749795969')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/audrey-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0481.jpg?v=1749726849" alt="Audrey Dress">
+            <div class="product-details">
+                <div class="product-name">Audrey Dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/audrey-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/audrey-dress', 'Audrey Dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0481.jpg?v=1749726849')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/lana-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0369.jpg?v=1749726625" alt="Lana Dress">
+            <div class="product-details">
+                <div class="product-name">Lana Dress</div>
+                <div class="product-price">₹3099.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/lana-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/lana-dress', 'Lana Dress', '3099.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0369.jpg?v=1749726625')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/anastasia-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession01991.jpg?v=1749726475" alt="Anastasia Dress">
+            <div class="product-details">
+                <div class="product-name">Anastasia Dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/anastasia-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/anastasia-dress', 'Anastasia Dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession01991.jpg?v=1749726475')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/catherine-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0338.jpg?v=1749726336" alt="Catherine Dress">
+            <div class="product-details">
+                <div class="product-name">Catherine Dress</div>
+                <div class="product-price">₹3099.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/catherine-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/catherine-dress', 'Catherine Dress', '3099.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0338.jpg?v=1749726336')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/sabrina-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/IMG_6700.heic?v=1749724894" alt="Sabrina Dress">
+            <div class="product-details">
+                <div class="product-name">Sabrina Dress</div>
+                <div class="product-price">₹2299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/sabrina-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/sabrina-dress', 'Sabrina Dress', '2299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/IMG_6700.heic?v=1749724894')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/mandy-set-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0425.jpg?v=1749731151" alt="Mandy Set - Shirt">
+            <div class="product-details">
+                <div class="product-name">Mandy Set - Shirt</div>
+                <div class="product-price">₹4499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/mandy-set-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/mandy-set-shirt', 'Mandy Set - Shirt', '4499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0425.jpg?v=1749731151')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/mandy-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0468_37eaf6b7-04e0-44e1-8a56-6874330fc22e.jpg?v=1749731270" alt="Mandy Shirt">
+            <div class="product-details">
+                <div class="product-name">Mandy Shirt</div>
+                <div class="product-price">₹2399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/mandy-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/mandy-shirt', 'Mandy Shirt', '2399.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0468_37eaf6b7-04e0-44e1-8a56-6874330fc22e.jpg?v=1749731270')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/lily-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession06121.jpg?v=1749731410" alt="Lily Set">
+            <div class="product-details">
+                <div class="product-name">Lily Set</div>
+                <div class="product-price">₹4299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/lily-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/lily-set', 'Lily Set', '4299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession06121.jpg?v=1749731410')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/lily-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession05411.jpg?v=1749731590" alt="Lily Top">
+            <div class="product-details">
+                <div class="product-name">Lily Top</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/lily-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/lily-top', 'Lily Top', '1799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession05411.jpg?v=1749731590')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/lily-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession05701_161b0c63-5ce0-4012-a545-1439e92f8e2d.jpg?v=1749731625" alt="Lily Skirt">
+            <div class="product-details">
+                <div class="product-name">Lily Skirt</div>
+                <div class="product-price">₹2699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/lily-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/lily-skirt', 'Lily Skirt', '2699.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession05701_161b0c63-5ce0-4012-a545-1439e92f8e2d.jpg?v=1749731625')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/ida-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession04961.jpg?v=1749731679" alt="Ida Set">
+            <div class="product-details">
+                <div class="product-name">Ida Set</div>
+                <div class="product-price">₹4299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/ida-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/ida-set', 'Ida Set', '4299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession04961.jpg?v=1749731679')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/ida-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession05201_3af05014-7001-4e18-bff9-dfd7a3b983a3.jpg?v=1749731779" alt="Ida Pants">
+            <div class="product-details">
+                <div class="product-name">Ida Pants</div>
+                <div class="product-price">₹2699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/ida-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/ida-pants', 'Ida Pants', '2699.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession05201_3af05014-7001-4e18-bff9-dfd7a3b983a3.jpg?v=1749731779')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/alexa-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession02721.jpg?v=1749731997" alt="Alexa Set">
+            <div class="product-details">
+                <div class="product-name">Alexa Set</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/alexa-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/alexa-set', 'Alexa Set', '3499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession02721.jpg?v=1749731997')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/rory-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03371.jpg?v=1749732108" alt="Rory Set">
+            <div class="product-details">
+                <div class="product-name">Rory Set</div>
+                <div class="product-price">₹3799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/rory-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/rory-set', 'Rory Set', '3799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03371.jpg?v=1749732108')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/rory-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03351_dac5b2d6-e61b-4ea3-ad33-47b9574039ac.jpg?v=1749732186" alt="Rory Shirt">
+            <div class="product-details">
+                <div class="product-name">Rory Shirt</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/rory-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/rory-shirt', 'Rory Shirt', '2199.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession03351_dac5b2d6-e61b-4ea3-ad33-47b9574039ac.jpg?v=1749732186')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/rory-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession02341_f178c36f-6e80-456f-b050-6f2f3305c68d.jpg?v=1749732318" alt="Rory Pants">
+            <div class="product-details">
+                <div class="product-name">Rory Pants</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/rory-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/rory-pants', 'Rory Pants', '2199.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession02341_f178c36f-6e80-456f-b050-6f2f3305c68d.jpg?v=1749732318')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/skye-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0701_e85b0cc6-cb95-47cd-9924-409b1d5e6499.jpg?v=1749732411" alt="Skye Set">
+            <div class="product-details">
+                <div class="product-name">Skye Set</div>
+                <div class="product-price">₹3199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/skye-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/skye-set', 'Skye Set', '3199.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0701_e85b0cc6-cb95-47cd-9924-409b1d5e6499.jpg?v=1749732411')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/skye-skort', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0741.jpg?v=1749731902" alt="Skye Skort">
+            <div class="product-details">
+                <div class="product-name">Skye Skort</div>
+                <div class="product-price">₹1399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/skye-skort', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/skye-skort', 'Skye Skort', '1399.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0741.jpg?v=1749731902')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/fino-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession06861_640ca062-b19f-4b84-adec-8df9a30f1f5d.jpg?v=1749732704" alt="Fino Top">
+            <div class="product-details">
+                <div class="product-name">Fino Top</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/fino-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/fino-top', 'Fino Top', '1799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession06861_640ca062-b19f-4b84-adec-8df9a30f1f5d.jpg?v=1749732704')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/molly-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0020.jpg?v=1749724642" alt="Molly Dress">
+            <div class="product-details">
+                <div class="product-name">Molly Dress</div>
+                <div class="product-price">₹1699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/molly-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/molly-dress', 'Molly Dress', '1699.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0020.jpg?v=1749724642')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/fino-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession06451_5c4d64ba-3970-4005-a71d-da26e836cdff.jpg?v=1749732648" alt="Fino Set">
+            <div class="product-details">
+                <div class="product-name">Fino Set</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/fino-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/fino-set', 'Fino Set', '3499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession06451_5c4d64ba-3970-4005-a71d-da26e836cdff.jpg?v=1749732648')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/taylor-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0865.jpg?v=1749724209" alt="Taylor Dress">
+            <div class="product-details">
+                <div class="product-name">Taylor Dress</div>
+                <div class="product-price">₹2899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/taylor-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/taylor-dress', 'Taylor Dress', '2899.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0865.jpg?v=1749724209')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/nicole-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0096.jpg?v=1749724100" alt="Nicole Dress">
+            <div class="product-details">
+                <div class="product-name">Nicole Dress</div>
+                <div class="product-price">₹3199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/nicole-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/nicole-dress', 'Nicole Dress', '3199.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0096.jpg?v=1749724100')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/claire-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0652.jpg?v=1749723939" alt="Claire Dress">
+            <div class="product-details">
+                <div class="product-name">Claire Dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/claire-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/claire-dress', 'Claire Dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession0652.jpg?v=1749723939')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/lagos-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession00701.jpg?v=1749730324" alt="Lagos Set">
+            <div class="product-details">
+                <div class="product-name">Lagos Set</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/lagos-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/lagos-set', 'Lagos Set', '1899.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession00701.jpg?v=1749730324')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/peggy-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_22.jpg?v=1734167509" alt="Peggy Set">
+            <div class="product-details">
+                <div class="product-name">Peggy Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/peggy-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/peggy-set', 'Peggy Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_22.jpg?v=1734167509')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/cassie-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_40.jpg?v=1737365498" alt="Cassie Set">
+            <div class="product-details">
+                <div class="product-name">Cassie Set</div>
+                <div class="product-price">₹3299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/cassie-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/cassie-set', 'Cassie Set', '3299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_40.jpg?v=1737365498')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/cassie-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_41.jpg?v=1737365673" alt="Cassie Skirt">
+            <div class="product-details">
+                <div class="product-name">Cassie Skirt</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/cassie-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/cassie-skirt', 'Cassie Skirt', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_41.jpg?v=1737365673')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/laguna-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_36.jpg?v=1737364616" alt="Laguna Shirt">
+            <div class="product-details">
+                <div class="product-name">Laguna Shirt</div>
+                <div class="product-price">₹2699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/laguna-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/laguna-shirt', 'Laguna Shirt', '2699.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_36.jpg?v=1737364616')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/laguna-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_36.jpg?v=1737364616" alt="Laguna Pants">
+            <div class="product-details">
+                <div class="product-name">Laguna Pants</div>
+                <div class="product-price">₹2699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/laguna-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/laguna-pants', 'Laguna Pants', '2699.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_36.jpg?v=1737364616')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/laguna-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/2_9fe4df51-9d98-4940-a978-57ed47af23d2.jpg?v=1737362826" alt="Laguna Set">
+            <div class="product-details">
+                <div class="product-name">Laguna Set</div>
+                <div class="product-price">₹3799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/laguna-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/laguna-set', 'Laguna Set', '3799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/2_9fe4df51-9d98-4940-a978-57ed47af23d2.jpg?v=1737362826')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/sylvie-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/2_e00d9528-34ca-4aea-b42d-1647eb153806.jpg?v=1735749380" alt="Sylvie Dress">
+            <div class="product-details">
+                <div class="product-name">Sylvie Dress</div>
+                <div class="product-price">₹2899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/sylvie-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/sylvie-dress', 'Sylvie Dress', '2899.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/2_e00d9528-34ca-4aea-b42d-1647eb153806.jpg?v=1735749380')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/cher-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/4_87e65081-99ad-4ae7-bac3-a43d40b49fef.jpg?v=1734604012" alt="Cher Set">
+            <div class="product-details">
+                <div class="product-name">Cher Set</div>
+                <div class="product-price">₹3099.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/cher-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/cher-set', 'Cher Set', '3099.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/4_87e65081-99ad-4ae7-bac3-a43d40b49fef.jpg?v=1734604012')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/charlotte-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_32.jpg?v=1734187784" alt="Charlotte Top">
+            <div class="product-details">
+                <div class="product-name">Charlotte Top</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/charlotte-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/charlotte-top', 'Charlotte Top', '1899.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_32.jpg?v=1734187784')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/jade-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_35.jpg?v=1734187973" alt="Jade Top">
+            <div class="product-details">
+                <div class="product-name">Jade Top</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/jade-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/jade-top', 'Jade Top', '1799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_35.jpg?v=1734187973')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/carrie-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_27.jpg?v=1734170041" alt="Carrie Top">
+            <div class="product-details">
+                <div class="product-name">Carrie Top</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/carrie-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/carrie-top', 'Carrie Top', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_27.jpg?v=1734170041')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/olivia-shirt-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_20.jpg?v=1734127681" alt="Olivia Shirt Dress">
+            <div class="product-details">
+                <div class="product-name">Olivia Shirt Dress</div>
+                <div class="product-price">₹2299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/olivia-shirt-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/olivia-shirt-dress', 'Olivia Shirt Dress', '2299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_20.jpg?v=1734127681')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/zoe-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_55.jpg?v=1741378991" alt="Zoe Dress">
+            <div class="product-details">
+                <div class="product-name">Zoe Dress</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/zoe-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/zoe-dress', 'Zoe Dress', '1799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_55.jpg?v=1741378991')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/ariel-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_12.jpg?v=1734124236" alt="Ariel Set">
+            <div class="product-details">
+                <div class="product-name">Ariel Set</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/ariel-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/ariel-set', 'Ariel Set', '2499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_12.jpg?v=1734124236')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/jenna-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_8.jpg?v=1734123855" alt="Jenna Set">
+            <div class="product-details">
+                <div class="product-name">Jenna Set</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/jenna-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/jenna-set', 'Jenna Set', '2199.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_8.jpg?v=1734123855')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/lisa-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_9.jpg?v=1734122970" alt="Lisa Dress">
+            <div class="product-details">
+                <div class="product-name">Lisa Dress</div>
+                <div class="product-price">₹2799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/lisa-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/lisa-dress', 'Lisa Dress', '2799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/ShopifySize_9.jpg?v=1734122970')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/tara-pants-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/2FA3497A-AFEC-4F0F-B2EB-F6BDC21F6F29.jpg?v=1730643004" alt="Tara Pants Set">
+            <div class="product-details">
+                <div class="product-name">Tara Pants Set</div>
+                <div class="product-price">₹3599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/tara-pants-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/tara-pants-set', 'Tara Pants Set', '3599.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/2FA3497A-AFEC-4F0F-B2EB-F6BDC21F6F29.jpg?v=1730643004')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/gianna-draped-saree', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/4975E847-6D1A-4792-9201-8A29C6B2C8D5.jpg?v=1729511888" alt="Gianna Draped Saree">
+            <div class="product-details">
+                <div class="product-name">Gianna Draped Saree</div>
+                <div class="product-price">₹4679.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/gianna-draped-saree', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/gianna-draped-saree', 'Gianna Draped Saree', '4679.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/4975E847-6D1A-4792-9201-8A29C6B2C8D5.jpg?v=1729511888')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/alana-saree-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/E0CAB609-D292-4BF2-8A83-3675AF94F2A0.jpg?v=1729237971" alt="Alana Draped Saree">
+            <div class="product-details">
+                <div class="product-name">Alana Draped Saree</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/alana-saree-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/alana-saree-copy', 'Alana Draped Saree', '3999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/E0CAB609-D292-4BF2-8A83-3675AF94F2A0.jpg?v=1729237971')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/kiara-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_57.jpg?v=1741379213" alt="Kiara Skirt Set">
+            <div class="product-details">
+                <div class="product-name">Kiara Skirt Set</div>
+                <div class="product-price">₹4399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/kiara-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/kiara-set-copy', 'Kiara Skirt Set', '4399.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Shopify_Size_57.jpg?v=1741379213')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/ruby-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/9246F33C-948A-4427-8344-1514B1F52388.jpg?v=1729237417" alt="Ruby Sharara Set">
+            <div class="product-details">
+                <div class="product-name">Ruby Sharara Set</div>
+                <div class="product-price">₹4199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/ruby-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/ruby-set-copy', 'Ruby Sharara Set', '4199.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/9246F33C-948A-4427-8344-1514B1F52388.jpg?v=1729237417')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/bella-top-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/9B50DA5E-157A-46A7-93E6-2D12DABC4BEB.jpg?v=1729160248" alt="Bella Top - Black">
+            <div class="product-details">
+                <div class="product-name">Bella Top - Black</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/bella-top-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/bella-top-black', 'Bella Top - Black', '1199.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/9B50DA5E-157A-46A7-93E6-2D12DABC4BEB.jpg?v=1729160248')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/noor-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/0F93081A-9E08-4A21-AE55-69151ADB1EF9.jpg?v=1726471699" alt="Noor Set">
+            <div class="product-details">
+                <div class="product-name">Noor Set</div>
+                <div class="product-price">₹3839.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/noor-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/noor-set', 'Noor Set', '3839.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/0F93081A-9E08-4A21-AE55-69151ADB1EF9.jpg?v=1726471699')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/emily-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Untitleddesign.jpg?v=1724433391" alt="Emily Dress">
+            <div class="product-details">
+                <div class="product-name">Emily Dress</div>
+                <div class="product-price">₹2799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/emily-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/emily-dress', 'Emily Dress', '2799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Untitleddesign.jpg?v=1724433391')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/lucy-dress-pink', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Untitled_design_52.jpg?v=1722851342" alt="Lucy Dress - Pink">
+            <div class="product-details">
+                <div class="product-name">Lucy Dress - Pink</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/lucy-dress-pink', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/lucy-dress-pink', 'Lucy Dress - Pink', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Untitled_design_52.jpg?v=1722851342')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/christina-waistcoat', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_bc6ba2c7-4369-4c41-b957-464c841706ad.jpg?v=1722671632" alt="Christina Waistcoat">
+            <div class="product-details">
+                <div class="product-name">Christina Waistcoat</div>
+                <div class="product-price">₹1399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/christina-waistcoat', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/christina-waistcoat', 'Christina Waistcoat', '1399.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_bc6ba2c7-4369-4c41-b957-464c841706ad.jpg?v=1722671632')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/christina-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_6a5c243c-59c4-44a5-983d-7376c1fa384e.jpg?v=1722670119" alt="Christina Set">
+            <div class="product-details">
+                <div class="product-name">Christina Set</div>
+                <div class="product-price">₹2899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/christina-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/christina-set', 'Christina Set', '2899.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_6a5c243c-59c4-44a5-983d-7376c1fa384e.jpg?v=1722670119')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/rosa-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/midi1.jpg?v=1722668656" alt="Rosa Dress">
+            <div class="product-details">
+                <div class="product-name">Rosa Dress</div>
+                <div class="product-price">₹2599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/rosa-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/rosa-dress', 'Rosa Dress', '2599.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/midi1.jpg?v=1722668656')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-mandy-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/4_4083d71c-5554-47c7-bc73-54b725514a04.jpg?v=1715711816" alt="Mandy Pants">
+            <div class="product-details">
+                <div class="product-name">Mandy Pants</div>
+                <div class="product-price">₹2699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-mandy-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-mandy-pants', 'Mandy Pants', '2699.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/4_4083d71c-5554-47c7-bc73-54b725514a04.jpg?v=1715711816')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-serena-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_92baf5bc-b150-4681-bb39-76277a196517.jpg?v=1715711327" alt="Serena Skirt">
+            <div class="product-details">
+                <div class="product-name">Serena Skirt</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-serena-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-serena-skirt', 'Serena Skirt', '1599.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_92baf5bc-b150-4681-bb39-76277a196517.jpg?v=1715711327')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-lola-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_eba95e18-5adf-4377-b8bf-f860f7a0f5e7.jpg?v=1715710455" alt="Lola Skirt">
+            <div class="product-details">
+                <div class="product-name">Lola Skirt</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-lola-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-lola-skirt', 'Lola Skirt', '1499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_eba95e18-5adf-4377-b8bf-f860f7a0f5e7.jpg?v=1715710455')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-mandy-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_06ea3946-edfa-48fc-93cc-3db7f94ea00a.jpg?v=1715711433" alt="Mandy Set">
+            <div class="product-details">
+                <div class="product-name">Mandy Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-mandy-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-mandy-set', 'Mandy Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_06ea3946-edfa-48fc-93cc-3db7f94ea00a.jpg?v=1715711433')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-serena-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_1801a4f9-d6da-4360-b9f0-a16897862ae9.jpg?v=1715710836" alt="Serena Set">
+            <div class="product-details">
+                <div class="product-name">Serena Set</div>
+                <div class="product-price">₹2299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-serena-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-serena-set', 'Serena Set', '2299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_1801a4f9-d6da-4360-b9f0-a16897862ae9.jpg?v=1715710836')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-lola-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_9cc07d04-8f67-49cf-aaaa-cb7bff5a71d2.jpg?v=1715841751" alt="Lola Set">
+            <div class="product-details">
+                <div class="product-name">Lola Set</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-lola-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-lola-set', 'Lola Set', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_9cc07d04-8f67-49cf-aaaa-cb7bff5a71d2.jpg?v=1715841751')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-aria-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_b76b9e3a-abf1-449b-8b67-3d27562afcd6.jpg?v=1715938651" alt="Aria Set">
+            <div class="product-details">
+                <div class="product-name">Aria Set</div>
+                <div class="product-price">₹2299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-aria-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-aria-set', 'Aria Set', '2299.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_b76b9e3a-abf1-449b-8b67-3d27562afcd6.jpg?v=1715938651')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-bella-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_b3b7f020-076d-488e-bfb3-4adc456a1f1d.jpg?v=1715709201" alt="Bella Top">
+            <div class="product-details">
+                <div class="product-name">Bella Top</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-bella-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-bella-top', 'Bella Top', '1499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_b3b7f020-076d-488e-bfb3-4adc456a1f1d.jpg?v=1715709201')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-willow-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Untitled_design_30.jpg?v=1722410763" alt="Willow Top">
+            <div class="product-details">
+                <div class="product-name">Willow Top</div>
+                <div class="product-price">₹799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-willow-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-willow-top', 'Willow Top', '799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/Untitled_design_30.jpg?v=1722410763')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-sofia-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_580dbcf2-e85e-4a3b-9b0e-8f4e1ca4842a.jpg?v=1715709690" alt="Sofia Dress">
+            <div class="product-details">
+                <div class="product-name">Sofia Dress</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-sofia-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-sofia-dress', 'Sofia Dress', '1799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_580dbcf2-e85e-4a3b-9b0e-8f4e1ca4842a.jpg?v=1715709690')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-millie-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_4badd7b9-526b-406a-9deb-c48d114ed17c.jpg?v=1715709523" alt="Millie Dress">
+            <div class="product-details">
+                <div class="product-name">Millie Dress</div>
+                <div class="product-price">₹2799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-millie-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-millie-dress', 'Millie Dress', '2799.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_4badd7b9-526b-406a-9deb-c48d114ed17c.jpg?v=1715709523')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-lucy-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_100bc584-3695-4049-b5f0-e763c1960199.jpg?v=1715709352" alt="Lucy Dress">
+            <div class="product-details">
+                <div class="product-name">Lucy Dress</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-lucy-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-lucy-dress', 'Lucy Dress', '1999.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1_100bc584-3695-4049-b5f0-e763c1960199.jpg?v=1715709352')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-dahlia-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/2_6caa895e-0fb6-4994-bd7a-659d12a5d7fc.jpg?v=1716069007" alt="Dahlia Dress">
+            <div class="product-details">
+                <div class="product-name">Dahlia Dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-dahlia-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-dahlia-dress', 'Dahlia Dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/2_6caa895e-0fb6-4994-bd7a-659d12a5d7fc.jpg?v=1716069007')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://blomas.in/products/the-alice-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1.jpg?v=1715708803" alt="Alice Dress">
+            <div class="product-details">
+                <div class="product-name">Alice Dress</div>
+                <div class="product-price">₹2899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://blomas.in/products/the-alice-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://blomas.in/products/the-alice-dress', 'Alice Dress', '2899.00', 'https://cdn.shopify.com/s/files/1/0693/2906/0073/files/1.jpg?v=1715708803')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

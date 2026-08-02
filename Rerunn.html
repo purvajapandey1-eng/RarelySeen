@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rerunn - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Rerunn</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/cherry-night-suit-set-in-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1356.jpg?v=1780229589" alt="Sleepy Girl Cherry Set in Blue">
+            <div class="product-details">
+                <div class="product-name">Sleepy Girl Cherry Set in Blue</div>
+                <div class="product-price">₹1590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/cherry-night-suit-set-in-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/cherry-night-suit-set-in-blue', 'Sleepy Girl Cherry Set in Blue', '1590.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1356.jpg?v=1780229589')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/pink-floral-lucy-bag', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Pink_Floral_Bag.png?v=1781248213" alt="Lucy Shoulder Bag in Pink Floral">
+            <div class="product-details">
+                <div class="product-name">Lucy Shoulder Bag in Pink Floral</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/pink-floral-lucy-bag', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/pink-floral-lucy-bag', 'Lucy Shoulder Bag in Pink Floral', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Pink_Floral_Bag.png?v=1781248213')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/brown-polka-lucy-bag', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/yellowpinkbag.png?v=1781248891" alt="Lucy Bag in Brown Polka Dot-PREORDER">
+            <div class="product-details">
+                <div class="product-name">Lucy Bag in Brown Polka Dot-PREORDER</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/brown-polka-lucy-bag', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/brown-polka-lucy-bag', 'Lucy Bag in Brown Polka Dot-PREORDER', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/yellowpinkbag.png?v=1781248891')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/blue-floral-lucy-bag', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/BlueFloralBag.png?v=1781248720" alt="Lucy Shoulder Bag in Blue Floral">
+            <div class="product-details">
+                <div class="product-name">Lucy Shoulder Bag in Blue Floral</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/blue-floral-lucy-bag', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/blue-floral-lucy-bag', 'Lucy Shoulder Bag in Blue Floral', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/BlueFloralBag.png?v=1781248720')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/white-polka-lucy-bag', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/whitepolkadotbag.png?v=1781249266" alt="Lucy Shoulder Bag in White Polka Dot">
+            <div class="product-details">
+                <div class="product-name">Lucy Shoulder Bag in White Polka Dot</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/white-polka-lucy-bag', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/white-polka-lucy-bag', 'Lucy Shoulder Bag in White Polka Dot', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/whitepolkadotbag.png?v=1781249266')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/black-polka-lucy-bag', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_pffe3upffe3upffe.png?v=1781249171" alt="Lucy Shoulder Bag in Black Polka Dot">
+            <div class="product-details">
+                <div class="product-name">Lucy Shoulder Bag in Black Polka Dot</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/black-polka-lucy-bag', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/black-polka-lucy-bag', 'Lucy Shoulder Bag in Black Polka Dot', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_pffe3upffe3upffe.png?v=1781249171')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/rosalina-corset-princess-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7680.heic?v=1775905943" alt="Rosalina Corset Princess Dress-MADE TO ORDER, SHIPS IN 20-25 DAYS">
+            <div class="product-details">
+                <div class="product-name">Rosalina Corset Princess Dress-MADE TO ORDER, SHIPS IN 20-25 DAYS</div>
+                <div class="product-price">₹2590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/rosalina-corset-princess-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/rosalina-corset-princess-dress', 'Rosalina Corset Princess Dress-MADE TO ORDER, SHIPS IN 20-25 DAYS', '2590.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7680.heic?v=1775905943')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/juliette-lace-night-set-with-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/0bdd98d9-9711-4ee2-91ef-253855b9abd4.jpg?v=1780230612" alt="Juliette Lace Night Set with Pants">
+            <div class="product-details">
+                <div class="product-name">Juliette Lace Night Set with Pants</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/juliette-lace-night-set-with-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/juliette-lace-night-set-with-pants', 'Juliette Lace Night Set with Pants', '1290.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/0bdd98d9-9711-4ee2-91ef-253855b9abd4.jpg?v=1780230612')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/lace-night-suit-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1264_2.jpg?v=1780230514" alt="Juliette Lace Night Set with Shorts">
+            <div class="product-details">
+                <div class="product-name">Juliette Lace Night Set with Shorts</div>
+                <div class="product-price">₹1090.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/lace-night-suit-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/lace-night-suit-set', 'Juliette Lace Night Set with Shorts', '1090.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1264_2.jpg?v=1780230514')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/cherry-night-suit-set-in-butter-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_12362.jpg?v=1780229832" alt="Sleepy Girl Cherry Set in Cream">
+            <div class="product-details">
+                <div class="product-name">Sleepy Girl Cherry Set in Cream</div>
+                <div class="product-price">₹1590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/cherry-night-suit-set-in-butter-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/cherry-night-suit-set-in-butter-yellow', 'Sleepy Girl Cherry Set in Cream', '1590.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_12362.jpg?v=1780229832')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/strawberry-night-suit-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_2401.heic?v=1780229377" alt="Cozy Strawberry Pinstripe Set">
+            <div class="product-details">
+                <div class="product-name">Cozy Strawberry Pinstripe Set</div>
+                <div class="product-price">₹1490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/strawberry-night-suit-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/strawberry-night-suit-set', 'Cozy Strawberry Pinstripe Set', '1490.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_2401.heic?v=1780229377')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/isabelle-top-in-red', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6375.heic?v=1776272817" alt="Isabelle Top in Red">
+            <div class="product-details">
+                <div class="product-name">Isabelle Top in Red</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/isabelle-top-in-red', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/isabelle-top-in-red', 'Isabelle Top in Red', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6375.heic?v=1776272817')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/isabelle-top-in-polka-dot', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7156.heic?v=1775901022" alt="Isabelle Top in Polka Dot">
+            <div class="product-details">
+                <div class="product-name">Isabelle Top in Polka Dot</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/isabelle-top-in-polka-dot', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/isabelle-top-in-polka-dot', 'Isabelle Top in Polka Dot', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7156.heic?v=1775901022')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/babydoll-ribbon-top-in-polka-dot-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/03a87ddc-4da8-4e0f-9373-63e4dcf4cfd92.jpg?v=1777723404" alt="Babydoll Ribbon Top in Polka Dot">
+            <div class="product-details">
+                <div class="product-name">Babydoll Ribbon Top in Polka Dot</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/babydoll-ribbon-top-in-polka-dot-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/babydoll-ribbon-top-in-polka-dot-1', 'Babydoll Ribbon Top in Polka Dot', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/03a87ddc-4da8-4e0f-9373-63e4dcf4cfd92.jpg?v=1777723404')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/babydoll-ribbon-top-in-yellow-floral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0406.heic?v=1777723805" alt="Babydoll Ribbon Top in Yellow Floral">
+            <div class="product-details">
+                <div class="product-name">Babydoll Ribbon Top in Yellow Floral</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/babydoll-ribbon-top-in-yellow-floral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/babydoll-ribbon-top-in-yellow-floral', 'Babydoll Ribbon Top in Yellow Floral', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0406.heic?v=1777723805')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/babydoll-ribbon-top-in-blue-floral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0389.heic?v=1777723987" alt="Babydoll Ribbon Top in Blue Floral">
+            <div class="product-details">
+                <div class="product-name">Babydoll Ribbon Top in Blue Floral</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/babydoll-ribbon-top-in-blue-floral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/babydoll-ribbon-top-in-blue-floral', 'Babydoll Ribbon Top in Blue Floral', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0389.heic?v=1777723987')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/cami-top-in-pink', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0328.heic?v=1777721398" alt="Belly Top in Pink">
+            <div class="product-details">
+                <div class="product-name">Belly Top in Pink</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/cami-top-in-pink', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/cami-top-in-pink', 'Belly Top in Pink', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0328.heic?v=1777721398')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/cami-top-in-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0304.heic?v=1777721340" alt="Belly Top in Blue">
+            <div class="product-details">
+                <div class="product-name">Belly Top in Blue</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/cami-top-in-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/cami-top-in-blue', 'Belly Top in Blue', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0304.heic?v=1777721340')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/bubble-top-in-butter-yellow-xs-2xl-new-04', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1793.heic?v=1745658657" alt="Bubble Top in Butter Yellow">
+            <div class="product-details">
+                <div class="product-name">Bubble Top in Butter Yellow</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/bubble-top-in-butter-yellow-xs-2xl-new-04', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/bubble-top-in-butter-yellow-xs-2xl-new-04', 'Bubble Top in Butter Yellow', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1793.heic?v=1745658657')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/bubblegum-top-in-bow-xs-xl', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_9663_77772e9d-6c52-4aec-8226-516c36b633b8.heic?v=1777719293" alt="Bubble Top in Bow">
+            <div class="product-details">
+                <div class="product-name">Bubble Top in Bow</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/bubblegum-top-in-bow-xs-xl', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/bubblegum-top-in-bow-xs-xl', 'Bubble Top in Bow', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_9663_77772e9d-6c52-4aec-8226-516c36b633b8.heic?v=1777719293')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/bambi-top-in-light-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_gcoyz5gcoyz5gcoy.png?v=1777464763" alt="Bambi Top in Light Blue">
+            <div class="product-details">
+                <div class="product-name">Bambi Top in Light Blue</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/bambi-top-in-light-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/bambi-top-in-light-blue', 'Bambi Top in Light Blue', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_gcoyz5gcoyz5gcoy.png?v=1777464763')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/bambi-top-in-navy-polka-dot', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_r81vikr81vikr81v.png?v=1777464850" alt="Bambi Top in Navy Polka Dot">
+            <div class="product-details">
+                <div class="product-name">Bambi Top in Navy Polka Dot</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/bambi-top-in-navy-polka-dot', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/bambi-top-in-navy-polka-dot', 'Bambi Top in Navy Polka Dot', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_r81vikr81vikr81v.png?v=1777464850')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/daisy-mini-skirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_xmac9axmac9axmac.png?v=1777551685" alt="Florence Mini Skirt">
+            <div class="product-details">
+                <div class="product-name">Florence Mini Skirt</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/daisy-mini-skirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/daisy-mini-skirt-copy', 'Florence Mini Skirt', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_xmac9axmac9axmac.png?v=1777551685')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/florence-lace-top-in-white-polka-dot', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/7bb5ef3f-c1a8-4fc1-ace3-fa33d9d0a3d4.jpg?v=1777715104" alt="Florence Lace Top in White Polka Dot">
+            <div class="product-details">
+                <div class="product-name">Florence Lace Top in White Polka Dot</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/florence-lace-top-in-white-polka-dot', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/florence-lace-top-in-white-polka-dot', 'Florence Lace Top in White Polka Dot', '1290.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/7bb5ef3f-c1a8-4fc1-ace3-fa33d9d0a3d4.jpg?v=1777715104')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/belle-sculpting-top-in-polka-dot-new-04', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/1208dfaf-7766-46cb-8e05-c93538dd75433.jpg?v=1777713613" alt="Belle Sculpting Top in Polka Dot">
+            <div class="product-details">
+                <div class="product-name">Belle Sculpting Top in Polka Dot</div>
+                <div class="product-price">₹1090.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/belle-sculpting-top-in-polka-dot-new-04', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/belle-sculpting-top-in-polka-dot-new-04', 'Belle Sculpting Top in Polka Dot', '1090.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/1208dfaf-7766-46cb-8e05-c93538dd75433.jpg?v=1777713613')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/belle-sculpting-top-in-navy-new-04', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_4449.heic?v=1755431490" alt="Belle Sculpting Top in Navy">
+            <div class="product-details">
+                <div class="product-name">Belle Sculpting Top in Navy</div>
+                <div class="product-price">₹1090.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/belle-sculpting-top-in-navy-new-04', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/belle-sculpting-top-in-navy-new-04', 'Belle Sculpting Top in Navy', '1090.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_4449.heic?v=1755431490')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/belle-sculpting-top-in-crimson-new-04', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_41602.heic?v=1768036970" alt="Belle Sculpting Top in Crimson">
+            <div class="product-details">
+                <div class="product-name">Belle Sculpting Top in Crimson</div>
+                <div class="product-price">₹1090.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/belle-sculpting-top-in-crimson-new-04', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/belle-sculpting-top-in-crimson-new-04', 'Belle Sculpting Top in Crimson', '1090.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_41602.heic?v=1768036970')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/juliette-ruffle-top-in-navy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_5101_c19981d1-f030-4c12-839a-d9a02d302451.heic?v=1773917990" alt="Juliette Ruffle Top in Navy">
+            <div class="product-details">
+                <div class="product-name">Juliette Ruffle Top in Navy</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/juliette-ruffle-top-in-navy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/juliette-ruffle-top-in-navy', 'Juliette Ruffle Top in Navy', '1290.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_5101_c19981d1-f030-4c12-839a-d9a02d302451.heic?v=1773917990')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/juliette-ruffle-top-in-blush', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_4950_0a8b6449-50d5-4c96-8829-4dc495ea3789.heic?v=1773931630" alt="Juliette Ruffle Top in Blush">
+            <div class="product-details">
+                <div class="product-name">Juliette Ruffle Top in Blush</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/juliette-ruffle-top-in-blush', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/juliette-ruffle-top-in-blush', 'Juliette Ruffle Top in Blush', '1290.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_4950_0a8b6449-50d5-4c96-8829-4dc495ea3789.heic?v=1773931630')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/celine-polka-dot-satin-skirt-in-black-new-04', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG-1552.heic?v=1769005549" alt="Celine Polka Dot Satin Skirt in Black">
+            <div class="product-details">
+                <div class="product-name">Celine Polka Dot Satin Skirt in Black</div>
+                <div class="product-price">₹1590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/celine-polka-dot-satin-skirt-in-black-new-04', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/celine-polka-dot-satin-skirt-in-black-new-04', 'Celine Polka Dot Satin Skirt in Black', '1590.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG-1552.heic?v=1769005549')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/juliette-ruffle-top-in-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_4888_2_copy.jpg?v=1773822287" alt="Juliette Ruffle Top in Brown">
+            <div class="product-details">
+                <div class="product-name">Juliette Ruffle Top in Brown</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/juliette-ruffle-top-in-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/juliette-ruffle-top-in-brown', 'Juliette Ruffle Top in Brown', '1290.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_4888_2_copy.jpg?v=1773822287')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/juliette-ruffle-top-in-crimson', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_5176_054f10de-3cd4-4c6d-aa2d-aa95613b957a.heic?v=1773919679" alt="Juliette Ruffle Top in Crimson">
+            <div class="product-details">
+                <div class="product-name">Juliette Ruffle Top in Crimson</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/juliette-ruffle-top-in-crimson', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/juliette-ruffle-top-in-crimson', 'Juliette Ruffle Top in Crimson', '1290.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_5176_054f10de-3cd4-4c6d-aa2d-aa95613b957a.heic?v=1773919679')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/juliette-ruffle-top-in-burgundy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_4885_4b47f9f6-21b0-4443-b690-cde93ee71744.heic?v=1773918422" alt="Juliette Ruffle Top in Burgundy">
+            <div class="product-details">
+                <div class="product-name">Juliette Ruffle Top in Burgundy</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/juliette-ruffle-top-in-burgundy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/juliette-ruffle-top-in-burgundy', 'Juliette Ruffle Top in Burgundy', '1290.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_4885_4b47f9f6-21b0-4443-b690-cde93ee71744.heic?v=1773918422')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/lucy-top-in-blue-gingham', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0238.jpg?v=1777725020" alt="Lucy Top in Blue Gingham">
+            <div class="product-details">
+                <div class="product-name">Lucy Top in Blue Gingham</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/lucy-top-in-blue-gingham', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/lucy-top-in-blue-gingham', 'Lucy Top in Blue Gingham', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0238.jpg?v=1777725020')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/lucy-top-in-pink-gingham', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0137_ef55a868-593f-4c2f-84bb-e46f8c46312a.heic?v=1777725530" alt="Lucy Top in Pink Gingham">
+            <div class="product-details">
+                <div class="product-name">Lucy Top in Pink Gingham</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/lucy-top-in-pink-gingham', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/lucy-top-in-pink-gingham', 'Lucy Top in Pink Gingham', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0137_ef55a868-593f-4c2f-84bb-e46f8c46312a.heic?v=1777725530')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/lucy-top-in-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/WhatsApp_Image_2026-05-01_at_12.39.23_PM.jpg?v=1777698547" alt="Lucy Top in Butter Yellow">
+            <div class="product-details">
+                <div class="product-name">Lucy Top in Butter Yellow</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/lucy-top-in-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/lucy-top-in-yellow', 'Lucy Top in Butter Yellow', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/WhatsApp_Image_2026-05-01_at_12.39.23_PM.jpg?v=1777698547')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/lucy-top-in-red-gingham-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_9870_4dfd6846-6b34-4b5d-a715-528b2c278d96.heic?v=1777725434" alt="Lucy Top in Red Gingham">
+            <div class="product-details">
+                <div class="product-name">Lucy Top in Red Gingham</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/lucy-top-in-red-gingham-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/lucy-top-in-red-gingham-copy', 'Lucy Top in Red Gingham', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_9870_4dfd6846-6b34-4b5d-a715-528b2c278d96.heic?v=1777725434')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/florencia-corset-princess-dress-made-to-order-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7626_3e3e0edc-0345-471c-a8a7-1b3619008d62.heic?v=1775907353" alt="Florencia Corset Princess Dress">
+            <div class="product-details">
+                <div class="product-name">Florencia Corset Princess Dress</div>
+                <div class="product-price">₹2290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/florencia-corset-princess-dress-made-to-order-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/florencia-corset-princess-dress-made-to-order-copy', 'Florencia Corset Princess Dress', '2290.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7626_3e3e0edc-0345-471c-a8a7-1b3619008d62.heic?v=1775907353')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/daydream-belle-top-in-blush', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7821.heic?v=1775904396" alt="Daydream Belle Top in Blush">
+            <div class="product-details">
+                <div class="product-name">Daydream Belle Top in Blush</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/daydream-belle-top-in-blush', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/daydream-belle-top-in-blush', 'Daydream Belle Top in Blush', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7821.heic?v=1775904396')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/cherry-mini-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6264_e222dc0f-e409-4875-86de-12dd949d71f8.heic?v=1775903871" alt="Cherry Mini Skirt">
+            <div class="product-details">
+                <div class="product-name">Cherry Mini Skirt</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/cherry-mini-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/cherry-mini-skirt', 'Cherry Mini Skirt', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6264_e222dc0f-e409-4875-86de-12dd949d71f8.heic?v=1775903871')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/pixi-tie-up-top-in-cherry', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6215.heic?v=1775903781" alt="Cherry Peterpan Top">
+            <div class="product-details">
+                <div class="product-name">Cherry Peterpan Top</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/pixi-tie-up-top-in-cherry', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/pixi-tie-up-top-in-cherry', 'Cherry Peterpan Top', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6215.heic?v=1775903781')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/bella-eyelet-skort-in-polka-dot', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6578.heic?v=1775902935" alt="Bella Eyelet Skort in Polka Dot">
+            <div class="product-details">
+                <div class="product-name">Bella Eyelet Skort in Polka Dot</div>
+                <div class="product-price">₹699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/bella-eyelet-skort-in-polka-dot', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/bella-eyelet-skort-in-polka-dot', 'Bella Eyelet Skort in Polka Dot', '699.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6578.heic?v=1775902935')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/bella-eyelet-skort-in-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_lnwgy3lnwgy3lnwg.png?v=1775900233" alt="Bella Eyelet Skort in Black">
+            <div class="product-details">
+                <div class="product-name">Bella Eyelet Skort in Black</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/bella-eyelet-skort-in-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/bella-eyelet-skort-in-black', 'Bella Eyelet Skort in Black', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_lnwgy3lnwgy3lnwg.png?v=1775900233')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/bella-eyelet-skort', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_75aiz175aiz175ai.png?v=1776143862" alt="Bella Eyelet Skort in White">
+            <div class="product-details">
+                <div class="product-name">Bella Eyelet Skort in White</div>
+                <div class="product-price">₹990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/bella-eyelet-skort', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/bella-eyelet-skort', 'Bella Eyelet Skort in White', '990.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/Gemini_Generated_Image_75aiz175aiz175ai.png?v=1776143862')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/keyhole-top-in-burgundy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7315_f05c44ad-2509-469c-826a-31ff922c24bd.heic?v=1776107974" alt="Keyhole Top in Burgundy">
+            <div class="product-details">
+                <div class="product-name">Keyhole Top in Burgundy</div>
+                <div class="product-price">₹1090.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/keyhole-top-in-burgundy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/keyhole-top-in-burgundy', 'Keyhole Top in Burgundy', '1090.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7315_f05c44ad-2509-469c-826a-31ff922c24bd.heic?v=1776107974')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/gigi-linen-vest-in-butter-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7934_c6ace746-cb21-4180-9a8d-39877bf3ccfa.heic?v=1775902307" alt="Gigi Linen Vest in Butter Yellow">
+            <div class="product-details">
+                <div class="product-name">Gigi Linen Vest in Butter Yellow</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/gigi-linen-vest-in-butter-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/gigi-linen-vest-in-butter-yellow', 'Gigi Linen Vest in Butter Yellow', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_7934_c6ace746-cb21-4180-9a8d-39877bf3ccfa.heic?v=1775902307')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/gigi-linen-vest-in-pink', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_8722_876da6c3-7825-4fc1-b1cc-74ecaec2920a.heic?v=1775902014" alt="Gigi Linen Vest in Pink">
+            <div class="product-details">
+                <div class="product-name">Gigi Linen Vest in Pink</div>
+                <div class="product-price">₹890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/gigi-linen-vest-in-pink', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/gigi-linen-vest-in-pink', 'Gigi Linen Vest in Pink', '890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_8722_876da6c3-7825-4fc1-b1cc-74ecaec2920a.heic?v=1775902014')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/hailey-shirt-in-white-polka-dot', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_8650_fdaccc24-bbac-4551-b441-06b494f406f4.heic?v=1775929456" alt="Hailey Shirt in White Polka Dot">
+            <div class="product-details">
+                <div class="product-name">Hailey Shirt in White Polka Dot</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/hailey-shirt-in-white-polka-dot', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/hailey-shirt-in-white-polka-dot', 'Hailey Shirt in White Polka Dot', '1290.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_8650_fdaccc24-bbac-4551-b441-06b494f406f4.heic?v=1775929456')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/rosalie-corset-princess-dress-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6519_52e00f0e-b67a-46f5-bebd-f40652708dea.heic?v=1775900706" alt="Florence Lace Top">
+            <div class="product-details">
+                <div class="product-name">Florence Lace Top</div>
+                <div class="product-price">₹1090.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/rosalie-corset-princess-dress-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/rosalie-corset-princess-dress-copy', 'Florence Lace Top', '1090.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_6519_52e00f0e-b67a-46f5-bebd-f40652708dea.heic?v=1775900706')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/rosalie-corset-princess-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1018_2820fa48-31cf-4d6c-807a-696f4e30466b.heic?v=1770466198" alt="Rosalie Corset Princess Dress">
+            <div class="product-details">
+                <div class="product-name">Rosalie Corset Princess Dress</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/rosalie-corset-princess-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/rosalie-corset-princess-dress', 'Rosalie Corset Princess Dress', '1890.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1018_2820fa48-31cf-4d6c-807a-696f4e30466b.heic?v=1770466198')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/mini-skirt-in-yellow-floral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1345_e5c2ba64-0f9b-4094-9154-2143f01443e2.heic?v=1770460335" alt="Daisy Mini Skirt">
+            <div class="product-details">
+                <div class="product-name">Daisy Mini Skirt</div>
+                <div class="product-price">₹590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/mini-skirt-in-yellow-floral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/mini-skirt-in-yellow-floral', 'Daisy Mini Skirt', '590.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1345_e5c2ba64-0f9b-4094-9154-2143f01443e2.heic?v=1770460335')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/bambi-top-in-red-gingham-new-04', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1529_29f65f2d-f1c3-4246-a341-12c3454193d1.heic?v=1769883866" alt="Bambi Top in Red Gingham">
+            <div class="product-details">
+                <div class="product-name">Bambi Top in Red Gingham</div>
+                <div class="product-price">₹950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/bambi-top-in-red-gingham-new-04', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/bambi-top-in-red-gingham-new-04', 'Bambi Top in Red Gingham', '950.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_1529_29f65f2d-f1c3-4246-a341-12c3454193d1.heic?v=1769883866')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://rerunn.com/products/amour-night-suit-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0131_2260f23f-d473-49d4-9c5e-3c31f8f786ae.heic?v=1768651069" alt="Amour Night Suit Set">
+            <div class="product-details">
+                <div class="product-name">Amour Night Suit Set</div>
+                <div class="product-price">₹1390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://rerunn.com/products/amour-night-suit-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://rerunn.com/products/amour-night-suit-set', 'Amour Night Suit Set', '1390.00', 'https://cdn.shopify.com/s/files/1/0876/8906/8854/files/IMG_0131_2260f23f-d473-49d4-9c5e-3c31f8f786ae.heic?v=1768651069')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

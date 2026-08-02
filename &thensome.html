@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&thensome - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">&thensome</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-lvr-grl-corset-tank-off-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_0500_0010_IMG_0500-_3.jpg?v=1780920940" alt="040 LVR GRL Corset Tank Off-White">
+            <div class="product-details">
+                <div class="product-name">040 LVR GRL Corset Tank Off-White</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-lvr-grl-corset-tank-off-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-lvr-grl-corset-tank-off-white', '040 LVR GRL Corset Tank Off-White', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_0500_0010_IMG_0500-_3.jpg?v=1780920940')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-lvr-grl-studio-high-corset-tank-off-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_0500_0007_IMG_0508-_3.jpg?v=1780925700" alt="040 LVR GRL Studio High Corset Tank Off-White">
+            <div class="product-details">
+                <div class="product-name">040 LVR GRL Studio High Corset Tank Off-White</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-lvr-grl-studio-high-corset-tank-off-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-lvr-grl-studio-high-corset-tank-off-white', '040 LVR GRL Studio High Corset Tank Off-White', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_0500_0007_IMG_0508-_3.jpg?v=1780925700')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/175-frill-schiffli-cami', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9908-01-_5.jpg?v=1779719686" alt="175 Frill Schiffli Cami">
+            <div class="product-details">
+                <div class="product-name">175 Frill Schiffli Cami</div>
+                <div class="product-price">₹1500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/175-frill-schiffli-cami', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/175-frill-schiffli-cami', '175 Frill Schiffli Cami', '1500.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9908-01-_5.jpg?v=1779719686')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/174-bardot-schiffli-blouse', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9897-01-_5.jpg?v=1779719732" alt="174 Bardot Schiffli Blouse">
+            <div class="product-details">
+                <div class="product-name">174 Bardot Schiffli Blouse</div>
+                <div class="product-price">₹1500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/174-bardot-schiffli-blouse', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/174-bardot-schiffli-blouse', '174 Bardot Schiffli Blouse', '1500.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9897-01-_5.jpg?v=1779719732')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-corset-tank-off-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9930-2.4.jpg?v=1779569351" alt="040 Corset Tank Off-White">
+            <div class="product-details">
+                <div class="product-name">040 Corset Tank Off-White</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-corset-tank-off-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-corset-tank-off-white', '040 Corset Tank Off-White', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9930-2.4.jpg?v=1779569351')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-corset-tank-off-white-monochrome', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9930-2.3.jpg?v=1779568500" alt="040 Corset Tank Off-White Monochrome">
+            <div class="product-details">
+                <div class="product-name">040 Corset Tank Off-White Monochrome</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-corset-tank-off-white-monochrome', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-corset-tank-off-white-monochrome', '040 Corset Tank Off-White Monochrome', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9930-2.3.jpg?v=1779568500')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/169-closure-tank-deep-teal', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9841-01.jpg?v=1778536247" alt="169 Closure Tank Deep Teal">
+            <div class="product-details">
+                <div class="product-name">169 Closure Tank Deep Teal</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/169-closure-tank-deep-teal', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/169-closure-tank-deep-teal', '169 Closure Tank Deep Teal', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9841-01.jpg?v=1778536247')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/169-closure-tank-denim-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9829-01.jpg?v=1778535672" alt="169 Closure Tank Denim Blue">
+            <div class="product-details">
+                <div class="product-name">169 Closure Tank Denim Blue</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/169-closure-tank-denim-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/169-closure-tank-denim-blue', '169 Closure Tank Denim Blue', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9829-01.jpg?v=1778535672')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/169-closure-tank-noir', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9819-01.jpg?v=1778534477" alt="169 Closure Tank Noir">
+            <div class="product-details">
+                <div class="product-name">169 Closure Tank Noir</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/169-closure-tank-noir', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/169-closure-tank-noir', '169 Closure Tank Noir', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9819-01.jpg?v=1778534477')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/143-peplum-corset-cami-butter-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/front_143_butter_yellow.jpg?v=1773777973" alt="143 Peplum Corset Cami Butter Yellow">
+            <div class="product-details">
+                <div class="product-name">143 Peplum Corset Cami Butter Yellow</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/143-peplum-corset-cami-butter-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/143-peplum-corset-cami-butter-yellow', '143 Peplum Corset Cami Butter Yellow', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/front_143_butter_yellow.jpg?v=1773777973')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-corset-tank-butter-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/040_butter_yellow_front.jpg?v=1773777913" alt="040 Corset Tank Butter Yellow">
+            <div class="product-details">
+                <div class="product-name">040 Corset Tank Butter Yellow</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-corset-tank-butter-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-corset-tank-butter-yellow', '040 Corset Tank Butter Yellow', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/040_butter_yellow_front.jpg?v=1773777913')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/164-ruched-tank-butter-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9774-UQ-3_a61d9083-e3e4-4b51-a82a-16ac9a254369.jpg?v=1771541042" alt="164 Ruched Tank Butter Yellow">
+            <div class="product-details">
+                <div class="product-name">164 Ruched Tank Butter Yellow</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/164-ruched-tank-butter-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/164-ruched-tank-butter-yellow', '164 Ruched Tank Butter Yellow', '2100.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9774-UQ-3_a61d9083-e3e4-4b51-a82a-16ac9a254369.jpg?v=1771541042')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/164-ruched-tank-cathedral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9751-UQ-UQ-2.3.jpg?v=1771540813" alt="164 Ruched Tank Cathedral">
+            <div class="product-details">
+                <div class="product-name">164 Ruched Tank Cathedral</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/164-ruched-tank-cathedral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/164-ruched-tank-cathedral', '164 Ruched Tank Cathedral', '2100.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9751-UQ-UQ-2.3.jpg?v=1771540813')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/164-ruched-tank-deep-teal', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9742-UQ-2-UQ-2-UQ-2-UQ-2.1-_3-_12.1.jpg?v=1778737600" alt="164 Ruched Tank Deep Teal">
+            <div class="product-details">
+                <div class="product-name">164 Ruched Tank Deep Teal</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/164-ruched-tank-deep-teal', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/164-ruched-tank-deep-teal', '164 Ruched Tank Deep Teal', '2100.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9742-UQ-2-UQ-2-UQ-2-UQ-2.1-_3-_12.1.jpg?v=1778737600')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-corset-tank-denim-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9725-UQ-2.2_d40425e3-2245-4548-8b01-1f95a3179815.jpg?v=1768607643" alt="040 Corset Tank Denim Blue">
+            <div class="product-details">
+                <div class="product-name">040 Corset Tank Denim Blue</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-corset-tank-denim-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-corset-tank-denim-blue', '040 Corset Tank Denim Blue', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9725-UQ-2.2_d40425e3-2245-4548-8b01-1f95a3179815.jpg?v=1768607643')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-corset-tank-deep-teal', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9711-1-_3-_12.jpg?v=1778737646" alt="040 Corset Tank Deep Teal">
+            <div class="product-details">
+                <div class="product-name">040 Corset Tank Deep Teal</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-corset-tank-deep-teal', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-corset-tank-deep-teal', '040 Corset Tank Deep Teal', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9711-1-_3-_12.jpg?v=1778737646')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/155-patch-joggers-noir', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9719-1.jpg?v=1765457890" alt="155 Patch Joggers Noir">
+            <div class="product-details">
+                <div class="product-name">155 Patch Joggers Noir</div>
+                <div class="product-price">₹2960.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/155-patch-joggers-noir', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/155-patch-joggers-noir', '155 Patch Joggers Noir', '2960.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9719-1.jpg?v=1765457890')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/160-patch-hoodie-noir', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9678-1.jpg?v=1765457959" alt="160 Patch Hoodie Noir">
+            <div class="product-details">
+                <div class="product-name">160 Patch Hoodie Noir</div>
+                <div class="product-price">₹4450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/160-patch-hoodie-noir', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/160-patch-hoodie-noir', '160 Patch Hoodie Noir', '4450.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9678-1.jpg?v=1765457959')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/150-trace-jacket-sand', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9593-1_b08f52a0-b55d-4789-a7b4-46c5fc53b0d6.jpg?v=1761566315" alt="150 Trace Jacket Sand">
+            <div class="product-details">
+                <div class="product-name">150 Trace Jacket Sand</div>
+                <div class="product-price">₹2625.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/150-trace-jacket-sand', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/150-trace-jacket-sand', '150 Trace Jacket Sand', '2625.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9593-1_b08f52a0-b55d-4789-a7b4-46c5fc53b0d6.jpg?v=1761566315')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/150-trace-jacket-cathedral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9582-1.jpg?v=1761567927" alt="150 Trace Jacket Cathedral">
+            <div class="product-details">
+                <div class="product-name">150 Trace Jacket Cathedral</div>
+                <div class="product-price">₹2625.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/150-trace-jacket-cathedral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/150-trace-jacket-cathedral', '150 Trace Jacket Cathedral', '2625.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9582-1.jpg?v=1761567927')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/150-trace-jacket-noir', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9588.jpg?v=1761641228" alt="150 Trace Jacket Noir">
+            <div class="product-details">
+                <div class="product-name">150 Trace Jacket Noir</div>
+                <div class="product-price">₹2625.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/150-trace-jacket-noir', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/150-trace-jacket-noir', '150 Trace Jacket Noir', '2625.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9588.jpg?v=1761641228')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/143-peplum-corset-cami-sand', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9518-1.jpg?v=1761549773" alt="143 Peplum Corset Cami Sand">
+            <div class="product-details">
+                <div class="product-name">143 Peplum Corset Cami Sand</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/143-peplum-corset-cami-sand', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/143-peplum-corset-cami-sand', '143 Peplum Corset Cami Sand', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9518-1.jpg?v=1761549773')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/143-peplum-corset-cami-noir', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9530-1-SV.jpg?v=1761550397" alt="143 Peplum Corset Cami Noir">
+            <div class="product-details">
+                <div class="product-name">143 Peplum Corset Cami Noir</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/143-peplum-corset-cami-noir', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/143-peplum-corset-cami-noir', '143 Peplum Corset Cami Noir', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9530-1-SV.jpg?v=1761550397')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/143-peplum-corset-cami-cathedral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9556-2.jpg?v=1761550875" alt="143 Peplum Corset Cami Cathedral">
+            <div class="product-details">
+                <div class="product-name">143 Peplum Corset Cami Cathedral</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/143-peplum-corset-cami-cathedral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/143-peplum-corset-cami-cathedral', '143 Peplum Corset Cami Cathedral', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9556-2.jpg?v=1761550875')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/143-peplum-corset-cami-deep-teal', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9548-1-_3-_12.jpg?v=1778737721" alt="143 Peplum Corset Cami Deep Teal">
+            <div class="product-details">
+                <div class="product-name">143 Peplum Corset Cami Deep Teal</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/143-peplum-corset-cami-deep-teal', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/143-peplum-corset-cami-deep-teal', '143 Peplum Corset Cami Deep Teal', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9548-1-_3-_12.jpg?v=1778737721')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-studio-high-corset-tank-cathedral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9196-2.jpg?v=1756380888" alt="040 Studio High Corset Tank Cathedral">
+            <div class="product-details">
+                <div class="product-name">040 Studio High Corset Tank Cathedral</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-studio-high-corset-tank-cathedral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-studio-high-corset-tank-cathedral', '040 Studio High Corset Tank Cathedral', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9196-2.jpg?v=1756380888')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-studio-high-corset-tank-noir', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9164-1.jpg?v=1756318937" alt="040 Studio High Corset Tank Noir">
+            <div class="product-details">
+                <div class="product-name">040 Studio High Corset Tank Noir</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-studio-high-corset-tank-noir', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-studio-high-corset-tank-noir', '040 Studio High Corset Tank Noir', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9164-1.jpg?v=1756318937')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-corset-tank-sand', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9170-1.jpg?v=1755948747" alt="040 Corset Tank Sand">
+            <div class="product-details">
+                <div class="product-name">040 Corset Tank Sand</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-corset-tank-sand', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-corset-tank-sand', '040 Corset Tank Sand', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9170-1.jpg?v=1755948747')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/008-patch-studio-high-tank-cathedral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9188-1.jpg?v=1755863767" alt="008 Studio High Patch Tank Cathedral">
+            <div class="product-details">
+                <div class="product-name">008 Studio High Patch Tank Cathedral</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/008-patch-studio-high-tank-cathedral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/008-patch-studio-high-tank-cathedral', '008 Studio High Patch Tank Cathedral', '2100.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9188-1.jpg?v=1755863767')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/008-patch-studio-high-tank-noir', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9178-1_d279019c-d224-4a12-a1be-a7a90ce7ce5a.jpg?v=1755863449" alt="008 Studio High Patch Tank Noir">
+            <div class="product-details">
+                <div class="product-name">008 Studio High Patch Tank Noir</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/008-patch-studio-high-tank-noir', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/008-patch-studio-high-tank-noir', '008 Studio High Patch Tank Noir', '2100.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9178-1_d279019c-d224-4a12-a1be-a7a90ce7ce5a.jpg?v=1755863449')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/008-patch-tank-noir', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9046T_S-1.1.jpg?v=1754816679" alt="008 Patch Tank Noir">
+            <div class="product-details">
+                <div class="product-name">008 Patch Tank Noir</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/008-patch-tank-noir', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/008-patch-tank-noir', '008 Patch Tank Noir', '2100.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9046T_S-1.1.jpg?v=1754816679')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/119-broderie-peplum-cami', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/119_Front.jpg?v=1754819338" alt="119 Broderie Peplum Cami">
+            <div class="product-details">
+                <div class="product-name">119 Broderie Peplum Cami</div>
+                <div class="product-price">₹1500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/119-broderie-peplum-cami', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/119-broderie-peplum-cami', '119 Broderie Peplum Cami', '1500.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/119_Front.jpg?v=1754819338')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/116-dual-cinch-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/Cotton_Floral_Jacquard_Front.jpg?v=1754818849" alt="116 Dual-Cinch Shirt">
+            <div class="product-details">
+                <div class="product-name">116 Dual-Cinch Shirt</div>
+                <div class="product-price">₹1500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/116-dual-cinch-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/116-dual-cinch-shirt', '116 Dual-Cinch Shirt', '1500.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/Cotton_Floral_Jacquard_Front.jpg?v=1754818849')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/108-pleated-cami', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9083T_S-2T_S-1.jpg?v=1754817894" alt="108 Pleated Cami">
+            <div class="product-details">
+                <div class="product-name">108 Pleated Cami</div>
+                <div class="product-price">₹1500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/108-pleated-cami', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/108-pleated-cami', '108 Pleated Cami', '1500.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9083T_S-2T_S-1.jpg?v=1754817894')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/059-ruffle-tie-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9069T_S-1T_S-1.jpg?v=1754817314" alt="059 Ruffle-Tie Top">
+            <div class="product-details">
+                <div class="product-name">059 Ruffle-Tie Top</div>
+                <div class="product-price">₹1500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/059-ruffle-tie-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/059-ruffle-tie-top', '059 Ruffle-Tie Top', '1500.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9069T_S-1T_S-1.jpg?v=1754817314')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/103-hoodie-tank-magnet', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/103_magnet_back.jpg?v=1752923561" alt="103 Hoodie Tank Magnet">
+            <div class="product-details">
+                <div class="product-name">103 Hoodie Tank Magnet</div>
+                <div class="product-price">₹2295.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/103-hoodie-tank-magnet', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/103-hoodie-tank-magnet', '103 Hoodie Tank Magnet', '2295.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/103_magnet_back.jpg?v=1752923561')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/103-hoodie-tank-sand', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/B5581FC1-FDE4-4351-8AC4-F5D83F267D04.jpg?v=1752923838" alt="103 Hoodie Tank Sand">
+            <div class="product-details">
+                <div class="product-name">103 Hoodie Tank Sand</div>
+                <div class="product-price">₹2295.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/103-hoodie-tank-sand', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/103-hoodie-tank-sand', '103 Hoodie Tank Sand', '2295.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/B5581FC1-FDE4-4351-8AC4-F5D83F267D04.jpg?v=1752923838')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/090-sequin-cami-night', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8863-1_95754086-e179-4293-89d5-6bae7c2c2172.jpg?v=1751429103" alt="090 Sequin Cami Night">
+            <div class="product-details">
+                <div class="product-name">090 Sequin Cami Night</div>
+                <div class="product-price">₹3700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/090-sequin-cami-night', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/090-sequin-cami-night', '090 Sequin Cami Night', '3700.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8863-1_95754086-e179-4293-89d5-6bae7c2c2172.jpg?v=1751429103')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/090-sequin-cami-amber', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8859-A3_1013c10a-f91a-4ebc-bb24-af2a9b7dd73c.jpg?v=1751446730" alt="090 Sequin Cami Amber">
+            <div class="product-details">
+                <div class="product-name">090 Sequin Cami Amber</div>
+                <div class="product-price">₹3700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/090-sequin-cami-amber', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/090-sequin-cami-amber', '090 Sequin Cami Amber', '3700.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8859-A3_1013c10a-f91a-4ebc-bb24-af2a9b7dd73c.jpg?v=1751446730')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/090-sequin-cami-peach', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/Sequin_Camisole_Peach_Front.jpg?v=1752139535" alt="090 Sequin Cami Peach">
+            <div class="product-details">
+                <div class="product-name">090 Sequin Cami Peach</div>
+                <div class="product-price">₹3700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/090-sequin-cami-peach', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/090-sequin-cami-peach', '090 Sequin Cami Peach', '3700.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/Sequin_Camisole_Peach_Front.jpg?v=1752139535')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/091-halter-neck-corset-tank-mint', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8517-1A3.jpg?v=1750958646" alt="091 Halter Corset Mint">
+            <div class="product-details">
+                <div class="product-name">091 Halter Corset Mint</div>
+                <div class="product-price">₹1980.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/091-halter-neck-corset-tank-mint', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/091-halter-neck-corset-tank-mint', '091 Halter Corset Mint', '1980.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8517-1A3.jpg?v=1750958646')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/091-halter-neck-corset-tank', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8525-1A3.jpg?v=1750958734" alt="091 Halter Corset Haute Pink">
+            <div class="product-details">
+                <div class="product-name">091 Halter Corset Haute Pink</div>
+                <div class="product-price">₹1980.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/091-halter-neck-corset-tank', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/091-halter-neck-corset-tank', '091 Halter Corset Haute Pink', '1980.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8525-1A3.jpg?v=1750958734')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/091-halter-neck-corset-tank-amber', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8531A3.jpg?v=1750958556" alt="091 Halter Corset Amber">
+            <div class="product-details">
+                <div class="product-name">091 Halter Corset Amber</div>
+                <div class="product-price">₹1980.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/091-halter-neck-corset-tank-amber', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/091-halter-neck-corset-tank-amber', '091 Halter Corset Amber', '1980.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8531A3.jpg?v=1750958556')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/012-virgo-tank-in-lavender', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8353-1A3.jpg?v=1750958774" alt="012 Virgo Tank Lavender">
+            <div class="product-details">
+                <div class="product-name">012 Virgo Tank Lavender</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/012-virgo-tank-in-lavender', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/012-virgo-tank-in-lavender', '012 Virgo Tank Lavender', '2600.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8353-1A3.jpg?v=1750958774')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/012-leo-tank-in-lemon', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8567A3.jpg?v=1750958821" alt="012 Leo Tank Lemon">
+            <div class="product-details">
+                <div class="product-name">012 Leo Tank Lemon</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/012-leo-tank-in-lemon', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/012-leo-tank-in-lemon', '012 Leo Tank Lemon', '2600.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8567A3.jpg?v=1750958821')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/012-cancer-tank-in-sage', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8562A3.jpg?v=1750958857" alt="012 Cancer Tank Sage">
+            <div class="product-details">
+                <div class="product-name">012 Cancer Tank Sage</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/012-cancer-tank-in-sage', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/012-cancer-tank-in-sage', '012 Cancer Tank Sage', '2600.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8562A3.jpg?v=1750958857')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/012-gemini-tank-in-faded-jade', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8573A3.jpg?v=1750958924" alt="012 Gemini Tank Faded Jade">
+            <div class="product-details">
+                <div class="product-name">012 Gemini Tank Faded Jade</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/012-gemini-tank-in-faded-jade', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/012-gemini-tank-in-faded-jade', '012 Gemini Tank Faded Jade', '2600.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8573A3.jpg?v=1750958924')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/012-taurus-tank', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8584A3.jpg?v=1750959197" alt="012 Taurus Tank Sangria Sunset">
+            <div class="product-details">
+                <div class="product-name">012 Taurus Tank Sangria Sunset</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/012-taurus-tank', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/012-taurus-tank', '012 Taurus Tank Sangria Sunset', '2600.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8584A3.jpg?v=1750959197')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/064-skirt-in-sangria-sunset', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8615-1.1A3.jpg?v=1750959130" alt="064 Skirt Sangria Sunset">
+            <div class="product-details">
+                <div class="product-name">064 Skirt Sangria Sunset</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/064-skirt-in-sangria-sunset', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/064-skirt-in-sangria-sunset', '064 Skirt Sangria Sunset', '2100.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8615-1.1A3.jpg?v=1750959130')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/012-aries-tank-in-shell-pink', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8580A3.jpg?v=1750959530" alt="012 Aries Tank Shell Pink">
+            <div class="product-details">
+                <div class="product-name">012 Aries Tank Shell Pink</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/012-aries-tank-in-shell-pink', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/012-aries-tank-in-shell-pink', '012 Aries Tank Shell Pink', '2600.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8580A3.jpg?v=1750959530')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/064-skirt-in-shell-pink', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8619A3.jpg?v=1750959530" alt="064 Skirt Shell Pink">
+            <div class="product-details">
+                <div class="product-name">064 Skirt Shell Pink</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/064-skirt-in-shell-pink', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/064-skirt-in-shell-pink', '064 Skirt Shell Pink', '2100.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8619A3.jpg?v=1750959530')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/043-in-cathedral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8602-1.1A3.jpg?v=1750959246" alt="043 Maxi Skirt Cathedral">
+            <div class="product-details">
+                <div class="product-name">043 Maxi Skirt Cathedral</div>
+                <div class="product-price">₹3060.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/043-in-cathedral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/043-in-cathedral', '043 Maxi Skirt Cathedral', '3060.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8602-1.1A3.jpg?v=1750959246')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/043-in-denim-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8597.jpg?v=1750959314" alt="043 Maxi Skirt Denim Blue">
+            <div class="product-details">
+                <div class="product-name">043 Maxi Skirt Denim Blue</div>
+                <div class="product-price">₹3060.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/043-in-denim-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/043-in-denim-blue', '043 Maxi Skirt Denim Blue', '3060.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8597.jpg?v=1750959314')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/043-in-magnet', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8606A3.jpg?v=1750959392" alt="043 Maxi Skirt Magnet">
+            <div class="product-details">
+                <div class="product-name">043 Maxi Skirt Magnet</div>
+                <div class="product-price">₹3060.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/043-in-magnet', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/043-in-magnet', '043 Maxi Skirt Magnet', '3060.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8606A3.jpg?v=1750959392')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-in-noir', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8495A3.jpg?v=1750959617" alt="040 Corset Tank Noir">
+            <div class="product-details">
+                <div class="product-name">040 Corset Tank Noir</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-in-noir', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-in-noir', '040 Corset Tank Noir', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8495A3.jpg?v=1750959617')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/040-in-cathedral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8498.jpg?v=1750959659" alt="040 Corset Tank Cathedral">
+            <div class="product-details">
+                <div class="product-name">040 Corset Tank Cathedral</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/040-in-cathedral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/040-in-cathedral', '040 Corset Tank Cathedral', '2200.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8498.jpg?v=1750959659')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/041-in-offwhite', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8454A3.jpg?v=1750959713" alt="041 Cropped Tank Off-white">
+            <div class="product-details">
+                <div class="product-name">041 Cropped Tank Off-white</div>
+                <div class="product-price">₹1450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/041-in-offwhite', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/041-in-offwhite', '041 Cropped Tank Off-white', '1450.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8454A3.jpg?v=1750959713')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/041-in-magnet', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8448A3.jpg?v=1750959748" alt="041 Cropped Tank Magnet">
+            <div class="product-details">
+                <div class="product-name">041 Cropped Tank Magnet</div>
+                <div class="product-price">₹1450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/041-in-magnet', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/041-in-magnet', '041 Cropped Tank Magnet', '1450.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8448A3.jpg?v=1750959748')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/002-magnet', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8347-1.1.jpg?v=1750959784" alt="002 Rhinestone Tank Magnet">
+            <div class="product-details">
+                <div class="product-name">002 Rhinestone Tank Magnet</div>
+                <div class="product-price">₹2400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/002-magnet', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/002-magnet', '002 Rhinestone Tank Magnet', '2400.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8347-1.1.jpg?v=1750959784')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/035-cathedral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8500.jpg?v=1750959913" alt="035 Frill Tank Cathedral">
+            <div class="product-details">
+                <div class="product-name">035 Frill Tank Cathedral</div>
+                <div class="product-price">₹1710.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/035-cathedral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/035-cathedral', '035 Frill Tank Cathedral', '1710.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8500.jpg?v=1750959913')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/037-cathedral', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8493.jpg?v=1750959963" alt="037 Exposed Seam Tank Cathedral">
+            <div class="product-details">
+                <div class="product-name">037 Exposed Seam Tank Cathedral</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/037-cathedral', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/037-cathedral', '037 Exposed Seam Tank Cathedral', '1800.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8493.jpg?v=1750959963')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/039-magnet', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8475A3.jpg?v=1750960000" alt="039 Chain Tank Magnet">
+            <div class="product-details">
+                <div class="product-name">039 Chain Tank Magnet</div>
+                <div class="product-price">₹2160.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/039-magnet', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/039-magnet', '039 Chain Tank Magnet', '2160.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8475A3.jpg?v=1750960000')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/039', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8469-A3.jpg?v=1750960155" alt="039 Chain Tank Denim Blue">
+            <div class="product-details">
+                <div class="product-name">039 Chain Tank Denim Blue</div>
+                <div class="product-price">₹2160.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/039', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/039', '039 Chain Tank Denim Blue', '2160.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8469-A3.jpg?v=1750960155')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/037', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8481-A3.jpg?v=1750960190" alt="037 Exposed Seam Tank Denim Blue">
+            <div class="product-details">
+                <div class="product-name">037 Exposed Seam Tank Denim Blue</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/037', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/037', '037 Exposed Seam Tank Denim Blue', '1800.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8481-A3.jpg?v=1750960190')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/035', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8363-1.jpg?v=1750960224" alt="035 Frill Tank Denim Blue">
+            <div class="product-details">
+                <div class="product-name">035 Frill Tank Denim Blue</div>
+                <div class="product-price">₹1710.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/035', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/035', '035 Frill Tank Denim Blue', '1710.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8363-1.jpg?v=1750960224')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/008', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8503-A3-1.jpg?v=1750960266" alt="008 Patch Tank Cathedral">
+            <div class="product-details">
+                <div class="product-name">008 Patch Tank Cathedral</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/008', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/008', '008 Patch Tank Cathedral', '2100.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8503-A3-1.jpg?v=1750960266')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://andthensome.in/products/001', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8508-A3.jpg?v=1750960310" alt="002 Rhinestone Tank Denim Blue">
+            <div class="product-details">
+                <div class="product-name">002 Rhinestone Tank Denim Blue</div>
+                <div class="product-price">₹2400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://andthensome.in/products/001', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://andthensome.in/products/001', '002 Rhinestone Tank Denim Blue', '2400.00', 'https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_8508-A3.jpg?v=1750960310')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core cotton - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Core cotton</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/positano-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/E4CD6C63-F05D-4FA2-8DA8-D83CB347F45A.jpg?v=1784914436" alt="POSITANO DRESS">
+            <div class="product-details">
+                <div class="product-name">POSITANO DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/positano-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/positano-dress', 'POSITANO DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/E4CD6C63-F05D-4FA2-8DA8-D83CB347F45A.jpg?v=1784914436')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/sage-baloon-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/52EB0F2A-931A-4175-939E-5C189A131058.jpg?v=1784615433" alt="SAGE BALOON DRESS">
+            <div class="product-details">
+                <div class="product-name">SAGE BALOON DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/sage-baloon-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/sage-baloon-dress', 'SAGE BALOON DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/52EB0F2A-931A-4175-939E-5C189A131058.jpg?v=1784615433')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/red-stripe-smoking-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/E5C35733-0B62-4392-B3F2-1FBBBCE84204.jpg?v=1784615229" alt="RED STRIPE SMOKING DRESS">
+            <div class="product-details">
+                <div class="product-name">RED STRIPE SMOKING DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/red-stripe-smoking-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/red-stripe-smoking-dress', 'RED STRIPE SMOKING DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/E5C35733-0B62-4392-B3F2-1FBBBCE84204.jpg?v=1784615229')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/fluid-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/F73B69F4-6C3E-49F5-AAF8-2CBF394B458D.jpg?v=1784615118" alt="FLUID DRESS">
+            <div class="product-details">
+                <div class="product-name">FLUID DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/fluid-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/fluid-dress', 'FLUID DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/F73B69F4-6C3E-49F5-AAF8-2CBF394B458D.jpg?v=1784615118')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/green-gingham-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/9790613E-2EEB-490F-AFA0-B6D5320E0300.jpg?v=1784615046" alt="GREEN GINGHAM DRESS">
+            <div class="product-details">
+                <div class="product-name">GREEN GINGHAM DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/green-gingham-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/green-gingham-dress', 'GREEN GINGHAM DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/9790613E-2EEB-490F-AFA0-B6D5320E0300.jpg?v=1784615046')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/sailor-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/AD050871-C655-486E-BF48-4611114F2154.jpg?v=1784614931" alt="SAILOR DRESS">
+            <div class="product-details">
+                <div class="product-name">SAILOR DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/sailor-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/sailor-dress', 'SAILOR DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/AD050871-C655-486E-BF48-4611114F2154.jpg?v=1784614931')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/blue-gingham-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/9A027F59-8E93-4C99-B5D0-CC1590072AFD.jpg?v=1784149177" alt="BLUE GINGHAM DRESS">
+            <div class="product-details">
+                <div class="product-name">BLUE GINGHAM DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/blue-gingham-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/blue-gingham-dress', 'BLUE GINGHAM DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/9A027F59-8E93-4C99-B5D0-CC1590072AFD.jpg?v=1784149177')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/sage-green-top-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/57EF2841-1CF1-482F-9A1C-4BF6C2C1D6D0.png?v=1784057292" alt="SAGE GREEN TOP CO-ORD">
+            <div class="product-details">
+                <div class="product-name">SAGE GREEN TOP CO-ORD</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/sage-green-top-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/sage-green-top-co-ord', 'SAGE GREEN TOP CO-ORD', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/57EF2841-1CF1-482F-9A1C-4BF6C2C1D6D0.png?v=1784057292')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/sage-green-skirt-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/3990C859-5971-4939-907F-A50E11F5EA34.png?v=1784057139" alt="SAGE GREEN SKIRT CO-ORD">
+            <div class="product-details">
+                <div class="product-name">SAGE GREEN SKIRT CO-ORD</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/sage-green-skirt-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/sage-green-skirt-co-ord', 'SAGE GREEN SKIRT CO-ORD', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/3990C859-5971-4939-907F-A50E11F5EA34.png?v=1784057139')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/denim-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/360FCBB1-4B7A-44C1-9096-88A931293549.jpg?v=1783941526" alt="DENIM DRESS">
+            <div class="product-details">
+                <div class="product-name">DENIM DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/denim-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/denim-dress', 'DENIM DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/360FCBB1-4B7A-44C1-9096-88A931293549.jpg?v=1783941526')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/abstract-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/4FC1AFD0-149B-450D-AAA4-82997D309197.jpg?v=1783711022" alt="ABSTRACT DRESS">
+            <div class="product-details">
+                <div class="product-name">ABSTRACT DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/abstract-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/abstract-dress', 'ABSTRACT DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/4FC1AFD0-149B-450D-AAA4-82997D309197.jpg?v=1783711022')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/labubu', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/478098D8-94CF-4226-AF99-B47618B9FBE6.jpg?v=1782285522" alt="LABUBU">
+            <div class="product-details">
+                <div class="product-name">LABUBU</div>
+                <div class="product-price">₹0.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/labubu', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/labubu', 'LABUBU', '0.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/478098D8-94CF-4226-AF99-B47618B9FBE6.jpg?v=1782285522')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/new-york-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/49D34685-87AA-47DA-9E9F-1FB78C64351B.png?v=1782245256" alt="NEW YORK CO-ORD">
+            <div class="product-details">
+                <div class="product-name">NEW YORK CO-ORD</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/new-york-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/new-york-co-ord', 'NEW YORK CO-ORD', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/49D34685-87AA-47DA-9E9F-1FB78C64351B.png?v=1782245256')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/arizona-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/4B7F65F6-9DC8-4663-AE1B-C6B2EB03BBD2.png?v=1782245191" alt="ARIZONA CO - ORD">
+            <div class="product-details">
+                <div class="product-name">ARIZONA CO - ORD</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/arizona-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/arizona-dress', 'ARIZONA CO - ORD', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/4B7F65F6-9DC8-4663-AE1B-C6B2EB03BBD2.png?v=1782245191')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/mallorca-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/EE8C0DA5-126B-4174-829E-D09249122A86.png?v=1782245140" alt="MALLORCA DRESS">
+            <div class="product-details">
+                <div class="product-name">MALLORCA DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/mallorca-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/mallorca-dress', 'MALLORCA DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/EE8C0DA5-126B-4174-829E-D09249122A86.png?v=1782245140')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/seville-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/91B14F59-3F27-479D-976D-AB8CE615A6B2.png?v=1782245105" alt="SEVILLE DRESS">
+            <div class="product-details">
+                <div class="product-name">SEVILLE DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/seville-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/seville-dress', 'SEVILLE DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/91B14F59-3F27-479D-976D-AB8CE615A6B2.png?v=1782245105')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/doha-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/DEAC9297-FC9B-4DF3-84DF-E90A78AF81CE.png?v=1782245070" alt="DOHA DRESS">
+            <div class="product-details">
+                <div class="product-name">DOHA DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/doha-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/doha-dress', 'DOHA DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/DEAC9297-FC9B-4DF3-84DF-E90A78AF81CE.png?v=1782245070')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/cannes-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/63F9CDD6-FFA3-4B73-9F7F-B9EF2E419150.png?v=1782127702" alt="CANNES DRESS">
+            <div class="product-details">
+                <div class="product-name">CANNES DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/cannes-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/cannes-dress', 'CANNES DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/63F9CDD6-FFA3-4B73-9F7F-B9EF2E419150.png?v=1782127702')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/como-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/30928A12-A130-4A09-A764-DF3E49E0AB5A.png?v=1782127652" alt="COMO DRESS">
+            <div class="product-details">
+                <div class="product-name">COMO DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/como-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/como-dress', 'COMO DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/30928A12-A130-4A09-A764-DF3E49E0AB5A.png?v=1782127652')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/ghana-dress-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/0B515A64-B581-43BC-B17B-6F2AAD1290F1.png?v=1782127608" alt="GHANA DRESS">
+            <div class="product-details">
+                <div class="product-name">GHANA DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/ghana-dress-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/ghana-dress-1', 'GHANA DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/0B515A64-B581-43BC-B17B-6F2AAD1290F1.png?v=1782127608')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/aman-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/ED23EA4C-7560-44CB-986F-2BF3E3D3FD1F.jpg?v=1777005373" alt="AMAN DRESS">
+            <div class="product-details">
+                <div class="product-name">AMAN DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/aman-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/aman-dress', 'AMAN DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/ED23EA4C-7560-44CB-986F-2BF3E3D3FD1F.jpg?v=1777005373')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/hawai-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/AC914E11-3F76-48EA-BE64-AD30B77AEFD2.png?v=1776923004" alt="HAWAI DRESS">
+            <div class="product-details">
+                <div class="product-name">HAWAI DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/hawai-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/hawai-dress', 'HAWAI DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/AC914E11-3F76-48EA-BE64-AD30B77AEFD2.png?v=1776923004')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/petra-shirt-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/DBB7BB64-977D-4CB4-83E3-5893553752FD.jpg?v=1776832962" alt="PETRA SHIRT DRESS">
+            <div class="product-details">
+                <div class="product-name">PETRA SHIRT DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/petra-shirt-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/petra-shirt-dress', 'PETRA SHIRT DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/DBB7BB64-977D-4CB4-83E3-5893553752FD.jpg?v=1776832962')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/beach-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/59DF37C9-C35E-4334-B27A-F8398F020DEA.png?v=1775999273" alt="BEACH DRESS">
+            <div class="product-details">
+                <div class="product-name">BEACH DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/beach-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/beach-dress', 'BEACH DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/59DF37C9-C35E-4334-B27A-F8398F020DEA.png?v=1775999273')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/donna-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/131DB23C-BD7E-49F6-8383-9758043A9A89.jpg?v=1775067991" alt="DONNA DRESS">
+            <div class="product-details">
+                <div class="product-name">DONNA DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/donna-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/donna-dress', 'DONNA DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/131DB23C-BD7E-49F6-8383-9758043A9A89.jpg?v=1775067991')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/wildflower-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/2CF92150-9E7A-45F4-AE21-0DC5337A2642.jpg?v=1775067926" alt="WILDFLOWER DRESS">
+            <div class="product-details">
+                <div class="product-name">WILDFLOWER DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/wildflower-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/wildflower-dress', 'WILDFLOWER DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/2CF92150-9E7A-45F4-AE21-0DC5337A2642.jpg?v=1775067926')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/birdie-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/7ADC7DE6-F2E5-40E8-BF63-2A6FC83B9DDD.jpg?v=1774980483" alt="BIRDIE DRESS">
+            <div class="product-details">
+                <div class="product-name">BIRDIE DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/birdie-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/birdie-dress', 'BIRDIE DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/7ADC7DE6-F2E5-40E8-BF63-2A6FC83B9DDD.jpg?v=1774980483')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/caneri-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/DAEB86AD-4C99-4C93-8679-2FF4FEB9B172.jpg?v=1774944265" alt="CANERI DRESS">
+            <div class="product-details">
+                <div class="product-name">CANERI DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/caneri-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/caneri-dress', 'CANERI DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/DAEB86AD-4C99-4C93-8679-2FF4FEB9B172.jpg?v=1774944265')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/ciao-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/BAE5D02B-3033-412F-B984-334BE72B1BE8.png?v=1774944227" alt="CIAO DRESS">
+            <div class="product-details">
+                <div class="product-name">CIAO DRESS</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/ciao-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/ciao-dress', 'CIAO DRESS', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/BAE5D02B-3033-412F-B984-334BE72B1BE8.png?v=1774944227')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.corecotton.in/products/multi-stripe-coord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0616/3224/9925/files/F416702E-2903-434D-8735-193367138AC4.jpg?v=1774874584" alt="MULTI STRIPE COORD">
+            <div class="product-details">
+                <div class="product-name">MULTI STRIPE COORD</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.corecotton.in/products/multi-stripe-coord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.corecotton.in/products/multi-stripe-coord', 'MULTI STRIPE COORD', '2490.00', 'https://cdn.shopify.com/s/files/1/0616/3224/9925/files/F416702E-2903-434D-8735-193367138AC4.jpg?v=1774874584')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

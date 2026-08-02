@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms.maven - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Ms.maven</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/oorja-denim-maxi-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/870B8357-2BD5-46EF-B7FD-6F39F333605C.jpg?v=1774943455" alt="Oorja Denim Maxi Dress">
+            <div class="product-details">
+                <div class="product-name">Oorja Denim Maxi Dress</div>
+                <div class="product-price">₹5490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/oorja-denim-maxi-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/oorja-denim-maxi-dress', 'Oorja Denim Maxi Dress', '5490.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/870B8357-2BD5-46EF-B7FD-6F39F333605C.jpg?v=1774943455')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dariya-block-denim-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/1E3F8E78-0D32-467A-92EA-1E94514962C7.jpg?v=1774957632" alt="Dariya Block Denim Skirt">
+            <div class="product-details">
+                <div class="product-name">Dariya Block Denim Skirt</div>
+                <div class="product-price">₹3990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dariya-block-denim-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dariya-block-denim-skirt', 'Dariya Block Denim Skirt', '3990.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/1E3F8E78-0D32-467A-92EA-1E94514962C7.jpg?v=1774957632')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dori-shacket-denim-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/625EB066-D776-4EEA-A933-92017023A781.jpg?v=1774943686" alt="Dori Shacket Denim  Set">
+            <div class="product-details">
+                <div class="product-name">Dori Shacket Denim  Set</div>
+                <div class="product-price">₹7890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dori-shacket-denim-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dori-shacket-denim-set-copy', 'Dori Shacket Denim  Set', '7890.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/625EB066-D776-4EEA-A933-92017023A781.jpg?v=1774943686')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dori-shacket-denim-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/AC3CDE5D-56B8-4A2D-B8A7-82339926C646.jpg?v=1774942291" alt="Dori Shacket Denim  Set">
+            <div class="product-details">
+                <div class="product-name">Dori Shacket Denim  Set</div>
+                <div class="product-price">₹7890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dori-shacket-denim-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dori-shacket-denim-set', 'Dori Shacket Denim  Set', '7890.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/AC3CDE5D-56B8-4A2D-B8A7-82339926C646.jpg?v=1774942291')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/leher-wide-leg-denim-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/43A8A6B9-BE47-44AF-BCAE-76D267930ACD.jpg?v=1774942291" alt="Leher Wide-Leg Denim Pants">
+            <div class="product-details">
+                <div class="product-name">Leher Wide-Leg Denim Pants</div>
+                <div class="product-price">₹3590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/leher-wide-leg-denim-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/leher-wide-leg-denim-pants', 'Leher Wide-Leg Denim Pants', '3590.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/43A8A6B9-BE47-44AF-BCAE-76D267930ACD.jpg?v=1774942291')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/matsya-wide-leg-denim-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/2404EA96-618A-4D54-A67D-0078AB5D907B.jpg?v=1774941402" alt="Matsya Wide-Leg Denim Pants">
+            <div class="product-details">
+                <div class="product-name">Matsya Wide-Leg Denim Pants</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/matsya-wide-leg-denim-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/matsya-wide-leg-denim-pants', 'Matsya Wide-Leg Denim Pants', '3490.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/2404EA96-618A-4D54-A67D-0078AB5D907B.jpg?v=1774941402')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/matsya-block-denim-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/12429370-E87C-4BEE-B823-732DD3D4C16F.jpg?v=1774942291" alt="Matsya Block Denim Top">
+            <div class="product-details">
+                <div class="product-name">Matsya Block Denim Top</div>
+                <div class="product-price">₹3290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/matsya-block-denim-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/matsya-block-denim-top', 'Matsya Block Denim Top', '3290.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/12429370-E87C-4BEE-B823-732DD3D4C16F.jpg?v=1774942291')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dhoop-corset-denim-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/5FCCB47B-9637-4EAA-B306-DABCBDA03E26.jpg?v=1774957632" alt="Dhoop corset denim top">
+            <div class="product-details">
+                <div class="product-name">Dhoop corset denim top</div>
+                <div class="product-price">₹3290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dhoop-corset-denim-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dhoop-corset-denim-top', 'Dhoop corset denim top', '3290.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/5FCCB47B-9637-4EAA-B306-DABCBDA03E26.jpg?v=1774957632')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/leher-peplum-denim-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/1AF46F4B-A5FC-474B-A4A7-F719447FD78E.jpg?v=1774942291" alt="Leher Peplum Denim Top">
+            <div class="product-details">
+                <div class="product-name">Leher Peplum Denim Top</div>
+                <div class="product-price">₹2990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/leher-peplum-denim-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/leher-peplum-denim-top', 'Leher Peplum Denim Top', '2990.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/1AF46F4B-A5FC-474B-A4A7-F719447FD78E.jpg?v=1774942291')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dhoop-dhariya-skirt-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/21F29128-7212-42C2-9FA4-0DB522298903.jpg?v=1774957391" alt="Dhoop Dhariya Skirt Set">
+            <div class="product-details">
+                <div class="product-name">Dhoop Dhariya Skirt Set</div>
+                <div class="product-price">₹7490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dhoop-dhariya-skirt-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dhoop-dhariya-skirt-set', 'Dhoop Dhariya Skirt Set', '7490.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/21F29128-7212-42C2-9FA4-0DB522298903.jpg?v=1774957391')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/matsya-block-print-denim-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/F44D72A2-A691-4A6D-8EA6-211C215830A2.jpg?v=1774941403" alt="Matsya Block Print Denim Set">
+            <div class="product-details">
+                <div class="product-name">Matsya Block Print Denim Set</div>
+                <div class="product-price">₹6490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/matsya-block-print-denim-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/matsya-block-print-denim-set', 'Matsya Block Print Denim Set', '6490.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/F44D72A2-A691-4A6D-8EA6-211C215830A2.jpg?v=1774941403')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/products-hand-block-print-denim-shirt-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/F08F84B6-0423-4C3D-B36D-B55D5708394A.jpg?v=1774942291" alt="Surya Denim Shirt Dress">
+            <div class="product-details">
+                <div class="product-name">Surya Denim Shirt Dress</div>
+                <div class="product-price">₹5499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/products-hand-block-print-denim-shirt-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/products-hand-block-print-denim-shirt-dress', 'Surya Denim Shirt Dress', '5499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/F08F84B6-0423-4C3D-B36D-B55D5708394A.jpg?v=1774942291')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/untitled-feb26_18-17', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/550674CF-A56E-48CB-A0C4-87C1901B0323.jpg?v=1709285197" alt="Rachel Top S-M-L">
+            <div class="product-details">
+                <div class="product-name">Rachel Top S-M-L</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/untitled-feb26_18-17', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/untitled-feb26_18-17', 'Rachel Top S-M-L', '1199.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/550674CF-A56E-48CB-A0C4-87C1901B0323.jpg?v=1709285197')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/am-to-pm-set-blue-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/40B26167-87C7-46A2-9BB9-D52A3D033B32.jpg?v=1709279722" alt="AM to PM SET (Blue)">
+            <div class="product-details">
+                <div class="product-name">AM to PM SET (Blue)</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/am-to-pm-set-blue-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/am-to-pm-set-blue-1', 'AM to PM SET (Blue)', '1799.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/40B26167-87C7-46A2-9BB9-D52A3D033B32.jpg?v=1709279722')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/barfi-shirt-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/38FFC4B9-D42F-4B7E-AF76-4BA91ED13926.jpg?v=1724837170" alt="Barfi Shirt S-M-L-XL">
+            <div class="product-details">
+                <div class="product-name">Barfi Shirt S-M-L-XL</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/barfi-shirt-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/barfi-shirt-1', 'Barfi Shirt S-M-L-XL', '1199.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/38FFC4B9-D42F-4B7E-AF76-4BA91ED13926.jpg?v=1724837170')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/cloe-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5487.heic?v=1769432264" alt="CLOE SHIRT">
+            <div class="product-details">
+                <div class="product-name">CLOE SHIRT</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/cloe-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/cloe-shirt', 'CLOE SHIRT', '2999.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5487.heic?v=1769432264')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/ayka-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/F7ECA88B-D475-41AC-A1DA-902D5E380AB8.jpg?v=1769433759" alt="AYKA DRESS">
+            <div class="product-details">
+                <div class="product-name">AYKA DRESS</div>
+                <div class="product-price">₹5899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/ayka-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/ayka-dress', 'AYKA DRESS', '5899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/F7ECA88B-D475-41AC-A1DA-902D5E380AB8.jpg?v=1769433759')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/cloe-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5489.heic?v=1769432264" alt="CLOE SET">
+            <div class="product-details">
+                <div class="product-name">CLOE SET</div>
+                <div class="product-price">₹6599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/cloe-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/cloe-set', 'CLOE SET', '6599.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5489.heic?v=1769432264')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/amy-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5490.heic?v=1769433942" alt="AMY DRESS">
+            <div class="product-details">
+                <div class="product-name">AMY DRESS</div>
+                <div class="product-price">₹5499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/amy-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/amy-dress', 'AMY DRESS', '5499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5490.heic?v=1769433942')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/copy-midnight-oasis-embroidered-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5444.jpg?v=1767960911" alt="CHANDNI MINI DRESS">
+            <div class="product-details">
+                <div class="product-name">CHANDNI MINI DRESS</div>
+                <div class="product-price">₹6499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/copy-midnight-oasis-embroidered-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/copy-midnight-oasis-embroidered-dress', 'CHANDNI MINI DRESS', '6499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5444.jpg?v=1767960911')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/emily-polka-dress-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5280.heic?v=1763551144" alt="EMILY POLKA DRESS">
+            <div class="product-details">
+                <div class="product-name">EMILY POLKA DRESS</div>
+                <div class="product-price">₹4499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/emily-polka-dress-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/emily-polka-dress-copy', 'EMILY POLKA DRESS', '4499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5280.heic?v=1763551144')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/blair-polka-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5278.heic?v=1763621430" alt="BLAIR POLKA TOP">
+            <div class="product-details">
+                <div class="product-name">BLAIR POLKA TOP</div>
+                <div class="product-price">₹2399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/blair-polka-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/blair-polka-top', 'BLAIR POLKA TOP', '2399.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5278.heic?v=1763621430')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/blair-polka-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5277.heic?v=1763621430" alt="BLAIR POLKA SET">
+            <div class="product-details">
+                <div class="product-name">BLAIR POLKA SET</div>
+                <div class="product-price">₹4449.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/blair-polka-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/blair-polka-set', 'BLAIR POLKA SET', '4449.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5277.heic?v=1763621430')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/midnight-oasis-embroidered-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5274.heic?v=1763550803" alt="CHANDNI MINI DRESS">
+            <div class="product-details">
+                <div class="product-name">CHANDNI MINI DRESS</div>
+                <div class="product-price">₹6499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/midnight-oasis-embroidered-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/midnight-oasis-embroidered-dress', 'CHANDNI MINI DRESS', '6499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5274.heic?v=1763550803')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/doobara-reversible-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/3817E1A7-9DD1-4C6E-99B7-E985CF6E0945.jpg?v=1763550663" alt="DOOBARA REVERSIBLE SET">
+            <div class="product-details">
+                <div class="product-name">DOOBARA REVERSIBLE SET</div>
+                <div class="product-price">₹5999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/doobara-reversible-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/doobara-reversible-set-copy', 'DOOBARA REVERSIBLE SET', '5999.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/3817E1A7-9DD1-4C6E-99B7-E985CF6E0945.jpg?v=1763550663')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/doobara-reversible-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/0E7006C9-DE68-43C7-94FA-ADD1DC814939.jpg?v=1763550240" alt="DOOBARA REVERSIBLE SET">
+            <div class="product-details">
+                <div class="product-name">DOOBARA REVERSIBLE SET</div>
+                <div class="product-price">₹5999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/doobara-reversible-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/doobara-reversible-set', 'DOOBARA REVERSIBLE SET', '5999.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/0E7006C9-DE68-43C7-94FA-ADD1DC814939.jpg?v=1763550240')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/bejewelled-corset', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7EB9DB90-74DC-40BA-B889-B19B5ED14C60.jpg?v=1763550095" alt="BEJEWELLED CORSET">
+            <div class="product-details">
+                <div class="product-name">BEJEWELLED CORSET</div>
+                <div class="product-price">₹14999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/bejewelled-corset', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/bejewelled-corset', 'BEJEWELLED CORSET', '14999.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7EB9DB90-74DC-40BA-B889-B19B5ED14C60.jpg?v=1763550095')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/tierra-polka-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5247.heic?v=1763549706" alt="TIERRA POLKA DRESS">
+            <div class="product-details">
+                <div class="product-name">TIERRA POLKA DRESS</div>
+                <div class="product-price">₹5499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/tierra-polka-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/tierra-polka-dress', 'TIERRA POLKA DRESS', '5499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/IMG-5247.heic?v=1763549706')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/emily-polka-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/45178D10-659D-4ADD-9EF5-D4D9BCECF994.jpg?v=1763621407" alt="EMILY POLKA DRESS">
+            <div class="product-details">
+                <div class="product-name">EMILY POLKA DRESS</div>
+                <div class="product-price">₹4499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/emily-polka-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/emily-polka-dress', 'EMILY POLKA DRESS', '4499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/45178D10-659D-4ADD-9EF5-D4D9BCECF994.jpg?v=1763621407')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/isha-denim-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/0BC3F300-7003-4F18-90CC-4AD8AFB9B25D.jpg?v=1754999573" alt="Isha Denim Set">
+            <div class="product-details">
+                <div class="product-name">Isha Denim Set</div>
+                <div class="product-price">₹4499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/isha-denim-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/isha-denim-set', 'Isha Denim Set', '4499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/0BC3F300-7003-4F18-90CC-4AD8AFB9B25D.jpg?v=1754999573')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/radhika-corset-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/3CD7808F-5433-4D25-A627-1B970C82E95E.jpg?v=1754995720" alt="Radhika Corset Top">
+            <div class="product-details">
+                <div class="product-name">Radhika Corset Top</div>
+                <div class="product-price">₹2299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/radhika-corset-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/radhika-corset-top', 'Radhika Corset Top', '2299.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/3CD7808F-5433-4D25-A627-1B970C82E95E.jpg?v=1754995720')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/isha-flare-denim-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/0BC3F300-7003-4F18-90CC-4AD8AFB9B25D.jpg?v=1754999573" alt="Isha Flare Denim Pants">
+            <div class="product-details">
+                <div class="product-name">Isha Flare Denim Pants</div>
+                <div class="product-price">₹2799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/isha-flare-denim-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/isha-flare-denim-pants', 'Isha Flare Denim Pants', '2799.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/0BC3F300-7003-4F18-90CC-4AD8AFB9B25D.jpg?v=1754999573')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/isha-denim-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/6466DF49-289C-4C37-869C-953D24837E1F.jpg?v=1754995687" alt="Isha Denim Shirt">
+            <div class="product-details">
+                <div class="product-name">Isha Denim Shirt</div>
+                <div class="product-price">₹2599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/isha-denim-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/isha-denim-shirt', 'Isha Denim Shirt', '2599.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/6466DF49-289C-4C37-869C-953D24837E1F.jpg?v=1754995687')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/masoom-black-linen-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7F01F5E9-23D9-419A-BA9C-085AE4679919.jpg?v=1754995719" alt="Masoom Black Linen Shirt - S">
+            <div class="product-details">
+                <div class="product-name">Masoom Black Linen Shirt - S</div>
+                <div class="product-price">₹2399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/masoom-black-linen-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/masoom-black-linen-shirt', 'Masoom Black Linen Shirt - S', '2399.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7F01F5E9-23D9-419A-BA9C-085AE4679919.jpg?v=1754995719')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/matcha-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/609DEAC7-92CA-448A-BFA7-CEAC987CE805.jpg?v=1750919961" alt="MATCHA GINGHAM TOP">
+            <div class="product-details">
+                <div class="product-name">MATCHA GINGHAM TOP</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/matcha-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/matcha-top', 'MATCHA GINGHAM TOP', '2199.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/609DEAC7-92CA-448A-BFA7-CEAC987CE805.jpg?v=1750919961')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/copy-dual-denim-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/FD28D66E-20EC-4882-AD2B-B47CACB352BB.jpg?v=1749893613" alt="DUAL DENIM DRESS">
+            <div class="product-details">
+                <div class="product-name">DUAL DENIM DRESS</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/copy-dual-denim-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/copy-dual-denim-dress', 'DUAL DENIM DRESS', '3499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/FD28D66E-20EC-4882-AD2B-B47CACB352BB.jpg?v=1749893613')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/shella-tank-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/344D748A-42F4-4F9C-BB2A-A969F741F3DF.jpg?v=1749065300" alt="SHELLA TANK TOP">
+            <div class="product-details">
+                <div class="product-name">SHELLA TANK TOP</div>
+                <div class="product-price">₹1890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/shella-tank-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/shella-tank-top', 'SHELLA TANK TOP', '1890.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/344D748A-42F4-4F9C-BB2A-A969F741F3DF.jpg?v=1749065300')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/cora-beige-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7F2A49B8-AD96-45F7-B7F7-2523FED22CC7.jpg?v=1749122375" alt="CORA BEIGE PANTS">
+            <div class="product-details">
+                <div class="product-name">CORA BEIGE PANTS</div>
+                <div class="product-price">₹1990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/cora-beige-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/cora-beige-pants', 'CORA BEIGE PANTS', '1990.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7F2A49B8-AD96-45F7-B7F7-2523FED22CC7.jpg?v=1749122375')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/rumi-corset-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/20BC8377-A397-4B0D-A446-51E4E4EA9B23.jpg?v=1749064969" alt="RUMI CORSET TOP">
+            <div class="product-details">
+                <div class="product-name">RUMI CORSET TOP</div>
+                <div class="product-price">₹2799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/rumi-corset-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/rumi-corset-top', 'RUMI CORSET TOP', '2799.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/20BC8377-A397-4B0D-A446-51E4E4EA9B23.jpg?v=1749064969')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/maree-shell-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/10D85FDB-34C9-4D4A-8717-9EF348A62CAD.jpg?v=1749061854" alt="MAREE SHELL DRESS">
+            <div class="product-details">
+                <div class="product-name">MAREE SHELL DRESS</div>
+                <div class="product-price">₹5499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/maree-shell-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/maree-shell-dress', 'MAREE SHELL DRESS', '5499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/10D85FDB-34C9-4D4A-8717-9EF348A62CAD.jpg?v=1749061854')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/brisa-fringe-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/B4777142-ACE9-451C-A005-125CD1C9E86A.jpg?v=1749064877" alt="BRISA FRINGE SKIRT">
+            <div class="product-details">
+                <div class="product-name">BRISA FRINGE SKIRT</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/brisa-fringe-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/brisa-fringe-skirt', 'BRISA FRINGE SKIRT', '2890.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/B4777142-ACE9-451C-A005-125CD1C9E86A.jpg?v=1749064877')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/luma-fringe-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/4B3B34A1-A018-4F26-B4C0-87127548DE83.jpg?v=1749064833" alt="LUMA FRINGE TOP">
+            <div class="product-details">
+                <div class="product-name">LUMA FRINGE TOP</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/luma-fringe-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/luma-fringe-top', 'LUMA FRINGE TOP', '2790.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/4B3B34A1-A018-4F26-B4C0-87127548DE83.jpg?v=1749064833')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/kaia-shell-fringe-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/DDDF7143-F4A2-44CB-A8F1-5486D16B5EDF.jpg?v=1749060086" alt="KAIA SHELL FRINGE DRESS">
+            <div class="product-details">
+                <div class="product-name">KAIA SHELL FRINGE DRESS</div>
+                <div class="product-price">₹5290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/kaia-shell-fringe-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/kaia-shell-fringe-dress', 'KAIA SHELL FRINGE DRESS', '5290.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/DDDF7143-F4A2-44CB-A8F1-5486D16B5EDF.jpg?v=1749060086')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/sand-beige-skorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/EC60887F-E2B9-44A8-9E47-E55D7C5B9F39.jpg?v=1749064833" alt="SAND BEIGE SKORTS">
+            <div class="product-details">
+                <div class="product-name">SAND BEIGE SKORTS</div>
+                <div class="product-price">₹2190.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/sand-beige-skorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/sand-beige-skorts', 'SAND BEIGE SKORTS', '2190.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/EC60887F-E2B9-44A8-9E47-E55D7C5B9F39.jpg?v=1749064833')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dune-pants-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/87B09380-6BD5-49EE-92EF-468AB59B8B1F.jpg?v=1749122388" alt="DUNE PANTS">
+            <div class="product-details">
+                <div class="product-name">DUNE PANTS</div>
+                <div class="product-price">₹2390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dune-pants-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dune-pants-1', 'DUNE PANTS', '2390.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/87B09380-6BD5-49EE-92EF-468AB59B8B1F.jpg?v=1749122388')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/nila-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/79BFC74A-E24D-4911-BF65-0BE37E6CD317.jpg?v=1748275067" alt="NILA SKIRT">
+            <div class="product-details">
+                <div class="product-name">NILA SKIRT</div>
+                <div class="product-price">₹2899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/nila-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/nila-skirt', 'NILA SKIRT', '2899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/79BFC74A-E24D-4911-BF65-0BE37E6CD317.jpg?v=1748275067')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/aira-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/A294F966-2693-4904-86AE-78B850070443.jpg?v=1748257135" alt="AIRA DRESS">
+            <div class="product-details">
+                <div class="product-name">AIRA DRESS</div>
+                <div class="product-price">₹3399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/aira-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/aira-dress', 'AIRA DRESS', '3399.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/A294F966-2693-4904-86AE-78B850070443.jpg?v=1748257135')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/tigress-shift-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/C8AB41C6-498A-4041-AA7A-C13E839744E1.jpg?v=1752314595" alt="TIGRESS SHIFT DRESS">
+            <div class="product-details">
+                <div class="product-name">TIGRESS SHIFT DRESS</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/tigress-shift-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/tigress-shift-dress', 'TIGRESS SHIFT DRESS', '2790.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/C8AB41C6-498A-4041-AA7A-C13E839744E1.jpg?v=1752314595')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/citrus-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/0B1C7174-BD36-4EE8-8214-160F3DE43D11.png?v=1745324130" alt="CITRUS TOP">
+            <div class="product-details">
+                <div class="product-name">CITRUS TOP</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/citrus-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/citrus-top', 'CITRUS TOP', '1899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/0B1C7174-BD36-4EE8-8214-160F3DE43D11.png?v=1745324130')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/checkerboard-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/A0566D8F-0140-47C1-A9B1-9EC6326CB554.jpg?v=1749072174" alt="CHECKERBOARD SKIRT">
+            <div class="product-details">
+                <div class="product-name">CHECKERBOARD SKIRT</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/checkerboard-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/checkerboard-skirt', 'CHECKERBOARD SKIRT', '1899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/A0566D8F-0140-47C1-A9B1-9EC6326CB554.jpg?v=1749072174')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/checkerboard-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7395DFCF-8710-4BB1-8FD1-C1E842D849E9.jpg?v=1748276580" alt="CHECKERBOARD TOP">
+            <div class="product-details">
+                <div class="product-name">CHECKERBOARD TOP</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/checkerboard-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/checkerboard-top', 'CHECKERBOARD TOP', '1899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7395DFCF-8710-4BB1-8FD1-C1E842D849E9.jpg?v=1748276580')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/checkboard-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/A0566D8F-0140-47C1-A9B1-9EC6326CB554.jpg?v=1749072174" alt="CHECKERBOARD SET">
+            <div class="product-details">
+                <div class="product-name">CHECKERBOARD SET</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/checkboard-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/checkboard-dress', 'CHECKERBOARD SET', '3499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/A0566D8F-0140-47C1-A9B1-9EC6326CB554.jpg?v=1749072174')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/barfi-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/38FFC4B9-D42F-4B7E-AF76-4BA91ED13926.jpg?v=1724837170" alt="BARFI SHIRT">
+            <div class="product-details">
+                <div class="product-name">BARFI SHIRT</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/barfi-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/barfi-shirt', 'BARFI SHIRT', '1799.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/38FFC4B9-D42F-4B7E-AF76-4BA91ED13926.jpg?v=1724837170')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/lyla-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/B10E9828-D1E9-4862-8928-D9547B9A6CEF.jpg?v=1722341702" alt="LYLA SHIRT">
+            <div class="product-details">
+                <div class="product-name">LYLA SHIRT</div>
+                <div class="product-price">₹1799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/lyla-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/lyla-shirt', 'LYLA SHIRT', '1799.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/B10E9828-D1E9-4862-8928-D9547B9A6CEF.jpg?v=1722341702')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/seychelles-maxi', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/EDDB4314-492C-4EC5-8038-AB4092B46F22.jpg?v=1722184767" alt="SEYCHELLES MAXI">
+            <div class="product-details">
+                <div class="product-name">SEYCHELLES MAXI</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/seychelles-maxi', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/seychelles-maxi', 'SEYCHELLES MAXI', '1999.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/EDDB4314-492C-4EC5-8038-AB4092B46F22.jpg?v=1722184767')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/ceo-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/69239046-77F0-4070-86B0-4387433F41A9.jpg?v=1722186389" alt="CEO SET">
+            <div class="product-details">
+                <div class="product-name">CEO SET</div>
+                <div class="product-price">₹5399.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/ceo-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/ceo-set', 'CEO SET', '5399.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/69239046-77F0-4070-86B0-4387433F41A9.jpg?v=1722186389')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/lyla-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/4F7C158E-BEA3-493B-86C6-A1FBC335184A.jpg?v=1722184659" alt="LYLA SET">
+            <div class="product-details">
+                <div class="product-name">LYLA SET</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/lyla-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/lyla-set', 'LYLA SET', '2499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/4F7C158E-BEA3-493B-86C6-A1FBC335184A.jpg?v=1722184659')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/indie-denim-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/766017B1-0E5A-439D-A8C4-2DC3376929BA.jpg?v=1722184396" alt="INDIE DENIM DRESS">
+            <div class="product-details">
+                <div class="product-name">INDIE DENIM DRESS</div>
+                <div class="product-price">₹2199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/indie-denim-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/indie-denim-dress', 'INDIE DENIM DRESS', '2199.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/766017B1-0E5A-439D-A8C4-2DC3376929BA.jpg?v=1722184396')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/gigi-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/E631D539-BD98-4DE5-9D69-AEC620C6BD50.jpg?v=1722942184" alt="GIGI TOP S-L">
+            <div class="product-details">
+                <div class="product-name">GIGI TOP S-L</div>
+                <div class="product-price">₹1199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/gigi-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/gigi-top', 'GIGI TOP S-L', '1199.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/E631D539-BD98-4DE5-9D69-AEC620C6BD50.jpg?v=1722942184')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dove-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/E5F5A402-F389-4C12-A171-120770AE4C78.jpg?v=1722184603" alt="DOVE DRESS">
+            <div class="product-details">
+                <div class="product-name">DOVE DRESS</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dove-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dove-dress', 'DOVE DRESS', '2499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/E5F5A402-F389-4C12-A171-120770AE4C78.jpg?v=1722184603')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/sasha-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/01169FD8-3457-4915-BDB3-DFE1A3635D9D.jpg?v=1722184712" alt="SASHA SET">
+            <div class="product-details">
+                <div class="product-name">SASHA SET</div>
+                <div class="product-price">₹2899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/sasha-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/sasha-set', 'SASHA SET', '2899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/01169FD8-3457-4915-BDB3-DFE1A3635D9D.jpg?v=1722184712')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dreamy-denim-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/721DCB7B-DF91-4874-AFA6-622A3E8704BC.jpg?v=1722941361" alt="DREAMY DENIM DRESS">
+            <div class="product-details">
+                <div class="product-name">DREAMY DENIM DRESS</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dreamy-denim-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dreamy-denim-dress', 'DREAMY DENIM DRESS', '3499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/721DCB7B-DF91-4874-AFA6-622A3E8704BC.jpg?v=1722941361')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/barfi-polo-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/FBD91705-2ED7-409F-B400-E331B2753601.jpg?v=1718387790" alt="BARFI POLO DRESS">
+            <div class="product-details">
+                <div class="product-name">BARFI POLO DRESS</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/barfi-polo-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/barfi-polo-dress', 'BARFI POLO DRESS', '1899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/FBD91705-2ED7-409F-B400-E331B2753601.jpg?v=1718387790')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dazzle-in-denim-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/E2424C08-BCF6-415C-932A-793D4C9D6320.png?v=1749578545" alt="DAZZLE IN DENIM CO-ORD">
+            <div class="product-details">
+                <div class="product-name">DAZZLE IN DENIM CO-ORD</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dazzle-in-denim-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dazzle-in-denim-co-ord', 'DAZZLE IN DENIM CO-ORD', '2499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/E2424C08-BCF6-415C-932A-793D4C9D6320.png?v=1749578545')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/willow-balloon-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/21980735-6C7B-4E99-9422-0129211C43EC.png?v=1716392373" alt="WILLOW BALLOON DRESS">
+            <div class="product-details">
+                <div class="product-name">WILLOW BALLOON DRESS</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/willow-balloon-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/willow-balloon-dress', 'WILLOW BALLOON DRESS', '1899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/21980735-6C7B-4E99-9422-0129211C43EC.png?v=1716392373')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/women-in-business-waistcoat-set-collar', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7213C872-CC54-473D-BB81-47036A231B8E.jpg?v=1709305863" alt="WOMEN IN WAISTCOAT SET">
+            <div class="product-details">
+                <div class="product-name">WOMEN IN WAISTCOAT SET</div>
+                <div class="product-price">₹2850.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/women-in-business-waistcoat-set-collar', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/women-in-business-waistcoat-set-collar', 'WOMEN IN WAISTCOAT SET', '2850.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/7213C872-CC54-473D-BB81-47036A231B8E.jpg?v=1709305863')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/balloona-dress-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/96467DF3-679E-48B0-8517-6EFF4277DC14.png?v=1714558360" alt="BALLOONA DRESS">
+            <div class="product-details">
+                <div class="product-name">BALLOONA DRESS</div>
+                <div class="product-price">₹1899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/balloona-dress-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/balloona-dress-1', 'BALLOONA DRESS', '1899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/96467DF3-679E-48B0-8517-6EFF4277DC14.png?v=1714558360')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/denim-bow-vest', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/4BD4FD5D-6200-4474-A4C6-DF1AE71EF4CD.png?v=1749894587" alt="DENIM BOW VEST">
+            <div class="product-details">
+                <div class="product-name">DENIM BOW VEST</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/denim-bow-vest', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/denim-bow-vest', 'DENIM BOW VEST', '1499.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/4BD4FD5D-6200-4474-A4C6-DF1AE71EF4CD.png?v=1749894587')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/boss-babe-blazer-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/EECE5D5C-0112-43D8-BEEC-0AC3EB8B8C1F.jpg?v=1749894175" alt="BOSS BABE SET">
+            <div class="product-details">
+                <div class="product-name">BOSS BABE SET</div>
+                <div class="product-price">₹2599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/boss-babe-blazer-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/boss-babe-blazer-set', 'BOSS BABE SET', '2599.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/EECE5D5C-0112-43D8-BEEC-0AC3EB8B8C1F.jpg?v=1749894175')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/copy-boss-babe-blazer-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/D869E04F-44ED-4A26-97C6-334DB044FBB7.png?v=1716393160" alt="Bandhani Set S-M-L-XL">
+            <div class="product-details">
+                <div class="product-name">Bandhani Set S-M-L-XL</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/copy-boss-babe-blazer-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/copy-boss-babe-blazer-set', 'Bandhani Set S-M-L-XL', '1999.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/D869E04F-44ED-4A26-97C6-334DB044FBB7.png?v=1716393160')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/falling-for-you-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/34CF92D3-DADE-42C8-B4CC-1968B9FC9CA6.jpg?v=1709298373" alt="FLIRTY FLORAL DRESS">
+            <div class="product-details">
+                <div class="product-name">FLIRTY FLORAL DRESS</div>
+                <div class="product-price">₹1999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/falling-for-you-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/falling-for-you-dress', 'FLIRTY FLORAL DRESS', '1999.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/34CF92D3-DADE-42C8-B4CC-1968B9FC9CA6.jpg?v=1709298373')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/women-in-business-waistcoat-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/928B2492-93C2-4512-BF66-9B086E88056E.jpg?v=1709285371" alt="WOMEN IN BUSINESS SET">
+            <div class="product-details">
+                <div class="product-name">WOMEN IN BUSINESS SET</div>
+                <div class="product-price">₹2899.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/women-in-business-waistcoat-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/women-in-business-waistcoat-set', 'WOMEN IN BUSINESS SET', '2899.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/928B2492-93C2-4512-BF66-9B086E88056E.jpg?v=1709285371')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/all-day-coord-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/AB4B6244-2157-4221-B748-3CAE41A7F409.jpg?v=1771501747" alt="ALL DAY SET BLUE S-M-L-XL">
+            <div class="product-details">
+                <div class="product-name">ALL DAY SET BLUE S-M-L-XL</div>
+                <div class="product-price">₹1699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/all-day-coord-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/all-day-coord-set-1', 'ALL DAY SET BLUE S-M-L-XL', '1699.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/AB4B6244-2157-4221-B748-3CAE41A7F409.jpg?v=1771501747')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/all-day-coord-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/2DEFC074-6BE2-49F9-BA45-4E16DD1DE644.png?v=1709317162" alt="ALL-DAY SET">
+            <div class="product-details">
+                <div class="product-name">ALL-DAY SET</div>
+                <div class="product-price">₹1599.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/all-day-coord-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/all-day-coord-set', 'ALL-DAY SET', '1599.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/2DEFC074-6BE2-49F9-BA45-4E16DD1DE644.png?v=1709317162')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://msmaven.in/products/dual-tone-denim-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0650/8622/6664/files/581F38B0-8E08-4A8E-87E9-D42E46C4FEEC.jpg?v=1722941707" alt="DUAL DENIM DRESS">
+            <div class="product-details">
+                <div class="product-name">DUAL DENIM DRESS</div>
+                <div class="product-price">₹3799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://msmaven.in/products/dual-tone-denim-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://msmaven.in/products/dual-tone-denim-dress', 'DUAL DENIM DRESS', '3799.00', 'https://cdn.shopify.com/s/files/1/0650/8622/6664/files/581F38B0-8E08-4A8E-87E9-D42E46C4FEEC.jpg?v=1722941707')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

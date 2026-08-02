@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Picante - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Studio Picante</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/zyla-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/21.png?v=1782998292" alt="Zyla Top">
+            <div class="product-details">
+                <div class="product-name">Zyla Top</div>
+                <div class="product-price">₹22000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/zyla-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/zyla-top', 'Zyla Top', '22000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/21.png?v=1782998292')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/milos-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/5.png?v=1779455151" alt="Milos Set">
+            <div class="product-details">
+                <div class="product-name">Milos Set</div>
+                <div class="product-price">₹28000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/milos-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/milos-set', 'Milos Set', '28000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/5.png?v=1779455151')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/mimi-dress-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/1_0989490e-0af0-44fa-bcea-36aa0ef63c29.png?v=1779456263" alt="Riri Dress">
+            <div class="product-details">
+                <div class="product-name">Riri Dress</div>
+                <div class="product-price">₹19000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/mimi-dress-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/mimi-dress-1', 'Riri Dress', '19000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/1_0989490e-0af0-44fa-bcea-36aa0ef63c29.png?v=1779456263')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/milos-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/8.png?v=1779455449" alt="Milos Skirt">
+            <div class="product-details">
+                <div class="product-name">Milos Skirt</div>
+                <div class="product-price">₹15000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/milos-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/milos-skirt', 'Milos Skirt', '15000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/8.png?v=1779455449')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/milos-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/5_e7c26b78-a84a-476b-a48e-36a6241144d4.png?v=1779455424" alt="Milos Top">
+            <div class="product-details">
+                <div class="product-name">Milos Top</div>
+                <div class="product-price">₹13000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/milos-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/milos-top', 'Milos Top', '13000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/5_e7c26b78-a84a-476b-a48e-36a6241144d4.png?v=1779455424')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/celeste', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC027472_2.png?v=1776255909" alt="Celeste Dress">
+            <div class="product-details">
+                <div class="product-name">Celeste Dress</div>
+                <div class="product-price">₹22000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/celeste', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/celeste', 'Celeste Dress', '22000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC027472_2.png?v=1776255909')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/rani-corset', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72722.png?v=1776924995" alt="Rani corset">
+            <div class="product-details">
+                <div class="product-name">Rani corset</div>
+                <div class="product-price">₹25000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/rani-corset', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/rani-corset', 'Rani corset', '25000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72722.png?v=1776924995')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/coco-set-in-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_7318_af36ceca-6884-4244-a3c9-6e0f23adcb3e.png?v=1775919984" alt="Coco Set">
+            <div class="product-details">
+                <div class="product-name">Coco Set</div>
+                <div class="product-price">₹23500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/coco-set-in-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/coco-set-in-brown', 'Coco Set', '23500.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_7318_af36ceca-6884-4244-a3c9-6e0f23adcb3e.png?v=1775919984')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/rouge-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72981_d2a3cf84-1584-4ac9-8206-ee50b693fcd2.png?v=1775900901" alt="Rouge Set">
+            <div class="product-details">
+                <div class="product-name">Rouge Set</div>
+                <div class="product-price">₹23500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/rouge-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/rouge-set', 'Rouge Set', '23500.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72981_d2a3cf84-1584-4ac9-8206-ee50b693fcd2.png?v=1775900901')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/rouge-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72651.png?v=1776083995" alt="Rouge Top">
+            <div class="product-details">
+                <div class="product-name">Rouge Top</div>
+                <div class="product-price">₹15000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/rouge-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/rouge-top', 'Rouge Top', '15000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72651.png?v=1776083995')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/rouge-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72981_d2a3cf84-1584-4ac9-8206-ee50b693fcd2.png?v=1775900901" alt="Rouge Skirt">
+            <div class="product-details">
+                <div class="product-name">Rouge Skirt</div>
+                <div class="product-price">₹8500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/rouge-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/rouge-skirt', 'Rouge Skirt', '8500.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72981_d2a3cf84-1584-4ac9-8206-ee50b693fcd2.png?v=1775900901')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/sila-cotton-pants-in-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72691.png?v=1775899458" alt="Sila Cotton Pants">
+            <div class="product-details">
+                <div class="product-name">Sila Cotton Pants</div>
+                <div class="product-price">₹9000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/sila-cotton-pants-in-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/sila-cotton-pants-in-black', 'Sila Cotton Pants', '9000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72691.png?v=1775899458')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/chandelier-top-in-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC01442.jpg?v=1775884362" alt="Chandelier Top">
+            <div class="product-details">
+                <div class="product-name">Chandelier Top</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/chandelier-top-in-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/chandelier-top-in-blue', 'Chandelier Top', '6500.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC01442.jpg?v=1775884362')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/chandelier-top-in-purple', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC01096.jpg?v=1775884860" alt="Chandelier Top">
+            <div class="product-details">
+                <div class="product-name">Chandelier Top</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/chandelier-top-in-purple', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/chandelier-top-in-purple', 'Chandelier Top', '6500.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC01096.jpg?v=1775884860')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/iris-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC03061_1_eb3b7e61-f812-4041-9ae9-169212be425b.jpg?v=1775137350" alt="Iris Set">
+            <div class="product-details">
+                <div class="product-name">Iris Set</div>
+                <div class="product-price">₹18000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/iris-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/iris-set', 'Iris Set', '18000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC03061_1_eb3b7e61-f812-4041-9ae9-169212be425b.jpg?v=1775137350')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/everyday-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC01988_2.jpg?v=1775136717" alt="Everyday Blazer Set">
+            <div class="product-details">
+                <div class="product-name">Everyday Blazer Set</div>
+                <div class="product-price">₹24000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/everyday-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/everyday-set', 'Everyday Blazer Set', '24000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC01988_2.jpg?v=1775136717')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/everyday-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02001_1.jpg?v=1775135766" alt="Everyday Pants">
+            <div class="product-details">
+                <div class="product-name">Everyday Pants</div>
+                <div class="product-price">₹7000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/everyday-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/everyday-pants', 'Everyday Pants', '7000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02001_1.jpg?v=1775135766')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/roma-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02521_1.jpg?v=1775139088" alt="Roma Set">
+            <div class="product-details">
+                <div class="product-name">Roma Set</div>
+                <div class="product-price">₹28000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/roma-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/roma-set', 'Roma Set', '28000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02521_1.jpg?v=1775139088')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/roma-shirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02521.jpg?v=1775137971" alt="Roma Skirt">
+            <div class="product-details">
+                <div class="product-name">Roma Skirt</div>
+                <div class="product-price">₹15000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/roma-shirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/roma-shirt', 'Roma Skirt', '15000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02521.jpg?v=1775137971')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/roma-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02521_1_72468ef0-56ac-4ffa-869e-3fba778618c2.jpg?v=1775138076" alt="Roma Top">
+            <div class="product-details">
+                <div class="product-name">Roma Top</div>
+                <div class="product-price">₹13000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/roma-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/roma-top', 'Roma Top', '13000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02521_1_72468ef0-56ac-4ffa-869e-3fba778618c2.jpg?v=1775138076')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/tara', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72661.png?v=1775899390" alt="Tara Top">
+            <div class="product-details">
+                <div class="product-name">Tara Top</div>
+                <div class="product-price">₹8500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/tara', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/tara', 'Tara Top', '8500.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72661.png?v=1775899390')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/sila-cotton-pants-in-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72961.png?v=1775900482" alt="Sila Cotton Pants">
+            <div class="product-details">
+                <div class="product-name">Sila Cotton Pants</div>
+                <div class="product-price">₹9000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/sila-cotton-pants-in-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/sila-cotton-pants-in-white', 'Sila Cotton Pants', '9000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72961.png?v=1775900482')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/gaurvi-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02290.jpg?v=1775480800" alt="Gaurvi Skirt">
+            <div class="product-details">
+                <div class="product-name">Gaurvi Skirt</div>
+                <div class="product-price">₹22000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/gaurvi-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/gaurvi-skirt', 'Gaurvi Skirt', '22000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02290.jpg?v=1775480800')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/iris-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC03061_1.jpg?v=1775136924" alt="Iris Skirt">
+            <div class="product-details">
+                <div class="product-name">Iris Skirt</div>
+                <div class="product-price">₹10000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/iris-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/iris-skirt', 'Iris Skirt', '10000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC03061_1.jpg?v=1775136924')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/iris-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC03061.jpg?v=1775136582" alt="Iris Top">
+            <div class="product-details">
+                <div class="product-name">Iris Top</div>
+                <div class="product-price">₹9500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/iris-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/iris-top', 'Iris Top', '9500.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC03061.jpg?v=1775136582')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/maya-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72971_80913974-4688-4e94-ac13-d35fcf8a2038.png?v=1775901899" alt="Maya Top">
+            <div class="product-details">
+                <div class="product-name">Maya Top</div>
+                <div class="product-price">₹10000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/maya-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/maya-top', 'Maya Top', '10000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/IMG_72971_80913974-4688-4e94-ac13-d35fcf8a2038.png?v=1775901899')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/chandelier-top-in-red', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC03136.jpg?v=1775126479" alt="Chandelier Top">
+            <div class="product-details">
+                <div class="product-name">Chandelier Top</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/chandelier-top-in-red', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/chandelier-top-in-red', 'Chandelier Top', '6500.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC03136.jpg?v=1775126479')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/everyday-blazer', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC01988.jpg?v=1775134922" alt="Everyday Blazer">
+            <div class="product-details">
+                <div class="product-name">Everyday Blazer</div>
+                <div class="product-price">₹17000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/everyday-blazer', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/everyday-blazer', 'Everyday Blazer', '17000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC01988.jpg?v=1775134922')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/heer-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02736.jpg?v=1775134060" alt="Heer Skirt">
+            <div class="product-details">
+                <div class="product-name">Heer Skirt</div>
+                <div class="product-price">₹43000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/heer-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/heer-skirt', 'Heer Skirt', '43000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02736.jpg?v=1775134060')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://studiopicante.in/products/lilly-corset', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02671.jpg?v=1775133935" alt="Lilly Corset">
+            <div class="product-details">
+                <div class="product-name">Lilly Corset</div>
+                <div class="product-price">₹29000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://studiopicante.in/products/lilly-corset', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://studiopicante.in/products/lilly-corset', 'Lilly Corset', '29000.00', 'https://cdn.shopify.com/s/files/1/0896/1664/6514/files/DSC02671.jpg?v=1775133935')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

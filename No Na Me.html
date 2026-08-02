@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Na Me - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">No Na Me</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/arc-hemedes-earrings-with-studs', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/0_2.jpg?v=1699287925" alt="Arc-Hemedes Earring">
+            <div class="product-details">
+                <div class="product-name">Arc-Hemedes Earring</div>
+                <div class="product-price">₹2700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/arc-hemedes-earrings-with-studs', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/arc-hemedes-earrings-with-studs', 'Arc-Hemedes Earring', '2700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/0_2.jpg?v=1699287925')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/lovebytes-lapel-pin-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/2_2a4421f4-cdc9-4f26-a0e3-7fc79bb1b078.jpg?v=1769600223" alt="Lovebytes small Brooch">
+            <div class="product-details">
+                <div class="product-name">Lovebytes small Brooch</div>
+                <div class="product-price">₹2700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/lovebytes-lapel-pin-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/lovebytes-lapel-pin-copy', 'Lovebytes small Brooch', '2700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/2_2a4421f4-cdc9-4f26-a0e3-7fc79bb1b078.jpg?v=1769600223')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/lovebytes-lapel-pin', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/lapelpin.jpg?v=1769509341" alt="Lovebytes Lapel Pin">
+            <div class="product-details">
+                <div class="product-name">Lovebytes Lapel Pin</div>
+                <div class="product-price">₹3600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/lovebytes-lapel-pin', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/lovebytes-lapel-pin', 'Lovebytes Lapel Pin', '3600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/lapelpin.jpg?v=1769509341')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/pause', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/pause_37709dd1-007c-4b4b-9539-35920a6dcbe3.jpg?v=1768474720" alt="Pause">
+            <div class="product-details">
+                <div class="product-name">Pause</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/pause', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/pause', 'Pause', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/pause_37709dd1-007c-4b4b-9539-35920a6dcbe3.jpg?v=1768474720')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-second-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/the_second_ring_1.jpg?v=1768474526" alt="The Second Ring">
+            <div class="product-details">
+                <div class="product-name">The Second Ring</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-second-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-second-ring', 'The Second Ring', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/the_second_ring_1.jpg?v=1768474526')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/origin', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Untitled-4_cc1291fb-f826-4f30-b5fc-5d89478c42e6.jpg?v=1768474573" alt="Origin">
+            <div class="product-details">
+                <div class="product-name">Origin</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/origin', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/origin', 'Origin', '5500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Untitled-4_cc1291fb-f826-4f30-b5fc-5d89478c42e6.jpg?v=1768474573')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/trine-pendant-and-chain', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/trinependanta.jpg?v=1768407119" alt="Trine pendant and chain">
+            <div class="product-details">
+                <div class="product-name">Trine pendant and chain</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/trine-pendant-and-chain', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/trine-pendant-and-chain', 'Trine pendant and chain', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/trinependanta.jpg?v=1768407119')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/quadrune', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/quadrunea_c65458d2-4b5a-499c-9a2f-325948bdf0c4.jpg?v=1768475090" alt="Quadrune">
+            <div class="product-details">
+                <div class="product-name">Quadrune</div>
+                <div class="product-price">₹10500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/quadrune', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/quadrune', 'Quadrune', '10500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/quadrunea_c65458d2-4b5a-499c-9a2f-325948bdf0c4.jpg?v=1768475090')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/void-v', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/void_v.jpg?v=1768475487" alt="Void V">
+            <div class="product-details">
+                <div class="product-name">Void V</div>
+                <div class="product-price">₹6600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/void-v', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/void-v', 'Void V', '6600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/void_v.jpg?v=1768475487')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/uno', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/uno_3.jpg?v=1768475188" alt="Uno">
+            <div class="product-details">
+                <div class="product-name">Uno</div>
+                <div class="product-price">₹2400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/uno', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/uno', 'Uno', '2400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/uno_3.jpg?v=1768475188')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/duo-earrings', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/duoearrings3.jpg?v=1768405897" alt="Duo earrings">
+            <div class="product-details">
+                <div class="product-name">Duo earrings</div>
+                <div class="product-price">₹4400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/duo-earrings', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/duo-earrings', 'Duo earrings', '4400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/duoearrings3.jpg?v=1768405897')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/trine-ear-cuff', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/trine7.jpg?v=1768405509" alt="Trine ear cuff">
+            <div class="product-details">
+                <div class="product-name">Trine ear cuff</div>
+                <div class="product-price">₹2400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/trine-ear-cuff', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/trine-ear-cuff', 'Trine ear cuff', '2400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/trine7.jpg?v=1768405509')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/quint-earcuff-sngle-ear', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/quint_earcuff_1.jpg?v=1768405217" alt="Quint earcuff single ear">
+            <div class="product-details">
+                <div class="product-name">Quint earcuff single ear</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/quint-earcuff-sngle-ear', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/quint-earcuff-sngle-ear', 'Quint earcuff single ear', '2200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/quint_earcuff_1.jpg?v=1768405217')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/quint-earrings', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/quint_earrings_12.jpg?v=1768475363" alt="Quint earrings">
+            <div class="product-details">
+                <div class="product-name">Quint earrings</div>
+                <div class="product-price">₹3400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/quint-earrings', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/quint-earrings', 'Quint earrings', '3400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/quint_earrings_12.jpg?v=1768475363')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/retro-run', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1a_ca56bf5a-ebf2-4fa0-a841-7bc01da0fb79.jpg?v=1750673174" alt="Retro Run">
+            <div class="product-details">
+                <div class="product-name">Retro Run</div>
+                <div class="product-price">₹16700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/retro-run', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/retro-run', 'Retro Run', '16700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1a_ca56bf5a-ebf2-4fa0-a841-7bc01da0fb79.jpg?v=1750673174')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/lovebytes-pixel-heart-stud-earrings', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_deae8e66-5c61-4cf0-831b-b889b7797488.jpg?v=1748775335" alt="Lovebytes Pixel Heart Stud Earrings (Gold / Silver)">
+            <div class="product-details">
+                <div class="product-name">Lovebytes Pixel Heart Stud Earrings (Gold / Silver)</div>
+                <div class="product-price">₹3600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/lovebytes-pixel-heart-stud-earrings', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/lovebytes-pixel-heart-stud-earrings', 'Lovebytes Pixel Heart Stud Earrings (Gold / Silver)', '3600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_deae8e66-5c61-4cf0-831b-b889b7797488.jpg?v=1748775335')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/blip', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_9.jpg?v=1748762970" alt="Blip nose clip on">
+            <div class="product-details">
+                <div class="product-name">Blip nose clip on</div>
+                <div class="product-price">₹1600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/blip', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/blip', 'Blip nose clip on', '1600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_9.jpg?v=1748762970')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-badge-of-honor', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_10.jpg?v=1748763053" alt="The Badge of Honor">
+            <div class="product-details">
+                <div class="product-name">The Badge of Honor</div>
+                <div class="product-price">₹3700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-badge-of-honor', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-badge-of-honor', 'The Badge of Honor', '3700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_10.jpg?v=1748763053')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/coin-up', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_11.jpg?v=1748776648" alt="Coin-up Ring">
+            <div class="product-details">
+                <div class="product-name">Coin-up Ring</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/coin-up', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/coin-up', 'Coin-up Ring', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_11.jpg?v=1748776648')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/remnant', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_aff24c97-9ef1-492a-9105-358974d7ee4e.jpg?v=1748769803" alt="Remnant Ring">
+            <div class="product-details">
+                <div class="product-name">Remnant Ring</div>
+                <div class="product-price">₹4900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/remnant', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/remnant', 'Remnant Ring', '4900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_aff24c97-9ef1-492a-9105-358974d7ee4e.jpg?v=1748769803')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/heart-spawn', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/0_5d8377a3-6128-4d7f-8c9f-214941403f44.jpg?v=1750674222" alt="Heart Spawn">
+            <div class="product-details">
+                <div class="product-name">Heart Spawn</div>
+                <div class="product-price">₹23000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/heart-spawn', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/heart-spawn', 'Heart Spawn', '23000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/0_5d8377a3-6128-4d7f-8c9f-214941403f44.jpg?v=1750674222')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/game-over-lover', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_21ba035f-8152-4776-8fbf-16ab8cc974a5.jpg?v=1748769313" alt="Game over, lover -  Neck Choker">
+            <div class="product-details">
+                <div class="product-name">Game over, lover -  Neck Choker</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/game-over-lover', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/game-over-lover', 'Game over, lover -  Neck Choker', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_21ba035f-8152-4776-8fbf-16ab8cc974a5.jpg?v=1748769313')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/heartstack', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_9b0d0756-91ea-40a2-a710-57a1458c7dd4.jpg?v=1748776045" alt="Heartstack">
+            <div class="product-details">
+                <div class="product-name">Heartstack</div>
+                <div class="product-price">₹8600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/heartstack', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/heartstack', 'Heartstack', '8600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_9b0d0756-91ea-40a2-a710-57a1458c7dd4.jpg?v=1748776045')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/bounty', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/2_faf7a136-deed-4fa5-8114-70ae155dc071.jpg?v=1748756359" alt="Bounty">
+            <div class="product-details">
+                <div class="product-name">Bounty</div>
+                <div class="product-price">₹5400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/bounty', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/bounty', 'Bounty', '5400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/2_faf7a136-deed-4fa5-8114-70ae155dc071.jpg?v=1748756359')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/lovebytes-large', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_1852f904-711f-4d7b-8cd2-f563a9ee6b81.jpg?v=1748755202" alt="Lovebytes_Large">
+            <div class="product-details">
+                <div class="product-name">Lovebytes_Large</div>
+                <div class="product-price">₹4900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/lovebytes-large', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/lovebytes-large', 'Lovebytes_Large', '4900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_1852f904-711f-4d7b-8cd2-f563a9ee6b81.jpg?v=1748755202')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-revive-band', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_0439784a-be17-4436-8454-872c3c60e598.jpg?v=1748775849" alt="The Revive Band">
+            <div class="product-details">
+                <div class="product-name">The Revive Band</div>
+                <div class="product-price">₹7200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-revive-band', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-revive-band', 'The Revive Band', '7200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_0439784a-be17-4436-8454-872c3c60e598.jpg?v=1748775849')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/gold-ring-2', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_20585450-848c-4632-aadf-dd6c73a1a92d.jpg?v=1748754408" alt="Gold Ring+2">
+            <div class="product-details">
+                <div class="product-name">Gold Ring+2</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/gold-ring-2', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/gold-ring-2', 'Gold Ring+2', '6400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_20585450-848c-4632-aadf-dd6c73a1a92d.jpg?v=1748754408')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/treasure-ting', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_8.jpg?v=1748721920" alt="Treasure Ting">
+            <div class="product-details">
+                <div class="product-name">Treasure Ting</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/treasure-ting', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/treasure-ting', 'Treasure Ting', '4200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_8.jpg?v=1748721920')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/cha-ching', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_6.jpg?v=1748721765" alt="Cha-Ching! - Ear &amp; nose clip on">
+            <div class="product-details">
+                <div class="product-name">Cha-Ching! - Ear &amp; nose clip on</div>
+                <div class="product-price">₹2250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/cha-ching', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/cha-ching', 'Cha-Ching! - Ear &amp; nose clip on', '2250.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_6.jpg?v=1748721765')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/love-bits', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_64557eae-6ef0-4fc0-9318-a5894fd688ae.jpg?v=1748769127" alt="Heartware">
+            <div class="product-details">
+                <div class="product-name">Heartware</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/love-bits', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/love-bits', 'Heartware', '6500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_64557eae-6ef0-4fc0-9318-a5894fd688ae.jpg?v=1748769127')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/tiny-but-mighty', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_5.jpg?v=1748776183" alt="Tiny but Mighty">
+            <div class="product-details">
+                <div class="product-name">Tiny but Mighty</div>
+                <div class="product-price">₹2900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/tiny-but-mighty', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/tiny-but-mighty', 'Tiny but Mighty', '2900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_5.jpg?v=1748776183')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/reason-2-in-1-necklace', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/reason_4.jpg?v=1744190826" alt="Reason 2-in-1 Necklace">
+            <div class="product-details">
+                <div class="product-name">Reason 2-in-1 Necklace</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/reason-2-in-1-necklace', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/reason-2-in-1-necklace', 'Reason 2-in-1 Necklace', '6800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/reason_4.jpg?v=1744190826')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/eclipsis', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_500da594-d088-47ef-9dfc-a290ed249664.jpg?v=1737710938" alt="Eclipsis">
+            <div class="product-details">
+                <div class="product-name">Eclipsis</div>
+                <div class="product-price">₹5100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/eclipsis', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/eclipsis', 'Eclipsis', '5100.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_500da594-d088-47ef-9dfc-a290ed249664.jpg?v=1737710938')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/keplers-law-earrings', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1a_50fefca3-e096-464e-be3d-a5236913ea6d.jpg?v=1762767811" alt="Kepler&#x27;s Law Earring - Single Ear">
+            <div class="product-details">
+                <div class="product-name">Kepler&#x27;s Law Earring - Single Ear</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/keplers-law-earrings', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/keplers-law-earrings', 'Kepler&#x27;s Law Earring - Single Ear', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1a_50fefca3-e096-464e-be3d-a5236913ea6d.jpg?v=1762767811')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-question-is', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_6ba0a40d-c2e5-427e-bd9c-c6cf28781b21.jpg?v=1735889669" alt="Curious Curve">
+            <div class="product-details">
+                <div class="product-name">Curious Curve</div>
+                <div class="product-price">₹2000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-question-is', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-question-is', 'Curious Curve', '2000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_6ba0a40d-c2e5-427e-bd9c-c6cf28781b21.jpg?v=1735889669')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/one-of-a-kind-earring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/4_61d4962c-13fb-4508-a3bc-17b8455d3a19.jpg?v=1735884776" alt="One Of A Kind Earring">
+            <div class="product-details">
+                <div class="product-name">One Of A Kind Earring</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/one-of-a-kind-earring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/one-of-a-kind-earring', 'One Of A Kind Earring', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/4_61d4962c-13fb-4508-a3bc-17b8455d3a19.jpg?v=1735884776')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/pac-man-stretch', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_29722cd8-ce5b-420b-bd84-3f910940e764.jpg?v=1735556854" alt="Pac-man stretch">
+            <div class="product-details">
+                <div class="product-name">Pac-man stretch</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/pac-man-stretch', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/pac-man-stretch', 'Pac-man stretch', '4200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_29722cd8-ce5b-420b-bd84-3f910940e764.jpg?v=1735556854')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/rogue-brooch-pins', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_37f6fc52-b730-402c-89d4-1f62286b4675.jpg?v=1732630857" alt="Rogue brooch Pins">
+            <div class="product-details">
+                <div class="product-name">Rogue brooch Pins</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/rogue-brooch-pins', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/rogue-brooch-pins', 'Rogue brooch Pins', '2800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_37f6fc52-b730-402c-89d4-1f62286b4675.jpg?v=1732630857')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/rogue-earrings', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/5_b71bbd5c-242a-4011-91a9-bc970503396a.jpg?v=1732630400" alt="Rogue Earrings">
+            <div class="product-details">
+                <div class="product-name">Rogue Earrings</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/rogue-earrings', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/rogue-earrings', 'Rogue Earrings', '3200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/5_b71bbd5c-242a-4011-91a9-bc970503396a.jpg?v=1732630400')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/blade-runner', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/4_f69c170b-6c66-4c57-93eb-8c91c48bf96c.jpg?v=1730791274" alt="BLADE RUNNER">
+            <div class="product-details">
+                <div class="product-name">BLADE RUNNER</div>
+                <div class="product-price">₹3000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/blade-runner', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/blade-runner', 'BLADE RUNNER', '3000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/4_f69c170b-6c66-4c57-93eb-8c91c48bf96c.jpg?v=1730791274')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/cosmic-flare', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_b4242811-9d40-42c1-bed9-467a158acb4c.jpg?v=1730786242" alt="COSMIC FLARE">
+            <div class="product-details">
+                <div class="product-name">COSMIC FLARE</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/cosmic-flare', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/cosmic-flare', 'COSMIC FLARE', '3200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_b4242811-9d40-42c1-bed9-467a158acb4c.jpg?v=1730786242')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/summit', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/a.jpg?v=1728987644" alt="Summit">
+            <div class="product-details">
+                <div class="product-name">Summit</div>
+                <div class="product-price">₹11500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/summit', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/summit', 'Summit', '11500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/a.jpg?v=1728987644')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/luminary-hoops-_-all-metal', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_916099b3-0c6b-4546-bfcb-ffd69d0d27b5.jpg?v=1762767836" alt="Luminary Hoops Gold">
+            <div class="product-details">
+                <div class="product-name">Luminary Hoops Gold</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/luminary-hoops-_-all-metal', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/luminary-hoops-_-all-metal', 'Luminary Hoops Gold', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_916099b3-0c6b-4546-bfcb-ffd69d0d27b5.jpg?v=1762767836')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/heliopause-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Untitled-1_7468f283-bf0c-4054-93b7-c44ac2f96ea0.jpg?v=1762767856" alt="Celeste">
+            <div class="product-details">
+                <div class="product-name">Celeste</div>
+                <div class="product-price">₹11500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/heliopause-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/heliopause-copy', 'Celeste', '11500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Untitled-1_7468f283-bf0c-4054-93b7-c44ac2f96ea0.jpg?v=1762767856')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/tusker', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_4902ed97-7dc3-48a6-b5ad-fcd9bc22bd53.jpg?v=1725637882" alt="Tusker Studs">
+            <div class="product-details">
+                <div class="product-name">Tusker Studs</div>
+                <div class="product-price">₹2700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/tusker', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/tusker', 'Tusker Studs', '2700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_4902ed97-7dc3-48a6-b5ad-fcd9bc22bd53.jpg?v=1725637882')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/luminary-hoops', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_46826694-afac-4c53-b7df-e6a0c13d3259.jpg?v=1725637617" alt="Luminary Hoops">
+            <div class="product-details">
+                <div class="product-name">Luminary Hoops</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/luminary-hoops', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/luminary-hoops', 'Luminary Hoops', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_46826694-afac-4c53-b7df-e6a0c13d3259.jpg?v=1725637617')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/formid-necklace', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Formid_1_ae6a4c4a-4e25-45b0-8405-2a67778ad31c.jpg?v=1723011378" alt="Formid necklace">
+            <div class="product-details">
+                <div class="product-name">Formid necklace</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/formid-necklace', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/formid-necklace', 'Formid necklace', '5800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Formid_1_ae6a4c4a-4e25-45b0-8405-2a67778ad31c.jpg?v=1723011378')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/totem-necklace-cum-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Totem_1_b50db6a2-89c0-4b12-b17e-9156a02b2552.jpg?v=1723011369" alt="Totem necklace cum ring">
+            <div class="product-details">
+                <div class="product-name">Totem necklace cum ring</div>
+                <div class="product-price">₹9900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/totem-necklace-cum-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/totem-necklace-cum-ring', 'Totem necklace cum ring', '9900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Totem_1_b50db6a2-89c0-4b12-b17e-9156a02b2552.jpg?v=1723011369')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/orient', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Orient_4.jpg?v=1723011359" alt="Orient">
+            <div class="product-details">
+                <div class="product-name">Orient</div>
+                <div class="product-price">₹7400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/orient', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/orient', 'Orient', '7400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Orient_4.jpg?v=1723011359')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/alpha', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Alpha_1.jpg?v=1723011350" alt="Alpha">
+            <div class="product-details">
+                <div class="product-name">Alpha</div>
+                <div class="product-price">₹11000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/alpha', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/alpha', 'Alpha', '11000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Alpha_1.jpg?v=1723011350')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/impulsiq', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Impulsiq_1.jpg?v=1723011342" alt="Impulsiq">
+            <div class="product-details">
+                <div class="product-name">Impulsiq</div>
+                <div class="product-price">₹9200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/impulsiq', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/impulsiq', 'Impulsiq', '9200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Impulsiq_1.jpg?v=1723011342')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/intuite-necklace', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Intuite_1_9ada897b-a35e-4376-addf-b4ac1594509a.jpg?v=1723011278" alt="Intuite Necklace">
+            <div class="product-details">
+                <div class="product-name">Intuite Necklace</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/intuite-necklace', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/intuite-necklace', 'Intuite Necklace', '6500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Intuite_1_9ada897b-a35e-4376-addf-b4ac1594509a.jpg?v=1723011278')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/clanad', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Clanad_1.jpg?v=1723011234" alt="Clanad">
+            <div class="product-details">
+                <div class="product-name">Clanad</div>
+                <div class="product-price">₹9600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/clanad', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/clanad', 'Clanad', '9600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Clanad_1.jpg?v=1723011234')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/perceptor', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Perceptor_1.jpg?v=1723011225" alt="Perceptor">
+            <div class="product-details">
+                <div class="product-name">Perceptor</div>
+                <div class="product-price">₹11000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/perceptor', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/perceptor', 'Perceptor', '11000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Perceptor_1.jpg?v=1723011225')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/formid-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Formid_1.jpg?v=1723011112" alt="Formid Ring">
+            <div class="product-details">
+                <div class="product-name">Formid Ring</div>
+                <div class="product-price">₹4400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/formid-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/formid-ring', 'Formid Ring', '4400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Formid_1.jpg?v=1723011112')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/totem-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Totem_1.jpg?v=1723011087" alt="Totem Ring">
+            <div class="product-details">
+                <div class="product-name">Totem Ring</div>
+                <div class="product-price">₹7800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/totem-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/totem-ring', 'Totem Ring', '7800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Totem_1.jpg?v=1723011087')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/drift', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Drift_2.jpg?v=1723011068" alt="Drift">
+            <div class="product-details">
+                <div class="product-name">Drift</div>
+                <div class="product-price">₹4400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/drift', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/drift', 'Drift', '4400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Drift_2.jpg?v=1723011068')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/intuite-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Intuite_1.jpg?v=1723011043" alt="Intuite Ring">
+            <div class="product-details">
+                <div class="product-name">Intuite Ring</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/intuite-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/intuite-ring', 'Intuite Ring', '5200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Intuite_1.jpg?v=1723011043')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/primalis', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Primalis_2.jpg?v=1723011021" alt="Primalis">
+            <div class="product-details">
+                <div class="product-name">Primalis</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/primalis', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/primalis', 'Primalis', '5000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Primalis_2.jpg?v=1723011021')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/oracle', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Oracle_1.jpg?v=1723010979" alt="Oracle">
+            <div class="product-details">
+                <div class="product-name">Oracle</div>
+                <div class="product-price">₹7600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/oracle', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/oracle', 'Oracle', '7600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Oracle_1.jpg?v=1723010979')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/chaste-hair-accessory-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Twilight_1.jpg?v=1722841859" alt="Twilight _ Hair Braid Accessory Cum Necklace">
+            <div class="product-details">
+                <div class="product-name">Twilight _ Hair Braid Accessory Cum Necklace</div>
+                <div class="product-price">₹14000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/chaste-hair-accessory-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/chaste-hair-accessory-copy', 'Twilight _ Hair Braid Accessory Cum Necklace', '14000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Twilight_1.jpg?v=1722841859')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/twilight-_-hair-braid-accessory-cum-necklace-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Temptationsofthehighway_1.jpg?v=1722842173" alt="Temptations Of The Highway_Hair braid accessory">
+            <div class="product-details">
+                <div class="product-name">Temptations Of The Highway_Hair braid accessory</div>
+                <div class="product-price">₹9900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/twilight-_-hair-braid-accessory-cum-necklace-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/twilight-_-hair-braid-accessory-cum-necklace-copy', 'Temptations Of The Highway_Hair braid accessory', '9900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Temptationsofthehighway_1.jpg?v=1722842173')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/deca-midi-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_3ae73724-8a00-4ae3-a8be-00cd795904a0.jpg?v=1762767886" alt="Deca Midi Ring">
+            <div class="product-details">
+                <div class="product-name">Deca Midi Ring</div>
+                <div class="product-price">₹1700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/deca-midi-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/deca-midi-ring', 'Deca Midi Ring', '1700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_3ae73724-8a00-4ae3-a8be-00cd795904a0.jpg?v=1762767886')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/halo', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_6d3a3a6a-71d1-43de-84e4-892bd32537e9.jpg?v=1716475590" alt="Halo">
+            <div class="product-details">
+                <div class="product-name">Halo</div>
+                <div class="product-price">₹5900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/halo', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/halo', 'Halo', '5900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_6d3a3a6a-71d1-43de-84e4-892bd32537e9.jpg?v=1716475590')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/unity', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_3c67c559-ea4d-447a-a586-38be28dcfe9f.jpg?v=1713957568" alt="Unity">
+            <div class="product-details">
+                <div class="product-name">Unity</div>
+                <div class="product-price">₹5000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/unity', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/unity', 'Unity', '5000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_3c67c559-ea4d-447a-a586-38be28dcfe9f.jpg?v=1713957568')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/equator-earrings_long', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Equator_LongC.jpg?v=1762767965" alt="Equator Earrings_Long">
+            <div class="product-details">
+                <div class="product-name">Equator Earrings_Long</div>
+                <div class="product-price">₹6600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/equator-earrings_long', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/equator-earrings_long', 'Equator Earrings_Long', '6600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/Equator_LongC.jpg?v=1762767965')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/stance-necklace', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/stance_1.jpg?v=1712147637" alt="Stance Necklace">
+            <div class="product-details">
+                <div class="product-name">Stance Necklace</div>
+                <div class="product-price">₹6900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/stance-necklace', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/stance-necklace', 'Stance Necklace', '6900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/stance_1.jpg?v=1712147637')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/two-small-peas-ear-studs_silver', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/TWOSMALLPEASSILVER.jpg?v=1712144993" alt="Two Small Peas Ear Studs_Silver">
+            <div class="product-details">
+                <div class="product-name">Two Small Peas Ear Studs_Silver</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/two-small-peas-ear-studs_silver', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/two-small-peas-ear-studs_silver', 'Two Small Peas Ear Studs_Silver', '2800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/TWOSMALLPEASSILVER.jpg?v=1712144993')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/nexus-neckpiece-silver', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/nexussilver_1.jpg?v=1712125707" alt="Nexus Neckpiece Silver">
+            <div class="product-details">
+                <div class="product-name">Nexus Neckpiece Silver</div>
+                <div class="product-price">₹16200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/nexus-neckpiece-silver', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/nexus-neckpiece-silver', 'Nexus Neckpiece Silver', '16200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/nexussilver_1.jpg?v=1712125707')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/two-large-peas-ear-studs_silver', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/2largepeassilver_FINAL.jpg?v=1712133476" alt="Two Large Peas Ear Studs_Silver">
+            <div class="product-details">
+                <div class="product-name">Two Large Peas Ear Studs_Silver</div>
+                <div class="product-price">₹3000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/two-large-peas-ear-studs_silver', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/two-large-peas-ear-studs_silver', 'Two Large Peas Ear Studs_Silver', '3000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/2largepeassilver_FINAL.jpg?v=1712133476')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-two-tone-tine', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/ThetwotonetineA.jpg?v=1712140097" alt="The Two-Tone Tine">
+            <div class="product-details">
+                <div class="product-name">The Two-Tone Tine</div>
+                <div class="product-price">₹4400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-two-tone-tine', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-two-tone-tine', 'The Two-Tone Tine', '4400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/ThetwotonetineA.jpg?v=1712140097')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/better-half-jigsaw', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/betterhalf_jigsaw_2.jpg?v=1706263430" alt="Better Half Puzzle">
+            <div class="product-details">
+                <div class="product-name">Better Half Puzzle</div>
+                <div class="product-price">₹1100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/better-half-jigsaw', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/better-half-jigsaw', 'Better Half Puzzle', '1100.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/betterhalf_jigsaw_2.jpg?v=1706263430')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/accord-jigsaw', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/accordjigsaw_2.jpg?v=1706110500" alt="The Accord Puzzle">
+            <div class="product-details">
+                <div class="product-name">The Accord Puzzle</div>
+                <div class="product-price">₹1100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/accord-jigsaw', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/accord-jigsaw', 'The Accord Puzzle', '1100.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/accordjigsaw_2.jpg?v=1706110500')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/heliopause', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/heliopause_1.jpg?v=1703228021" alt="Heliopause">
+            <div class="product-details">
+                <div class="product-name">Heliopause</div>
+                <div class="product-price">₹19000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/heliopause', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/heliopause', 'Heliopause', '19000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/heliopause_1.jpg?v=1703228021')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/nexus', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/NEXUS.jpg?v=1703220232" alt="Nexus Neckpiece">
+            <div class="product-details">
+                <div class="product-name">Nexus Neckpiece</div>
+                <div class="product-price">₹14800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/nexus', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/nexus', 'Nexus Neckpiece', '14800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/NEXUS.jpg?v=1703220232')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/statis', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/stasis_1.jpg?v=1703220321" alt="Stasis">
+            <div class="product-details">
+                <div class="product-name">Stasis</div>
+                <div class="product-price">₹18000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/statis', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/statis', 'Stasis', '18000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/stasis_1.jpg?v=1703220321')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/tempus', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/TEMPUSWRISTLET.621.jpg?v=1703230574" alt="Tempus">
+            <div class="product-details">
+                <div class="product-name">Tempus</div>
+                <div class="product-price">₹4700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/tempus', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/tempus', 'Tempus', '4700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/TEMPUSWRISTLET.621.jpg?v=1703230574')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/loop-choker', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/LOOP_1.jpg?v=1701280028" alt="Loop Choker">
+            <div class="product-details">
+                <div class="product-name">Loop Choker</div>
+                <div class="product-price">₹4900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/loop-choker', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/loop-choker', 'Loop Choker', '4900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/LOOP_1.jpg?v=1701280028')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/clarks-orbit-nose-pin', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/CLARKE_SORBITNOSESEPTUM_1.jpg?v=1709363949" alt="Clark&#x27;s Orbit Clip on Nose Pin">
+            <div class="product-details">
+                <div class="product-name">Clark&#x27;s Orbit Clip on Nose Pin</div>
+                <div class="product-price">₹2000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/clarks-orbit-nose-pin', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/clarks-orbit-nose-pin', 'Clark&#x27;s Orbit Clip on Nose Pin', '2000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/CLARKE_SORBITNOSESEPTUM_1.jpg?v=1709363949')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/crescent-nose-pin', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/CRESCENTNOSERING_1.jpg?v=1701167427" alt="Crescent Nose Pin">
+            <div class="product-details">
+                <div class="product-name">Crescent Nose Pin</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/crescent-nose-pin', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/crescent-nose-pin', 'Crescent Nose Pin', '1800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/CRESCENTNOSERING_1.jpg?v=1701167427')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/ode', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/1F15C38D-58EC-4544-B00E-7C2FD16DB060.jpg?v=1681201270" alt="Ode Ring">
+            <div class="product-details">
+                <div class="product-name">Ode Ring</div>
+                <div class="product-price">₹3100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/ode', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/ode', 'Ode Ring', '3100.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/1F15C38D-58EC-4544-B00E-7C2FD16DB060.jpg?v=1681201270')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/equator', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_be1a6222-fb4f-4651-b722-c4717c02cb94.jpg?v=1700115827" alt="Equator Earrings">
+            <div class="product-details">
+                <div class="product-name">Equator Earrings</div>
+                <div class="product-price">₹4800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/equator', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/equator', 'Equator Earrings', '4800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1_be1a6222-fb4f-4651-b722-c4717c02cb94.jpg?v=1700115827')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-big-dipper-earrings', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1A_25d118f8-eb37-427c-98f8-d761900b553b.jpg?v=1730896749" alt="The Big Dipper Earring - Single Ear">
+            <div class="product-details">
+                <div class="product-name">The Big Dipper Earring - Single Ear</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-big-dipper-earrings', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-big-dipper-earrings', 'The Big Dipper Earring - Single Ear', '2800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1A_25d118f8-eb37-427c-98f8-d761900b553b.jpg?v=1730896749')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/single-small-peas-ear-stud', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/singlepea.jpg?v=1708771476" alt="Single Small Peas Ear Stud">
+            <div class="product-details">
+                <div class="product-name">Single Small Peas Ear Stud</div>
+                <div class="product-price">₹1300.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/single-small-peas-ear-stud', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/single-small-peas-ear-stud', 'Single Small Peas Ear Stud', '1300.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/singlepea.jpg?v=1708771476')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/vortex-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/VORTEX_0.jpg?v=1699286014" alt="Vortex Ring">
+            <div class="product-details">
+                <div class="product-name">Vortex Ring</div>
+                <div class="product-price">₹2500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/vortex-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/vortex-ring', 'Vortex Ring', '2500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/VORTEX_0.jpg?v=1699286014')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/keplers-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/KEPLER_SLAWRING.623.png?v=1699287741" alt="Kepler&#x27;s Law Ring">
+            <div class="product-details">
+                <div class="product-name">Kepler&#x27;s Law Ring</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/keplers-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/keplers-ring', 'Kepler&#x27;s Law Ring', '3200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/KEPLER_SLAWRING.623.png?v=1699287741')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/large-peas-ear-studs', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/largepea1.png?v=1699364199" alt="Single Large Peas Ear Stud">
+            <div class="product-details">
+                <div class="product-name">Single Large Peas Ear Stud</div>
+                <div class="product-price">₹1400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/large-peas-ear-studs', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/large-peas-ear-studs', 'Single Large Peas Ear Stud', '1400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/largepea1.png?v=1699364199')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/copy-of-8-ways-to-sunday-brooch', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/ARCHIMEDESEARRING.621.png?v=1699949785" alt="Arc-Hemedes Earring Extension">
+            <div class="product-details">
+                <div class="product-name">Arc-Hemedes Earring Extension</div>
+                <div class="product-price">₹1950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/copy-of-8-ways-to-sunday-brooch', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/copy-of-8-ways-to-sunday-brooch', 'Arc-Hemedes Earring Extension', '1950.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/ARCHIMEDESEARRING.621.png?v=1699949785')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/mantis', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/mantis_3.jpg?v=1692621585" alt="Mantis Necklace">
+            <div class="product-details">
+                <div class="product-name">Mantis Necklace</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/mantis', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/mantis', 'Mantis Necklace', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/mantis_3.jpg?v=1692621585')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-sharp-end', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/earringextension3.jpg?v=1682061341" alt="The Sharp End Earrings">
+            <div class="product-details">
+                <div class="product-name">The Sharp End Earrings</div>
+                <div class="product-price">₹3900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-sharp-end', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-sharp-end', 'The Sharp End Earrings', '3900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/earringextension3.jpg?v=1682061341')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/mantis-bag-cum-jewellery', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/Mantisbag2.jpg?v=1682074348" alt="Mantis Bag cum Jewellery">
+            <div class="product-details">
+                <div class="product-name">Mantis Bag cum Jewellery</div>
+                <div class="product-price">₹18000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/mantis-bag-cum-jewellery', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/mantis-bag-cum-jewellery', 'Mantis Bag cum Jewellery', '18000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/Mantisbag2.jpg?v=1682074348')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/no-na-me-gift-card', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/c86ed3_bf4d33185f72431f8c3b4c0ec4255f87_mv2.jpg?v=1684262205" alt="NO NA MÉ Gift Card">
+            <div class="product-details">
+                <div class="product-name">NO NA MÉ Gift Card</div>
+                <div class="product-price">₹1000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/no-na-me-gift-card', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/no-na-me-gift-card', 'NO NA MÉ Gift Card', '1000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/c86ed3_bf4d33185f72431f8c3b4c0ec4255f87_mv2.jpg?v=1684262205')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/grasshopper-bag-cum-jewellery', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/grasshoppermedium.jpg?v=1687621149" alt="Grasshopper Bag cum Jewellery">
+            <div class="product-details">
+                <div class="product-name">Grasshopper Bag cum Jewellery</div>
+                <div class="product-price">₹18000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/grasshopper-bag-cum-jewellery', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/grasshopper-bag-cum-jewellery', 'Grasshopper Bag cum Jewellery', '18000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/grasshoppermedium.jpg?v=1687621149')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/grasshopper-necklace', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/grasshoppernecklace.jpg?v=1682064919" alt="Grasshopper Necklace">
+            <div class="product-details">
+                <div class="product-name">Grasshopper Necklace</div>
+                <div class="product-price">₹7400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/grasshopper-necklace', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/grasshopper-necklace', 'Grasshopper Necklace', '7400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/grasshoppernecklace.jpg?v=1682064919')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/diverge', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/AE3A0018-34A2-415A-A31C-D94DDF931531_34acb24d-1f11-49f1-81d3-3f8307987ac8.jpg?v=1681211387" alt="Diverge 4-in-1 Necklace">
+            <div class="product-details">
+                <div class="product-name">Diverge 4-in-1 Necklace</div>
+                <div class="product-price">₹6600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/diverge', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/diverge', 'Diverge 4-in-1 Necklace', '6600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/AE3A0018-34A2-415A-A31C-D94DDF931531_34acb24d-1f11-49f1-81d3-3f8307987ac8.jpg?v=1681211387')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/traverse', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/DBAD1696-B0FF-46B0-A6EE-F6162D4895D4_55b08e93-795c-4936-86e3-0033bdb9c225.jpg?v=1681211279" alt="Traverse 4-in-1 Necklace">
+            <div class="product-details">
+                <div class="product-name">Traverse 4-in-1 Necklace</div>
+                <div class="product-price">₹6600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/traverse', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/traverse', 'Traverse 4-in-1 Necklace', '6600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/DBAD1696-B0FF-46B0-A6EE-F6162D4895D4_55b08e93-795c-4936-86e3-0033bdb9c225.jpg?v=1681211279')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/vanishing-point', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/0382D21F-5E9D-4D6C-AEF5-FE448ADD3491_32330ee4-dade-431c-ac6a-361e431cf05d.jpg?v=1681211151" alt="Vanishing Point 4-in-1 Necklace">
+            <div class="product-details">
+                <div class="product-name">Vanishing Point 4-in-1 Necklace</div>
+                <div class="product-price">₹6600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/vanishing-point', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/vanishing-point', 'Vanishing Point 4-in-1 Necklace', '6600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/0382D21F-5E9D-4D6C-AEF5-FE448ADD3491_32330ee4-dade-431c-ac6a-361e431cf05d.jpg?v=1681211151')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/abel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/5C5C96EA-B652-4593-8111-AB22DD76E8F1_c392839c-a3b5-4103-a819-83868dfd24a6.jpg?v=1689326972" alt="Abel Necklace">
+            <div class="product-details">
+                <div class="product-name">Abel Necklace</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/abel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/abel', 'Abel Necklace', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/5C5C96EA-B652-4593-8111-AB22DD76E8F1_c392839c-a3b5-4103-a819-83868dfd24a6.jpg?v=1689326972')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/binary-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1a.jpg?v=1694150673" alt="Binary Ring">
+            <div class="product-details">
+                <div class="product-name">Binary Ring</div>
+                <div class="product-price">₹3700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/binary-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/binary-ring', 'Binary Ring', '3700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/1a.jpg?v=1694150673')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/trail', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/064F246B-0773-4459-A486-004FF5B66A2A.jpg?v=1681200311" alt="Trail Body Belt">
+            <div class="product-details">
+                <div class="product-name">Trail Body Belt</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/trail', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/trail', 'Trail Body Belt', '6500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/064F246B-0773-4459-A486-004FF5B66A2A.jpg?v=1681200311')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/duality', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/DUALITY_1.jpg?v=1681201649" alt="Duality Ring">
+            <div class="product-details">
+                <div class="product-name">Duality Ring</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/duality', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/duality', 'Duality Ring', '3800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/DUALITY_1.jpg?v=1681201649')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/fringe', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/4DBE189B-A21E-4A04-B7DC-8D613926A24F.jpg?v=1681210013" alt="Fringe Choker">
+            <div class="product-details">
+                <div class="product-name">Fringe Choker</div>
+                <div class="product-price">₹4800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/fringe', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/fringe', 'Fringe Choker', '4800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/4DBE189B-A21E-4A04-B7DC-8D613926A24F.jpg?v=1681210013')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/tangent', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/1C0AF3A3-FE4F-4EC0-925B-A27E1423BE90.jpg?v=1681201887" alt="Tangent Ring">
+            <div class="product-details">
+                <div class="product-name">Tangent Ring</div>
+                <div class="product-price">₹4400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/tangent', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/tangent', 'Tangent Ring', '4400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/1C0AF3A3-FE4F-4EC0-925B-A27E1423BE90.jpg?v=1681201887')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/element-choker', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/5DA6EF77-CB6E-4BFE-9C69-4BF6288939DA.jpg?v=1681210157" alt="Element Choker">
+            <div class="product-details">
+                <div class="product-name">Element Choker</div>
+                <div class="product-price">₹4400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/element-choker', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/element-choker', 'Element Choker', '4400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/5DA6EF77-CB6E-4BFE-9C69-4BF6288939DA.jpg?v=1681210157')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/kane', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/A5DFB375-1E00-4B3C-B176-95B9B12928D8.jpg?v=1689326239" alt="Kane Necklace">
+            <div class="product-details">
+                <div class="product-name">Kane Necklace</div>
+                <div class="product-price">₹4400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/kane', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/kane', 'Kane Necklace', '4400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/A5DFB375-1E00-4B3C-B176-95B9B12928D8.jpg?v=1689326239')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/curb-choker', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/Curb_1.jpg?v=1681208883" alt="Curb Choker">
+            <div class="product-details">
+                <div class="product-name">Curb Choker</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/curb-choker', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/curb-choker', 'Curb Choker', '6800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/Curb_1.jpg?v=1681208883')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/a-bar-circle-machination-hand-accessory', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/F7E2A385-C0AD-4394-90F0-E0E485F3051D.jpg?v=1681207202" alt="A Bar Circle Machination - Hand Accessory">
+            <div class="product-details">
+                <div class="product-name">A Bar Circle Machination - Hand Accessory</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/a-bar-circle-machination-hand-accessory', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/a-bar-circle-machination-hand-accessory', 'A Bar Circle Machination - Hand Accessory', '5500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/F7E2A385-C0AD-4394-90F0-E0E485F3051D.jpg?v=1681207202')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/clover', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/DCD4DB64-DBE4-432E-9466-BE3C8F13A7D2.jpg?v=1681210680" alt="Clover 4-in-1 Necklace">
+            <div class="product-details">
+                <div class="product-name">Clover 4-in-1 Necklace</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/clover', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/clover', 'Clover 4-in-1 Necklace', '6800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/DCD4DB64-DBE4-432E-9466-BE3C8F13A7D2.jpg?v=1681210680')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/poise', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/2ED17362-4ACE-4E0D-B398-B38A2A0B92ED.jpg?v=1719160050" alt="Poise Necklace">
+            <div class="product-details">
+                <div class="product-name">Poise Necklace</div>
+                <div class="product-price">₹6900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/poise', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/poise', 'Poise Necklace', '6900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/2ED17362-4ACE-4E0D-B398-B38A2A0B92ED.jpg?v=1719160050')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/contraption-hand-accessory', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/257D699E-223D-476A-830F-DBC92E30D26B.jpg?v=1681206941" alt="Contraption Hand Accessory">
+            <div class="product-details">
+                <div class="product-name">Contraption Hand Accessory</div>
+                <div class="product-price">₹5900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/contraption-hand-accessory', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/contraption-hand-accessory', 'Contraption Hand Accessory', '5900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/257D699E-223D-476A-830F-DBC92E30D26B.jpg?v=1681206941')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/chaste', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/CHASTE_1.jpg?v=1681204586" alt="Chaste Hair Accessory">
+            <div class="product-details">
+                <div class="product-name">Chaste Hair Accessory</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/chaste', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/chaste', 'Chaste Hair Accessory', '4500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/CHASTE_1.jpg?v=1681204586')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/ascend-necklace', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/1b_3be2a2ce-60a2-4179-8d17-d04fb7c612bb.jpg?v=1682069129" alt="Ascend Necklace">
+            <div class="product-details">
+                <div class="product-name">Ascend Necklace</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/ascend-necklace', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/ascend-necklace', 'Ascend Necklace', '4200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/1b_3be2a2ce-60a2-4179-8d17-d04fb7c612bb.jpg?v=1682069129')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/inscribe', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/F349ACBB-6DF9-4C8C-A8D7-C9B78A3BF413.jpg?v=1681201484" alt="Inscribe Ring">
+            <div class="product-details">
+                <div class="product-name">Inscribe Ring</div>
+                <div class="product-price">₹3500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/inscribe', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/inscribe', 'Inscribe Ring', '3500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/F349ACBB-6DF9-4C8C-A8D7-C9B78A3BF413.jpg?v=1681201484')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/curb-wrist-accessory', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/2b.jpg?v=1681208385" alt="Curb Wrist Band">
+            <div class="product-details">
+                <div class="product-name">Curb Wrist Band</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/curb-wrist-accessory', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/curb-wrist-accessory', 'Curb Wrist Band', '4600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/2b.jpg?v=1681208385')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/bar-circle-machination-finger-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/5D3A16B4-5262-44F2-9939-00282458EBAF.jpg?v=1681202295" alt="Bar Circle Machination Ring">
+            <div class="product-details">
+                <div class="product-name">Bar Circle Machination Ring</div>
+                <div class="product-price">₹3600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/bar-circle-machination-finger-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/bar-circle-machination-finger-ring', 'Bar Circle Machination Ring', '3600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/5D3A16B4-5262-44F2-9939-00282458EBAF.jpg?v=1681202295')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/contraption-finger-ring', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/E57561B3-30AC-4BF2-A5E4-34F66B341FF7.jpg?v=1681202615" alt="Contraption Ring">
+            <div class="product-details">
+                <div class="product-name">Contraption Ring</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/contraption-finger-ring', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/contraption-finger-ring', 'Contraption Ring', '4200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/E57561B3-30AC-4BF2-A5E4-34F66B341FF7.jpg?v=1681202615')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/ascend-hand-accessory', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/2d.jpg?v=1682068279" alt="Ascend - Hand Accessory">
+            <div class="product-details">
+                <div class="product-name">Ascend - Hand Accessory</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/ascend-hand-accessory', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/ascend-hand-accessory', 'Ascend - Hand Accessory', '4200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/2d.jpg?v=1682068279')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/element-wrist-band', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/elementblack.jpg?v=1689327205" alt="Element Wrist Band">
+            <div class="product-details">
+                <div class="product-name">Element Wrist Band</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/element-wrist-band', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/element-wrist-band', 'Element Wrist Band', '2800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/elementblack.jpg?v=1689327205')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/one-of-a-kind', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-A506B21D-66E7-45AD-AD37-A437D13761E3.jpg?v=1762767926" alt="One Of A Kind Ring">
+            <div class="product-details">
+                <div class="product-name">One Of A Kind Ring</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/one-of-a-kind', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/one-of-a-kind', 'One Of A Kind Ring', '2200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-A506B21D-66E7-45AD-AD37-A437D13761E3.jpg?v=1762767926')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/half-a-dozen', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-FB931A6A-F2A8-463E-95C7-15CBB602B4FB.jpg?v=1681292743" alt="Half A Dozen Ring">
+            <div class="product-details">
+                <div class="product-name">Half A Dozen Ring</div>
+                <div class="product-price">₹1900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/half-a-dozen', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/half-a-dozen', 'Half A Dozen Ring', '1900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-FB931A6A-F2A8-463E-95C7-15CBB602B4FB.jpg?v=1681292743')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/threesome', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-7B2B8676-B86B-4F40-8459-4794C30B73A2.jpg?v=1681290691" alt="Threesome Ring">
+            <div class="product-details">
+                <div class="product-name">Threesome Ring</div>
+                <div class="product-price">₹1700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/threesome', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/threesome', 'Threesome Ring', '1700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-7B2B8676-B86B-4F40-8459-4794C30B73A2.jpg?v=1681290691')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/a-thing-or-two', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-B203E37F-B918-40A8-B35E-7F6F2D40A75D.jpg?v=1681292560" alt="A Thing Or Two - Index Finger Ring">
+            <div class="product-details">
+                <div class="product-name">A Thing Or Two - Index Finger Ring</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/a-thing-or-two', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/a-thing-or-two', 'A Thing Or Two - Index Finger Ring', '1800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-B203E37F-B918-40A8-B35E-7F6F2D40A75D.jpg?v=1681292560')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/two-fold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/twofoldring.jpg?v=1683137104" alt="Two Fold Ring">
+            <div class="product-details">
+                <div class="product-name">Two Fold Ring</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/two-fold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/two-fold', 'Two Fold Ring', '2100.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/twofoldring.jpg?v=1683137104')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/in-one-ear-out-the-other', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/ononeear_outtheother_2.jpg?v=1694148871" alt="In One Ear &amp; Out The Other Ear Cuff">
+            <div class="product-details">
+                <div class="product-name">In One Ear &amp; Out The Other Ear Cuff</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/in-one-ear-out-the-other', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/in-one-ear-out-the-other', 'In One Ear &amp; Out The Other Ear Cuff', '2200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/ononeear_outtheother_2.jpg?v=1694148871')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-big-five', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-thbigfive.jpg?v=1682062423" alt="The Big Five Necklace">
+            <div class="product-details">
+                <div class="product-name">The Big Five Necklace</div>
+                <div class="product-price">₹13500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-big-five', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-big-five', 'The Big Five Necklace', '13500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-thbigfive.jpg?v=1682062423')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-three-way-street', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-3waystreet.jpg?v=1682062831" alt="The Three Way Street Necklace">
+            <div class="product-details">
+                <div class="product-name">The Three Way Street Necklace</div>
+                <div class="product-price">₹13900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-three-way-street', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-three-way-street', 'The Three Way Street Necklace', '13900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-3waystreet.jpg?v=1682062831')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-better-half', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/12_3485f3f6-e4eb-4daa-89c5-52872567ced5.jpg?v=1754391714" alt="The Better Half Necklace">
+            <div class="product-details">
+                <div class="product-name">The Better Half Necklace</div>
+                <div class="product-price">₹6600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-better-half', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-better-half', 'The Better Half Necklace', '6600.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/12_3485f3f6-e4eb-4daa-89c5-52872567ced5.jpg?v=1754391714')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/on-cloud-nine', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-oncloudnine.jpg?v=1682062705" alt="On Cloud Nine Necklace">
+            <div class="product-details">
+                <div class="product-name">On Cloud Nine Necklace</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/on-cloud-nine', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/on-cloud-nine', 'On Cloud Nine Necklace', '3200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-oncloudnine.jpg?v=1682062705')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/double-date', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-AE113F1A-0ECE-49BC-B2F7-DAF9AAA31ACA.jpg?v=1681289394" alt="Double Date Brooch">
+            <div class="product-details">
+                <div class="product-name">Double Date Brooch</div>
+                <div class="product-price">₹4800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/double-date', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/double-date', 'Double Date Brooch', '4800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-AE113F1A-0ECE-49BC-B2F7-DAF9AAA31ACA.jpg?v=1681289394')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/on-the-one-hand', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ONTHEONEHAND1.jpg?v=1682062106" alt="On the one hand">
+            <div class="product-details">
+                <div class="product-name">On the one hand</div>
+                <div class="product-price">₹3000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/on-the-one-hand', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/on-the-one-hand', 'On the one hand', '3000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ONTHEONEHAND1.jpg?v=1682062106')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-old-one-two', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-B898E65C-EECB-49D9-810B-B0F644641548.jpg?v=1681290234" alt="The Old One Two Knuckle Ring">
+            <div class="product-details">
+                <div class="product-name">The Old One Two Knuckle Ring</div>
+                <div class="product-price">₹3300.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-old-one-two', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-old-one-two', 'The Old One Two Knuckle Ring', '3300.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/ConvertOut-Resized-B898E65C-EECB-49D9-810B-B0F644641548.jpg?v=1681290234')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-last-quarter', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/thelastquarter_4a.jpg?v=1692615781" alt="The Last Quarter Brooch">
+            <div class="product-details">
+                <div class="product-name">The Last Quarter Brooch</div>
+                <div class="product-price">₹6000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-last-quarter', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-last-quarter', 'The Last Quarter Brooch', '6000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/thelastquarter_4a.jpg?v=1692615781')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/in-one-round', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/Inoneround_3_1.jpg?v=1719146778" alt="In One Round Ear Cuff">
+            <div class="product-details">
+                <div class="product-name">In One Round Ear Cuff</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/in-one-round', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/in-one-round', 'In One Round Ear Cuff', '3200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/Inoneround_3_1.jpg?v=1719146778')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/circle-through', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/10DD752D-2354-44A9-896D-FA028242A1CA.jpg?v=1681202818" alt="Circle Through Ear Cuff">
+            <div class="product-details">
+                <div class="product-name">Circle Through Ear Cuff</div>
+                <div class="product-price">₹3500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/circle-through', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/circle-through', 'Circle Through Ear Cuff', '3500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/10DD752D-2354-44A9-896D-FA028242A1CA.jpg?v=1681202818')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/two-small-peas', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/files/PEASINAPOD_1_HIGHRES.jpg?v=1708773415" alt="Two Small Peas Ear Studs">
+            <div class="product-details">
+                <div class="product-name">Two Small Peas Ear Studs</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/two-small-peas', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/two-small-peas', 'Two Small Peas Ear Studs', '2800.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/files/PEASINAPOD_1_HIGHRES.jpg?v=1708773415')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/two-large-peas', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/A079081B-F3C0-4A04-AAA3-49EFFFA641A0.jpg?v=1681203821" alt="Two Large Peas Ear Studs">
+            <div class="product-details">
+                <div class="product-name">Two Large Peas Ear Studs</div>
+                <div class="product-price">₹3000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/two-large-peas', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/two-large-peas', 'Two Large Peas Ear Studs', '3000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/A079081B-F3C0-4A04-AAA3-49EFFFA641A0.jpg?v=1681203821')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/the-long-end-of-the-stick', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/earringextension1.jpg?v=1762768560" alt="The Long End Of The Stick Earrings">
+            <div class="product-details">
+                <div class="product-name">The Long End Of The Stick Earrings</div>
+                <div class="product-price">₹3900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/the-long-end-of-the-stick', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/the-long-end-of-the-stick', 'The Long End Of The Stick Earrings', '3900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/earringextension1.jpg?v=1762768560')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/a-square-a-cut-out', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/square_acutout.jpg?v=1682061684" alt="A Square &amp; A Cut Out Earrings">
+            <div class="product-details">
+                <div class="product-name">A Square &amp; A Cut Out Earrings</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/a-square-a-cut-out', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/a-square-a-cut-out', 'A Square &amp; A Cut Out Earrings', '4200.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/square_acutout.jpg?v=1682061684')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/two-brooch-pins', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/BROOCHPINS1.jpg?v=1699290346" alt="Two Brooch Pins">
+            <div class="product-details">
+                <div class="product-name">Two Brooch Pins</div>
+                <div class="product-price">₹2900.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/two-brooch-pins', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/two-brooch-pins', 'Two Brooch Pins', '2900.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/BROOCHPINS1.jpg?v=1699290346')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/dragonfly', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/DRAGONFLY_1_1.jpg?v=1682063944" alt="Dragonfly Necklace">
+            <div class="product-details">
+                <div class="product-name">Dragonfly Necklace</div>
+                <div class="product-price">₹7400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/dragonfly', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/dragonfly', 'Dragonfly Necklace', '7400.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/DRAGONFLY_1_1.jpg?v=1682063944')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/ladybug', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/LADYBUG_1_2.jpg?v=1682064345" alt="Ladybug Necklace">
+            <div class="product-details">
+                <div class="product-name">Ladybug Necklace</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/ladybug', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/ladybug', 'Ladybug Necklace', '6500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/LADYBUG_1_2.jpg?v=1682064345')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/flatfish', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/FLATFISH_2.jpg?v=1682064218" alt="Flatfish Necklace">
+            <div class="product-details">
+                <div class="product-name">Flatfish Necklace</div>
+                <div class="product-price">₹5250.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/flatfish', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/flatfish', 'Flatfish Necklace', '5250.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/FLATFISH_2.jpg?v=1682064218')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/hellbender', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/hellbender_1_2.jpg?v=1682064511" alt="Hellbender Necklace">
+            <div class="product-details">
+                <div class="product-name">Hellbender Necklace</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/hellbender', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/hellbender', 'Hellbender Necklace', '6500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/hellbender_1_2.jpg?v=1682064511')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/8-ways-to-sunday', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/bow.jpg?v=1681289866" alt="8 Ways To Sunday Brooch">
+            <div class="product-details">
+                <div class="product-name">8 Ways To Sunday Brooch</div>
+                <div class="product-price">₹4100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/8-ways-to-sunday', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/8-ways-to-sunday', '8 Ways To Sunday Brooch', '4100.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/bow.jpg?v=1681289866')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/hair-hair', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/hairhair1.jpg?v=1682074258" alt="Hair Hair - Hair Accessory">
+            <div class="product-details">
+                <div class="product-name">Hair Hair - Hair Accessory</div>
+                <div class="product-price">₹3500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/hair-hair', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/hair-hair', 'Hair Hair - Hair Accessory', '3500.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/hairhair1.jpg?v=1682074258')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/all-hail-the-mane', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/agoodhairday.jpg?v=1682068133" alt="All Hail The Mane - Hair Accessory">
+            <div class="product-details">
+                <div class="product-name">All Hail The Mane - Hair Accessory</div>
+                <div class="product-price">₹3700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/all-hail-the-mane', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/all-hail-the-mane', 'All Hail The Mane - Hair Accessory', '3700.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/agoodhairday.jpg?v=1682068133')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/dragonfly-bag-cum-jewellery', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/1malaigrey_1.jpg?v=1687618509" alt="Dragonfly - Bag cum jewellery">
+            <div class="product-details">
+                <div class="product-name">Dragonfly - Bag cum jewellery</div>
+                <div class="product-price">₹23000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/dragonfly-bag-cum-jewellery', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/dragonfly-bag-cum-jewellery', 'Dragonfly - Bag cum jewellery', '23000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/1malaigrey_1.jpg?v=1687618509')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/hellbender-bag-cum-jewellery', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/Hellbender_1_3.jpg?v=1687619958" alt="Hellbender Bag cum jewellery">
+            <div class="product-details">
+                <div class="product-name">Hellbender Bag cum jewellery</div>
+                <div class="product-price">₹18000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/hellbender-bag-cum-jewellery', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/hellbender-bag-cum-jewellery', 'Hellbender Bag cum jewellery', '18000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/Hellbender_1_3.jpg?v=1687619958')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.nonamejewelry.in/products/flatfish-bag-cum-jewellery', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0706/8749/0369/products/FLATFISHGREY1.jpg?v=1687619933" alt="Flatfish Bag cum Jewellery">
+            <div class="product-details">
+                <div class="product-name">Flatfish Bag cum Jewellery</div>
+                <div class="product-price">₹21000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.nonamejewelry.in/products/flatfish-bag-cum-jewellery', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.nonamejewelry.in/products/flatfish-bag-cum-jewellery', 'Flatfish Bag cum Jewellery', '21000.00', 'https://cdn.shopify.com/s/files/1/0706/8749/0369/products/FLATFISHGREY1.jpg?v=1687619933')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

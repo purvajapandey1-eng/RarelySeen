@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endless summer - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Endless summer</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/ayla-top-ekine-shorts', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/NRN_14481_7a480935-5664-4734-8163-98ac6e33e6d1.jpg?v=1697619804" alt="Ayla &amp; Eleni Set">
+            <div class="product-details">
+                <div class="product-name">Ayla &amp; Eleni Set</div>
+                <div class="product-price">₹7290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/ayla-top-ekine-shorts', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/ayla-top-ekine-shorts', 'Ayla &amp; Eleni Set', '7290.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/NRN_14481_7a480935-5664-4734-8163-98ac6e33e6d1.jpg?v=1697619804')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/pink-top-chiffon', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/WhatsAppImage2026-06-29at11.48.28AM_1.jpg?v=1782714166" alt="Pink top chiffon">
+            <div class="product-details">
+                <div class="product-name">Pink top chiffon</div>
+                <div class="product-price">₹1700.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/pink-top-chiffon', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/pink-top-chiffon', 'Pink top chiffon', '1700.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/WhatsAppImage2026-06-29at11.48.28AM_1.jpg?v=1782714166')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/white-top-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/WhatsAppImage2026-06-29at11.48.28AM_4.jpg?v=1782714105" alt="White top">
+            <div class="product-details">
+                <div class="product-name">White top</div>
+                <div class="product-price">₹1500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/white-top-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/white-top-1', 'White top', '1500.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/WhatsAppImage2026-06-29at11.48.28AM_4.jpg?v=1782714105')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/cherry-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/WhatsAppImage2026-06-29at11.48.28AM_2.jpg?v=1782713997" alt="Cherry dress">
+            <div class="product-details">
+                <div class="product-name">Cherry dress</div>
+                <div class="product-price">₹3000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/cherry-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/cherry-dress', 'Cherry dress', '3000.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/WhatsAppImage2026-06-29at11.48.28AM_2.jpg?v=1782713997')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/multicolour-shorts-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9446_ab132ab1-1a6b-4b1c-9d71-321ad0f218e2.jpg?v=1781865796" alt="Sky blue Mini Skirt">
+            <div class="product-details">
+                <div class="product-name">Sky blue Mini Skirt</div>
+                <div class="product-price">₹2990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/multicolour-shorts-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/multicolour-shorts-copy', 'Sky blue Mini Skirt', '2990.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9446_ab132ab1-1a6b-4b1c-9d71-321ad0f218e2.jpg?v=1781865796')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/beaded-bag', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8368.jpg?v=1781866082" alt="Beaded bag">
+            <div class="product-details">
+                <div class="product-name">Beaded bag</div>
+                <div class="product-price">₹1290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/beaded-bag', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/beaded-bag', 'Beaded bag', '1290.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8368.jpg?v=1781866082')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/musturd-organza-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/NRN_0888.jpg?v=1697623617" alt="Amaris Top">
+            <div class="product-details">
+                <div class="product-name">Amaris Top</div>
+                <div class="product-price">₹4290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/musturd-organza-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/musturd-organza-top', 'Amaris Top', '4290.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/NRN_0888.jpg?v=1697623617')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/musturd-shirt-with-cotton-crape-shorts-2-pcs-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9399_c99a3dfd-3c5f-4cb7-8970-6dca25d397a9.jpg?v=1781865751" alt="Sky blue skirt set (set of 2)">
+            <div class="product-details">
+                <div class="product-name">Sky blue skirt set (set of 2)</div>
+                <div class="product-price">₹6290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/musturd-shirt-with-cotton-crape-shorts-2-pcs-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/musturd-shirt-with-cotton-crape-shorts-2-pcs-set-copy', 'Sky blue skirt set (set of 2)', '6290.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9399_c99a3dfd-3c5f-4cb7-8970-6dca25d397a9.jpg?v=1781865751')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/sky-blue-mini-skirt-copy-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8141_3f59a2a1-ed72-4b39-a634-93c12e7da77d.jpg?v=1781336052" alt="Roger skirt">
+            <div class="product-details">
+                <div class="product-name">Roger skirt</div>
+                <div class="product-price">₹2990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/sky-blue-mini-skirt-copy-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/sky-blue-mini-skirt-copy-1', 'Roger skirt', '2990.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8141_3f59a2a1-ed72-4b39-a634-93c12e7da77d.jpg?v=1781336052')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/blair-bralette-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9446_4dc894ad-723b-4d5d-80ef-7b180eb7d0ea.jpg?v=1781865985" alt="Roger bralette">
+            <div class="product-details">
+                <div class="product-name">Roger bralette</div>
+                <div class="product-price">₹1690.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/blair-bralette-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/blair-bralette-copy', 'Roger bralette', '1690.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9446_4dc894ad-723b-4d5d-80ef-7b180eb7d0ea.jpg?v=1781865985')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/sky-blue-mini-skirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8283.jpg?v=1781261947" alt="Blue pants">
+            <div class="product-details">
+                <div class="product-name">Blue pants</div>
+                <div class="product-price">₹3790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/sky-blue-mini-skirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/sky-blue-mini-skirt-copy', 'Blue pants', '3790.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8283.jpg?v=1781261947')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/musturd-shorts-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8418_321d98dc-1bc6-4df4-a637-2224b371f0dd.jpg?v=1781262007" alt="Blair shorts">
+            <div class="product-details">
+                <div class="product-name">Blair shorts</div>
+                <div class="product-price">₹2990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/musturd-shorts-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/musturd-shorts-copy', 'Blair shorts', '2990.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8418_321d98dc-1bc6-4df4-a637-2224b371f0dd.jpg?v=1781262007')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/multicolour-shirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8750_f71164ea-252d-40b5-b55a-15e0c69f6993.jpg?v=1781262049" alt="Abyss shorts">
+            <div class="product-details">
+                <div class="product-name">Abyss shorts</div>
+                <div class="product-price">₹3290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/multicolour-shirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/multicolour-shirt-copy', 'Abyss shorts', '3290.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8750_f71164ea-252d-40b5-b55a-15e0c69f6993.jpg?v=1781262049')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/shirt-musturd-cc-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/K3A3279_252e6197-b2f5-4e6a-88ce-1198f22bfbde.jpg?v=1781262080" alt="Blair shirt">
+            <div class="product-details">
+                <div class="product-name">Blair shirt</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/shirt-musturd-cc-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/shirt-musturd-cc-copy', 'Blair shirt', '3490.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/K3A3279_252e6197-b2f5-4e6a-88ce-1198f22bfbde.jpg?v=1781262080')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/sting-sky-blue-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8514_97531c64-d3f0-40d0-93a9-e26042a847f2.jpg?v=1781262108" alt="Abyss shirt">
+            <div class="product-details">
+                <div class="product-name">Abyss shirt</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/sting-sky-blue-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/sting-sky-blue-top-copy', 'Abyss shirt', '3490.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8514_97531c64-d3f0-40d0-93a9-e26042a847f2.jpg?v=1781262108')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/blue-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8329_471a6070-63ee-4823-aa78-dd69e201de35.jpg?v=1781262227" alt="Roger top">
+            <div class="product-details">
+                <div class="product-name">Roger top</div>
+                <div class="product-price">₹3290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/blue-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/blue-top-copy', 'Roger top', '3290.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8329_471a6070-63ee-4823-aa78-dd69e201de35.jpg?v=1781262227')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/stipe-satin-string-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8211.jpg?v=1781262244" alt="Blue shirt">
+            <div class="product-details">
+                <div class="product-name">Blue shirt</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/stipe-satin-string-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/stipe-satin-string-top-copy', 'Blue shirt', '3490.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8211.jpg?v=1781262244')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/multicolour-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8136.jpg?v=1781262276" alt="Roger string top">
+            <div class="product-details">
+                <div class="product-name">Roger string top</div>
+                <div class="product-price">₹3790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/multicolour-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/multicolour-top-copy', 'Roger string top', '3790.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8136.jpg?v=1781262276')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/blue-top-with-blue-pant-2-pcs-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8340.jpg?v=1781260992" alt="Roger top &amp; blue pant ( 2 pcs set )">
+            <div class="product-details">
+                <div class="product-name">Roger top &amp; blue pant ( 2 pcs set )</div>
+                <div class="product-price">₹6690.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/blue-top-with-blue-pant-2-pcs-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/blue-top-with-blue-pant-2-pcs-set-copy', 'Roger top &amp; blue pant ( 2 pcs set )', '6690.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8340.jpg?v=1781260992')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/stipe-satin-string-top-with-mini-skirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8257.jpg?v=1781260858" alt="Blue co-ord set (2 pcs)">
+            <div class="product-details">
+                <div class="product-name">Blue co-ord set (2 pcs)</div>
+                <div class="product-price">₹6990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/stipe-satin-string-top-with-mini-skirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/stipe-satin-string-top-with-mini-skirt-copy', 'Blue co-ord set (2 pcs)', '6990.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8257.jpg?v=1781260858')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/buster-musturd-copy-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8734.jpg?v=1781261863" alt="Abyss bralette">
+            <div class="product-details">
+                <div class="product-name">Abyss bralette</div>
+                <div class="product-price">₹1690.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/buster-musturd-copy-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/buster-musturd-copy-1', 'Abyss bralette', '1690.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8734.jpg?v=1781261863')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/blue-pant-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/K3A3667_b80380b4-44b7-44a3-9f54-9c3acae574d8.jpg?v=1781261912" alt="Roger pants">
+            <div class="product-details">
+                <div class="product-name">Roger pants</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/blue-pant-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/blue-pant-copy', 'Roger pants', '3490.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/K3A3667_b80380b4-44b7-44a3-9f54-9c3acae574d8.jpg?v=1781261912')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/blue-long-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9537.jpg?v=1781260773" alt="Blue maxi dress">
+            <div class="product-details">
+                <div class="product-name">Blue maxi dress</div>
+                <div class="product-price">₹6990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/blue-long-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/blue-long-dress', 'Blue maxi dress', '6990.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9537.jpg?v=1781260773')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/jumpsuit-stripe', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9138_aa6316ab-1781-419c-9f55-c11e96735db6.jpg?v=1781260679" alt="Roger playsuit">
+            <div class="product-details">
+                <div class="product-name">Roger playsuit</div>
+                <div class="product-price">₹5790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/jumpsuit-stripe', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/jumpsuit-stripe', 'Roger playsuit', '5790.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9138_aa6316ab-1781-419c-9f55-c11e96735db6.jpg?v=1781260679')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/stirpe-cotton-crape-top-with-cotton-crape-pant-2-pcs-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8582.jpg?v=1781261049" alt="Abyss co-ord set ( 2 pcs set )">
+            <div class="product-details">
+                <div class="product-name">Abyss co-ord set ( 2 pcs set )</div>
+                <div class="product-price">₹6490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/stirpe-cotton-crape-top-with-cotton-crape-pant-2-pcs-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/stirpe-cotton-crape-top-with-cotton-crape-pant-2-pcs-set-copy', 'Abyss co-ord set ( 2 pcs set )', '6490.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8582.jpg?v=1781261049')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/sting-sky-blue-top-with-mini-skirt-2-pcs-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/K3A3655.jpg?v=1781261784" alt="Halter top &amp; Roger pants ( 2 pcs set )">
+            <div class="product-details">
+                <div class="product-name">Halter top &amp; Roger pants ( 2 pcs set )</div>
+                <div class="product-price">₹6290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/sting-sky-blue-top-with-mini-skirt-2-pcs-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/sting-sky-blue-top-with-mini-skirt-2-pcs-set-copy', 'Halter top &amp; Roger pants ( 2 pcs set )', '6290.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/K3A3655.jpg?v=1781261784')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/jumpsuit-printed', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8778.jpg?v=1781261711" alt="Blair playsuit">
+            <div class="product-details">
+                <div class="product-name">Blair playsuit</div>
+                <div class="product-price">₹5790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/jumpsuit-printed', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/jumpsuit-printed', 'Blair playsuit', '5790.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8778.jpg?v=1781261711')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/musturd-satin-short-dress-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8412_4e9ec9a3-6b7d-41ab-b236-2c2a450627e6.jpg?v=1781261543" alt="Blair short top">
+            <div class="product-details">
+                <div class="product-name">Blair short top</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/musturd-satin-short-dress-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/musturd-satin-short-dress-copy', 'Blair short top', '2490.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8412_4e9ec9a3-6b7d-41ab-b236-2c2a450627e6.jpg?v=1781261543')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/stirpe-cc-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/K3A3597.jpg?v=1781261331" alt="Halter top (sky blue)">
+            <div class="product-details">
+                <div class="product-name">Halter top (sky blue)</div>
+                <div class="product-price">₹2990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/stirpe-cc-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/stirpe-cc-top-copy', 'Halter top (sky blue)', '2990.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/K3A3597.jpg?v=1781261331')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.endlesssummershop.com/products/sky-blue-top-halter-neck-copy-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9408.jpg?v=1781261441" alt="String top (sky blue)">
+            <div class="product-details">
+                <div class="product-name">String top (sky blue)</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.endlesssummershop.com/products/sky-blue-top-halter-neck-copy-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.endlesssummershop.com/products/sky-blue-top-halter-neck-copy-copy', 'String top (sky blue)', '3490.00', 'https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_9408.jpg?v=1781261441')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

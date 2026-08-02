@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruiaan - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Ruiaan</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/vesper', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0995.jpg?v=1776410012" alt="Vesper">
+            <div class="product-details">
+                <div class="product-name">Vesper</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/vesper', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/vesper', 'Vesper', '5200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0995.jpg?v=1776410012')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/vanilla', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0218.jpg?v=1776409854" alt="Vanilla">
+            <div class="product-details">
+                <div class="product-name">Vanilla</div>
+                <div class="product-price">₹5400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/vanilla', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/vanilla', 'Vanilla', '5400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0218.jpg?v=1776409854')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/tidal', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_02212.jpg?v=1776409735" alt="Tidal">
+            <div class="product-details">
+                <div class="product-name">Tidal</div>
+                <div class="product-price">₹4800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/tidal', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/tidal', 'Tidal', '4800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_02212.jpg?v=1776409735')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/sienna', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0098.jpg?v=1776409574" alt="Sienna">
+            <div class="product-details">
+                <div class="product-name">Sienna</div>
+                <div class="product-price">₹3600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/sienna', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/sienna', 'Sienna', '3600.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0098.jpg?v=1776409574')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/serenity', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_1195_1.jpg?v=1776409327" alt="Serenity">
+            <div class="product-details">
+                <div class="product-name">Serenity</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/serenity', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/serenity', 'Serenity', '5200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_1195_1.jpg?v=1776409327')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/pulse', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0604.jpg?v=1776407866" alt="Pulse">
+            <div class="product-details">
+                <div class="product-name">Pulse</div>
+                <div class="product-price">₹3600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/pulse', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/pulse', 'Pulse', '3600.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0604.jpg?v=1776407866')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/nimbus', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_02952.jpg?v=1776407708" alt="Nimbus">
+            <div class="product-details">
+                <div class="product-name">Nimbus</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/nimbus', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/nimbus', 'Nimbus', '4200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_02952.jpg?v=1776407708')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/musk', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_01021.jpg?v=1776407555" alt="Musk">
+            <div class="product-details">
+                <div class="product-name">Musk</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/musk', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/musk', 'Musk', '3800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_01021.jpg?v=1776407555')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/mirage', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_1080_1.jpg?v=1776407396" alt="Mirage">
+            <div class="product-details">
+                <div class="product-name">Mirage</div>
+                <div class="product-price">₹6200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/mirage', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/mirage', 'Mirage', '6200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_1080_1.jpg?v=1776407396')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/lapis', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_03781.jpg?v=1776406247" alt="Lapis">
+            <div class="product-details">
+                <div class="product-name">Lapis</div>
+                <div class="product-price">₹5400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/lapis', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/lapis', 'Lapis', '5400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_03781.jpg?v=1776406247')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/juniper', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0538.jpg?v=1776406093" alt="Juniper">
+            <div class="product-details">
+                <div class="product-name">Juniper</div>
+                <div class="product-price">₹4800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/juniper', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/juniper', 'Juniper', '4800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0538.jpg?v=1776406093')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/ivory', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_01631.jpg?v=1776405786" alt="Ivory">
+            <div class="product-details">
+                <div class="product-name">Ivory</div>
+                <div class="product-price">₹4800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/ivory', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/ivory', 'Ivory', '4800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_01631.jpg?v=1776405786')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/haze', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_1121.jpg?v=1776405332" alt="Haze">
+            <div class="product-details">
+                <div class="product-name">Haze</div>
+                <div class="product-price">₹8800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/haze', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/haze', 'Haze', '8800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_1121.jpg?v=1776405332')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/haven', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_05171.jpg?v=1776404872" alt="Haven">
+            <div class="product-details">
+                <div class="product-name">Haven</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/haven', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/haven', 'Haven', '4200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_05171.jpg?v=1776404872')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/fern', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_01251.jpg?v=1776403712" alt="Fern">
+            <div class="product-details">
+                <div class="product-name">Fern</div>
+                <div class="product-price">₹5400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/fern', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/fern', 'Fern', '5400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_01251.jpg?v=1776403712')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/eden', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0486.jpg?v=1776403394" alt="Eden">
+            <div class="product-details">
+                <div class="product-name">Eden</div>
+                <div class="product-price">₹3800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/eden', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/eden', 'Eden', '3800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0486.jpg?v=1776403394')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/drift', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0946_1.jpg?v=1776402142" alt="Drift">
+            <div class="product-details">
+                <div class="product-name">Drift</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/drift', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/drift', 'Drift', '4200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0946_1.jpg?v=1776402142')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/breeze', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_02491_1.jpg?v=1776401349" alt="Breeze">
+            <div class="product-details">
+                <div class="product-name">Breeze</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/breeze', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/breeze', 'Breeze', '4200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_02491_1.jpg?v=1776401349')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/solace-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0250.jpg?v=1774349734" alt="Solace">
+            <div class="product-details">
+                <div class="product-name">Solace</div>
+                <div class="product-price">₹8400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/solace-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/solace-1', 'Solace', '8400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0250.jpg?v=1774349734')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/twilight-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0158.jpg?v=1774349406" alt="Twilight">
+            <div class="product-details">
+                <div class="product-name">Twilight</div>
+                <div class="product-price">₹8400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/twilight-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/twilight-1', 'Twilight', '8400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0158.jpg?v=1774349406')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/lumina-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0391.jpg?v=1774348415" alt="Lumina">
+            <div class="product-details">
+                <div class="product-name">Lumina</div>
+                <div class="product-price">₹8400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/lumina-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/lumina-1', 'Lumina', '8400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0391.jpg?v=1774348415')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/skylark-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0562_2_1.jpg?v=1771921875" alt="Skylark Pants">
+            <div class="product-details">
+                <div class="product-name">Skylark Pants</div>
+                <div class="product-price">₹3600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/skylark-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/skylark-pants', 'Skylark Pants', '3600.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0562_2_1.jpg?v=1771921875')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/skylark-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/4_4.jpg?v=1772175521" alt="Skylark Top">
+            <div class="product-details">
+                <div class="product-name">Skylark Top</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/skylark-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/skylark-1', 'Skylark Top', '4600.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/4_4.jpg?v=1772175521')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/skylark', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/2_3.jpg?v=1771921835" alt="Skylark">
+            <div class="product-details">
+                <div class="product-name">Skylark</div>
+                <div class="product-price">₹8200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/skylark', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/skylark', 'Skylark', '8200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/2_3.jpg?v=1771921835')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/arc-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/1_1.jpg?v=1771922111" alt="Arc Pants">
+            <div class="product-details">
+                <div class="product-name">Arc Pants</div>
+                <div class="product-price">₹3600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/arc-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/arc-pants', 'Arc Pants', '3600.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/1_1.jpg?v=1771922111')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/arc-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/5_1.jpg?v=1771920361" alt="Arc Top">
+            <div class="product-details">
+                <div class="product-name">Arc Top</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/arc-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/arc-top', 'Arc Top', '4600.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/5_1.jpg?v=1771920361')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/arc', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/1_1.jpg?v=1771922111" alt="Arc">
+            <div class="product-details">
+                <div class="product-name">Arc</div>
+                <div class="product-price">₹8200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/arc', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/arc', 'Arc', '8200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/1_1.jpg?v=1771922111')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/ember-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3_3.jpg?v=1771921564" alt="Ember Pants">
+            <div class="product-details">
+                <div class="product-name">Ember Pants</div>
+                <div class="product-price">₹3600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/ember-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/ember-pants', 'Ember Pants', '3600.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3_3.jpg?v=1771921564')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/ember-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/1_2.jpg?v=1772175641" alt="Ember Top">
+            <div class="product-details">
+                <div class="product-name">Ember Top</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/ember-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/ember-top', 'Ember Top', '4600.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/1_2.jpg?v=1772175641')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/ember', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3_3.jpg?v=1771921564" alt="Ember">
+            <div class="product-details">
+                <div class="product-name">Ember</div>
+                <div class="product-price">₹8200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/ember', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/ember', 'Ember', '8200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3_3.jpg?v=1771921564')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/luna-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/4_8.jpg?v=1771923336" alt="Luna">
+            <div class="product-details">
+                <div class="product-name">Luna</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/luna-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/luna-1', 'Luna', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/4_8.jpg?v=1771923336')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/suncrest', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0959_1.jpg?v=1771925057" alt="Suncrest">
+            <div class="product-details">
+                <div class="product-name">Suncrest</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/suncrest', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/suncrest', 'Suncrest', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0959_1.jpg?v=1771925057')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/honeybeam', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_1027_1.jpg?v=1771925172" alt="Honeybeam">
+            <div class="product-details">
+                <div class="product-name">Honeybeam</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/honeybeam', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/honeybeam', 'Honeybeam', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_1027_1.jpg?v=1771925172')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/celeste', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Saanchi_in_Celeste.jpg?v=1775547440" alt="Saanchi Gilani in Celeste">
+            <div class="product-details">
+                <div class="product-name">Saanchi Gilani in Celeste</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/celeste', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/celeste', 'Saanchi Gilani in Celeste', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Saanchi_in_Celeste.jpg?v=1775547440')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/wisp', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/6_1.jpg?v=1771922631" alt="Wisp">
+            <div class="product-details">
+                <div class="product-name">Wisp</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/wisp', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/wisp', 'Wisp', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/6_1.jpg?v=1771922631')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/gleam', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/2_4.jpg?v=1771922261" alt="Gleam">
+            <div class="product-details">
+                <div class="product-name">Gleam</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/gleam', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/gleam', 'Gleam', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/2_4.jpg?v=1771922261')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/sand-stone', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/5_721b6047-5d3d-4f3a-8109-f632d8b14d07.jpg?v=1771993231" alt="Sandstone">
+            <div class="product-details">
+                <div class="product-name">Sandstone</div>
+                <div class="product-price">₹8200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/sand-stone', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/sand-stone', 'Sandstone', '8200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/5_721b6047-5d3d-4f3a-8109-f632d8b14d07.jpg?v=1771993231')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/aura', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0020_3.jpg?v=1771919298" alt="Aura">
+            <div class="product-details">
+                <div class="product-name">Aura</div>
+                <div class="product-price">₹8200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/aura', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/aura', 'Aura', '8200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Ruiaan_Feb_0020_3.jpg?v=1771919298')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/martini', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0306.jpg?v=1765952744" alt="Martini">
+            <div class="product-details">
+                <div class="product-name">Martini</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/martini', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/martini', 'Martini', '4200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0306.jpg?v=1765952744')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/green-martini', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A1319_1.jpg?v=1765947803" alt="Green Martini">
+            <div class="product-details">
+                <div class="product-name">Green Martini</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/green-martini', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/green-martini', 'Green Martini', '4200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A1319_1.jpg?v=1765947803')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/green-lily', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A7901.jpg?v=1765947561" alt="Green Lily">
+            <div class="product-details">
+                <div class="product-name">Green Lily</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/green-lily', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/green-lily', 'Green Lily', '3200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A7901.jpg?v=1765947561')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/aw2501', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6731.jpg?v=1762943647" alt="Eclipse">
+            <div class="product-details">
+                <div class="product-name">Eclipse</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/aw2501', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/aw2501', 'Eclipse', '5200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6731.jpg?v=1762943647')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss48-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_5837.jpg?v=1762943974" alt="Timber">
+            <div class="product-details">
+                <div class="product-name">Timber</div>
+                <div class="product-price">₹6200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss48-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss48-1', 'Timber', '6200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_5837.jpg?v=1762943974')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss48-f-vest-c-523-pant', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6894.jpg?v=1762945106" alt="Glacier">
+            <div class="product-details">
+                <div class="product-name">Glacier</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss48-f-vest-c-523-pant', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss48-f-vest-c-523-pant', 'Glacier', '6800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6894.jpg?v=1762945106')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss50a', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6581.jpg?v=1762945457" alt="Crimson">
+            <div class="product-details">
+                <div class="product-name">Crimson</div>
+                <div class="product-price">₹5400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss50a', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss50a', 'Crimson', '5400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6581.jpg?v=1762945457')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/cw1135', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3_9176fc86-0158-496c-a183-a37dcc00b85a.jpg?v=1767866181" alt="Mehak Bakshi in Dawn">
+            <div class="product-details">
+                <div class="product-name">Mehak Bakshi in Dawn</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/cw1135', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/cw1135', 'Mehak Bakshi in Dawn', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3_9176fc86-0158-496c-a183-a37dcc00b85a.jpg?v=1767866181')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/cw1135a', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6418.jpg?v=1763707274" alt="Frostbite">
+            <div class="product-details">
+                <div class="product-name">Frostbite</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/cw1135a', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/cw1135a', 'Frostbite', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6418.jpg?v=1763707274')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/dusk', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Untitled_design_9_1.png?v=1766130910" alt="Smridhi Sibal in Dusk">
+            <div class="product-details">
+                <div class="product-name">Smridhi Sibal in Dusk</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/dusk', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/dusk', 'Smridhi Sibal in Dusk', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Untitled_design_9_1.png?v=1766130910')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/wonderland', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6344.jpg?v=1763709008" alt="Wonderland">
+            <div class="product-details">
+                <div class="product-name">Wonderland</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/wonderland', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/wonderland', 'Wonderland', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6344.jpg?v=1763709008')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/twilight', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6128.jpg?v=1763709506" alt="Twilight">
+            <div class="product-details">
+                <div class="product-name">Twilight</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/twilight', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/twilight', 'Twilight', '5200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6128.jpg?v=1763709506')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/snowball', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6512.jpg?v=1763709918" alt="Snowball">
+            <div class="product-details">
+                <div class="product-name">Snowball</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/snowball', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/snowball', 'Snowball', '5200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6512.jpg?v=1763709918')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/midnight', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6279.jpg?v=1763710595" alt="Midnight">
+            <div class="product-details">
+                <div class="product-name">Midnight</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/midnight', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/midnight', 'Midnight', '5200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6279.jpg?v=1763710595')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss61', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Untitled_design_2_1d97189c-f183-4555-afb2-19c512b061af.png?v=1766066240" alt="Simran Luthria in Cherry">
+            <div class="product-details">
+                <div class="product-name">Simran Luthria in Cherry</div>
+                <div class="product-price">₹6400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss61', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss61', 'Simran Luthria in Cherry', '6400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Untitled_design_2_1d97189c-f183-4555-afb2-19c512b061af.png?v=1766066240')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/rene', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7485.jpg?v=1761289424" alt="RENE">
+            <div class="product-details">
+                <div class="product-name">RENE</div>
+                <div class="product-price">₹8400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/rene', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/rene', 'RENE', '8400.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7485.jpg?v=1761289424')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/bella', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7129.jpg?v=1761288649" alt="BELLA">
+            <div class="product-details">
+                <div class="product-name">BELLA</div>
+                <div class="product-price">₹7200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/bella', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/bella', 'BELLA', '7200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7129.jpg?v=1761288649')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/vera', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7630.jpg?v=1761287880" alt="VERA">
+            <div class="product-details">
+                <div class="product-name">VERA</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/vera', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/vera', 'VERA', '6500.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7630.jpg?v=1761287880')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/june', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/influencer_images_-_resize.png?v=1769248736" alt="SAANCHI GILANI IN JUNE">
+            <div class="product-details">
+                <div class="product-name">SAANCHI GILANI IN JUNE</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/june', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/june', 'SAANCHI GILANI IN JUNE', '6500.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/influencer_images_-_resize.png?v=1769248736')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/monroe', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7476.jpg?v=1761286799" alt="MONROE">
+            <div class="product-details">
+                <div class="product-name">MONROE</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/monroe', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/monroe', 'MONROE', '5800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7476.jpg?v=1761286799')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/lola', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7710.jpg?v=1761285881" alt="LOLA">
+            <div class="product-details">
+                <div class="product-name">LOLA</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/lola', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/lola', 'LOLA', '6800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7710.jpg?v=1761285881')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/aw24-29', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7210.jpg?v=1761284452" alt="Blondie">
+            <div class="product-details">
+                <div class="product-name">Blondie</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/aw24-29', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/aw24-29', 'Blondie', '5200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7210.jpg?v=1761284452')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss23', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7776.jpg?v=1761284309" alt="ROXY">
+            <div class="product-details">
+                <div class="product-name">ROXY</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss23', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss23', 'ROXY', '6800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_7776.jpg?v=1761284309')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss54', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Untitled_design_8.png?v=1764564445" alt="Saanchi Gilani in BRANDY">
+            <div class="product-details">
+                <div class="product-name">Saanchi Gilani in BRANDY</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss54', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss54', 'Saanchi Gilani in BRANDY', '5200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/Untitled_design_8.png?v=1764564445')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss48', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6988.jpg?v=1761281895" alt="COCO">
+            <div class="product-details">
+                <div class="product-name">COCO</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss48', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss48', 'COCO', '6800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/IMG_6988.jpg?v=1761281895')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss50', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8205_1.jpg?v=1751613019" alt="Siren">
+            <div class="product-details">
+                <div class="product-name">Siren</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss50', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss50', 'Siren', '2800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8205_1.jpg?v=1751613019')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss35a', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9520_1.jpg?v=1751611743" alt="Cortado">
+            <div class="product-details">
+                <div class="product-name">Cortado</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss35a', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss35a', 'Cortado', '3200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9520_1.jpg?v=1751611743')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss35', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0729_1.jpg?v=1751611224" alt="Roses">
+            <div class="product-details">
+                <div class="product-name">Roses</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss35', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss35', 'Roses', '3200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0729_1.jpg?v=1751611224')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss7b', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9752.jpg?v=1751609411" alt="Bloom">
+            <div class="product-details">
+                <div class="product-name">Bloom</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss7b', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss7b', 'Bloom', '1800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9752.jpg?v=1751609411')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss7-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9698.jpg?v=1751609075" alt="Duvina">
+            <div class="product-details">
+                <div class="product-name">Duvina</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss7-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss7-black', 'Duvina', '1800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9698.jpg?v=1751609075')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/aloha-mini-creme', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0491_1.jpg?v=1751608486" alt="Soft Breeze">
+            <div class="product-details">
+                <div class="product-name">Soft Breeze</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/aloha-mini-creme', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/aloha-mini-creme', 'Soft Breeze', '2100.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0491_1.jpg?v=1751608486')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/aloha-animal', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0863.jpg?v=1751607540" alt="Celesa">
+            <div class="product-details">
+                <div class="product-name">Celesa</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/aloha-animal', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/aloha-animal', 'Celesa', '1800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0863.jpg?v=1751607540')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/aloha-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A1079.jpg?v=1751607190" alt="Grace">
+            <div class="product-details">
+                <div class="product-name">Grace</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/aloha-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/aloha-blue', 'Grace', '1800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A1079.jpg?v=1751607190')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/aloha-grey', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9828.jpg?v=1751606727" alt="Warm Hug">
+            <div class="product-details">
+                <div class="product-name">Warm Hug</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/aloha-grey', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/aloha-grey', 'Warm Hug', '1800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9828.jpg?v=1751606727')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/aloha-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9864.jpg?v=1751606478" alt="Soothe">
+            <div class="product-details">
+                <div class="product-name">Soothe</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/aloha-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/aloha-black', 'Soothe', '1800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9864.jpg?v=1751606478')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/wave-pant', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8266_1.jpg?v=1747641107" alt="Wave Pants">
+            <div class="product-details">
+                <div class="product-name">Wave Pants</div>
+                <div class="product-price">₹2300.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/wave-pant', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/wave-pant', 'Wave Pants', '2300.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8266_1.jpg?v=1747641107')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/wave-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8324_1.jpg?v=1747641107" alt="Wave Kimono Shirt">
+            <div class="product-details">
+                <div class="product-name">Wave Kimono Shirt</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/wave-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/wave-top', 'Wave Kimono Shirt', '3200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8324_1.jpg?v=1747641107')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/rosae-pants', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8556_7a3b2b77-a056-43a5-946e-810da1b9c728.jpg?v=1747481037" alt="Rosae Pants">
+            <div class="product-details">
+                <div class="product-name">Rosae Pants</div>
+                <div class="product-price">₹2000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/rosae-pants', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/rosae-pants', 'Rosae Pants', '2000.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8556_7a3b2b77-a056-43a5-946e-810da1b9c728.jpg?v=1747481037')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/rosae-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8556_8a302088-5bd7-4101-b842-d29f54d6e638.jpg?v=1747480786" alt="Rosae Top">
+            <div class="product-details">
+                <div class="product-name">Rosae Top</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/rosae-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/rosae-top', 'Rosae Top', '1800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8556_8a302088-5bd7-4101-b842-d29f54d6e638.jpg?v=1747480786')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/css119b', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0444.jpg?v=1745477405" alt="Verena">
+            <div class="product-details">
+                <div class="product-name">Verena</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/css119b', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/css119b', 'Verena', '2100.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A0444.jpg?v=1745477405')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss116', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9991.jpg?v=1745392266" alt="Rhea">
+            <div class="product-details">
+                <div class="product-name">Rhea</div>
+                <div class="product-price">₹2100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss116', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss116', 'Rhea', '2100.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9991.jpg?v=1745392266')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/25ss22a', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8607.jpg?v=1745319785" alt="Rosae">
+            <div class="product-details">
+                <div class="product-name">Rosae</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/25ss22a', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/25ss22a', 'Rosae', '3200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8607.jpg?v=1745319785')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/blue-lily-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A7812.jpg?v=1745222029" alt="Blue Lily">
+            <div class="product-details">
+                <div class="product-name">Blue Lily</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/blue-lily-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/blue-lily-1', 'Blue Lily', '3200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A7812.jpg?v=1745222029')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/green-fin-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A1128_1.jpg?v=1744271416" alt="Green Fin Dress">
+            <div class="product-details">
+                <div class="product-name">Green Fin Dress</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/green-fin-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/green-fin-dress', 'Green Fin Dress', '3200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A1128_1.jpg?v=1744271416')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/wave', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8324_1.jpg?v=1747641107" alt="Wave">
+            <div class="product-details">
+                <div class="product-name">Wave</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/wave', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/wave', 'Wave', '5500.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A8324_1.jpg?v=1747641107')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/simran-luthria-in-red-martini', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9347.jpg?v=1759207167" alt="Simran Luthria In Red Martini">
+            <div class="product-details">
+                <div class="product-name">Simran Luthria In Red Martini</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/simran-luthria-in-red-martini', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/simran-luthria-in-red-martini', 'Simran Luthria In Red Martini', '4200.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/0E5A9347.jpg?v=1759207167')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/eoo-aw24-30', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3G5A8280_1_1.jpg?v=1726228721" alt="Ocean">
+            <div class="product-details">
+                <div class="product-name">Ocean</div>
+                <div class="product-price">₹1800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/eoo-aw24-30', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/eoo-aw24-30', 'Ocean', '1800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3G5A8280_1_1.jpg?v=1726228721')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/eoo-c233e', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/anaita.jpg?v=1737001497" alt="Anaita Shroff Adjania in Amara">
+            <div class="product-details">
+                <div class="product-name">Anaita Shroff Adjania in Amara</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/eoo-c233e', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/eoo-c233e', 'Anaita Shroff Adjania in Amara', '2800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/anaita.jpg?v=1737001497')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://ruiaan.com/products/eoo-aw24-18a', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3G5A7488.jpg?v=1726299081" alt="Teal">
+            <div class="product-details">
+                <div class="product-name">Teal</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://ruiaan.com/products/eoo-aw24-18a', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://ruiaan.com/products/eoo-aw24-18a', 'Teal', '2800.00', 'https://cdn.shopify.com/s/files/1/0473/8852/4704/files/3G5A7488.jpg?v=1726299081')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

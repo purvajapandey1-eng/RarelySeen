@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sunday loveshop - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">sunday loveshop</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/arushi-mehra-in-pink-checkered-cotton-short-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/82421902-2543-4232-B165-CACA89115003.jpg?v=1781017327" alt="Arushi Mehra in Pink Checkered Cotton Short Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Arushi Mehra in Pink Checkered Cotton Short Pajama Set</div>
+                <div class="product-price">₹1249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/arushi-mehra-in-pink-checkered-cotton-short-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/arushi-mehra-in-pink-checkered-cotton-short-pajama-set', 'Arushi Mehra in Pink Checkered Cotton Short Pajama Set', '1249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/82421902-2543-4232-B165-CACA89115003.jpg?v=1781017327')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/arushi-mehra-red-gingham-cotton-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/31C3BEE6-E9B2-4C27-B856-DDA791D0956F.jpg?v=1781017161" alt="Arushi Mehra in Red Gingham Cotton Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Arushi Mehra in Red Gingham Cotton Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/arushi-mehra-red-gingham-cotton-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/arushi-mehra-red-gingham-cotton-pajama-set', 'Arushi Mehra in Red Gingham Cotton Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/31C3BEE6-E9B2-4C27-B856-DDA791D0956F.jpg?v=1781017161')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/arushi-mehra-in-green-gingham-cotton-shorts-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/FD691F26-EB23-455A-91D4-16AEB2B0E13F.jpg?v=1781017082" alt="Arushi Mehra in Green Gingham Cotton Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Arushi Mehra in Green Gingham Cotton Shorts Set</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/arushi-mehra-in-green-gingham-cotton-shorts-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/arushi-mehra-in-green-gingham-cotton-shorts-set', 'Arushi Mehra in Green Gingham Cotton Shorts Set', '2499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/FD691F26-EB23-455A-91D4-16AEB2B0E13F.jpg?v=1781017082')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/arushi-mehra-in-light-pink-floral-cotton-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_8788.jpg?v=1781016905" alt="Arushi Mehra in Light Pink Floral Cotton Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Arushi Mehra in Light Pink Floral Cotton Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/arushi-mehra-in-light-pink-floral-cotton-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/arushi-mehra-in-light-pink-floral-cotton-pajama-set', 'Arushi Mehra in Light Pink Floral Cotton Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_8788.jpg?v=1781016905')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/brinda-patel-in-rose-glazed-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo25-05-26_111033PM_6.jpg?v=1779906254" alt="Brinda Patel in Rose Glazed Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Brinda Patel in Rose Glazed Satin Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/brinda-patel-in-rose-glazed-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/brinda-patel-in-rose-glazed-satin-pajama-set', 'Brinda Patel in Rose Glazed Satin Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo25-05-26_111033PM_6.jpg?v=1779906254')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/natallia-aroraa-in-checkered-wine-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo25-12-25_100512PM_1.jpg?v=1779905867" alt="Natallia Aroraa in Checkered Wine Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Natallia Aroraa in Checkered Wine Satin Pajama Set</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/natallia-aroraa-in-checkered-wine-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/natallia-aroraa-in-checkered-wine-satin-pajama-set', 'Natallia Aroraa in Checkered Wine Satin Pajama Set', '3499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo25-12-25_100512PM_1.jpg?v=1779905867')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/riya-jain-in-classic-personalised-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_3278.jpg?v=1774854039" alt="Riya Jain in Classic Personalised Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Riya Jain in Classic Personalised Pajama Set</div>
+                <div class="product-price">₹3699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/riya-jain-in-classic-personalised-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/riya-jain-in-classic-personalised-pajama-set', 'Riya Jain in Classic Personalised Pajama Set', '3699.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_3278.jpg?v=1774854039')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/reva-in-solid-cotton-corset-dress-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo08-04-26_73838PM.jpg?v=1779905356" alt="Reva in Solid Cotton Corset Dress - Black">
+            <div class="product-details">
+                <div class="product-name">Reva in Solid Cotton Corset Dress - Black</div>
+                <div class="product-price">₹6499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/reva-in-solid-cotton-corset-dress-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/reva-in-solid-cotton-corset-dress-black', 'Reva in Solid Cotton Corset Dress - Black', '6499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo08-04-26_73838PM.jpg?v=1779905356')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/ruby-red-feather-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo25-05-26_105322PM_2.jpg?v=1779904947" alt="Geetika Verma in Ruby Red Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Geetika Verma in Ruby Red Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/ruby-red-feather-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/ruby-red-feather-glazed-satin-long-pajama-set', 'Geetika Verma in Ruby Red Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo25-05-26_105322PM_2.jpg?v=1779904947')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/aska-sachdeva-in-fit-and-flared-cotton-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo25-05-26_105545PM.jpg?v=1779904431" alt="Aska Sachdeva in Fit And Flared Cotton Dress">
+            <div class="product-details">
+                <div class="product-name">Aska Sachdeva in Fit And Flared Cotton Dress</div>
+                <div class="product-price">₹7499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/aska-sachdeva-in-fit-and-flared-cotton-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/aska-sachdeva-in-fit-and-flared-cotton-dress', 'Aska Sachdeva in Fit And Flared Cotton Dress', '7499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/Photo25-05-26_105545PM.jpg?v=1779904431')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/green-gingham-cotton-shorts-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08039.jpg?v=1777396396" alt="Green Gingham Cotton Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Green Gingham Cotton Shorts Set</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/green-gingham-cotton-shorts-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/green-gingham-cotton-shorts-set-1', 'Green Gingham Cotton Shorts Set', '2499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08039.jpg?v=1777396396')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/black-flared-midi-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08794.jpg?v=1779380930" alt="Black Flared Midi Dress">
+            <div class="product-details">
+                <div class="product-name">Black Flared Midi Dress</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/black-flared-midi-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/black-flared-midi-dress', 'Black Flared Midi Dress', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08794.jpg?v=1779380930')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/white-flared-midi-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08746_fcbdaadb-522a-4bf4-8e22-e58a00232e27.jpg?v=1779380837" alt="White Flared Midi Dress">
+            <div class="product-details">
+                <div class="product-name">White Flared Midi Dress</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/white-flared-midi-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/white-flared-midi-dress', 'White Flared Midi Dress', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08746_fcbdaadb-522a-4bf4-8e22-e58a00232e27.jpg?v=1779380837')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/light-champagne-feather-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09486.jpg?v=1777399353" alt="Light Champagne Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Light Champagne Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/light-champagne-feather-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/light-champagne-feather-glazed-satin-long-pajama-set-1', 'Light Champagne Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09486.jpg?v=1777399353')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/pista-green-feather-glazed-satin-long-pajama-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09411.jpg?v=1777399291" alt="Pista Green Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Pista Green Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/pista-green-feather-glazed-satin-long-pajama-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/pista-green-feather-glazed-satin-long-pajama-set-copy', 'Pista Green Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09411.jpg?v=1777399291')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/light-pink-feather-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF03_7.png?v=1777375720" alt="Light Pink Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Light Pink Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/light-pink-feather-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/light-pink-feather-glazed-satin-long-pajama-set-1', 'Light Pink Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF03_7.png?v=1777375720')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/white-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09383.jpg?v=1777399115" alt="White Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">White Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/white-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/white-glazed-satin-long-pajama-set', 'White Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09383.jpg?v=1777399115')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/green-feather-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF04_3.png?v=1777375786" alt="Green Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Green Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/green-feather-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/green-feather-glazed-satin-long-pajama-set-1', 'Green Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF04_3.png?v=1777375786')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/berry-pink-feather-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09449.jpg?v=1777399323" alt="Berry Pink Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Berry Pink Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/berry-pink-feather-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/berry-pink-feather-glazed-satin-long-pajama-set-1', 'Berry Pink Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09449.jpg?v=1777399323')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/dark-pink-feather-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF01_2.png?v=1777375620" alt="Dark Pink Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Dark Pink Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/dark-pink-feather-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/dark-pink-feather-glazed-satin-long-pajama-set-1', 'Dark Pink Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF01_2.png?v=1777375620')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/powder-blue-feather-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF05_4.png?v=1777375705" alt="Powder Blue Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Powder Blue Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/powder-blue-feather-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/powder-blue-feather-glazed-satin-long-pajama-set-1', 'Powder Blue Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF05_4.png?v=1777375705')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/ruby-red-feather-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09338.jpg?v=1777399155" alt="Ruby Red Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Ruby Red Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/ruby-red-feather-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/ruby-red-feather-glazed-satin-long-pajama-set-1', 'Ruby Red Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09338.jpg?v=1777399155')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/electric-blue-feather-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF02_1.png?v=1777375612" alt="Electric Blue Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Electric Blue Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/electric-blue-feather-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/electric-blue-feather-glazed-satin-long-pajama-set-1', 'Electric Blue Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLF02_1.png?v=1777375612')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/light-pink-tassels-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09617.jpg?v=1777399739" alt="Light Pink Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Light Pink Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/light-pink-tassels-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/light-pink-tassels-glazed-satin-long-pajama-set-1', 'Light Pink Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09617.jpg?v=1777399739')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/powder-blue-tassels-glazed-satin-long-pajama-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLT05_2.png?v=1777375037" alt="Powder Blue Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Powder Blue Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/powder-blue-tassels-glazed-satin-long-pajama-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/powder-blue-tassels-glazed-satin-long-pajama-set-copy', 'Powder Blue Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLT05_2.png?v=1777375037')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/electric-blue-tassels-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09729.jpg?v=1777399846" alt="Electric Blue Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Electric Blue Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/electric-blue-tassels-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/electric-blue-tassels-glazed-satin-long-pajama-set-1', 'Electric Blue Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09729.jpg?v=1777399846')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/black-tassels-glazed-satin-long-pajama-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09520.jpg?v=1777399661" alt="Black Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Black Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/black-tassels-glazed-satin-long-pajama-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/black-tassels-glazed-satin-long-pajama-set-copy', 'Black Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09520.jpg?v=1777399661')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/olive-tassels-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/oliveedit1_1.png?v=1778607837" alt="Olive Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Olive Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/olive-tassels-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/olive-tassels-glazed-satin-long-pajama-set-1', 'Olive Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/oliveedit1_1.png?v=1778607837')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/navy-tassels-glazed-satin-long-pajama-set-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_3796.png?v=1778171366" alt="Navy Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Navy Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/navy-tassels-glazed-satin-long-pajama-set-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/navy-tassels-glazed-satin-long-pajama-set-copy', 'Navy Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_3796.png?v=1778171366')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/hot-pink-tassels-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_3749.png?v=1777919478" alt="Hot Pink Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Hot Pink Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/hot-pink-tassels-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/hot-pink-tassels-glazed-satin-long-pajama-set-1', 'Hot Pink Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_3749.png?v=1777919478')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/teal-tassels-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/TealEdit1_4.png?v=1778607791" alt="Teal Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Teal Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/teal-tassels-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/teal-tassels-glazed-satin-long-pajama-set-1', 'Teal Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/TealEdit1_4.png?v=1778607791')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/mustard-tassels-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/MusteredEdit2.jpg?v=1778607864" alt="Mustard Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Mustard Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/mustard-tassels-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/mustard-tassels-glazed-satin-long-pajama-set-1', 'Mustard Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/MusteredEdit2.jpg?v=1778607864')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/green-tassels-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLT07_1.png?v=1777375200" alt="Green Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Green Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/green-tassels-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/green-tassels-glazed-satin-long-pajama-set-1', 'Green Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLT07_1.png?v=1777375200')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/white-tassels-glazed-satin-long-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLT06_2.png?v=1777375146" alt="White Tassels Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">White Tassels Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/white-tassels-glazed-satin-long-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/white-tassels-glazed-satin-long-pajama-set-1', 'White Tassels Glazed Satin Long Pajama Set', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLT06_2.png?v=1777375146')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/green-and-black-swimsuit', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09122.jpg?v=1777401482" alt="Green And Black Swimsuit">
+            <div class="product-details">
+                <div class="product-name">Green And Black Swimsuit</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/green-and-black-swimsuit', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/green-and-black-swimsuit', 'Green And Black Swimsuit', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09122.jpg?v=1777401482')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/black-bikini-suit', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09255.jpg?v=1777401287" alt="Black Bikini Suit">
+            <div class="product-details">
+                <div class="product-name">Black Bikini Suit</div>
+                <div class="product-price">₹3249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/black-bikini-suit', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/black-bikini-suit', 'Black Bikini Suit', '3249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09255.jpg?v=1777401287')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/black-pop-back-detailed-swimsuit', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09183.jpg?v=1777401234" alt="Black Pop Back Detailed Swimsuit">
+            <div class="product-details">
+                <div class="product-name">Black Pop Back Detailed Swimsuit</div>
+                <div class="product-price">₹3249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/black-pop-back-detailed-swimsuit', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/black-pop-back-detailed-swimsuit', 'Black Pop Back Detailed Swimsuit', '3249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09183.jpg?v=1777401234')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/black-feather-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09370.jpg?v=1777399103" alt="Black Feather Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Black Feather Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/black-feather-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/black-feather-glazed-satin-long-pajama-set', 'Black Feather Glazed Satin Long Pajama Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09370.jpg?v=1777399103')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/bright-red-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08098.jpg?v=1777394914" alt="Bright Red Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Bright Red Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/bright-red-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/bright-red-glazed-satin-long-pajama-set', 'Bright Red Glazed Satin Long Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08098.jpg?v=1777394914')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/forest-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07617.jpg?v=1777394719" alt="Forest Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Forest Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/forest-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/forest-glazed-satin-long-pajama-set', 'Forest Glazed Satin Long Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07617.jpg?v=1777394719')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/pale-mauve-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08152.jpg?v=1777394766" alt="Pale Mauve Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Pale Mauve Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/pale-mauve-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/pale-mauve-glazed-satin-long-pajama-set', 'Pale Mauve Glazed Satin Long Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08152.jpg?v=1777394766')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/scarlet-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07397.jpg?v=1777394270" alt="Scarlet Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Scarlet Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/scarlet-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/scarlet-glazed-satin-long-pajama-set', 'Scarlet Glazed Satin Long Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07397.jpg?v=1777394270')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/fuchsia-pink-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07492.jpg?v=1777394384" alt="Fuchsia Pink Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Fuchsia Pink Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/fuchsia-pink-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/fuchsia-pink-glazed-satin-long-pajama-set', 'Fuchsia Pink Glazed Satin Long Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07492.jpg?v=1777394384')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/citrus-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07448.jpg?v=1777393934" alt="Citrus Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Citrus Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/citrus-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/citrus-glazed-satin-long-pajama-set', 'Citrus Glazed Satin Long Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07448.jpg?v=1777393934')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/nude-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07739.jpg?v=1777394224" alt="Nude Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Nude Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/nude-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/nude-glazed-satin-long-pajama-set', 'Nude Glazed Satin Long Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07739.jpg?v=1777394224')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/powder-blue-glazed-satin-long-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07414.jpg?v=1777392578" alt="Powder Blue Glazed Satin Long Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Powder Blue Glazed Satin Long Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/powder-blue-glazed-satin-long-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/powder-blue-glazed-satin-long-pajama-set', 'Powder Blue Glazed Satin Long Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07414.jpg?v=1777392578')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/teal-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS03.png?v=1777374046" alt="Teal Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Teal Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/teal-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/teal-tassle-sarong', 'Teal Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS03.png?v=1777374046')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/olive-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_4184.jpg?v=1781018660" alt="Olive Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Olive Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/olive-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/olive-tassle-sarong', 'Olive Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_4184.jpg?v=1781018660')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/mustard-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09206.jpg?v=1777401683" alt="Mustard Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Mustard Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/mustard-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/mustard-tassle-sarong', 'Mustard Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09206.jpg?v=1777401683')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/black-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09135_29cebdb2-7030-4968-bf33-b131e83e79ba.jpg?v=1777401671" alt="Black Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Black Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/black-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/black-tassle-sarong', 'Black Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09135_29cebdb2-7030-4968-bf33-b131e83e79ba.jpg?v=1777401671')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/navy-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS02_1.png?v=1777373855" alt="Navy Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Navy Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/navy-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/navy-tassle-sarong', 'Navy Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS02_1.png?v=1777373855')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/white-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS01_3.png?v=1777373802" alt="White Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">White Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/white-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/white-tassle-sarong', 'White Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS01_3.png?v=1777373802')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/powder-blue-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS06_1.jpg?v=1777374242" alt="Powder Blue Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Powder Blue Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/powder-blue-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/powder-blue-tassle-sarong', 'Powder Blue Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS06_1.jpg?v=1777374242')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/light-pink-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_4187.jpg?v=1781018788" alt="Light Pink Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Light Pink Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/light-pink-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/light-pink-tassle-sarong', 'Light Pink Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_4187.jpg?v=1781018788')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/green-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS04.png?v=1777374152" alt="Green Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Green Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/green-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/green-tassle-sarong', 'Green Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS04.png?v=1777374152')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/electric-blue-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS08_1.png?v=1777374627" alt="Electric Blue Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Electric Blue Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/electric-blue-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/electric-blue-tassle-sarong', 'Electric Blue Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLS08_1.png?v=1777374627')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/hot-pink-tassle-sarong', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09279.jpg?v=1777401581" alt="Hot Pink Tassle Sarong">
+            <div class="product-details">
+                <div class="product-name">Hot Pink Tassle Sarong</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/hot-pink-tassle-sarong', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/hot-pink-tassle-sarong', 'Hot Pink Tassle Sarong', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09279.jpg?v=1777401581')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/pink-floral-smocking-long-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLD01_1_0bbeffbd-04e5-41ba-a472-0dff0809b6a9.jpg?v=1777486498" alt="Pink Floral Smocking Long Dress">
+            <div class="product-details">
+                <div class="product-name">Pink Floral Smocking Long Dress</div>
+                <div class="product-price">₹9999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/pink-floral-smocking-long-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/pink-floral-smocking-long-dress', 'Pink Floral Smocking Long Dress', '9999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SLD01_1_0bbeffbd-04e5-41ba-a472-0dff0809b6a9.jpg?v=1777486498')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/blue-floral-smocking-long-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_9635.jpg?v=1781344290" alt="Blue Floral Smocking Long Dress">
+            <div class="product-details">
+                <div class="product-name">Blue Floral Smocking Long Dress</div>
+                <div class="product-price">₹9999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/blue-floral-smocking-long-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/blue-floral-smocking-long-dress', 'Blue Floral Smocking Long Dress', '9999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_9635.jpg?v=1781344290')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/red-stripe-cotton-long-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08983.jpg?v=1777400882" alt="Red Stripe Cotton Long Dress">
+            <div class="product-details">
+                <div class="product-name">Red Stripe Cotton Long Dress</div>
+                <div class="product-price">₹6499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/red-stripe-cotton-long-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/red-stripe-cotton-long-dress', 'Red Stripe Cotton Long Dress', '6499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08983.jpg?v=1777400882')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/multi-colour-stripe-cotton-long-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08654.jpg?v=1777400792" alt="Multi Colour Stripe Cotton Long Dress">
+            <div class="product-details">
+                <div class="product-name">Multi Colour Stripe Cotton Long Dress</div>
+                <div class="product-price">₹6999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/multi-colour-stripe-cotton-long-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/multi-colour-stripe-cotton-long-dress', 'Multi Colour Stripe Cotton Long Dress', '6999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08654.jpg?v=1777400792')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/multi-floral-panel-printed-long-cotton-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08677.jpg?v=1777485532" alt="Multi Floral Panel Printed Long Cotton Dress">
+            <div class="product-details">
+                <div class="product-name">Multi Floral Panel Printed Long Cotton Dress</div>
+                <div class="product-price">₹7999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/multi-floral-panel-printed-long-cotton-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/multi-floral-panel-printed-long-cotton-dress', 'Multi Floral Panel Printed Long Cotton Dress', '7999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08677.jpg?v=1777485532')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/green-cotton-long-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08534.jpg?v=1777485573" alt="Green Cotton Long Dress">
+            <div class="product-details">
+                <div class="product-name">Green Cotton Long Dress</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/green-cotton-long-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/green-cotton-long-dress', 'Green Cotton Long Dress', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08534.jpg?v=1777485573')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/red-cotton-long-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08635.jpg?v=1777400393" alt="Red Cotton Long Dress">
+            <div class="product-details">
+                <div class="product-name">Red Cotton Long Dress</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/red-cotton-long-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/red-cotton-long-dress', 'Red Cotton Long Dress', '4999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08635.jpg?v=1777400393')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/fit-and-flared-cotton-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09068.jpg?v=1777400332" alt="Fit And Flared Cotton Dress">
+            <div class="product-details">
+                <div class="product-name">Fit And Flared Cotton Dress</div>
+                <div class="product-price">₹7499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/fit-and-flared-cotton-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/fit-and-flared-cotton-dress', 'Fit And Flared Cotton Dress', '7499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC09068.jpg?v=1777400332')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/swan-pocket-cotton-shorts-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08278.jpg?v=1777485766" alt="Swan Pocket Cotton Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Swan Pocket Cotton Shorts Set</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/swan-pocket-cotton-shorts-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/swan-pocket-cotton-shorts-set', 'Swan Pocket Cotton Shorts Set', '2499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08278.jpg?v=1777485766')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/green-gingham-cotton-shorts-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/PHOTO-2026-05-24-20-47-28.jpg?v=1779698719" alt="Tarini Manchanda in Green Gingham Cotton Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Tarini Manchanda in Green Gingham Cotton Shorts Set</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/green-gingham-cotton-shorts-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/green-gingham-cotton-shorts-set', 'Tarini Manchanda in Green Gingham Cotton Shorts Set', '2499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/PHOTO-2026-05-24-20-47-28.jpg?v=1779698719')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/pink-gingham-cotton-shorts-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07819.jpg?v=1777483582" alt="Pink Gingham Cotton Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Pink Gingham Cotton Shorts Set</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/pink-gingham-cotton-shorts-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/pink-gingham-cotton-shorts-set', 'Pink Gingham Cotton Shorts Set', '2499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07819.jpg?v=1777483582')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/light-pink-floral-cotton-shorts-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07825.jpg?v=1777396310" alt="Light Pink Floral Cotton Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Light Pink Floral Cotton Shorts Set</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/light-pink-floral-cotton-shorts-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/light-pink-floral-cotton-shorts-set', 'Light Pink Floral Cotton Shorts Set', '2499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07825.jpg?v=1777396310')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/wine-glazed-satin-shorts-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07653.jpg?v=1777396570" alt="Wine Glazed Satin Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Wine Glazed Satin Shorts Set</div>
+                <div class="product-price">₹2699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/wine-glazed-satin-shorts-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/wine-glazed-satin-shorts-set', 'Wine Glazed Satin Shorts Set', '2699.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07653.jpg?v=1777396570')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/peach-glazed-satin-shorts-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08328.jpg?v=1777396468" alt="Peach Glazed Satin Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Peach Glazed Satin Shorts Set</div>
+                <div class="product-price">₹2699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/peach-glazed-satin-shorts-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/peach-glazed-satin-shorts-set', 'Peach Glazed Satin Shorts Set', '2699.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08328.jpg?v=1777396468')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/brown-glazed-satin-shorts-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08066.jpg?v=1777395811" alt="Brown Glazed Satin Shorts Set">
+            <div class="product-details">
+                <div class="product-name">Brown Glazed Satin Shorts Set</div>
+                <div class="product-price">₹2699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/brown-glazed-satin-shorts-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/brown-glazed-satin-shorts-set', 'Brown Glazed Satin Shorts Set', '2699.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08066.jpg?v=1777395811')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/pink-bow-pocket-cotton-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08187.jpg?v=1777396048" alt="Pink Bow Pocket Cotton Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Pink Bow Pocket Cotton Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/pink-bow-pocket-cotton-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/pink-bow-pocket-cotton-pajama-set', 'Pink Bow Pocket Cotton Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08187.jpg?v=1777396048')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/light-pink-floral-cotton-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07901.jpg?v=1777483860" alt="Light Pink Floral Cotton Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Light Pink Floral Cotton Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/light-pink-floral-cotton-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/light-pink-floral-cotton-pajama-set', 'Light Pink Floral Cotton Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07901.jpg?v=1777483860')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/red-gingham-cotton-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07789.jpg?v=1777395606" alt="Red Gingham Cotton Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Red Gingham Cotton Pajama Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/red-gingham-cotton-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/red-gingham-cotton-pajama-set', 'Red Gingham Cotton Pajama Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07789.jpg?v=1777395606')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/swan-pocket-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08402.jpg?v=1777399952" alt="Swan Pocket Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Swan Pocket Satin Pajama Set</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/swan-pocket-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/swan-pocket-satin-pajama-set', 'Swan Pocket Satin Pajama Set', '3499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08402.jpg?v=1777399952')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/light-pink-gingham-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07980.jpg?v=1777395435" alt="Light Pink Gingham Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Light Pink Gingham Satin Pajama Set</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/light-pink-gingham-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/light-pink-gingham-satin-pajama-set', 'Light Pink Gingham Satin Pajama Set', '3499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07980.jpg?v=1777395435')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/maroon-stripe-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08124.jpg?v=1777395905" alt="Maroon Stripe Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Maroon Stripe Satin Pajama Set</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/maroon-stripe-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/maroon-stripe-satin-pajama-set', 'Maroon Stripe Satin Pajama Set', '3499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC08124.jpg?v=1777395905')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/sky-blue-floral-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07572.jpg?v=1777395140" alt="Sky Blue Floral Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Sky Blue Floral Satin Pajama Set</div>
+                <div class="product-price">₹3499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/sky-blue-floral-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/sky-blue-floral-satin-pajama-set', 'Sky Blue Floral Satin Pajama Set', '3499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC07572.jpg?v=1777395140')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/classic-personalised-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_3278.jpg?v=1774854039" alt="Classic Personalised Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Classic Personalised Pajama Set</div>
+                <div class="product-price">₹3699.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/classic-personalised-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/classic-personalised-pajama-set', 'Classic Personalised Pajama Set', '3699.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_3278.jpg?v=1774854039')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/citrus-pop-back-detailed-swimsuit', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_519_3c26a97a-f4fb-4252-beb5-211252eb93eb.jpg?v=1758535852" alt="Citrus Pop Back-Detailed Swimsuit">
+            <div class="product-details">
+                <div class="product-name">Citrus Pop Back-Detailed Swimsuit</div>
+                <div class="product-price">₹3249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/citrus-pop-back-detailed-swimsuit', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/citrus-pop-back-detailed-swimsuit', 'Citrus Pop Back-Detailed Swimsuit', '3249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_519_3c26a97a-f4fb-4252-beb5-211252eb93eb.jpg?v=1758535852')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/scarlet-bikini-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSCF1379.jpg?v=1758536770" alt="Scarlet Bikini Set">
+            <div class="product-details">
+                <div class="product-name">Scarlet Bikini Set</div>
+                <div class="product-price">₹3249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/scarlet-bikini-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/scarlet-bikini-set', 'Scarlet Bikini Set', '3249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSCF1379.jpg?v=1758536770')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/solid-cotton-corset-dress-maroon', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_2741.jpg?v=1771405775" alt="Solid Cotton Corset Dress - Maroon">
+            <div class="product-details">
+                <div class="product-name">Solid Cotton Corset Dress - Maroon</div>
+                <div class="product-price">₹3249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/solid-cotton-corset-dress-maroon', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/solid-cotton-corset-dress-maroon', 'Solid Cotton Corset Dress - Maroon', '3249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_2741.jpg?v=1771405775')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/signature-custom-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC05988.jpg?v=1763831479" alt="Signature Personalised Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Signature Personalised Pajama Set</div>
+                <div class="product-price">₹6199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/signature-custom-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/signature-custom-pajama-set', 'Signature Personalised Pajama Set', '6199.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSC05988.jpg?v=1763831479')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/jade-striped-swimsuit', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_541.jpg?v=1758266564" alt="Jade Striped Swimsuit">
+            <div class="product-details">
+                <div class="product-name">Jade Striped Swimsuit</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/jade-striped-swimsuit', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/jade-striped-swimsuit', 'Jade Striped Swimsuit', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_541.jpg?v=1758266564')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/sunday-love-signature-swimsuit', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSCF1391.jpg?v=1758536581" alt="Sunday Love Signature Swimsuit">
+            <div class="product-details">
+                <div class="product-name">Sunday Love Signature Swimsuit</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/sunday-love-signature-swimsuit', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/sunday-love-signature-swimsuit', 'Sunday Love Signature Swimsuit', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSCF1391.jpg?v=1758536581')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/pink-floral-swimsuit', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_579.jpg?v=1758536344" alt="Pink Floral Swimsuit">
+            <div class="product-details">
+                <div class="product-name">Pink Floral Swimsuit</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/pink-floral-swimsuit', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/pink-floral-swimsuit', 'Pink Floral Swimsuit', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_579.jpg?v=1758536344')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/indigo-high-rise-bikini-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSCF1349.jpg?v=1758536813" alt="Indigo High-Rise Bikini Set">
+            <div class="product-details">
+                <div class="product-name">Indigo High-Rise Bikini Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/indigo-high-rise-bikini-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/indigo-high-rise-bikini-set', 'Indigo High-Rise Bikini Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSCF1349.jpg?v=1758536813')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/white-floral-high-rise-bikini-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSCF1332_fa2de6bf-9cb7-4c69-a668-ab3676657f7b.jpg?v=1758537088" alt="White Floral High-Rise Bikini Set">
+            <div class="product-details">
+                <div class="product-name">White Floral High-Rise Bikini Set</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/white-floral-high-rise-bikini-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/white-floral-high-rise-bikini-set', 'White Floral High-Rise Bikini Set', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/DSCF1332_fa2de6bf-9cb7-4c69-a668-ab3676657f7b.jpg?v=1758537088')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/embellished-satin-flowy-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_1082.jpg?v=1758537426" alt="Embellished Satin Flowy Dress">
+            <div class="product-details">
+                <div class="product-name">Embellished Satin Flowy Dress</div>
+                <div class="product-price">₹5749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/embellished-satin-flowy-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/embellished-satin-flowy-dress', 'Embellished Satin Flowy Dress', '5749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_1082.jpg?v=1758537426')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/one-shoulder-satin-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_1060.jpg?v=1758537638" alt="One Shoulder Satin Dress">
+            <div class="product-details">
+                <div class="product-name">One Shoulder Satin Dress</div>
+                <div class="product-price">₹2749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/one-shoulder-satin-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/one-shoulder-satin-dress', 'One Shoulder Satin Dress', '2749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_1060.jpg?v=1758537638')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/knit-satin-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_647.jpg?v=1758537703" alt="Knit &amp; Satin Dress">
+            <div class="product-details">
+                <div class="product-name">Knit &amp; Satin Dress</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/knit-satin-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/knit-satin-dress', 'Knit &amp; Satin Dress', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_647.jpg?v=1758537703')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/pleated-black-cotton-tier-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_674.jpg?v=1758537775" alt="Pleated Black Cotton Tier Dress">
+            <div class="product-details">
+                <div class="product-name">Pleated Black Cotton Tier Dress</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/pleated-black-cotton-tier-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/pleated-black-cotton-tier-dress', 'Pleated Black Cotton Tier Dress', '3999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_674.jpg?v=1758537775')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/pleated-white-cotton-tier-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_799.jpg?v=1758537842" alt="Pleated White Cotton Tier Dress">
+            <div class="product-details">
+                <div class="product-name">Pleated White Cotton Tier Dress</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/pleated-white-cotton-tier-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/pleated-white-cotton-tier-dress', 'Pleated White Cotton Tier Dress', '3999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_799.jpg?v=1758537842')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/printed-cotton-shift-dress-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_718.jpg?v=1758537865" alt="Printed Cotton Corset Dress">
+            <div class="product-details">
+                <div class="product-name">Printed Cotton Corset Dress</div>
+                <div class="product-price">₹3249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/printed-cotton-shift-dress-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/printed-cotton-shift-dress-copy', 'Printed Cotton Corset Dress', '3249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_718.jpg?v=1758537865')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/printed-cotton-shift-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_735.jpg?v=1758537987" alt="Printed Cotton Shift Dress">
+            <div class="product-details">
+                <div class="product-name">Printed Cotton Shift Dress</div>
+                <div class="product-price">₹2499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/printed-cotton-shift-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/printed-cotton-shift-dress', 'Printed Cotton Shift Dress', '2499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_735.jpg?v=1758537987')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/solid-cotton-corset-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_1132.jpg?v=1758538055" alt="Solid Cotton Corset Dress - Black">
+            <div class="product-details">
+                <div class="product-name">Solid Cotton Corset Dress - Black</div>
+                <div class="product-price">₹3249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/solid-cotton-corset-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/solid-cotton-corset-dress', 'Solid Cotton Corset Dress - Black', '3249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_1132.jpg?v=1758538055')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/printed-cotton-long-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_761.jpg?v=1758538550" alt="Printed Cotton Long Dress">
+            <div class="product-details">
+                <div class="product-name">Printed Cotton Long Dress</div>
+                <div class="product-price">₹2749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/printed-cotton-long-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/printed-cotton-long-dress', 'Printed Cotton Long Dress', '2749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_761.jpg?v=1758538550')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/printed-cotton-short-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_603.jpg?v=1758538571" alt="Printed Cotton Short Dress">
+            <div class="product-details">
+                <div class="product-name">Printed Cotton Short Dress</div>
+                <div class="product-price">₹2999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/printed-cotton-short-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/printed-cotton-short-dress', 'Printed Cotton Short Dress', '2999.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_603.jpg?v=1758538571')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/floral-cotton-pajama-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_345.jpg?v=1758538698" alt="Floral Cotton Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Floral Cotton Pajama Set</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/floral-cotton-pajama-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/floral-cotton-pajama-set-1', 'Floral Cotton Pajama Set', '1499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_345.jpg?v=1758538698')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/floral-cotton-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_869.jpg?v=1758540570" alt="Red Striped Cotton Short Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Red Striped Cotton Short Pajama Set</div>
+                <div class="product-price">₹1249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/floral-cotton-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/floral-cotton-pajama-set', 'Red Striped Cotton Short Pajama Set', '1249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_869.jpg?v=1758540570')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/sunday-love-signature-cotton-short-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_340.jpg?v=1758540842" alt="Sunday Love Signature Cotton Short Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Sunday Love Signature Cotton Short Pajama Set</div>
+                <div class="product-price">₹1249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/sunday-love-signature-cotton-short-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/sunday-love-signature-cotton-short-pajama-set', 'Sunday Love Signature Cotton Short Pajama Set', '1249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_340.jpg?v=1758540842')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/white-checkered-cotton-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_243.jpg?v=1758538736" alt="White Checkered Cotton Pajama Set">
+            <div class="product-details">
+                <div class="product-name">White Checkered Cotton Pajama Set</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/white-checkered-cotton-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/white-checkered-cotton-pajama-set', 'White Checkered Cotton Pajama Set', '1499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_243.jpg?v=1758538736')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/blue-striped-cotton-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_317.jpg?v=1758538853" alt="Blue Striped Cotton Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Blue Striped Cotton Pajama Set</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/blue-striped-cotton-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/blue-striped-cotton-pajama-set', 'Blue Striped Cotton Pajama Set', '1499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_317.jpg?v=1758538853')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/champagne-v-neck-satin-short-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_830.jpg?v=1758540852" alt="Champagne V-Neck Satin Short Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Champagne V-Neck Satin Short Pajama Set</div>
+                <div class="product-price">₹1249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/champagne-v-neck-satin-short-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/champagne-v-neck-satin-short-pajama-set', 'Champagne V-Neck Satin Short Pajama Set', '1249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_830.jpg?v=1758540852')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/rose-v-neck-satin-short-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_406.jpg?v=1758540923" alt="Rose V-Neck Satin Short Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Rose V-Neck Satin Short Pajama Set</div>
+                <div class="product-price">₹1249.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/rose-v-neck-satin-short-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/rose-v-neck-satin-short-pajama-set', 'Rose V-Neck Satin Short Pajama Set', '1249.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_406.jpg?v=1758540923')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/hot-pink-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_896.jpg?v=1758539272" alt="Hot Pink Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Hot Pink Satin Pajama Set</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/hot-pink-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/hot-pink-satin-pajama-set', 'Hot Pink Satin Pajama Set', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_896.jpg?v=1758539272')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/sunday-love-signature-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_972.jpg?v=1758539393" alt="Sunday Love Signature Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Sunday Love Signature Satin Pajama Set</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/sunday-love-signature-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/sunday-love-signature-satin-pajama-set', 'Sunday Love Signature Satin Pajama Set', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_972.jpg?v=1758539393')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/black-floral-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_200.jpg?v=1758539539" alt="Black Floral Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Black Floral Satin Pajama Set</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/black-floral-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/black-floral-satin-pajama-set', 'Black Floral Satin Pajama Set', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_200.jpg?v=1758539539')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/checkered-wine-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_79.jpg?v=1758539634" alt="Checkered Wine Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Checkered Wine Satin Pajama Set</div>
+                <div class="product-price">₹1749.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/checkered-wine-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/checkered-wine-satin-pajama-set', 'Checkered Wine Satin Pajama Set', '1749.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_79.jpg?v=1758539634')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/champagne-glazed-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_439.jpg?v=1758539686" alt="Champagne Glazed Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Champagne Glazed Satin Pajama Set</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/champagne-glazed-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/champagne-glazed-satin-pajama-set', 'Champagne Glazed Satin Pajama Set', '1499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_439.jpg?v=1758539686')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/black-glazed-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_170.jpg?v=1758540109" alt="Black Glazed Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Black Glazed Satin Pajama Set</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/black-glazed-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/black-glazed-satin-pajama-set', 'Black Glazed Satin Pajama Set', '1499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_170.jpg?v=1758540109')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/navy-glazed-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_367.jpg?v=1758540128" alt="Navy Glazed Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Navy Glazed Satin Pajama Set</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/navy-glazed-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/navy-glazed-satin-pajama-set', 'Navy Glazed Satin Pajama Set', '1499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_367.jpg?v=1758540128')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/pink-glazed-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_147_e108da43-893b-4f6b-9260-d901acf981ad.jpg?v=1758540288" alt="Pink Glazed Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Pink Glazed Satin Pajama Set</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/pink-glazed-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/pink-glazed-satin-pajama-set', 'Pink Glazed Satin Pajama Set', '1499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_147_e108da43-893b-4f6b-9260-d901acf981ad.jpg?v=1758540288')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/rose-glazed-satin-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_0934.jpg?v=1758626734" alt="Rose Glazed Satin Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Rose Glazed Satin Pajama Set</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/rose-glazed-satin-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/rose-glazed-satin-pajama-set', 'Rose Glazed Satin Pajama Set', '1499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/IMG_0934.jpg?v=1758626734')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/checkered-green-satin-short-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_25.jpg?v=1757412948" alt="Checkered Green Satin Short Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Checkered Green Satin Short Pajama Set</div>
+                <div class="product-price">₹1499.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/checkered-green-satin-short-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/checkered-green-satin-short-pajama-set', 'Checkered Green Satin Short Pajama Set', '1499.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_25.jpg?v=1757412948')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://sundayloveshop.com/products/royal-blue-satin-short-pajama-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_916.jpg?v=1758541072" alt="Royal Blue Satin Short Pajama Set">
+            <div class="product-details">
+                <div class="product-name">Royal Blue Satin Short Pajama Set</div>
+                <div class="product-price">₹1349.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://sundayloveshop.com/products/royal-blue-satin-short-pajama-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://sundayloveshop.com/products/royal-blue-satin-short-pajama-set', 'Royal Blue Satin Short Pajama Set', '1349.00', 'https://cdn.shopify.com/s/files/1/0955/5601/0057/files/SundayLove_916.jpg?v=1758541072')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

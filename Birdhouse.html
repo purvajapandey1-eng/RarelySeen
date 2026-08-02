@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birdhouse - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Birdhouse</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/chidiya-wedges-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1209.jpg?v=1735893632" alt="Chidiya Wedges - White">
+            <div class="product-details">
+                <div class="product-name">Chidiya Wedges - White</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/chidiya-wedges-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/chidiya-wedges-white', 'Chidiya Wedges - White', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1209.jpg?v=1735893632')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mehfil-heel-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/6113_9d3a0e47-9315-4a9b-acf3-cb93058b66a5.jpg?v=1772185183" alt="Mehfil Heel- Black">
+            <div class="product-details">
+                <div class="product-name">Mehfil Heel- Black</div>
+                <div class="product-price">₹5490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mehfil-heel-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mehfil-heel-black', 'Mehfil Heel- Black', '5490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/6113_9d3a0e47-9315-4a9b-acf3-cb93058b66a5.jpg?v=1772185183')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mehfil-heel-rose-gold-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/6066.jpg?v=1772185137" alt="Mehfil Heels- Burgundy">
+            <div class="product-details">
+                <div class="product-name">Mehfil Heels- Burgundy</div>
+                <div class="product-price">₹5490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mehfil-heel-rose-gold-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mehfil-heel-rose-gold-copy', 'Mehfil Heels- Burgundy', '5490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/6066.jpg?v=1772185137')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mehfil-heel-rose-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/6013.jpg?v=1772104918" alt="Mehfil Heel-Rose Gold">
+            <div class="product-details">
+                <div class="product-name">Mehfil Heel-Rose Gold</div>
+                <div class="product-price">₹5490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mehfil-heel-rose-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mehfil-heel-rose-gold', 'Mehfil Heel-Rose Gold', '5490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/6013.jpg?v=1772104918')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/gulnar-wedge-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5905.jpg?v=1772103272" alt="Gulnar Wedge - Gold">
+            <div class="product-details">
+                <div class="product-name">Gulnar Wedge - Gold</div>
+                <div class="product-price">₹3990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/gulnar-wedge-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/gulnar-wedge-gold', 'Gulnar Wedge - Gold', '3990.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5905.jpg?v=1772103272')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/panchi-wedge-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5934.jpg?v=1772102510" alt="Panchi Wedge - White">
+            <div class="product-details">
+                <div class="product-name">Panchi Wedge - White</div>
+                <div class="product-price">₹3990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/panchi-wedge-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/panchi-wedge-white', 'Panchi Wedge - White', '3990.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5934.jpg?v=1772102510')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/trayi-kamal-wedges-rose-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5969.jpg?v=1772101937" alt="Trayi Kamal Wedges - Rose Gold">
+            <div class="product-details">
+                <div class="product-name">Trayi Kamal Wedges - Rose Gold</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/trayi-kamal-wedges-rose-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/trayi-kamal-wedges-rose-gold', 'Trayi Kamal Wedges - Rose Gold', '4590.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5969.jpg?v=1772101937')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/gift-wrap', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/BH-Gift_230bf168-8479-4bf0-b224-c5a480dbf438.png?v=1768200657" alt="Gift Wrap">
+            <div class="product-details">
+                <div class="product-name">Gift Wrap</div>
+                <div class="product-price">₹200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/gift-wrap', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/gift-wrap', 'Gift Wrap', '200.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/BH-Gift_230bf168-8479-4bf0-b224-c5a480dbf438.png?v=1768200657')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/noor-wedges-rose-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4254-min.jpg?v=1760625770" alt="Noor Wedges - Rose Gold">
+            <div class="product-details">
+                <div class="product-name">Noor Wedges - Rose Gold</div>
+                <div class="product-price">₹5990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/noor-wedges-rose-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/noor-wedges-rose-gold', 'Noor Wedges - Rose Gold', '5990.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4254-min.jpg?v=1760625770')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/trayi-kamal-wedges-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4229-min.jpg?v=1760625329" alt="Trayi Kamal Wedges - Gold">
+            <div class="product-details">
+                <div class="product-name">Trayi Kamal Wedges - Gold</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/trayi-kamal-wedges-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/trayi-kamal-wedges-gold', 'Trayi Kamal Wedges - Gold', '4590.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4229-min.jpg?v=1760625329')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/trayi-kamal-wedges-pink-metallic', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4147-min.jpg?v=1760629514" alt="Trayi Kamal Wedges - Pink metallic">
+            <div class="product-details">
+                <div class="product-name">Trayi Kamal Wedges - Pink metallic</div>
+                <div class="product-price">₹4590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/trayi-kamal-wedges-pink-metallic', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/trayi-kamal-wedges-pink-metallic', 'Trayi Kamal Wedges - Pink metallic', '4590.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4147-min.jpg?v=1760629514')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/shaam-savera-slides-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4198-min.jpg?v=1760625539" alt="Shaam Savera slides-Black">
+            <div class="product-details">
+                <div class="product-name">Shaam Savera slides-Black</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/shaam-savera-slides-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/shaam-savera-slides-black', 'Shaam Savera slides-Black', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4198-min.jpg?v=1760625539')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/shaam-savera-slides-dark-tan', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4170-min.jpg?v=1760625409" alt="Shaam Savera slides-Dark Tan">
+            <div class="product-details">
+                <div class="product-name">Shaam Savera slides-Dark Tan</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/shaam-savera-slides-dark-tan', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/shaam-savera-slides-dark-tan', 'Shaam Savera slides-Dark Tan', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4170-min.jpg?v=1760625409')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/sarika-heels-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5621_afc29122-45f3-4226-ae68-6e81ed9cee95.jpg?v=1749927834" alt="Sarika heels-Black">
+            <div class="product-details">
+                <div class="product-name">Sarika heels-Black</div>
+                <div class="product-price">₹3990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/sarika-heels-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/sarika-heels-black', 'Sarika heels-Black', '3990.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5621_afc29122-45f3-4226-ae68-6e81ed9cee95.jpg?v=1749927834')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/sarika-heels-cream', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3876.jpg?v=1749928194" alt="Sarika heels-Cream">
+            <div class="product-details">
+                <div class="product-name">Sarika heels-Cream</div>
+                <div class="product-price">₹3990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/sarika-heels-cream', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/sarika-heels-cream', 'Sarika heels-Cream', '3990.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3876.jpg?v=1749928194')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/saanjh-heels-maroon', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5382.jpg?v=1749928520" alt="Saanjh heels-Maroon">
+            <div class="product-details">
+                <div class="product-name">Saanjh heels-Maroon</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/saanjh-heels-maroon', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/saanjh-heels-maroon', 'Saanjh heels-Maroon', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5382.jpg?v=1749928520')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/saanjh-heels-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3472.jpg?v=1749928892" alt="Saanjh heels-White">
+            <div class="product-details">
+                <div class="product-name">Saanjh heels-White</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/saanjh-heels-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/saanjh-heels-white', 'Saanjh heels-White', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3472.jpg?v=1749928892')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/saanjh-heels-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5439.jpg?v=1750074129" alt="Saanjh heels-Black">
+            <div class="product-details">
+                <div class="product-name">Saanjh heels-Black</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/saanjh-heels-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/saanjh-heels-black', 'Saanjh heels-Black', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5439.jpg?v=1750074129')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/shaam-savera-slides-burgundy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5534.jpg?v=1749929441" alt="Shaam Savera slides-Burgundy">
+            <div class="product-details">
+                <div class="product-name">Shaam Savera slides-Burgundy</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/shaam-savera-slides-burgundy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/shaam-savera-slides-burgundy', 'Shaam Savera slides-Burgundy', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5534.jpg?v=1749929441')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/shaam-savera-slides-cream-arch-support', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3722.jpg?v=1749986578" alt="Shaam Savera slides-Cream">
+            <div class="product-details">
+                <div class="product-name">Shaam Savera slides-Cream</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/shaam-savera-slides-cream-arch-support', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/shaam-savera-slides-cream-arch-support', 'Shaam Savera slides-Cream', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3722.jpg?v=1749986578')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/ambar-dual-strap-slides-light-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5471.jpg?v=1749986551" alt="Ambar slides-Light gold">
+            <div class="product-details">
+                <div class="product-name">Ambar slides-Light gold</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/ambar-dual-strap-slides-light-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/ambar-dual-strap-slides-light-gold', 'Ambar slides-Light gold', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5471.jpg?v=1749986551')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/ambar-dual-strap-slides-dark-tan', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5564.jpg?v=1749961108" alt="Ambar slides-Dark tan">
+            <div class="product-details">
+                <div class="product-name">Ambar slides-Dark tan</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/ambar-dual-strap-slides-dark-tan', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/ambar-dual-strap-slides-dark-tan', 'Ambar slides-Dark tan', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5564.jpg?v=1749961108')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/ambar-dual-strap-slides-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5424.jpg?v=1749961261" alt="Ambar slides- Black">
+            <div class="product-details">
+                <div class="product-name">Ambar slides- Black</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/ambar-dual-strap-slides-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/ambar-dual-strap-slides-black', 'Ambar slides- Black', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5424.jpg?v=1749961261')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mudra-slides-light-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3788_cb1ca095-c827-44bb-a53f-ee1cfeb4d1b0.jpg?v=1749961459" alt="Mudra slides-Light Gold">
+            <div class="product-details">
+                <div class="product-name">Mudra slides-Light Gold</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mudra-slides-light-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mudra-slides-light-gold', 'Mudra slides-Light Gold', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3788_cb1ca095-c827-44bb-a53f-ee1cfeb4d1b0.jpg?v=1749961459')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mudra-slides-camel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5494.jpg?v=1749970281" alt="Mudra slides-Camel">
+            <div class="product-details">
+                <div class="product-name">Mudra slides-Camel</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mudra-slides-camel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mudra-slides-camel', 'Mudra slides-Camel', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5494.jpg?v=1749970281')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mudra-slides-teal', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5513.jpg?v=1749970384" alt="Mudra slides-Teal">
+            <div class="product-details">
+                <div class="product-name">Mudra slides-Teal</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mudra-slides-teal', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mudra-slides-teal', 'Mudra slides-Teal', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5513.jpg?v=1749970384')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mudra-slides-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3781_d268b92f-8a96-4043-8dee-5cdf1f6cf22a.jpg?v=1749970561" alt="Mudra slides-Black">
+            <div class="product-details">
+                <div class="product-name">Mudra slides-Black</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mudra-slides-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mudra-slides-black', 'Mudra slides-Black', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3781_d268b92f-8a96-4043-8dee-5cdf1f6cf22a.jpg?v=1749970561')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/matsya-slides-cream', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3650.jpg?v=1749970960" alt="Matsya flats-Cream">
+            <div class="product-details">
+                <div class="product-name">Matsya flats-Cream</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/matsya-slides-cream', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/matsya-slides-cream', 'Matsya flats-Cream', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3650.jpg?v=1749970960')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/matsya-slides-dark-tan', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5271_c7b30d6f-0bc2-4e26-8fc8-6fc1bb8e010a.jpg?v=1749971916" alt="Matsya flats-Dark Tan">
+            <div class="product-details">
+                <div class="product-name">Matsya flats-Dark Tan</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/matsya-slides-dark-tan', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/matsya-slides-dark-tan', 'Matsya flats-Dark Tan', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/5271_c7b30d6f-0bc2-4e26-8fc8-6fc1bb8e010a.jpg?v=1749971916')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/dori-slides-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2371.jpg?v=1750074247" alt="Dori sandals - White">
+            <div class="product-details">
+                <div class="product-name">Dori sandals - White</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/dori-slides-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/dori-slides-white', 'Dori sandals - White', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2371.jpg?v=1750074247')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/dori-slides-rose-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3986.jpg?v=1749972207" alt="Dori sandals - Rose Gold">
+            <div class="product-details">
+                <div class="product-name">Dori sandals - Rose Gold</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/dori-slides-rose-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/dori-slides-rose-gold', 'Dori sandals - Rose Gold', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3986.jpg?v=1749972207')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/dori-slides-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4012.jpg?v=1749972419" alt="Dori sandals - Black">
+            <div class="product-details">
+                <div class="product-name">Dori sandals - Black</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/dori-slides-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/dori-slides-black', 'Dori sandals - Black', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4012.jpg?v=1749972419')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/matsya-slides-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3597.jpg?v=1749972536" alt="Matsya flats-Black">
+            <div class="product-details">
+                <div class="product-name">Matsya flats-Black</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/matsya-slides-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/matsya-slides-black', 'Matsya flats-Black', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3597.jpg?v=1749972536')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/chand-wedges-rose-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3896_317c3a3c-b9cb-49c9-acf1-7ad06acebfb6.jpg?v=1749056764" alt="Chand Wedges - Rose Gold">
+            <div class="product-details">
+                <div class="product-name">Chand Wedges - Rose Gold</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/chand-wedges-rose-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/chand-wedges-rose-gold', 'Chand Wedges - Rose Gold', '3490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3896_317c3a3c-b9cb-49c9-acf1-7ad06acebfb6.jpg?v=1749056764')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/gulnar-slides-silver', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3925.jpg?v=1749056791" alt="Gulnar slides - Silver">
+            <div class="product-details">
+                <div class="product-name">Gulnar slides - Silver</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/gulnar-slides-silver', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/gulnar-slides-silver', 'Gulnar slides - Silver', '3490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3925.jpg?v=1749056791')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/gulnar-slides-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3904.jpg?v=1748935010" alt="Gulnar slides - Gold">
+            <div class="product-details">
+                <div class="product-name">Gulnar slides - Gold</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/gulnar-slides-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/gulnar-slides-gold', 'Gulnar slides - Gold', '3490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3904.jpg?v=1748935010')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mitthu-slides-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3881.jpg?v=1748936376" alt="Mitthu Slides - White">
+            <div class="product-details">
+                <div class="product-name">Mitthu Slides - White</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mitthu-slides-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mitthu-slides-white', 'Mitthu Slides - White', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3881.jpg?v=1748936376')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/5-tota-slides-light-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3937.jpg?v=1748934818" alt="5 Tota slides - Light Gold">
+            <div class="product-details">
+                <div class="product-name">5 Tota slides - Light Gold</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/5-tota-slides-light-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/5-tota-slides-light-gold', '5 Tota slides - Light Gold', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3937.jpg?v=1748934818')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/chidiya-slides-pink-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3950.jpg?v=1748934604" alt="Chidiya Slides - Tan">
+            <div class="product-details">
+                <div class="product-name">Chidiya Slides - Tan</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/chidiya-slides-pink-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/chidiya-slides-pink-copy', 'Chidiya Slides - Tan', '2490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3950.jpg?v=1748934604')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/5-tota-slides-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4356.jpg?v=1728812886" alt="5 Tota slides - White">
+            <div class="product-details">
+                <div class="product-name">5 Tota slides - White</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/5-tota-slides-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/5-tota-slides-white', '5 Tota slides - White', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4356.jpg?v=1728812886')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/haathi-slides-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A9561_460a2d88-081d-46e0-b054-8ddc17616621.jpg?v=1737201339" alt="Haathi slides - White">
+            <div class="product-details">
+                <div class="product-name">Haathi slides - White</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/haathi-slides-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/haathi-slides-white', 'Haathi slides - White', '3490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A9561_460a2d88-081d-46e0-b054-8ddc17616621.jpg?v=1737201339')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/chand-heels-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A9715_a0fab11a-9a7a-4c12-b164-bf5a388b6a3b.jpg?v=1737200482" alt="Chand Heels - Black">
+            <div class="product-details">
+                <div class="product-name">Chand Heels - Black</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/chand-heels-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/chand-heels-black', 'Chand Heels - Black', '3490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A9715_a0fab11a-9a7a-4c12-b164-bf5a388b6a3b.jpg?v=1737200482')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/chand-heels-tan', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A9490.jpg?v=1737200709" alt="Chand Heels - Tan">
+            <div class="product-details">
+                <div class="product-name">Chand Heels - Tan</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/chand-heels-tan', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/chand-heels-tan', 'Chand Heels - Tan', '3490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A9490.jpg?v=1737200709')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/haathi-slides-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A9594_fa4ad866-a59c-4814-b596-1bdb1d7b953c.jpg?v=1737200367" alt="Haathi slides - Gold">
+            <div class="product-details">
+                <div class="product-name">Haathi slides - Gold</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/haathi-slides-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/haathi-slides-gold', 'Haathi slides - Gold', '3490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A9594_fa4ad866-a59c-4814-b596-1bdb1d7b953c.jpg?v=1737200367')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/chand-heels-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A5657_29f1c661-8db6-4938-9516-9136d3d8808f.jpg?v=1737200616" alt="Chand Heels - Gold">
+            <div class="product-details">
+                <div class="product-name">Chand Heels - Gold</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/chand-heels-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/chand-heels-gold', 'Chand Heels - Gold', '3490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/2L1A5657_29f1c661-8db6-4938-9516-9136d3d8808f.jpg?v=1737200616')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/rangeen-heels-cream', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1226.jpg?v=1735893826" alt="Rangeen Heels - Cream">
+            <div class="product-details">
+                <div class="product-name">Rangeen Heels - Cream</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/rangeen-heels-cream', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/rangeen-heels-cream', 'Rangeen Heels - Cream', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1226.jpg?v=1735893826')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/rangeen-heels-tan', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1145.jpg?v=1735889560" alt="Rangeen Heels - Tan">
+            <div class="product-details">
+                <div class="product-name">Rangeen Heels - Tan</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/rangeen-heels-tan', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/rangeen-heels-tan', 'Rangeen Heels - Tan', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1145.jpg?v=1735889560')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/panchi-cork-slides-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4372.jpg?v=1728812887" alt="Panchi Cork slides - Black">
+            <div class="product-details">
+                <div class="product-name">Panchi Cork slides - Black</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/panchi-cork-slides-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/panchi-cork-slides-black', 'Panchi Cork slides - Black', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4372.jpg?v=1728812887')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/panchi-flats-white-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4413.jpg?v=1728812885" alt="Panchi Cork slides - White">
+            <div class="product-details">
+                <div class="product-name">Panchi Cork slides - White</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/panchi-flats-white-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/panchi-flats-white-copy', 'Panchi Cork slides - White', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4413.jpg?v=1728812885')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/baya-matka-heels-dark-tan', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/9759-2.jpg?v=1729608205" alt="Baya Matka Heels - Dark Tan">
+            <div class="product-details">
+                <div class="product-name">Baya Matka Heels - Dark Tan</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/baya-matka-heels-dark-tan', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/baya-matka-heels-dark-tan', 'Baya Matka Heels - Dark Tan', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/9759-2.jpg?v=1729608205')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/chidiya-slides-pink', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4399.jpg?v=1728812887" alt="Chidiya Slides - Pink">
+            <div class="product-details">
+                <div class="product-name">Chidiya Slides - Pink</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/chidiya-slides-pink', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/chidiya-slides-pink', 'Chidiya Slides - Pink', '2490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4399.jpg?v=1728812887')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/baya-heels-sage-green', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/9410copy.jpg?v=1725266984" alt="Baya Heels - Sage green">
+            <div class="product-details">
+                <div class="product-name">Baya Heels - Sage green</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/baya-heels-sage-green', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/baya-heels-sage-green', 'Baya Heels - Sage green', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/9410copy.jpg?v=1725266984')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/chidiya-slides-sage-green', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/0894.jpg?v=1715713284" alt="Chidiya Slides - Sage green">
+            <div class="product-details">
+                <div class="product-name">Chidiya Slides - Sage green</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/chidiya-slides-sage-green', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/chidiya-slides-sage-green', 'Chidiya Slides - Sage green', '2490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/0894.jpg?v=1715713284')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/baya-matka-heels-cream', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_0776.jpg?v=1716096618" alt="Baya Matka Heels - Cream">
+            <div class="product-details">
+                <div class="product-name">Baya Matka Heels - Cream</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/baya-matka-heels-cream', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/baya-matka-heels-cream', 'Baya Matka Heels - Cream', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_0776.jpg?v=1716096618')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/baya-heels-tan', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4132-darkbaya2.jpg?v=1729744561" alt="Baya Heels -Dark Tan">
+            <div class="product-details">
+                <div class="product-name">Baya Heels -Dark Tan</div>
+                <div class="product-price">₹3390.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/baya-heels-tan', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/baya-heels-tan', 'Baya Heels -Dark Tan', '3390.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/4132-darkbaya2.jpg?v=1729744561')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mithu-slides-light-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_0659.jpg?v=1748936245" alt="Mitthu slides - Sage green">
+            <div class="product-details">
+                <div class="product-name">Mitthu slides - Sage green</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mithu-slides-light-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mithu-slides-light-yellow', 'Mitthu slides - Sage green', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_0659.jpg?v=1748936245')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mithu-slides-dark-tan', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_0647.jpg?v=1716117920" alt="Mitthu Slides - Dark Tan">
+            <div class="product-details">
+                <div class="product-name">Mitthu Slides - Dark Tan</div>
+                <div class="product-price">₹2790.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mithu-slides-dark-tan', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mithu-slides-dark-tan', 'Mitthu Slides - Dark Tan', '2790.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_0647.jpg?v=1716117920')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/5-tota-slides-light-yellow', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1389.jpg?v=1715710244" alt="5 Tota slides - Mellow yellow">
+            <div class="product-details">
+                <div class="product-name">5 Tota slides - Mellow yellow</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/5-tota-slides-light-yellow', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/5-tota-slides-light-yellow', '5 Tota slides - Mellow yellow', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1389.jpg?v=1715710244')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/5-tota-slides-tan', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_1023.jpg?v=1715695926" alt="5 Tota slides - Tan">
+            <div class="product-details">
+                <div class="product-name">5 Tota slides - Tan</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/5-tota-slides-tan', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/5-tota-slides-tan', '5 Tota slides - Tan', '2890.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_1023.jpg?v=1715695926')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/braided-raffia-slides-whiite', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1315.jpg?v=1715713263" alt="Braided Raffia Slides - White">
+            <div class="product-details">
+                <div class="product-name">Braided Raffia Slides - White</div>
+                <div class="product-price">₹2371.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/braided-raffia-slides-whiite', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/braided-raffia-slides-whiite', 'Braided Raffia Slides - White', '2371.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/1315.jpg?v=1715713263')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/chidiya-slides-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/0937_3342e359-649a-4219-9fe8-baf129168bac.jpg?v=1735894225" alt="Chidiya Slides - White">
+            <div class="product-details">
+                <div class="product-name">Chidiya Slides - White</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/chidiya-slides-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/chidiya-slides-white', 'Chidiya Slides - White', '2490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/0937_3342e359-649a-4219-9fe8-baf129168bac.jpg?v=1735894225')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/rangeen-slides-cream', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3824.jpg?v=1716098422" alt="Rangeen Slides - Cream">
+            <div class="product-details">
+                <div class="product-name">Rangeen Slides - Cream</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/rangeen-slides-cream', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/rangeen-slides-cream', 'Rangeen Slides - Cream', '2490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/3824.jpg?v=1716098422')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/rangeen-slides-tan-mix', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_8682.jpg?v=1715695844" alt="Rangeen Slides - Tan">
+            <div class="product-details">
+                <div class="product-name">Rangeen Slides - Tan</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/rangeen-slides-tan-mix', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/rangeen-slides-tan-mix', 'Rangeen Slides - Tan', '2490.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_8682.jpg?v=1715695844')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://birdhouse.life/products/mayuri-flats-pink', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_8897.jpg?v=1716117898" alt="Mayuri Flats - Pink">
+            <div class="product-details">
+                <div class="product-name">Mayuri Flats - Pink</div>
+                <div class="product-price">₹2371.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://birdhouse.life/products/mayuri-flats-pink', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://birdhouse.life/products/mayuri-flats-pink', 'Mayuri Flats - Pink', '2371.00', 'https://cdn.shopify.com/s/files/1/0724/0761/3474/files/DSC_8897.jpg?v=1716117898')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

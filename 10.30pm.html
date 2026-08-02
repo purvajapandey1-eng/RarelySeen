@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10.30pm - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">10.30pm</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/untitled-jun3_16-08-41', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Reina_bd41e8c7-a6fc-4431-b318-d19d96f1409d.png?v=1780495835" alt="REINA DRESS">
+            <div class="product-details">
+                <div class="product-name">REINA DRESS</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/untitled-jun3_16-08-41', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/untitled-jun3_16-08-41', 'REINA DRESS', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Reina_bd41e8c7-a6fc-4431-b318-d19d96f1409d.png?v=1780495835')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/isobel', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/IMG-2562.jpg?v=1776623322" alt="ISOBEL">
+            <div class="product-details">
+                <div class="product-name">ISOBEL</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/isobel', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/isobel', 'ISOBEL', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/IMG-2562.jpg?v=1776623322')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/untitled-apr19_00-13', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/IMG-2536.jpg?v=1776538302" alt="SELENA">
+            <div class="product-details">
+                <div class="product-name">SELENA</div>
+                <div class="product-price">₹12500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/untitled-apr19_00-13', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/untitled-apr19_00-13', 'SELENA', '12500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/IMG-2536.jpg?v=1776538302')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/toffee', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Toffee.jpg?v=1776515210" alt="TOFFEE">
+            <div class="product-details">
+                <div class="product-name">TOFFEE</div>
+                <div class="product-price">₹7800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/toffee', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/toffee', 'TOFFEE', '7800.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Toffee.jpg?v=1776515210')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/nina', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Nina.jpg?v=1776513197" alt="NINA">
+            <div class="product-details">
+                <div class="product-name">NINA</div>
+                <div class="product-price">₹8500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/nina', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/nina', 'NINA', '8500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Nina.jpg?v=1776513197')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/emily-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/IMG-1099.jpg?v=1773221382" alt="EMILY DRESS">
+            <div class="product-details">
+                <div class="product-name">EMILY DRESS</div>
+                <div class="product-price">₹8500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/emily-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/emily-dress', 'EMILY DRESS', '8500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/IMG-1099.jpg?v=1773221382')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/ella-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Ella-1.jpg?v=1771840239" alt="ELLA DRESS">
+            <div class="product-details">
+                <div class="product-name">ELLA DRESS</div>
+                <div class="product-price">₹8500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/ella-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/ella-dress', 'ELLA DRESS', '8500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Ella-1.jpg?v=1771840239')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/elora-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/7-2.jpg?v=1771188136" alt="Elora Dress">
+            <div class="product-details">
+                <div class="product-name">Elora Dress</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/elora-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/elora-dress', 'Elora Dress', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/7-2.jpg?v=1771188136')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/untitled-feb13_12-09', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/0B24C51F-82AD-4141-83C1-EF4F8B6EED2E.jpg?v=1770966784" alt="JASMINE DRESS">
+            <div class="product-details">
+                <div class="product-name">JASMINE DRESS</div>
+                <div class="product-price">₹8500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/untitled-feb13_12-09', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/untitled-feb13_12-09', 'JASMINE DRESS', '8500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/0B24C51F-82AD-4141-83C1-EF4F8B6EED2E.jpg?v=1770966784')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/pearl-saree', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Pearl-saree.jpg?v=1770142614" alt="PEARL SAREE">
+            <div class="product-details">
+                <div class="product-name">PEARL SAREE</div>
+                <div class="product-price">₹29500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/pearl-saree', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/pearl-saree', 'PEARL SAREE', '29500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Pearl-saree.jpg?v=1770142614')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/shanaya-saree', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Shanaya-saree.jpg?v=1770125090" alt="SHANAYA SAREE">
+            <div class="product-details">
+                <div class="product-name">SHANAYA SAREE</div>
+                <div class="product-price">₹19500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/shanaya-saree', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/shanaya-saree', 'SHANAYA SAREE', '19500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Shanaya-saree.jpg?v=1770125090')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/zoya-corset', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Corset-3.jpg?v=1770122222" alt="Zoya corset">
+            <div class="product-details">
+                <div class="product-name">Zoya corset</div>
+                <div class="product-price">₹15500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/zoya-corset', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/zoya-corset', 'Zoya corset', '15500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Corset-3.jpg?v=1770122222')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/sienna-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Sienna-dress.png?v=1768667557" alt="Sienna Dress">
+            <div class="product-details">
+                <div class="product-name">Sienna Dress</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/sienna-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/sienna-dress', 'Sienna Dress', '5500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Sienna-dress.png?v=1768667557')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/kiara-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Kiara-2.jpg?v=1767642433" alt="KIARA DRESS">
+            <div class="product-details">
+                <div class="product-name">KIARA DRESS</div>
+                <div class="product-price">₹10800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/kiara-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/kiara-dress', 'KIARA DRESS', '10800.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Kiara-2.jpg?v=1767642433')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/aria-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Aria-6.png?v=1766310714" alt="ARIA DRESS">
+            <div class="product-details">
+                <div class="product-name">ARIA DRESS</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/aria-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/aria-dress', 'ARIA DRESS', '5500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Aria-6.png?v=1766310714')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/megan-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Megan-2.jpg?v=1765619768" alt="Megan dress">
+            <div class="product-details">
+                <div class="product-name">Megan dress</div>
+                <div class="product-price">₹4650.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/megan-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/megan-dress', 'Megan dress', '4650.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Megan-2.jpg?v=1765619768')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/tori-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Best.jpg?v=1766138893" alt="Tori dress">
+            <div class="product-details">
+                <div class="product-name">Tori dress</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/tori-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/tori-dress', 'Tori dress', '6800.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Best.jpg?v=1766138893')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/scarlet-satin-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Scarlet-3.jpg?v=1765444955" alt="Scarlet Satin Mini Dress">
+            <div class="product-details">
+                <div class="product-name">Scarlet Satin Mini Dress</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/scarlet-satin-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/scarlet-satin-mini-dress', 'Scarlet Satin Mini Dress', '4500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Scarlet-3.jpg?v=1765444955')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/vanessa-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/3.jpg?v=1764861365" alt="Vanessa top">
+            <div class="product-details">
+                <div class="product-name">Vanessa top</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/vanessa-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/vanessa-top', 'Vanessa top', '3999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/3.jpg?v=1764861365')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/lexi-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Lexi-3.jpg?v=1764426862" alt="LEXI DRESS">
+            <div class="product-details">
+                <div class="product-name">LEXI DRESS</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/lexi-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/lexi-dress', 'LEXI DRESS', '5500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Lexi-3.jpg?v=1764426862')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/ibiza-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Ibiza-set.jpg?v=1764082892" alt="IBIZA SET">
+            <div class="product-details">
+                <div class="product-name">IBIZA SET</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/ibiza-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/ibiza-set', 'IBIZA SET', '6800.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Ibiza-set.jpg?v=1764082892')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/noah-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Noah.jpg?v=1761414682" alt="NOAH DRESS">
+            <div class="product-details">
+                <div class="product-name">NOAH DRESS</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/noah-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/noah-dress', 'NOAH DRESS', '6500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Noah.jpg?v=1761414682')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/reina-dress-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/R7.jpg?v=1757062980" alt="Reina Dress – Black">
+            <div class="product-details">
+                <div class="product-name">Reina Dress – Black</div>
+                <div class="product-price">₹6999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/reina-dress-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/reina-dress-black', 'Reina Dress – Black', '6999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/R7.jpg?v=1757062980')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/zendaya-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Zen-3_09b889b2-8125-4731-b641-a9e29cf17fd3.jpg?v=1754214634" alt="Zendaya co ord">
+            <div class="product-details">
+                <div class="product-name">Zendaya co ord</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/zendaya-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/zendaya-co-ord', 'Zendaya co ord', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Zen-3_09b889b2-8125-4731-b641-a9e29cf17fd3.jpg?v=1754214634')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/helia-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/H2.jpg?v=1752737821" alt="Helia Dress">
+            <div class="product-details">
+                <div class="product-name">Helia Dress</div>
+                <div class="product-price">₹6999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/helia-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/helia-dress', 'Helia Dress', '6999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/H2.jpg?v=1752737821')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/reina-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Reina-1.jpg?v=1751800497" alt="REINA DRESS">
+            <div class="product-details">
+                <div class="product-name">REINA DRESS</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/reina-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/reina-dress', 'REINA DRESS', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Reina-1.jpg?v=1751800497')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/georgia-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Georgia-dress2.jpg?v=1749458961" alt="GEORGIA DRESS">
+            <div class="product-details">
+                <div class="product-name">GEORGIA DRESS</div>
+                <div class="product-price">₹6999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/georgia-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/georgia-dress', 'GEORGIA DRESS', '6999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Georgia-dress2.jpg?v=1749458961')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/pearl-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Pearl-1.jpg?v=1748101169" alt="Pearl dress">
+            <div class="product-details">
+                <div class="product-name">Pearl dress</div>
+                <div class="product-price">₹4999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/pearl-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/pearl-dress', 'Pearl dress', '4999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Pearl-1.jpg?v=1748101169')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/black-diamond-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Blackdiamonddress2.jpg?v=1776529126" alt="Black Diamond Dress">
+            <div class="product-details">
+                <div class="product-name">Black Diamond Dress</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/black-diamond-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/black-diamond-dress', 'Black Diamond Dress', '6500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Blackdiamonddress2.jpg?v=1776529126')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/olivia-dress-gold-chain-neck-detail', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Oliviadress2.jpg?v=1747381537" alt="Olivia Dress – Gold Chain Neck Detail">
+            <div class="product-details">
+                <div class="product-name">Olivia Dress – Gold Chain Neck Detail</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/olivia-dress-gold-chain-neck-detail', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/olivia-dress-gold-chain-neck-detail', 'Olivia Dress – Gold Chain Neck Detail', '4500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Oliviadress2.jpg?v=1747381537')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/cherry-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Cherrydress1.jpg?v=1747381328" alt="Cherry Dress">
+            <div class="product-details">
+                <div class="product-name">Cherry Dress</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/cherry-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/cherry-dress', 'Cherry Dress', '5500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Cherrydress1.jpg?v=1747381328')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/lucia-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/FullSizeRender.jpg?v=1770213372" alt="Lucia Dress">
+            <div class="product-details">
+                <div class="product-name">Lucia Dress</div>
+                <div class="product-price">₹4800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/lucia-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/lucia-dress', 'Lucia Dress', '4800.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/FullSizeRender.jpg?v=1770213372')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/nora-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/NORADRESS2.jpg?v=1747380783" alt="Nora Dress">
+            <div class="product-details">
+                <div class="product-name">Nora Dress</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/nora-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/nora-dress', 'Nora Dress', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/NORADRESS2.jpg?v=1747380783')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/sapphire-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Sapphiredress4.jpg?v=1747318748" alt="Sapphire Dress">
+            <div class="product-details">
+                <div class="product-name">Sapphire Dress</div>
+                <div class="product-price">₹4200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/sapphire-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/sapphire-dress', 'Sapphire Dress', '4200.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Sapphiredress4.jpg?v=1747318748')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/chanel-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Chaneldress2.jpg?v=1747245912" alt="Chanel Dress">
+            <div class="product-details">
+                <div class="product-name">Chanel Dress</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/chanel-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/chanel-dress', 'Chanel Dress', '4500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Chaneldress2.jpg?v=1747245912')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/summer-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Summerdress1.jpg?v=1747245612" alt="Summer Dress">
+            <div class="product-details">
+                <div class="product-name">Summer Dress</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/summer-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/summer-dress', 'Summer Dress', '4500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Summerdress1.jpg?v=1747245612')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/true-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Trueset1.png?v=1747402931" alt="True Set">
+            <div class="product-details">
+                <div class="product-name">True Set</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/true-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/true-set', 'True Set', '5800.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Trueset1.png?v=1747402931')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/stella-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Stellacoord.jpg?v=1747244929" alt="Stella Set">
+            <div class="product-details">
+                <div class="product-name">Stella Set</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/stella-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/stella-set', 'Stella Set', '6500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Stellacoord.jpg?v=1747244929')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/frost-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Frostset3.jpg?v=1747912557" alt="Frost Set">
+            <div class="product-details">
+                <div class="product-name">Frost Set</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/frost-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/frost-set', 'Frost Set', '5500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Frostset3.jpg?v=1747912557')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/kate-co-ord-set-lime-green', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Katecoord5.heic?v=1747405465" alt="Kate Co-ord Set – Lime Green">
+            <div class="product-details">
+                <div class="product-name">Kate Co-ord Set – Lime Green</div>
+                <div class="product-price">₹7299.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/kate-co-ord-set-lime-green', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/kate-co-ord-set-lime-green', 'Kate Co-ord Set – Lime Green', '7299.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Katecoord5.heic?v=1747405465')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/navy-co-ord-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Navycoord2.jpg?v=1747158411" alt="Navy Co-ord Set">
+            <div class="product-details">
+                <div class="product-name">Navy Co-ord Set</div>
+                <div class="product-price">₹6999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/navy-co-ord-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/navy-co-ord-set', 'Navy Co-ord Set', '6999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Navycoord2.jpg?v=1747158411')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/adriana-top-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Adrianatop4.jpg?v=1747158028" alt="Adriana Top">
+            <div class="product-details">
+                <div class="product-name">Adriana Top</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/adriana-top-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/adriana-top-black', 'Adriana Top', '3999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Adrianatop4.jpg?v=1747158028')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/bella-dress-black', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Belladress.png?v=1747157842" alt="Bella Dress – Black">
+            <div class="product-details">
+                <div class="product-name">Bella Dress – Black</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/bella-dress-black', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/bella-dress-black', 'Bella Dress – Black', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Belladress.png?v=1747157842')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/sophia-dress-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Sophia1.jpg?v=1747157656" alt="Sophia Dress – Blue">
+            <div class="product-details">
+                <div class="product-name">Sophia Dress – Blue</div>
+                <div class="product-price">₹6800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/sophia-dress-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/sophia-dress-blue', 'Sophia Dress – Blue', '6800.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Sophia1.jpg?v=1747157656')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/emma-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Emmadress3.jpg?v=1747078831" alt="Emma Dress">
+            <div class="product-details">
+                <div class="product-name">Emma Dress</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/emma-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/emma-dress', 'Emma Dress', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Emmadress3.jpg?v=1747078831')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/little-black-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Littleblackminidress.jpg?v=1747079602" alt="Little Black Mini Dress">
+            <div class="product-details">
+                <div class="product-name">Little Black Mini Dress</div>
+                <div class="product-price">₹5999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/little-black-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/little-black-mini-dress', 'Little Black Mini Dress', '5999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Littleblackminidress.jpg?v=1747079602')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/holly-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Hollydress.png?v=1747079400" alt="Holly Dress">
+            <div class="product-details">
+                <div class="product-name">Holly Dress</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/holly-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/holly-dress', 'Holly Dress', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Hollydress.png?v=1747079400')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/green-cut-out-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Greencutoutdress.jpg?v=1747079026" alt="Green Cut Out Dress">
+            <div class="product-details">
+                <div class="product-name">Green Cut Out Dress</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/green-cut-out-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/green-cut-out-dress', 'Green Cut Out Dress', '6500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Greencutoutdress.jpg?v=1747079026')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/jennie-co-ord', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Jenniecoord.jpg?v=1747078664" alt="Jennie Co-ord">
+            <div class="product-details">
+                <div class="product-name">Jennie Co-ord</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/jennie-co-ord', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/jennie-co-ord', 'Jennie Co-ord', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Jenniecoord.jpg?v=1747078664')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/river-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Rivermini2.jpg?v=1747078473" alt="River Dress Mini">
+            <div class="product-details">
+                <div class="product-name">River Dress Mini</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/river-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/river-dress', 'River Dress Mini', '4500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Rivermini2.jpg?v=1747078473')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/river-dress-royal-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Riverdress3.jpg?v=1747078305" alt="River Dress – Royal Blue Maxi">
+            <div class="product-details">
+                <div class="product-name">River Dress – Royal Blue Maxi</div>
+                <div class="product-price">₹6999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/river-dress-royal-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/river-dress-royal-blue', 'River Dress – Royal Blue Maxi', '6999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Riverdress3.jpg?v=1747078305')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/senorita-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Senoritadress.jpg?v=1747078224" alt="Senorita Dress">
+            <div class="product-details">
+                <div class="product-name">Senorita Dress</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/senorita-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/senorita-dress', 'Senorita Dress', '5500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Senoritadress.jpg?v=1747078224')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/hailey-dress-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Haileydress_e56a0617-5e09-402f-9f52-a54a4b810435.png?v=1747077893" alt="Hailey Dress">
+            <div class="product-details">
+                <div class="product-name">Hailey Dress</div>
+                <div class="product-price">₹7500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/hailey-dress-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/hailey-dress-1', 'Hailey Dress', '7500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Haileydress_e56a0617-5e09-402f-9f52-a54a4b810435.png?v=1747077893')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/ethereal-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Etherealset12.jpg?v=1747077657" alt="Ethereal Set">
+            <div class="product-details">
+                <div class="product-name">Ethereal Set</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/ethereal-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/ethereal-set', 'Ethereal Set', '5800.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Etherealset12.jpg?v=1747077657')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/aura-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/4C3BF1EF-9F8D-4601-AC52-EBE9A2EEB425.jpg?v=1773832782" alt="Aura Dress">
+            <div class="product-details">
+                <div class="product-name">Aura Dress</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/aura-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/aura-dress', 'Aura Dress', '5500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/4C3BF1EF-9F8D-4601-AC52-EBE9A2EEB425.jpg?v=1773832782')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/black-corset-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Blackcorsetdress2.jpg?v=1747077325" alt="Black Corset Dress">
+            <div class="product-details">
+                <div class="product-name">Black Corset Dress</div>
+                <div class="product-price">₹6500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/black-corset-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/black-corset-dress', 'Black Corset Dress', '6500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Blackcorsetdress2.jpg?v=1747077325')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/the-sky-dress-electric-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Skydress.png?v=1747077117" alt="The Sky Dress – Electric Blue">
+            <div class="product-details">
+                <div class="product-name">The Sky Dress – Electric Blue</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/the-sky-dress-electric-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/the-sky-dress-electric-blue', 'The Sky Dress – Electric Blue', '4500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Skydress.png?v=1747077117')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/lemon-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Lol2.jpg?v=1763211841" alt="LOLA Dress">
+            <div class="product-details">
+                <div class="product-name">LOLA Dress</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/lemon-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/lemon-dress', 'LOLA Dress', '4500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Lol2.jpg?v=1763211841')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/devil-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Devildress2.jpg?v=1747076837" alt="Devil Dress">
+            <div class="product-details">
+                <div class="product-name">Devil Dress</div>
+                <div class="product-price">₹6999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/devil-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/devil-dress', 'Devil Dress', '6999.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Devildress2.jpg?v=1747076837')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://1030pm.in/products/aqua-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Aquadress4.jpg?v=1747076406" alt="Aqua Dress">
+            <div class="product-details">
+                <div class="product-name">Aqua Dress</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://1030pm.in/products/aqua-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://1030pm.in/products/aqua-dress', 'Aqua Dress', '4500.00', 'https://cdn.shopify.com/s/files/1/0916/6870/9740/files/Aquadress4.jpg?v=1747076406')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

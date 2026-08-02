@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neelmii - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Neelmii</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/organic-cotton-co-ord-set-color-ivory', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-23.png?v=1776661515" alt="Organic Cotton Co-ord Set Color - Ivory">
+            <div class="product-details">
+                <div class="product-name">Organic Cotton Co-ord Set Color - Ivory</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/organic-cotton-co-ord-set-color-ivory', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/organic-cotton-co-ord-set-color-ivory', 'Organic Cotton Co-ord Set Color - Ivory', '5500.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-23.png?v=1776661515')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/dabbu-printed-a-line-dress-colot-black-beige', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/NEELMI0512.jpg?v=1778574974" alt="Dabbu Printed A-Line Dress Colot - Black &amp; Beige">
+            <div class="product-details">
+                <div class="product-name">Dabbu Printed A-Line Dress Colot - Black &amp; Beige</div>
+                <div class="product-price">₹3300.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/dabbu-printed-a-line-dress-colot-black-beige', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/dabbu-printed-a-line-dress-colot-black-beige', 'Dabbu Printed A-Line Dress Colot - Black &amp; Beige', '3300.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/NEELMI0512.jpg?v=1778574974')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/block-printed-a-line-dress-maroon-beige', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-5_1bea2f03-0a4a-4b3f-8e6f-16b47eda4ba5.png?v=1778576283" alt="Block Printed A-Line Dress - Maroon &amp; Beige">
+            <div class="product-details">
+                <div class="product-name">Block Printed A-Line Dress - Maroon &amp; Beige</div>
+                <div class="product-price">₹3300.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/block-printed-a-line-dress-maroon-beige', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/block-printed-a-line-dress-maroon-beige', 'Block Printed A-Line Dress - Maroon &amp; Beige', '3300.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-5_1bea2f03-0a4a-4b3f-8e6f-16b47eda4ba5.png?v=1778576283')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/shirt-dress-color-chocolate-brown', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-7_3fd85204-722e-41c0-a4b2-2ec238d5b52e.png?v=1778577266" alt="Shirt Dress - Chocolate Brown">
+            <div class="product-details">
+                <div class="product-name">Shirt Dress - Chocolate Brown</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/shirt-dress-color-chocolate-brown', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/shirt-dress-color-chocolate-brown', 'Shirt Dress - Chocolate Brown', '5800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-7_3fd85204-722e-41c0-a4b2-2ec238d5b52e.png?v=1778577266')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/shirt-dress-color-sky-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-13_d8927405-5aaf-4893-b2ac-22514f2fae30.png?v=1778578998" alt="Shirt Dress - Sky Blue">
+            <div class="product-details">
+                <div class="product-name">Shirt Dress - Sky Blue</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/shirt-dress-color-sky-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/shirt-dress-color-sky-blue', 'Shirt Dress - Sky Blue', '5800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-13_d8927405-5aaf-4893-b2ac-22514f2fae30.png?v=1778578998')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/shirt-dress-color-royal-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-20_1e323177-6782-4f34-8275-9ff20a5fad18.png?v=1778579448" alt="Shirt Dress - Royal Blue">
+            <div class="product-details">
+                <div class="product-name">Shirt Dress - Royal Blue</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/shirt-dress-color-royal-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/shirt-dress-color-royal-blue', 'Shirt Dress - Royal Blue', '5800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-20_1e323177-6782-4f34-8275-9ff20a5fad18.png?v=1778579448')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/shirt-dress-color-deep-teal', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/NEELMI0792.jpg?v=1778579989" alt="Shirt Dress - Deep Teal">
+            <div class="product-details">
+                <div class="product-name">Shirt Dress - Deep Teal</div>
+                <div class="product-price">₹5800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/shirt-dress-color-deep-teal', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/shirt-dress-color-deep-teal', 'Shirt Dress - Deep Teal', '5800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/NEELMI0792.jpg?v=1778579989')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/dabbu-heart-printed-co-ord-set-color-indigo-blue', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/NEELMI0922.jpg?v=1776666460" alt="Dabbu Heart Printed Co-ord Set Color - Indigo Blue">
+            <div class="product-details">
+                <div class="product-name">Dabbu Heart Printed Co-ord Set Color - Indigo Blue</div>
+                <div class="product-price">₹3640.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/dabbu-heart-printed-co-ord-set-color-indigo-blue', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/dabbu-heart-printed-co-ord-set-color-indigo-blue', 'Dabbu Heart Printed Co-ord Set Color - Indigo Blue', '3640.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/NEELMI0922.jpg?v=1776666460')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/dabbu-heart-printed-co-ord-set-color-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-36.png?v=1776667021" alt="Dabbu Heart Printed Co-ord Set Color - White">
+            <div class="product-details">
+                <div class="product-name">Dabbu Heart Printed Co-ord Set Color - White</div>
+                <div class="product-price">₹3640.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/dabbu-heart-printed-co-ord-set-color-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/dabbu-heart-printed-co-ord-set-color-white', 'Dabbu Heart Printed Co-ord Set Color - White', '3640.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-36.png?v=1776667021')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/linen-co-ord-set-color-beige', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-13_9b09b043-68c6-4c9f-a4b8-3176096d2c9a.png?v=1776660204" alt="Linen Co-ord Set Color - Beige">
+            <div class="product-details">
+                <div class="product-name">Linen Co-ord Set Color - Beige</div>
+                <div class="product-price">₹5450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/linen-co-ord-set-color-beige', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/linen-co-ord-set-color-beige', 'Linen Co-ord Set Color - Beige', '5450.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-13_9b09b043-68c6-4c9f-a4b8-3176096d2c9a.png?v=1776660204')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/linen-co-ord-set-color-olive-green', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-17_248933eb-e312-467e-b07a-14f241a4746f.png?v=1776660541" alt="Linen Co-ord Set Colot - Olive Green">
+            <div class="product-details">
+                <div class="product-name">Linen Co-ord Set Colot - Olive Green</div>
+                <div class="product-price">₹5450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/linen-co-ord-set-color-olive-green', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/linen-co-ord-set-color-olive-green', 'Linen Co-ord Set Colot - Olive Green', '5450.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-17_248933eb-e312-467e-b07a-14f241a4746f.png?v=1776660541')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/linen-co-ord-set-color-white', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-7_2cd29003-4eee-4e27-9efb-d4156103c71a.png?v=1776659907" alt="Linen Co-ord Set Color - White">
+            <div class="product-details">
+                <div class="product-name">Linen Co-ord Set Color - White</div>
+                <div class="product-price">₹5450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/linen-co-ord-set-color-white', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/linen-co-ord-set-color-white', 'Linen Co-ord Set Color - White', '5450.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-7_2cd29003-4eee-4e27-9efb-d4156103c71a.png?v=1776659907')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/linen-co-ord-set-color-rust', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-2_94356e8a-06e0-4125-8fdb-752b02aadbdd.png?v=1776659418" alt="Linen Co-ord Set Color - Rust">
+            <div class="product-details">
+                <div class="product-name">Linen Co-ord Set Color - Rust</div>
+                <div class="product-price">₹5450.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/linen-co-ord-set-color-rust', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/linen-co-ord-set-color-rust', 'Linen Co-ord Set Color - Rust', '5450.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-2_94356e8a-06e0-4125-8fdb-752b02aadbdd.png?v=1776659418')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indian-women-wear-latest-hand-block-tulip-dress-soft-cotton-collar-pocket', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03670-18.jpg?v=1742362656" alt="Hand-Block Printed Tulip Dress in Soft Cotton - Collar Neck">
+            <div class="product-details">
+                <div class="product-name">Hand-Block Printed Tulip Dress in Soft Cotton - Collar Neck</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indian-women-wear-latest-hand-block-tulip-dress-soft-cotton-collar-pocket', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indian-women-wear-latest-hand-block-tulip-dress-soft-cotton-collar-pocket', 'Hand-Block Printed Tulip Dress in Soft Cotton - Collar Neck', '2600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03670-18.jpg?v=1742362656')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/gray-tulip-handblock-cotton-co-ord-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Artboard_1.jpg?v=1769680228" alt="Gray Tulip Handblock Cotton Co-ord Set">
+            <div class="product-details">
+                <div class="product-name">Gray Tulip Handblock Cotton Co-ord Set</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/gray-tulip-handblock-cotton-co-ord-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/gray-tulip-handblock-cotton-co-ord-set', 'Gray Tulip Handblock Cotton Co-ord Set', '2600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Artboard_1.jpg?v=1769680228')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/blue-mul-cotton-kurta-set-with-handblock-print', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_0877.heic?v=1723789660" alt="Blue Mul-Cotton Kurta Set with Handblock Print">
+            <div class="product-details">
+                <div class="product-name">Blue Mul-Cotton Kurta Set with Handblock Print</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/blue-mul-cotton-kurta-set-with-handblock-print', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/blue-mul-cotton-kurta-set-with-handblock-print', 'Blue Mul-Cotton Kurta Set with Handblock Print', '4600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_0877.heic?v=1723789660')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/jamuni-leaf-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-11.png?v=1767342175" alt="2-jamuni Leaf Set (Purple &amp; Teel)">
+            <div class="product-details">
+                <div class="product-name">2-jamuni Leaf Set (Purple &amp; Teel)</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/jamuni-leaf-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/jamuni-leaf-set', '2-jamuni Leaf Set (Purple &amp; Teel)', '4600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-11.png?v=1767342175')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/berry-pinstripe-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-1.png?v=1767341383" alt="Berry Pinestriped Set (Pink &amp; Red)">
+            <div class="product-details">
+                <div class="product-name">Berry Pinestriped Set (Pink &amp; Red)</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/berry-pinstripe-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/berry-pinstripe-set', 'Berry Pinestriped Set (Pink &amp; Red)', '4600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/Untitled-1.png?v=1767341383')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/doodh-malai-dhaaga-kurta-set-off-white-with-black-chikankari-kurta-set-long', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00823_1.jpg?v=1762156398" alt="Doodh Malai Dhaaga Kurta Set (Off white with black chikankari kurta set - long)">
+            <div class="product-details">
+                <div class="product-name">Doodh Malai Dhaaga Kurta Set (Off white with black chikankari kurta set - long)</div>
+                <div class="product-price">₹4780.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/doodh-malai-dhaaga-kurta-set-off-white-with-black-chikankari-kurta-set-long', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/doodh-malai-dhaaga-kurta-set-off-white-with-black-chikankari-kurta-set-long', 'Doodh Malai Dhaaga Kurta Set (Off white with black chikankari kurta set - long)', '4780.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00823_1.jpg?v=1762156398')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/neelmii-blue-chikan-saaz-kurta-blue-kurta', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00473_1.jpg?v=1762156156" alt="Neelmii Blue Chikan Saaz Kurta (Blue kurta)">
+            <div class="product-details">
+                <div class="product-name">Neelmii Blue Chikan Saaz Kurta (Blue kurta)</div>
+                <div class="product-price">₹1780.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/neelmii-blue-chikan-saaz-kurta-blue-kurta', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/neelmii-blue-chikan-saaz-kurta-blue-kurta', 'Neelmii Blue Chikan Saaz Kurta (Blue kurta)', '1780.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00473_1.jpg?v=1762156156')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/mogra-safedi-bloom-kurta-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0013_4.jpg?v=1761768585" alt="Mogra Safedi Bloom Kurta Set">
+            <div class="product-details">
+                <div class="product-name">Mogra Safedi Bloom Kurta Set</div>
+                <div class="product-price">₹5100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/mogra-safedi-bloom-kurta-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/mogra-safedi-bloom-kurta-set', 'Mogra Safedi Bloom Kurta Set', '5100.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0013_4.jpg?v=1761768585')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/nimbu-ras-aabroo-kurta-set-yellow-chikankari-chanderi', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00615_1.jpg?v=1762155720" alt="Nimbu Ras Aabroo Kurta Set - Yellow Chikankari ( Chanderi)">
+            <div class="product-details">
+                <div class="product-name">Nimbu Ras Aabroo Kurta Set - Yellow Chikankari ( Chanderi)</div>
+                <div class="product-price">₹3780.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/nimbu-ras-aabroo-kurta-set-yellow-chikankari-chanderi', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/nimbu-ras-aabroo-kurta-set-yellow-chikankari-chanderi', 'Nimbu Ras Aabroo Kurta Set - Yellow Chikankari ( Chanderi)', '3780.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00615_1.jpg?v=1762155720')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/mogra-safedi-leher-kurta-set-white-short-kurta-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00025_1.jpg?v=1762156591" alt="Mogra Safedi Leher Kurta Set (White short kurta set)">
+            <div class="product-details">
+                <div class="product-name">Mogra Safedi Leher Kurta Set (White short kurta set)</div>
+                <div class="product-price">₹3550.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/mogra-safedi-leher-kurta-set-white-short-kurta-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/mogra-safedi-leher-kurta-set-white-short-kurta-set', 'Mogra Safedi Leher Kurta Set (White short kurta set)', '3550.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00025_1.jpg?v=1762156591')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/royal-black-cotton-kurta-3-4-sleeves', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied01462.jpg?v=1761766633" alt="Royal Black Cotton Kurta (3/4 sleeves)">
+            <div class="product-details">
+                <div class="product-name">Royal Black Cotton Kurta (3/4 sleeves)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/royal-black-cotton-kurta-3-4-sleeves', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/royal-black-cotton-kurta-3-4-sleeves', 'Royal Black Cotton Kurta (3/4 sleeves)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied01462.jpg?v=1761766633')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/royal-blue-cotton-kurta-sleeveless', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0020_1_1.jpg?v=1761562791" alt="Royal Blue Cotton Kurta (sleeveless)">
+            <div class="product-details">
+                <div class="product-name">Royal Blue Cotton Kurta (sleeveless)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/royal-blue-cotton-kurta-sleeveless', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/royal-blue-cotton-kurta-sleeveless', 'Royal Blue Cotton Kurta (sleeveless)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0020_1_1.jpg?v=1761562791')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/royal-blue-cotton-kurta-3-4-sleeves-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00331_1_1.jpg?v=1761562831" alt="Royal Blue Cotton Kurta (3/4 sleeves)">
+            <div class="product-details">
+                <div class="product-name">Royal Blue Cotton Kurta (3/4 sleeves)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/royal-blue-cotton-kurta-3-4-sleeves-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/royal-blue-cotton-kurta-3-4-sleeves-copy', 'Royal Blue Cotton Kurta (3/4 sleeves)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00331_1_1.jpg?v=1761562831')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/royal-blue-cotton-kurta-3-4-sleeves', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmi.0410_1.jpg?v=1760539770" alt="Royal Blue Cotton Kurta Set (3/4 sleeves)">
+            <div class="product-details">
+                <div class="product-name">Royal Blue Cotton Kurta Set (3/4 sleeves)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/royal-blue-cotton-kurta-3-4-sleeves', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/royal-blue-cotton-kurta-3-4-sleeves', 'Royal Blue Cotton Kurta Set (3/4 sleeves)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmi.0410_1.jpg?v=1760539770')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/royal-blue-cotton-kurta-with-dupatta', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmi.0377_1.jpg?v=1760539757" alt="Royal Blue Cotton Kurta (3/4 sleeves)">
+            <div class="product-details">
+                <div class="product-name">Royal Blue Cotton Kurta (3/4 sleeves)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/royal-blue-cotton-kurta-with-dupatta', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/royal-blue-cotton-kurta-with-dupatta', 'Royal Blue Cotton Kurta (3/4 sleeves)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmi.0377_1.jpg?v=1760539757')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/olive-yellow-cotton-kurta-with-dupatta-3-4-sleeves', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0233_1.jpg?v=1761751497" alt="Olive Yellow Cotton Kurta (3/4 sleeves)">
+            <div class="product-details">
+                <div class="product-name">Olive Yellow Cotton Kurta (3/4 sleeves)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/olive-yellow-cotton-kurta-with-dupatta-3-4-sleeves', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/olive-yellow-cotton-kurta-with-dupatta-3-4-sleeves', 'Olive Yellow Cotton Kurta (3/4 sleeves)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0233_1.jpg?v=1761751497')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/olive-yellow-cotton-kurta-with-dupatta-sleeveless', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0097_1.png?v=1761751621" alt="Olive Yellow Cotton Kurta (sleeveless)">
+            <div class="product-details">
+                <div class="product-name">Olive Yellow Cotton Kurta (sleeveless)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/olive-yellow-cotton-kurta-with-dupatta-sleeveless', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/olive-yellow-cotton-kurta-with-dupatta-sleeveless', 'Olive Yellow Cotton Kurta (sleeveless)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0097_1.png?v=1761751621')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/black-kurta-with-brown-grey-dupatta-sleeveless', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0034.jpg?v=1761752340" alt="Black Kurta (sleeveless)">
+            <div class="product-details">
+                <div class="product-name">Black Kurta (sleeveless)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/black-kurta-with-brown-grey-dupatta-sleeveless', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/black-kurta-with-brown-grey-dupatta-sleeveless', 'Black Kurta (sleeveless)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0034.jpg?v=1761752340')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/black-kurta-with-brown-grey-dupatta-3-4-sleeves', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmi.0682.jpg?v=1760539597" alt="Black Kurta (3/4 sleeves)">
+            <div class="product-details">
+                <div class="product-name">Black Kurta (3/4 sleeves)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/black-kurta-with-brown-grey-dupatta-3-4-sleeves', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/black-kurta-with-brown-grey-dupatta-3-4-sleeves', 'Black Kurta (3/4 sleeves)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmi.0682.jpg?v=1760539597')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/maroon-kurta-with-blue-polka-dupatta-sleeveless', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmi.0504.jpg?v=1752467540" alt="Maroon Kurta (sleeveless)">
+            <div class="product-details">
+                <div class="product-name">Maroon Kurta (sleeveless)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/maroon-kurta-with-blue-polka-dupatta-sleeveless', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/maroon-kurta-with-blue-polka-dupatta-sleeveless', 'Maroon Kurta (sleeveless)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmi.0504.jpg?v=1752467540')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/maroon-kurta-with-blue-polka-dupatta-3-4-sleeves', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00271_1.jpg?v=1761562967" alt="Maroon Kurta (3/4 sleeves)">
+            <div class="product-details">
+                <div class="product-name">Maroon Kurta (3/4 sleeves)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/maroon-kurta-with-blue-polka-dupatta-3-4-sleeves', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/maroon-kurta-with-blue-polka-dupatta-3-4-sleeves', 'Maroon Kurta (3/4 sleeves)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied00271_1.jpg?v=1761562967')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/royal-blue-cotton-kurta-with-dupatta-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0004-2.jpg?v=1761752236" alt="Royal Blue Cotton Kurta (sleeveless)">
+            <div class="product-details">
+                <div class="product-name">Royal Blue Cotton Kurta (sleeveless)</div>
+                <div class="product-price">₹3999.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/royal-blue-cotton-kurta-with-dupatta-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/royal-blue-cotton-kurta-with-dupatta-1', 'Royal Blue Cotton Kurta (sleeveless)', '3999.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmied0004-2.jpg?v=1761752236')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/tulip-print-kurtha-traditional-indian-clothing', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3556_1.jpg?v=1767867870" alt="Tulip Print Orange Kurta Set">
+            <div class="product-details">
+                <div class="product-name">Tulip Print Orange Kurta Set</div>
+                <div class="product-price">₹3000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/tulip-print-kurtha-traditional-indian-clothing', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/tulip-print-kurtha-traditional-indian-clothing', 'Tulip Print Orange Kurta Set', '3000.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3556_1.jpg?v=1767867870')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/tulip-print-kurtha-traditional-indian-clothing-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3573_1.jpg?v=1742362542" alt="Tulip Print Green Kurta Set">
+            <div class="product-details">
+                <div class="product-name">Tulip Print Green Kurta Set</div>
+                <div class="product-price">₹3000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/tulip-print-kurtha-traditional-indian-clothing-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/tulip-print-kurtha-traditional-indian-clothing-copy', 'Tulip Print Green Kurta Set', '3000.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3573_1.jpg?v=1742362542')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/cotton-kurtha-set-with-dabbu-print-plant-based-hand-block-design-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3662.jpg?v=1742362257" alt="Cotton Kurtha Set with Dabbu Print - Plant-Based Hand Block Design">
+            <div class="product-details">
+                <div class="product-name">Cotton Kurtha Set with Dabbu Print - Plant-Based Hand Block Design</div>
+                <div class="product-price">₹2400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/cotton-kurtha-set-with-dabbu-print-plant-based-hand-block-design-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/cotton-kurtha-set-with-dabbu-print-plant-based-hand-block-design-copy', 'Cotton Kurtha Set with Dabbu Print - Plant-Based Hand Block Design', '2400.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3662.jpg?v=1742362257')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/mul-cotton-yellow-flower-print-kurta-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/1_9d6aa05d-1203-496a-83f1-217f57dbfde5.png?v=1741623772" alt="Mul-Cotton Yellow Flower Print Kurta Set | Handblock Print |NIRVANA COLLECTION">
+            <div class="product-details">
+                <div class="product-name">Mul-Cotton Yellow Flower Print Kurta Set | Handblock Print |NIRVANA COLLECTION</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/mul-cotton-yellow-flower-print-kurta-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/mul-cotton-yellow-flower-print-kurta-set', 'Mul-Cotton Yellow Flower Print Kurta Set | Handblock Print |NIRVANA COLLECTION', '4600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/1_9d6aa05d-1203-496a-83f1-217f57dbfde5.png?v=1741623772')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/neelmii-nirvana-mul-cotton-leaf-print-kurta-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/2_2206856a-dfc3-4a21-866c-a3528d66ae7b.png?v=1741623869" alt="Neelmii Nirvana Leaf Print Mul Cotton Kurta Set – Handblock Print">
+            <div class="product-details">
+                <div class="product-name">Neelmii Nirvana Leaf Print Mul Cotton Kurta Set – Handblock Print</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/neelmii-nirvana-mul-cotton-leaf-print-kurta-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/neelmii-nirvana-mul-cotton-leaf-print-kurta-set', 'Neelmii Nirvana Leaf Print Mul Cotton Kurta Set – Handblock Print', '4600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/2_2206856a-dfc3-4a21-866c-a3528d66ae7b.png?v=1741623869')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/beige-ajrakh-handblock-coord-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/3_370e78bc-63e5-4f65-ad1c-6326ebe9e944.png?v=1741623900" alt="Handblock Printed Ajrakh Co-Ord Set in Beige | Organic Cotton | Neelmii, plant base dye">
+            <div class="product-details">
+                <div class="product-name">Handblock Printed Ajrakh Co-Ord Set in Beige | Organic Cotton | Neelmii, plant base dye</div>
+                <div class="product-price">₹3990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/beige-ajrakh-handblock-coord-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/beige-ajrakh-handblock-coord-set', 'Handblock Printed Ajrakh Co-Ord Set in Beige | Organic Cotton | Neelmii, plant base dye', '3990.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/3_370e78bc-63e5-4f65-ad1c-6326ebe9e944.png?v=1741623900')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indigo-striped-kurta-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/4_ec09a9d7-f002-4cc4-90e3-5f8696b7bf28.png?v=1741623927" alt="Indigo Striped Kurta Set with Sleeves | Handblock Printed | Neelmii">
+            <div class="product-details">
+                <div class="product-name">Indigo Striped Kurta Set with Sleeves | Handblock Printed | Neelmii</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indigo-striped-kurta-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indigo-striped-kurta-set', 'Indigo Striped Kurta Set with Sleeves | Handblock Printed | Neelmii', '3200.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/4_ec09a9d7-f002-4cc4-90e3-5f8696b7bf28.png?v=1741623927')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indigo-floral-kurta-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/5_09b1d38e-b969-4606-96a2-47a7be5c5f16.png?v=1741623975" alt="Indigo Floral Kurta Set | Handblock Printed | Neelmii">
+            <div class="product-details">
+                <div class="product-name">Indigo Floral Kurta Set | Handblock Printed | Neelmii</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indigo-floral-kurta-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indigo-floral-kurta-set', 'Indigo Floral Kurta Set | Handblock Printed | Neelmii', '3200.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/5_09b1d38e-b969-4606-96a2-47a7be5c5f16.png?v=1741623975')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indigo-striped-sleeveless-kurta-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/6_ffcae021-a065-4c8c-9f5d-4855af879aaa.png?v=1741623998" alt="Indigo Striped Sleeveless Kurta Set | Neelmii Handblock Collection">
+            <div class="product-details">
+                <div class="product-name">Indigo Striped Sleeveless Kurta Set | Neelmii Handblock Collection</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indigo-striped-sleeveless-kurta-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indigo-striped-sleeveless-kurta-set', 'Indigo Striped Sleeveless Kurta Set | Neelmii Handblock Collection', '3200.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/6_ffcae021-a065-4c8c-9f5d-4855af879aaa.png?v=1741623998')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indigo-polkadot-coord-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/7_c513e3d2-7005-45d6-83d2-816272981b73.png?v=1741624020" alt="Indigo Polkadot Co-ord Set | Neelmii Handblock Collection">
+            <div class="product-details">
+                <div class="product-name">Indigo Polkadot Co-ord Set | Neelmii Handblock Collection</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indigo-polkadot-coord-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indigo-polkadot-coord-set', 'Indigo Polkadot Co-ord Set | Neelmii Handblock Collection', '3200.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/7_c513e3d2-7005-45d6-83d2-816272981b73.png?v=1741624020')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/singlet-indigo-one-piece-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/8_9d95114c-e14a-413b-b559-6976568d5b27.png?v=1741624040" alt="Singlet Indigo One-Piece Dress for Women – Neelmii">
+            <div class="product-details">
+                <div class="product-name">Singlet Indigo One-Piece Dress for Women – Neelmii</div>
+                <div class="product-price">₹3200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/singlet-indigo-one-piece-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/singlet-indigo-one-piece-dress', 'Singlet Indigo One-Piece Dress for Women – Neelmii', '3200.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/8_9d95114c-e14a-413b-b559-6976568d5b27.png?v=1741624040')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/dabbu-print-kurtha-in-maheshwari-silk-maheshwari-silk-dresses-copy-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/imgonline-com-ua-resize-7qT72fbKe8S65Q.jpg?v=1747903667" alt="Dabbu Print Kurtha in Maheshwari Silk | Maheshwari Silk Dresses,PLANT BASE DYE">
+            <div class="product-details">
+                <div class="product-name">Dabbu Print Kurtha in Maheshwari Silk | Maheshwari Silk Dresses,PLANT BASE DYE</div>
+                <div class="product-price">₹4000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/dabbu-print-kurtha-in-maheshwari-silk-maheshwari-silk-dresses-copy-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/dabbu-print-kurtha-in-maheshwari-silk-maheshwari-silk-dresses-copy-copy', 'Dabbu Print Kurtha in Maheshwari Silk | Maheshwari Silk Dresses,PLANT BASE DYE', '4000.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/imgonline-com-ua-resize-7qT72fbKe8S65Q.jpg?v=1747903667')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/dabbu-print-kurtha-in-maheshwari-silk-maheshwari-silk-dresses-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS_3494.jpg?v=1747904064" alt="Dabbu Print Kurtha in Maheshwari Silk | Maheshwari Silk Dresses,PLANT BASE DYE">
+            <div class="product-details">
+                <div class="product-name">Dabbu Print Kurtha in Maheshwari Silk | Maheshwari Silk Dresses,PLANT BASE DYE</div>
+                <div class="product-price">₹4000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/dabbu-print-kurtha-in-maheshwari-silk-maheshwari-silk-dresses-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/dabbu-print-kurtha-in-maheshwari-silk-maheshwari-silk-dresses-copy', 'Dabbu Print Kurtha in Maheshwari Silk | Maheshwari Silk Dresses,PLANT BASE DYE', '4000.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS_3494.jpg?v=1747904064')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/handblock-print-cotton-co-ord-set-organic-plant-based-color-pattern-tulip-copy-copy-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii6.jpg?v=1739074795" alt="Gray Flower Handblock Cotton Co-ord Set">
+            <div class="product-details">
+                <div class="product-name">Gray Flower Handblock Cotton Co-ord Set</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/handblock-print-cotton-co-ord-set-organic-plant-based-color-pattern-tulip-copy-copy-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/handblock-print-cotton-co-ord-set-organic-plant-based-color-pattern-tulip-copy-copy-copy', 'Gray Flower Handblock Cotton Co-ord Set', '2600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii6.jpg?v=1739074795')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/handblock-print-cotton-co-ord-set-organic-plant-based-color-pattern-tulip-copy-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii090.jpg?v=1739074795" alt="Pink Tulip Handblock Cotton Co-ord Set">
+            <div class="product-details">
+                <div class="product-name">Pink Tulip Handblock Cotton Co-ord Set</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/handblock-print-cotton-co-ord-set-organic-plant-based-color-pattern-tulip-copy-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/handblock-print-cotton-co-ord-set-organic-plant-based-color-pattern-tulip-copy-copy', 'Pink Tulip Handblock Cotton Co-ord Set', '2600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii090.jpg?v=1739074795')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/handblock-print-cotton-co-ord-set-organic-plant-based-color-pattern-tulip-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii4.jpg?v=1739074795" alt="Yellow Tulip Handblock Cotton Co-ord Set">
+            <div class="product-details">
+                <div class="product-name">Yellow Tulip Handblock Cotton Co-ord Set</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/handblock-print-cotton-co-ord-set-organic-plant-based-color-pattern-tulip-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/handblock-print-cotton-co-ord-set-organic-plant-based-color-pattern-tulip-copy', 'Yellow Tulip Handblock Cotton Co-ord Set', '2600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii4.jpg?v=1739074795')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/katayani-cotton-kurta-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/ASP_8240.jpg?v=1732768947" alt="Katayani Cotton Kurta Set | Luxurious Comfort in XS-XL Sizes">
+            <div class="product-details">
+                <div class="product-name">Katayani Cotton Kurta Set | Luxurious Comfort in XS-XL Sizes</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/katayani-cotton-kurta-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/katayani-cotton-kurta-set', 'Katayani Cotton Kurta Set | Luxurious Comfort in XS-XL Sizes', '2800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/ASP_8240.jpg?v=1732768947')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/bagh-cotton-kurta-set-dupatta-cream-plant-print', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii.jpg?v=1729684875" alt="Bagh Collection Cotton Kurta Set with Dupatta - Cream White with Brown Plant base dye Print (S-XXL)">
+            <div class="product-details">
+                <div class="product-name">Bagh Collection Cotton Kurta Set with Dupatta - Cream White with Brown Plant base dye Print (S-XXL)</div>
+                <div class="product-price">₹3600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/bagh-cotton-kurta-set-dupatta-cream-plant-print', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/bagh-cotton-kurta-set-dupatta-cream-plant-print', 'Bagh Collection Cotton Kurta Set with Dupatta - Cream White with Brown Plant base dye Print (S-XXL)', '3600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii.jpg?v=1729684875')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/red-mul-cotton-kurta-set-with-handblock-print-nirvana-collection', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_0740.heic?v=1723789318" alt="Red Mul-Cotton Kurta Set without Dupatta  | Nirvana Collection">
+            <div class="product-details">
+                <div class="product-name">Red Mul-Cotton Kurta Set without Dupatta  | Nirvana Collection</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/red-mul-cotton-kurta-set-with-handblock-print-nirvana-collection', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/red-mul-cotton-kurta-set-with-handblock-print-nirvana-collection', 'Red Mul-Cotton Kurta Set without Dupatta  | Nirvana Collection', '4600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_0740.heic?v=1723789318')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/blue-mul-cotton-kurta-set-with-handblock-print-dupatta-nirvana-collection', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/FullSizeRender_d72fc8c1-7a16-44f8-8616-eb3f6cf128a9.heic?v=1723789659" alt="Blue Mul-Cotton Kurta Set with Handblock Print &amp; Dupatta | Nirvana Collection">
+            <div class="product-details">
+                <div class="product-name">Blue Mul-Cotton Kurta Set with Handblock Print &amp; Dupatta | Nirvana Collection</div>
+                <div class="product-price">₹5600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/blue-mul-cotton-kurta-set-with-handblock-print-dupatta-nirvana-collection', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/blue-mul-cotton-kurta-set-with-handblock-print-dupatta-nirvana-collection', 'Blue Mul-Cotton Kurta Set with Handblock Print &amp; Dupatta | Nirvana Collection', '5600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/FullSizeRender_d72fc8c1-7a16-44f8-8616-eb3f6cf128a9.heic?v=1723789659')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/red-mul-cotton-kurta-set-nirvana-dupatta', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_0732.heic?v=1723789317" alt="Red Mul-Cotton Kurta Set with Handblock Print &amp; Dupatta | Nirvana Collection">
+            <div class="product-details">
+                <div class="product-name">Red Mul-Cotton Kurta Set with Handblock Print &amp; Dupatta | Nirvana Collection</div>
+                <div class="product-price">₹5600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/red-mul-cotton-kurta-set-nirvana-dupatta', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/red-mul-cotton-kurta-set-nirvana-dupatta', 'Red Mul-Cotton Kurta Set with Handblock Print &amp; Dupatta | Nirvana Collection', '5600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_0732.heic?v=1723789317')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indian-ethnic-wear-women-kurta-set-kota-dori-dupatta', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/ASP_8186.jpg?v=1719728692" alt="Kurta Set with Kota Dori Dupatta, AJRAKH PRINT,PLANT BASE DYE">
+            <div class="product-details">
+                <div class="product-name">Kurta Set with Kota Dori Dupatta, AJRAKH PRINT,PLANT BASE DYE</div>
+                <div class="product-price">₹4500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indian-ethnic-wear-women-kurta-set-kota-dori-dupatta', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indian-ethnic-wear-women-kurta-set-kota-dori-dupatta', 'Kurta Set with Kota Dori Dupatta, AJRAKH PRINT,PLANT BASE DYE', '4500.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/ASP_8186.jpg?v=1719728692')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/maheshwari-silk-kurta-dupatta-set-maroon', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/ASP_7907.jpg?v=1711634742" alt="Maroon Maheshwari Silk Kurta Dupatta Sets,bagh print,plant base dye">
+            <div class="product-details">
+                <div class="product-name">Maroon Maheshwari Silk Kurta Dupatta Sets,bagh print,plant base dye</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/maheshwari-silk-kurta-dupatta-set-maroon', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/maheshwari-silk-kurta-dupatta-set-maroon', 'Maroon Maheshwari Silk Kurta Dupatta Sets,bagh print,plant base dye', '5500.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/ASP_7907.jpg?v=1711634742')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/black-maheshwari-silk-kurta-dupatta-set-ethnic-wear', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/ASP_8041.jpg?v=1711634147" alt="Black Maheshwari Silk Kurta without dupatta,bagh print ,plant base dye">
+            <div class="product-details">
+                <div class="product-name">Black Maheshwari Silk Kurta without dupatta,bagh print ,plant base dye</div>
+                <div class="product-price">₹4600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/black-maheshwari-silk-kurta-dupatta-set-ethnic-wear', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/black-maheshwari-silk-kurta-dupatta-set-ethnic-wear', 'Black Maheshwari Silk Kurta without dupatta,bagh print ,plant base dye', '4600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/ASP_8041.jpg?v=1711634147')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/maheshwari-silk-kurta-dupatta-set-handloom-gold', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/GOLDSIDE.png?v=1711633746" alt="Maheshwari Silk Kurta Dupatta Set,Bagh print, plant base dye">
+            <div class="product-details">
+                <div class="product-name">Maheshwari Silk Kurta Dupatta Set,Bagh print, plant base dye</div>
+                <div class="product-price">₹5500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/maheshwari-silk-kurta-dupatta-set-handloom-gold', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/maheshwari-silk-kurta-dupatta-set-handloom-gold', 'Maheshwari Silk Kurta Dupatta Set,Bagh print, plant base dye', '5500.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/GOLDSIDE.png?v=1711633746')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/striped-sophistication-cotton-kurta-by-neelmii', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_2751.jpg?v=1711183859" alt="Striped Sophistication: Cotton Kurta ,plant base dye by NEELMII">
+            <div class="product-details">
+                <div class="product-name">Striped Sophistication: Cotton Kurta ,plant base dye by NEELMII</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/striped-sophistication-cotton-kurta-by-neelmii', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/striped-sophistication-cotton-kurta-by-neelmii', 'Striped Sophistication: Cotton Kurta ,plant base dye by NEELMII', '2600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_2751.jpg?v=1711183859')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/neelmii-com-premium-cotton-kurtas', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_2724.jpg?v=1711183467" alt="Striped Sophistication: Cotton Kurta ,plant base dye, classic comfort by NEELMII">
+            <div class="product-details">
+                <div class="product-name">Striped Sophistication: Cotton Kurta ,plant base dye, classic comfort by NEELMII</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/neelmii-com-premium-cotton-kurtas', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/neelmii-com-premium-cotton-kurtas', 'Striped Sophistication: Cotton Kurta ,plant base dye, classic comfort by NEELMII', '2600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/IMG_2724.jpg?v=1711183467')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/handblock-print-cotton-kurti-organic-plant-based-color-pattern-tulip', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii8.jpg?v=1739074795" alt="Blue Tulip Handblock Cotton Co-ord Set">
+            <div class="product-details">
+                <div class="product-name">Blue Tulip Handblock Cotton Co-ord Set</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/handblock-print-cotton-kurti-organic-plant-based-color-pattern-tulip', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/handblock-print-cotton-kurti-organic-plant-based-color-pattern-tulip', 'Blue Tulip Handblock Cotton Co-ord Set', '2600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/neelmii8.jpg?v=1739074795')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/flower-print-cotton-kurti-set-organic-plant-based-color-pattern', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_040137689.jpg?v=1704546014" alt="Flower Print Cotton Kurti Set- Organic Plant-Based Color Pattern,katyani collection">
+            <div class="product-details">
+                <div class="product-name">Flower Print Cotton Kurti Set- Organic Plant-Based Color Pattern,katyani collection</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/flower-print-cotton-kurti-set-organic-plant-based-color-pattern', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/flower-print-cotton-kurti-set-organic-plant-based-color-pattern', 'Flower Print Cotton Kurti Set- Organic Plant-Based Color Pattern,katyani collection', '2800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_040137689.jpg?v=1704546014')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/lotus-print-cotton-kurti-organic-plant-based-color-pattern', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_043824921.jpg?v=1704545646" alt="Lotus Print Cotton Kurti - Organic Plant-Based Color Pattern,katyani collection">
+            <div class="product-details">
+                <div class="product-name">Lotus Print Cotton Kurti - Organic Plant-Based Color Pattern,katyani collection</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/lotus-print-cotton-kurti-organic-plant-based-color-pattern', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/lotus-print-cotton-kurti-organic-plant-based-color-pattern', 'Lotus Print Cotton Kurti - Organic Plant-Based Color Pattern,katyani collection', '2800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_043824921.jpg?v=1704545646')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/hand-block-printed-cotton-kurtha-organic-plant-based-colors-by-artisans', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_053412692.MP.jpg?v=1704543605" alt="Cotton Kurtha in Organic Plant-Based Colors by Artisans katyani collection">
+            <div class="product-details">
+                <div class="product-name">Cotton Kurtha in Organic Plant-Based Colors by Artisans katyani collection</div>
+                <div class="product-price">₹2200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/hand-block-printed-cotton-kurtha-organic-plant-based-colors-by-artisans', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/hand-block-printed-cotton-kurtha-organic-plant-based-colors-by-artisans', 'Cotton Kurtha in Organic Plant-Based Colors by Artisans katyani collection', '2200.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_053412692.MP.jpg?v=1704543605')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/cotton-katayani-kurtha-set-hand-block-printed-clothing-fish', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_050205829.MP.jpg?v=1704530370" alt="Cotton Katayani Kurtha Set | Hand Block Printed Clothing">
+            <div class="product-details">
+                <div class="product-name">Cotton Katayani Kurtha Set | Hand Block Printed Clothing</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/cotton-katayani-kurtha-set-hand-block-printed-clothing-fish', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/cotton-katayani-kurtha-set-hand-block-printed-clothing-fish', 'Cotton Katayani Kurtha Set | Hand Block Printed Clothing', '2800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_050205829.MP.jpg?v=1704530370')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/cotton-katayani-kurtha-set-hand-block-printed', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_050919561_2.jpg?v=1704529708" alt="Cotton Katayani Kurtha Set | Hand Block Printed Clothing">
+            <div class="product-details">
+                <div class="product-name">Cotton Katayani Kurtha Set | Hand Block Printed Clothing</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/cotton-katayani-kurtha-set-hand-block-printed', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/cotton-katayani-kurtha-set-hand-block-printed', 'Cotton Katayani Kurtha Set | Hand Block Printed Clothing', '2800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/PXL_20240103_050919561_2.jpg?v=1704529708')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/bagh-hand-block-women-ethnic-indian-wear', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS_0392.jpg?v=1700546853" alt="Bagh Hand-Block Printed Soft Cotton Kurtha Suit">
+            <div class="product-details">
+                <div class="product-name">Bagh Hand-Block Printed Soft Cotton Kurtha Suit</div>
+                <div class="product-price">₹3150.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/bagh-hand-block-women-ethnic-indian-wear', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/bagh-hand-block-women-ethnic-indian-wear', 'Bagh Hand-Block Printed Soft Cotton Kurtha Suit', '3150.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS_0392.jpg?v=1700546853')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indian-hand-block-bird-dress-soft-cotton', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03929-59.jpg?v=1739338396" alt="Bird Print Dress in Soft Cotton">
+            <div class="product-details">
+                <div class="product-name">Bird Print Dress in Soft Cotton</div>
+                <div class="product-price">₹2600.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indian-hand-block-bird-dress-soft-cotton', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indian-hand-block-bird-dress-soft-cotton', 'Bird Print Dress in Soft Cotton', '2600.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03929-59.jpg?v=1739338396')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indian-dress-cotton-hand-block-printed-latest-fashion-women-wear', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/resize.jpg?v=1700541604" alt="Hand-Block Printed Cotton Leaf Design dress with Side Pocket - Unique and Stylish Fashion">
+            <div class="product-details">
+                <div class="product-name">Hand-Block Printed Cotton Leaf Design dress with Side Pocket - Unique and Stylish Fashion</div>
+                <div class="product-price">₹2800.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indian-dress-cotton-hand-block-printed-latest-fashion-women-wear', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indian-dress-cotton-hand-block-printed-latest-fashion-women-wear', 'Hand-Block Printed Cotton Leaf Design dress with Side Pocket - Unique and Stylish Fashion', '2800.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/resize.jpg?v=1700541604')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/black-mughal-print-cotton-kurtha-indian-ethnic-wear-traditional-indian-clothing', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3444_d3f1c153-520f-40d2-a078-8c032cf25cbf.jpg?v=1700201440" alt="Black Mughal Print Cotton Kurtha with Mul Cotton Dupatta">
+            <div class="product-details">
+                <div class="product-name">Black Mughal Print Cotton Kurtha with Mul Cotton Dupatta</div>
+                <div class="product-price">₹3400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/black-mughal-print-cotton-kurtha-indian-ethnic-wear-traditional-indian-clothing', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/black-mughal-print-cotton-kurtha-indian-ethnic-wear-traditional-indian-clothing', 'Black Mughal Print Cotton Kurtha with Mul Cotton Dupatta', '3400.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3444_d3f1c153-520f-40d2-a078-8c032cf25cbf.jpg?v=1700201440')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indian-ethnic-wear-exclusive-indian-outfits-modal-silk-kurtha-luxurious-elegance', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03875-49.jpg?v=1699176531" alt="Modal Silk Kurtha -Luxurious Elegance,co-ord set">
+            <div class="product-details">
+                <div class="product-name">Modal Silk Kurtha -Luxurious Elegance,co-ord set</div>
+                <div class="product-price">₹4300.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indian-ethnic-wear-exclusive-indian-outfits-modal-silk-kurtha-luxurious-elegance', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indian-ethnic-wear-exclusive-indian-outfits-modal-silk-kurtha-luxurious-elegance', 'Modal Silk Kurtha -Luxurious Elegance,co-ord set', '4300.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03875-49.jpg?v=1699176531')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indian-ethnic-wear-exclusive-indian-outfits-orange-tulips-kurta-set-in-maheshwori-organic-silk-hand-blocked-plant-based-print', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03765-34.jpg?v=1699125452" alt="Orange Tulips Kurta Set in Maheshwari Silk |Organic Hand-Blocked Plant-Based Print | Traditional Indian Clothing">
+            <div class="product-details">
+                <div class="product-name">Orange Tulips Kurta Set in Maheshwari Silk |Organic Hand-Blocked Plant-Based Print | Traditional Indian Clothing</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indian-ethnic-wear-exclusive-indian-outfits-orange-tulips-kurta-set-in-maheshwori-organic-silk-hand-blocked-plant-based-print', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indian-ethnic-wear-exclusive-indian-outfits-orange-tulips-kurta-set-in-maheshwori-organic-silk-hand-blocked-plant-based-print', 'Orange Tulips Kurta Set in Maheshwari Silk |Organic Hand-Blocked Plant-Based Print | Traditional Indian Clothing', '5200.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03765-34.jpg?v=1699125452')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/green-tulips-hand-block-maheshwari-silk-kurtha-indian-ethnic-wear-indian-clothing-women', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03709-25.jpg?v=1699124051" alt="Tulips Hand-Block Printed Maheshwari Silk Kurtha | Traditional Indian Clothing | Ethnic Fashion for Women">
+            <div class="product-details">
+                <div class="product-name">Tulips Hand-Block Printed Maheshwari Silk Kurtha | Traditional Indian Clothing | Ethnic Fashion for Women</div>
+                <div class="product-price">₹5200.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/green-tulips-hand-block-maheshwari-silk-kurtha-indian-ethnic-wear-indian-clothing-women', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/green-tulips-hand-block-maheshwari-silk-kurtha-indian-ethnic-wear-indian-clothing-women', 'Tulips Hand-Block Printed Maheshwari Silk Kurtha | Traditional Indian Clothing | Ethnic Fashion for Women', '5200.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/DSC03709-25.jpg?v=1699124051')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indian-ethnic-wear-exclusive-indian-outfits-okar-print', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/19242DD7-91C1-4892-8049-E6032A5A4C5F.jpg?v=1695265122" alt="Okar Print-Kurtha with Side Pocket maheshwari silk, plant base dye by NEELMII">
+            <div class="product-details">
+                <div class="product-name">Okar Print-Kurtha with Side Pocket maheshwari silk, plant base dye by NEELMII</div>
+                <div class="product-price">₹4100.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indian-ethnic-wear-exclusive-indian-outfits-okar-print', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indian-ethnic-wear-exclusive-indian-outfits-okar-print', 'Okar Print-Kurtha with Side Pocket maheshwari silk, plant base dye by NEELMII', '4100.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/19242DD7-91C1-4892-8049-E6032A5A4C5F.jpg?v=1695265122')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/cotton-kurtha-dabu-print-indian-ethnic-wear-traditional-indian-clothing', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3666.jpg?v=1742362142" alt="Cotton Kurtha Set with Dabbu Print - Plant-Based Hand Block Design">
+            <div class="product-details">
+                <div class="product-name">Cotton Kurtha Set with Dabbu Print - Plant-Based Hand Block Design</div>
+                <div class="product-price">₹2400.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/cotton-kurtha-dabu-print-indian-ethnic-wear-traditional-indian-clothing', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/cotton-kurtha-dabu-print-indian-ethnic-wear-traditional-indian-clothing', 'Cotton Kurtha Set with Dabbu Print - Plant-Based Hand Block Design', '2400.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3666.jpg?v=1742362142')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/traditional-indian-clothing-ethnic-fashion-women-tulip-print-kurtha', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3560_1.jpg?v=1767867870" alt="Tulip Print Yellow Kurta Set">
+            <div class="product-details">
+                <div class="product-name">Tulip Print Yellow Kurta Set</div>
+                <div class="product-price">₹3000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/traditional-indian-clothing-ethnic-fashion-women-tulip-print-kurtha', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/traditional-indian-clothing-ethnic-fashion-women-tulip-print-kurtha', 'Tulip Print Yellow Kurta Set', '3000.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3560_1.jpg?v=1767867870')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/mughal-print-black-blue-indian-ethnic-wear-traditional-indian-clothing', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3381.jpg?v=1694599978" alt="Blue Mughal Print Mul Cotton Kurta Set  | Indian Ethnic Wear |Traditional Indian Clothing">
+            <div class="product-details">
+                <div class="product-name">Blue Mughal Print Mul Cotton Kurta Set  | Indian Ethnic Wear |Traditional Indian Clothing</div>
+                <div class="product-price">₹3950.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/mughal-print-black-blue-indian-ethnic-wear-traditional-indian-clothing', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/mughal-print-black-blue-indian-ethnic-wear-traditional-indian-clothing', 'Blue Mughal Print Mul Cotton Kurta Set  | Indian Ethnic Wear |Traditional Indian Clothing', '3950.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS-3381.jpg?v=1694599978')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://neelmii.com/products/indian-ethnic-wear-dabbu-print-maheshwari-silk-kurtha', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS_3508.jpg?v=1747903667" alt="Dabbu Print Kurtha in Maheshwari Silk | Maheshwari Silk Dresses">
+            <div class="product-details">
+                <div class="product-name">Dabbu Print Kurtha in Maheshwari Silk | Maheshwari Silk Dresses</div>
+                <div class="product-price">₹4000.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://neelmii.com/products/indian-ethnic-wear-dabbu-print-maheshwari-silk-kurtha', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://neelmii.com/products/indian-ethnic-wear-dabbu-print-maheshwari-silk-kurtha', 'Dabbu Print Kurtha in Maheshwari Silk | Maheshwari Silk Dresses', '4000.00', 'https://cdn.shopify.com/s/files/1/0830/5472/3379/files/AJS_3508.jpg?v=1747903667')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

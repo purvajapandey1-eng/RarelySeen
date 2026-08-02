@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label society - Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="main-content" style="padding: 100px 4rem 4rem 4rem; background-color: #670527; min-height: 100vh;">
+        <h1 class="main-title" style="text-align: center; margin-bottom: 3rem; color: white; font-family: 'Montserrat', sans-serif;">Label society</h1>
+        
+        <div class="product-grid" id="product-grid">
+            
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/leila-jute-bag', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/WhatsAppImage2026-03-23at2.33.38PM-2.jpg?v=1774257259" alt="Leila jute bag">
+            <div class="product-details">
+                <div class="product-name">Leila jute bag</div>
+                <div class="product-price">₹3199.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/leila-jute-bag', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/leila-jute-bag', 'Leila jute bag', '3199.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/WhatsAppImage2026-03-23at2.33.38PM-2.jpg?v=1774257259')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/the-society-bag', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/Screenshot2025-10-31at11.02.14AM.png?v=1761889024" alt="The Society bag">
+            <div class="product-details">
+                <div class="product-name">The Society bag</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/the-society-bag', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/the-society-bag', 'The Society bag', '3490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/Screenshot2025-10-31at11.02.14AM.png?v=1761889024')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/beige-jute-bag-small', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/Screenshot2025-10-31at11.04.41AM.png?v=1761889052" alt="Leila jute bag mini">
+            <div class="product-details">
+                <div class="product-name">Leila jute bag mini</div>
+                <div class="product-price">₹2799.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/beige-jute-bag-small', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/beige-jute-bag-small', 'Leila jute bag mini', '2799.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/Screenshot2025-10-31at11.04.41AM.png?v=1761889052')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/bubbles-bandana-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/BANDANA2-2.jpg?v=1761911168" alt="Dora bandana for Dogs and Cats">
+            <div class="product-details">
+                <div class="product-name">Dora bandana for Dogs and Cats</div>
+                <div class="product-price">₹590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/bubbles-bandana-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/bubbles-bandana-1', 'Dora bandana for Dogs and Cats', '590.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/BANDANA2-2.jpg?v=1761911168')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/bubbles-bandana', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/BANDANA1-4.jpg?v=1761562713" alt="Bubbles bandana for Dogs">
+            <div class="product-details">
+                <div class="product-name">Bubbles bandana for Dogs</div>
+                <div class="product-price">₹590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/bubbles-bandana', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/bubbles-bandana', 'Bubbles bandana for Dogs', '590.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/BANDANA1-4.jpg?v=1761562713')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-half-lace-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/SKIRT2-1.jpg?v=1761824503" alt="Half/half lace skirt">
+            <div class="product-details">
+                <div class="product-name">Half/half lace skirt</div>
+                <div class="product-price">₹8490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-half-lace-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-half-lace-skirt', 'Half/half lace skirt', '8490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/SKIRT2-1.jpg?v=1761824503')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-half-lace-mini-skirt', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/SKIRT1-1.jpg?v=1761559819" alt="Half &amp; half mini skirt">
+            <div class="product-details">
+                <div class="product-name">Half &amp; half mini skirt</div>
+                <div class="product-price">₹6490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-half-lace-mini-skirt', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-half-lace-mini-skirt', 'Half &amp; half mini skirt', '6490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/SKIRT1-1.jpg?v=1761559819')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-lace-corset-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK45-1.jpg?v=1761222808" alt="Half &amp; Half lace corset">
+            <div class="product-details">
+                <div class="product-name">Half &amp; Half lace corset</div>
+                <div class="product-price">₹8490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-lace-corset-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-lace-corset-1', 'Half &amp; Half lace corset', '8490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK45-1.jpg?v=1761222808')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-vest-2', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK44-2.jpg?v=1761222592" alt="Half and half vest">
+            <div class="product-details">
+                <div class="product-name">Half and half vest</div>
+                <div class="product-price">₹9490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-vest-2', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-vest-2', 'Half and half vest', '9490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK44-2.jpg?v=1761222592')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/classic-half-and-half-corset', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK42-1_3a5b3a51-05b5-4a9c-a86a-11a8913d1f51.jpg?v=1761221776" alt="Half &amp; Half paneled corset">
+            <div class="product-details">
+                <div class="product-name">Half &amp; Half paneled corset</div>
+                <div class="product-price">₹6490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/classic-half-and-half-corset', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/classic-half-and-half-corset', 'Half &amp; Half paneled corset', '6490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK42-1_3a5b3a51-05b5-4a9c-a86a-11a8913d1f51.jpg?v=1761221776')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-vest-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK41-1.jpg?v=1761221319" alt="Half and half vest">
+            <div class="product-details">
+                <div class="product-name">Half and half vest</div>
+                <div class="product-price">₹9490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-vest-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-vest-1', 'Half and half vest', '9490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK41-1.jpg?v=1761221319')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-vest', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK40-2.jpg?v=1761218152" alt="Half and half vest">
+            <div class="product-details">
+                <div class="product-name">Half and half vest</div>
+                <div class="product-price">₹9490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-vest', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-vest', 'Half and half vest', '9490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK40-2.jpg?v=1761218152')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-6', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK39-1.jpg?v=1761217933" alt="Brown Half &amp; half blazer">
+            <div class="product-details">
+                <div class="product-name">Brown Half &amp; half blazer</div>
+                <div class="product-price">₹14490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-6', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-blazer-6', 'Brown Half &amp; half blazer', '14490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK39-1.jpg?v=1761217933')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-corset-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK38-2.jpg?v=1761217701" alt="Half &amp; Half overlap corset">
+            <div class="product-details">
+                <div class="product-name">Half &amp; Half overlap corset</div>
+                <div class="product-price">₹6490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-corset-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-corset-1', 'Half &amp; Half overlap corset', '6490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK38-2.jpg?v=1761217701')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-5', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK37-1.jpg?v=1761217382" alt="Half and half blazer">
+            <div class="product-details">
+                <div class="product-name">Half and half blazer</div>
+                <div class="product-price">₹14490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-5', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-blazer-5', 'Half and half blazer', '14490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK37-1.jpg?v=1761217382')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-4', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/36-6.jpg?v=1761847495" alt="Half and half blazer">
+            <div class="product-details">
+                <div class="product-name">Half and half blazer</div>
+                <div class="product-price">₹14490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-4', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-blazer-4', 'Half and half blazer', '14490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/36-6.jpg?v=1761847495')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-and-skirt-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK35-1.jpg?v=1761216494" alt="Half and half blazer and skirt set">
+            <div class="product-details">
+                <div class="product-name">Half and half blazer and skirt set</div>
+                <div class="product-price">₹17490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-and-skirt-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-blazer-and-skirt-set-1', 'Half and half blazer and skirt set', '17490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK35-1.jpg?v=1761216494')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-3', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK34-1.jpg?v=1761216454" alt="Half and half blazer">
+            <div class="product-details">
+                <div class="product-name">Half and half blazer</div>
+                <div class="product-price">₹12490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-3', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-blazer-3', 'Half and half blazer', '12490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK34-1.jpg?v=1761216454')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-2', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK33-5.jpg?v=1761216418" alt="Half and half blazer">
+            <div class="product-details">
+                <div class="product-name">Half and half blazer</div>
+                <div class="product-price">₹12490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-2', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-blazer-2', 'Half and half blazer', '12490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK33-5.jpg?v=1761216418')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK32-5.jpg?v=1761827499" alt="Half and half blazer">
+            <div class="product-details">
+                <div class="product-name">Half and half blazer</div>
+                <div class="product-price">₹16490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-blazer-1', 'Half and half blazer', '16490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK32-5.jpg?v=1761827499')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-corset', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK31-1.jpg?v=1761216335" alt="Half &amp; Half overlap corset">
+            <div class="product-details">
+                <div class="product-name">Half &amp; Half overlap corset</div>
+                <div class="product-price">₹6490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-corset', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-corset', 'Half &amp; Half overlap corset', '6490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK31-1.jpg?v=1761216335')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-laced-corset-and-skirt-set-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/CORSET2-1.jpg?v=1761559622" alt="Half &amp; Half paneled corset">
+            <div class="product-details">
+                <div class="product-name">Half &amp; Half paneled corset</div>
+                <div class="product-price">₹8490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-laced-corset-and-skirt-set-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-laced-corset-and-skirt-set-1', 'Half &amp; Half paneled corset', '8490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/CORSET2-1.jpg?v=1761559622')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/upcycled-lace-blazer-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK29-2.jpg?v=1761827312" alt="Black Blazer dress">
+            <div class="product-details">
+                <div class="product-name">Black Blazer dress</div>
+                <div class="product-price">₹18490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/upcycled-lace-blazer-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/upcycled-lace-blazer-dress', 'Black Blazer dress', '18490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK29-2.jpg?v=1761827312')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-lace-corset', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK28-1.jpg?v=1761216131" alt="Half &amp; Half paneled corset">
+            <div class="product-details">
+                <div class="product-name">Half &amp; Half paneled corset</div>
+                <div class="product-price">₹8490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-lace-corset', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-lace-corset', 'Half &amp; Half paneled corset', '8490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK28-1.jpg?v=1761216131')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-laced-corset-and-skirt-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/CORSET1-2.jpg?v=1761827460" alt="Half &amp; Half lace corset">
+            <div class="product-details">
+                <div class="product-name">Half &amp; Half lace corset</div>
+                <div class="product-price">₹8490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-laced-corset-and-skirt-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-laced-corset-and-skirt-set', 'Half &amp; Half lace corset', '8490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/CORSET1-2.jpg?v=1761827460')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-and-skirt-set', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK26-1.jpg?v=1761216011" alt="Half and half blazer and skirt set">
+            <div class="product-details">
+                <div class="product-name">Half and half blazer and skirt set</div>
+                <div class="product-price">₹17500.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-blazer-and-skirt-set', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-blazer-and-skirt-set', 'Half and half blazer and skirt set', '17500.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK26-1.jpg?v=1761216011')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/upcycled-blazer-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK25-6.jpg?v=1761551029" alt="Upcycled Blazer Dress">
+            <div class="product-details">
+                <div class="product-name">Upcycled Blazer Dress</div>
+                <div class="product-price">₹15490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/upcycled-blazer-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/upcycled-blazer-dress', 'Upcycled Blazer Dress', '15490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK25-6.jpg?v=1761551029')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/classic-black-vest', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK24-1.jpg?v=1761215891" alt="Classic black vest">
+            <div class="product-details">
+                <div class="product-name">Classic black vest</div>
+                <div class="product-price">₹9490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/classic-black-vest', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/classic-black-vest', 'Classic black vest', '9490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK24-1.jpg?v=1761215891')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-blazer', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK23-1.jpg?v=1761215838" alt="Half and half blazer">
+            <div class="product-details">
+                <div class="product-name">Half and half blazer</div>
+                <div class="product-price">₹12490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-blazer', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-blazer', 'Half and half blazer', '12490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK23-1.jpg?v=1761215838')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/half-and-half-cropped-blazer', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK46-1.jpg?v=1761223012" alt="Cropped half &amp; half blazer">
+            <div class="product-details">
+                <div class="product-name">Cropped half &amp; half blazer</div>
+                <div class="product-price">₹10490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/half-and-half-cropped-blazer', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/half-and-half-cropped-blazer', 'Cropped half &amp; half blazer', '10490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK46-1.jpg?v=1761223012')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/aina-mini-dress-copy-2', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK8-3.jpg?v=1761719560" alt="Aina midi dress">
+            <div class="product-details">
+                <div class="product-name">Aina midi dress</div>
+                <div class="product-price">₹4190.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/aina-mini-dress-copy-2', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/aina-mini-dress-copy-2', 'Aina midi dress', '4190.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK8-3.jpg?v=1761719560')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/society-maxi-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK12-5.jpg?v=1761720336" alt="Society maxi dress">
+            <div class="product-details">
+                <div class="product-name">Society maxi dress</div>
+                <div class="product-price">₹5290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/society-maxi-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/society-maxi-dress', 'Society maxi dress', '5290.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK12-5.jpg?v=1761720336')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/hailey-mini-dress', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK10-4.jpg?v=1761908989" alt="Hailey mini dress">
+            <div class="product-details">
+                <div class="product-name">Hailey mini dress</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/hailey-mini-dress', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/hailey-mini-dress', 'Hailey mini dress', '2890.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK10-4.jpg?v=1761908989')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/society-scarf-top-copy-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK17-2.jpg?v=1761909019" alt="Society animal print pants">
+            <div class="product-details">
+                <div class="product-name">Society animal print pants</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/society-scarf-top-copy-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/society-scarf-top-copy-copy', 'Society animal print pants', '2890.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK17-2.jpg?v=1761909019')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/society-scarf-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK7-1.jpg?v=1761201794" alt="Society mini skirt">
+            <div class="product-details">
+                <div class="product-name">Society mini skirt</div>
+                <div class="product-price">₹2490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/society-scarf-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/society-scarf-top-copy', 'Society mini skirt', '2490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK7-1.jpg?v=1761201794')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/asha-barrel-pants-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK19-1.jpg?v=1761209476" alt="Society scarf top">
+            <div class="product-details">
+                <div class="product-name">Society scarf top</div>
+                <div class="product-price">₹2190.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/asha-barrel-pants-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/asha-barrel-pants-copy', 'Society scarf top', '2190.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK19-1.jpg?v=1761209476')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/the-notch-shirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK20-1.jpg?v=1761209705" alt="Asha barrel pants">
+            <div class="product-details">
+                <div class="product-name">Asha barrel pants</div>
+                <div class="product-price">₹3290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/the-notch-shirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/the-notch-shirt-copy', 'Asha barrel pants', '3290.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK20-1.jpg?v=1761209705')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/oversized-classic-white-shirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK1-1.jpg?v=1761194890" alt="The Notch shirt">
+            <div class="product-details">
+                <div class="product-name">The Notch shirt</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/oversized-classic-white-shirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/oversized-classic-white-shirt-copy', 'The Notch shirt', '2890.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK1-1.jpg?v=1761194890')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/the-muse-poplin-skirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK21-2.jpg?v=1761209937" alt="Oversized classic white shirt">
+            <div class="product-details">
+                <div class="product-name">Oversized classic white shirt</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/the-muse-poplin-skirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/the-muse-poplin-skirt-copy', 'Oversized classic white shirt', '2890.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK21-2.jpg?v=1761209937')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/the-muse-jorts-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK15-1.jpg?v=1761208392" alt="The muse poplin skirt">
+            <div class="product-details">
+                <div class="product-name">The muse poplin skirt</div>
+                <div class="product-price">₹3990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/the-muse-jorts-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/the-muse-jorts-copy', 'The muse poplin skirt', '3990.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK15-1.jpg?v=1761208392')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/the-muse-poplin-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK13-1.jpg?v=1761207862" alt="The muse jorts">
+            <div class="product-details">
+                <div class="product-name">The muse jorts</div>
+                <div class="product-price">₹2190.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/the-muse-poplin-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/the-muse-poplin-top-copy', 'The muse jorts', '2190.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK13-1.jpg?v=1761207862')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/the-muse-overlap-shirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK16-1.jpg?v=1761208607" alt="The muse poplin top">
+            <div class="product-details">
+                <div class="product-name">The muse poplin top</div>
+                <div class="product-price">₹3090.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/the-muse-overlap-shirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/the-muse-overlap-shirt-copy', 'The muse poplin top', '3090.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK16-1.jpg?v=1761208607')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/iris-black-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK4-2.jpg?v=1761197971" alt="The muse overlap shirt">
+            <div class="product-details">
+                <div class="product-name">The muse overlap shirt</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/iris-black-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/iris-black-top-copy', 'The muse overlap shirt', '2890.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK4-2.jpg?v=1761197971')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/aina-mini-dress-copy-1', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK42-1.jpg?v=1761221730" alt="Iris box pleated skirt">
+            <div class="product-details">
+                <div class="product-name">Iris box pleated skirt</div>
+                <div class="product-price">₹4290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/aina-mini-dress-copy-1', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/aina-mini-dress-copy-1', 'Iris box pleated skirt', '4290.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK42-1.jpg?v=1761221730')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/aina-mini-dress-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK2-1.jpg?v=1761910183" alt="Iris midi skirt">
+            <div class="product-details">
+                <div class="product-name">Iris midi skirt</div>
+                <div class="product-price">₹3990.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/aina-mini-dress-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/aina-mini-dress-copy', 'Iris midi skirt', '3990.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK2-1.jpg?v=1761910183')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/leila-mini-skirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK3-1.jpg?v=1761197501" alt="Aina mini dress">
+            <div class="product-details">
+                <div class="product-name">Aina mini dress</div>
+                <div class="product-price">₹3490.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/leila-mini-skirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/leila-mini-skirt-copy', 'Aina mini dress', '3490.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK3-1.jpg?v=1761197501')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/leila-maxi-skirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK18-2.jpg?v=1761910409" alt="Leila mini skirt">
+            <div class="product-details">
+                <div class="product-name">Leila mini skirt</div>
+                <div class="product-price">₹1590.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/leila-maxi-skirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/leila-maxi-skirt-copy', 'Leila mini skirt', '1590.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK18-2.jpg?v=1761910409')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/leila-poncho-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/look14-2.jpg?v=1761208179" alt="Leila maxi skirt">
+            <div class="product-details">
+                <div class="product-name">Leila maxi skirt</div>
+                <div class="product-price">₹3190.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/leila-poncho-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/leila-poncho-copy', 'Leila maxi skirt', '3190.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/look14-2.jpg?v=1761208179')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/leila-poncho', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK9-1.jpg?v=1761203201" alt="Leila poncho">
+            <div class="product-details">
+                <div class="product-name">Leila poncho</div>
+                <div class="product-price">₹2190.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/leila-poncho', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/leila-poncho', 'Leila poncho', '2190.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK9-1.jpg?v=1761203201')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/abegail-tie-up-top-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK22-2.jpg?v=1761910687" alt="Abegail mini skirt">
+            <div class="product-details">
+                <div class="product-name">Abegail mini skirt</div>
+                <div class="product-price">₹2690.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/abegail-tie-up-top-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/abegail-tie-up-top-copy', 'Abegail mini skirt', '2690.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK22-2.jpg?v=1761910687')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/abegail-tie-up-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK11-2.jpg?v=1761910702" alt="Abegail tie-up top">
+            <div class="product-details">
+                <div class="product-name">Abegail tie-up top</div>
+                <div class="product-price">₹3090.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/abegail-tie-up-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/abegail-tie-up-top', 'Abegail tie-up top', '3090.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK11-2.jpg?v=1761910702')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/abegail-polka-top', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK5-1.jpg?v=1761198547" alt="Abegail polka top">
+            <div class="product-details">
+                <div class="product-name">Abegail polka top</div>
+                <div class="product-price">₹2890.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/abegail-polka-top', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/abegail-polka-top', 'Abegail polka top', '2890.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK5-1.jpg?v=1761198547')">♡</div>
+        </div>
+        
+        <div class="product-item" onclick="window.open('https://www.labelsocietyco.com/products/iris-box-pleated-skirt-copy', '_blank')" style="cursor: pointer;">
+            <img class="product-image" src="https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK6-2.jpg?v=1761201415" alt="Iris black top">
+            <div class="product-details">
+                <div class="product-name">Iris black top</div>
+                <div class="product-price">₹3290.00</div>
+                <button class="explore-btn" style="margin-top: 10px; width: 100%; padding: 8px; background: #670527; color: white; border: none; border-radius: 4px; cursor: pointer; z-index: 20; position: relative;" onclick="event.stopPropagation(); window.open('https://www.labelsocietyco.com/products/iris-box-pleated-skirt-copy', '_blank')">Explore on Brand\'s Website</button>
+            </div>
+            <div class="like-btn" style="cursor: pointer; z-index: 20;" onclick="toggleLike(event, 'https://www.labelsocietyco.com/products/iris-box-pleated-skirt-copy', 'Iris black top', '3290.00', 'https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK6-2.jpg?v=1761201415')">♡</div>
+        </div>
+        
+        </div>
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            try {
+                const favs = JSON.parse(localStorage.getItem("rarelySeenFavorites")) || [];
+                const buttons = document.querySelectorAll('.like-btn');
+                buttons.forEach(btn => {
+                    // Hydration could go here
+                });
+            } catch(e) {}
+        });
+    </script>
+</body>
+</html>

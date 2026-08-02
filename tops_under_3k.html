@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rarely Seen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarina&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=37">
+    <!-- D3.js for Physics Engine -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="favorites.js?v=1"></script>
+
+</head>
+<body>
+    <div class="watermark-bg"></div>
+
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav-bar">
+        <div class="nav-left">
+            <a href="index.html" class="nav-brand-small" style="text-decoration: none;">RARELY SEEN</a>
+        </div>
+        <div class="nav-center">
+            <div class="dropdown">
+                <button class="dropbtn">Styles <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="tops_under_3k.html">Tops under 3k</a>
+                    <a href="birthday_specials.html">Birthday specials</a>
+                    <a href="indianwear.html">Indianwear</a>
+                    <a href="coords.html">Co-ords Brands</a>
+                    <a href="vacation_fits.html">Vacation fits</a>
+                    <a href="#">Sleepwear</a>
+                    <a href="beachwear.html">Beachwear</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Accessories <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <a href="footwear.html">Footwear</a>
+                    <a href="bags.html">Bags</a>
+                    <a href="jewellery.html">Jewellery</a>
+                </div>
+            </div>
+            
+            <div class="dropdown brands-dropdown">
+                <button class="dropbtn">Brands <span style="font-size: 0.8em;">&#9662;</span></button>
+                <div class="dropdown-content">
+                    <div class="search-container">
+                        <input type="text" id="brandSearchInput" placeholder="Search brands..." onkeyup="filterBrands()">
+                    </div>
+                                        <a href="%26thensome.html" class="brand-item">&thensome</a>
+                    <a href="10.30pm.html" class="brand-item">10.30pm</a>
+                    <a href="A%20little%20extra.html" class="brand-item">A little extra</a>
+                    <a href="Amoshi.html" class="brand-item">Amoshi</a>
+                    <a href="autumn%20summer.html" class="brand-item">autumn summer</a>
+                    <a href="Beeglee.html" class="brand-item">Beeglee</a>
+                    <a href="Birdhouse.html" class="brand-item">Birdhouse</a>
+                    <a href="Blomas.html" class="brand-item">Blomas</a>
+                    <a href="Bluer.html" class="brand-item">Bluer</a>
+                    <a href="ButterBawd.html" class="brand-item">ButterBawd</a>
+                    <a href="Core%20cotton.html" class="brand-item">Core cotton</a>
+                    <a href="Couch%20days.html" class="brand-item">Couch days</a>
+                    <a href="Dhora%20india.html" class="brand-item">Dhora india</a>
+                    <a href="Disobedience%20chennai.html" class="brand-item">Disobedience chennai</a>
+                    <a href="Endless%20summer.html" class="brand-item">Endless summer</a>
+                    <a href="Essgee.html" class="brand-item">Essgee</a>
+                    <a href="Ever%20pret.html" class="brand-item">Ever pret</a>
+                    <a href="Everdion.html" class="brand-item">Everdion</a>
+                    <a href="Evie%20rose.html" class="brand-item">Evie rose</a>
+                    <a href="Fancypastelsindia.html" class="brand-item">Fancypastelsindia</a>
+                    <a href="House%20of%20mae.html" class="brand-item">House of mae</a>
+                    <a href="House%20of%20Prisca.html" class="brand-item">House of Prisca</a>
+                    <a href="I%20blame%20beads.html" class="brand-item">I blame beads</a>
+                    <a href="Imsoo.html" class="brand-item">Imsoo</a>
+                    <a href="Jewels%20mars.html" class="brand-item">Jewels mars</a>
+                    <a href="Kind%20inside.html" class="brand-item">Kind inside</a>
+                    <a href="Kuuky.html" class="brand-item">Kuuky</a>
+                    <a href="Label%20society.html" class="brand-item">Label society</a>
+                    <a href="Leaclothingco.html" class="brand-item">Leaclothingco</a>
+                    <a href="Living%20in%20surma.html" class="brand-item">Living in surma</a>
+                    <a href="Lovechoje.html" class="brand-item">Lovechoje</a>
+                    <a href="Lovetobag.html" class="brand-item">Lovetobag</a>
+                    <a href="Mayabazaar%20jewellery.html" class="brand-item">Mayabazaar jewellery</a>
+                    <a href="Mazikien.html" class="brand-item">Mazikien</a>
+                    <a href="Mile%20collective.html" class="brand-item">Mile collective</a>
+                    <a href="Mnsh.design.html" class="brand-item">Mnsh.design</a>
+                    <a href="Moontara.html" class="brand-item">Moontara</a>
+                    <a href="Ms.maven.html" class="brand-item">Ms.maven</a>
+                    <a href="Muvazo.html" class="brand-item">Muvazo</a>
+                    <a href="Neelmii.html" class="brand-item">Neelmii</a>
+                    <a href="Nef%E2%80%99s%20finds.html" class="brand-item">Nef’s finds</a>
+                    <a href="Nete.html" class="brand-item">Nete</a>
+                    <a href="Nishorama.html" class="brand-item">Nishorama</a>
+                    <a href="No%20Na%20Me.html" class="brand-item">No Na Me</a>
+                    <a href="Orange%20at%20eight.html" class="brand-item">Orange at eight</a>
+                    <a href="Outcast.html" class="brand-item">Outcast</a>
+                    <a href="Outdated%20official.html" class="brand-item">Outdated official</a>
+                    <a href="Palay.html" class="brand-item">Palay</a>
+                    <a href="Pariparilife.html" class="brand-item">Pariparilife</a>
+                    <a href="Poppiclothing.html" class="brand-item">Poppiclothing</a>
+                    <a href="Qalaclothing.html" class="brand-item">Qalaclothing</a>
+                    <a href="Qua.html" class="brand-item">Qua</a>
+                    <a href="Rerunn.html" class="brand-item">Rerunn</a>
+                    <a href="Ribble.html" class="brand-item">Ribble</a>
+                    <a href="Ruiaan.html" class="brand-item">Ruiaan</a>
+                    <a href="shop%26yours.html" class="brand-item">shop&yours</a>
+                    <a href="Shopdiris.html" class="brand-item">Shopdiris</a>
+                    <a href="shopmauve.in.html" class="brand-item">shopmauve.in</a>
+                    <a href="Studio%20Picante.html" class="brand-item">Studio Picante</a>
+                    <a href="Summeraway.html" class="brand-item">Summeraway</a>
+                    
+                    <a href="sunday%20loveshop.html" class="brand-item">sunday loveshop</a>
+                    <a href="Sunday%20molly.html" class="brand-item">Sunday molly</a>
+                    <a href="The%20clothing%20factory.html" class="brand-item">The clothing factory</a>
+                    <a href="The%20missy%20co.html" class="brand-item">The missy co</a>
+                    <a href="The%20pink%20elephant.html" class="brand-item">The pink elephant</a>
+                    <a href="True%20west%20fashion.html" class="brand-item">True west fashion</a>
+                    <a href="Truffle.html" class="brand-item">Truffle</a>
+                    <a href="Twelvthedit.html" class="brand-item">Twelvthedit</a>
+                    <a href="Upkarna%20jewellery%20store.html" class="brand-item">Upkarna jewellery store</a>
+                    <a href="Weaving%20cult.html" class="brand-item">Weaving cult</a>
+                </div>
+            </div>
+            <a href="javascript:void(0)" onclick="openFavoritesOverlay(); return false;" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                <span>❤️</span> Liked
+            </a>
+            <a href="about.html" class="nav-liked-btn" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+                About Us
+            </a>
+        </div>
+        <div class="nav-right">
+            <!-- Space for future icons like cart/search -->
+        </div>
+    </nav>
+    <main class="content page-tops">
+        <a href="index.html" class="home-btn">← Back to Bubbles</a>
+        <header class="section-header" id="grid-header">
+            <h1 class="section-title">Tops under 3k</h1>
+            <p class="section-subtitle">Curated picks from our favorite emerging brands</p>
+        </header>
+        
+        <div class="brands-grid" id="brands-grid" data-default-category="tops" data-default-max-price="3000">
+            
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="ButterBawd" style="background-image: url("https://cdn.shopify.com/s/files/1/0764/5790/2319/files/1_08889878-abec-403d-baca-fb0ba64f903f.png?v=1782987287");">
+                <div class="brand-grid-overlay"></div>
+                <img src="http://www.butterbawd.com/cdn/shop/files/Facebook_cover_1200_x_628_px.png?v=1768725472" class="brand-grid-logo" alt="ButterBawd">
+                <div class="brand-grid-name">ButterBawd</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="&thensome" style="background-image: url("https://cdn.shopify.com/s/files/1/0891/0143/5247/files/IMG_9742-UQ-2-UQ-2-UQ-2-UQ-2.1-_3-_12.1.jpg?v=1778737600");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://andthensome.in/cdn/shop/files/Secondary_Logo_Black_200x.png?v=1733998955" class="brand-grid-logo" alt="&thensome">
+                <div class="brand-grid-name">&thensome</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="autumn summer" style="background-image: url("https://cdn.shopify.com/s/files/1/0663/2053/1530/files/WhatsAppImage2026-02-01at6.30.26PM_1.jpg?v=1769951051");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://www.autumnsummer.in/cdn/shop/files/Logo.png?v=1758892459&width=3840" class="brand-grid-logo" alt="Autumn Summer">
+                <div class="brand-grid-name">Autumn Summer</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Beeglee" style="background-image: url("https://cdn.shopify.com/s/files/1/0550/4942/0973/files/black-eyelet-barrel-sweatpants-5268000.jpg?v=1780987390");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://placehold.co/400x400/fdfbf7/333333/png?text=Beeglee" class="brand-grid-logo" alt="Beeglee">
+                <div class="brand-grid-name">Beeglee</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Blomas" style="background-image: url("https://cdn.shopify.com/s/files/1/0693/2906/0073/files/UntitledSession07171.jpg?v=1749730142");">
+                <div class="brand-grid-overlay"></div>
+                <img src="http://blomas.in/cdn/shop/files/Blomas_wordmark_-_red.png?height=628&pad_color=ffffff&v=1714568188&width=1200" class="brand-grid-logo" alt="Blomas">
+                <div class="brand-grid-name">Blomas</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Essgee" style="background-image: url("https://cdn.shopify.com/s/files/1/0578/5010/1860/files/0cover_a2d0438f-9fb3-430f-80e0-accac1a00b98.jpg?v=1776368747");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://essgee.co/cdn/shop/files/logo-01_140x.png?v=1651489454" class="brand-grid-logo" alt="Essgee">
+                <div class="brand-grid-name">Essgee</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Evie Rose" style="background-image: url("https://cdn.shopify.com/s/files/1/0711/1750/4758/files/BAF18C83-F56B-43A6-9F75-CFA7DA535AD1.jpg?v=1779980072");">
+                <div class="brand-grid-overlay"></div>
+                
+                <div class="brand-grid-name">Evie Rose</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Fancypastelsindia" style="background-image: url("https://cdn.shopify.com/s/files/1/1919/4035/files/hofp1111-20.png?v=1764848424");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://fancypastels.com/cdn/shop/files/newlogoround_2048x2048.png" class="brand-grid-logo" alt="Fancy Pastels">
+                <div class="brand-grid-name">Fancy Pastels</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="House of mae" style="background-image: url("https://cdn.shopify.com/s/files/1/0756/0583/6061/files/Untitleddesign_67_d121a292-c049-46a8-be5a-589c05d1eeba.png?v=1773988742");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://www.houseofmae.shop/cdn/shop/files/Website_Logo_1_180x.png?v=1703572037" class="brand-grid-logo" alt="House of Mae">
+                <div class="brand-grid-name">House of Mae</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Kind inside" style="background-image: url("https://cdn.shopify.com/s/files/1/0623/8093/3231/files/DSC00047.jpg?v=1773130617");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://kindinside.in/cdn/shop/files/LogoFIN.png?v=1740981168&width=600" class="brand-grid-logo" alt="Kind inside">
+                <div class="brand-grid-name">Kind inside</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Label society" style="background-image: url("https://cdn.shopify.com/s/files/1/0555/9291/0933/files/LOOK33-5.jpg?v=1761216418");">
+                <div class="brand-grid-overlay"></div>
+                
+                <div class="brand-grid-name">Label society</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Leaclothingco" style="background-image: url("https://cdn.shopify.com/s/files/1/0518/6768/0952/files/LA_61951_2eadbd27-0dfc-4ef0-88b0-ca479094e7e1.jpg?v=1780398430");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://cdn.shopify.com/s/files/1/0518/6768/0952/files/LEA_LOGO_1.png" class="brand-grid-logo" alt="Lea Clothing">
+                <div class="brand-grid-name">Lea Clothing</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Ms.maven" style="background-image: url("https://cdn.shopify.com/s/files/1/0650/8622/6664/files/5FCCB47B-9637-4EAA-B306-DABCBDA03E26.jpg?v=1774957632");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://www.msmaven.in/cdn/shop/files/final_logo_text-01.png?v=1749458046&width=600" class="brand-grid-logo" alt="Ms. Maven">
+                <div class="brand-grid-name">Ms. Maven</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Muvazo" style="background-image: url("https://cdn.shopify.com/s/files/1/0651/9006/8440/files/33_47483194-27d8-430d-bd8d-1d1db46f8f94.png?v=1781182451");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://cdn.shopify.com/s/files/1/0651/9006/8440/files/Muvazo_Logo_1_1cce44bb-3bc8-4674-b04c-307f282a3d7e.png?v=1763035308" class="brand-grid-logo" alt="Muvazo">
+                <div class="brand-grid-name">Muvazo</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Nef’s finds" style="background-image: url("https://cdn.shopify.com/s/files/1/0622/2679/2677/files/51_e565720d-b2ee-4c14-8b68-a72dade27016.png?v=1777620702");">
+                <div class="brand-grid-overlay"></div>
+                <img src="http://nefsfinds.com/cdn/shop/files/logo_f68d9d4e-825f-4efe-8e12-258942df8bae_1200x1200.jpg?v=1648281913" class="brand-grid-logo" alt="Nef’s finds">
+                <div class="brand-grid-name">Nef’s finds</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Nishorama" style="background-image: url("https://cdn.shopify.com/s/files/1/0647/1614/4830/files/5_5.jpg?v=1781858372");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://www.nishorama.com/cdn/shop/files/Website_logo_280_x_80_px_300_x_66_px_350_x_66_px_550_x_70_px_1000_x_80_px_8.png?v=1768836672&width=180" class="brand-grid-logo" alt="Nishorama">
+                <div class="brand-grid-name">Nishorama</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Orange at eight" style="background-image: url("https://cdn.shopify.com/s/files/1/0739/6818/9485/files/Lemon-Halter-top_a56229aa-9548-4468-b9dc-f725e7c1b493.jpg?v=1773825526");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://orangeateight.com/cdn/shop/files/Copy_of_Orange_at_Eight_logo_file-03.png?v=1773228678&width=1200" class="brand-grid-logo" alt="Orange at eight">
+                <div class="brand-grid-name">Orange at eight</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Outcast" style="background-image: url("https://cdn.shopify.com/s/files/1/0571/5119/3260/files/11_1_63f89245-eaba-41b9-a88a-309fb9336948.jpg?v=1780572424");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://outcasts.in/cdn/shop/files/logo_outcast_1.png?v=1735300677&width=380" class="brand-grid-logo" alt="Outcast">
+                <div class="brand-grid-name">Outcast</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Qua" style="background-image: url("https://cdn.shopify.com/s/files/1/0043/2098/5199/files/QUA0580_f112cad3-a139-40d7-8159-45cc988e90e6.jpg?v=1779723805");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://www.qua.clothing/cdn/shop/files/New_logo_1-removebg-preview_70x.png?v=1683639776" class="brand-grid-logo" alt="Qua">
+                <div class="brand-grid-name">Qua</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Rerunn" style="background-image: url("https://cdn.shopify.com/s/files/1/0876/8906/8854/files/BlueFloralBag.png?v=1781248720");">
+                <div class="brand-grid-overlay"></div>
+                <img src="http://rerunn.com/cdn/shop/files/Rerunn_logo_1a55db7b-e61c-4e34-ae38-8bf3f0dc9cd9.png?v=1727932646" class="brand-grid-logo" alt="Rerunn">
+                <div class="brand-grid-name">Rerunn</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Shop&yours" style="background-image: url("https://cdn.shopify.com/s/files/1/0555/5044/3654/files/Untitleddesign-1.jpg?v=1780316941");">
+                <div class="brand-grid-overlay"></div>
+                
+                <div class="brand-grid-name">Shop&yours</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Shopdiris" style="background-image: url("https://cdn.shopify.com/s/files/1/0877/5145/9104/files/IMG_1303.webp?v=1716639466");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://shopdiris.com/cdn/shop/files/logo_4.webp?v=1716622489" class="brand-grid-logo" alt="Diris">
+                <div class="brand-grid-name">Diris</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="shopmauve.in" style="background-image: url("https://cdn.shopify.com/s/files/1/0761/2904/2707/files/IMG_0751_JPG.jpg?v=1780985507");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://www.shopmauve.in/cdn/shop/files/LOGO_16.png" class="brand-grid-logo" alt="Shop mauve">
+                <div class="brand-grid-name">Shop mauve</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="The missy co" style="background-image: url("https://cdn.shopify.com/s/files/1/3006/8564/files/Cover_ada9b692-2a48-4855-ba29-963c4588063f.jpg?v=1776756272");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://themissyco.in/cdn/shop/files/black_missy_logo.png?v=1745332586&width=600" class="brand-grid-logo" alt="Missy co">
+                <div class="brand-grid-name">Missy co</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="True west fashion" style="background-image: url("https://cdn.shopify.com/s/files/1/0779/8659/5097/files/Edit_CaptureOneCatalog3462copy.jpg?v=1776600377");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://www.truewest.in/cdn/shop/files/Transparent-logo2.png?v=1710062536&width=600" class="brand-grid-logo" alt="True West">
+                <div class="brand-grid-name">True West</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Twelvth edit" style="background: linear-gradient(135deg, hsl(30, 30%, 80%), hsl(60, 40%, 70%));">
+                <img src="https://placehold.co/400x400/fdfbf7/333333/png?text=Twelvth%20Edit" class="brand-grid-logo" alt="Twelvth edit">
+                <div class="brand-grid-name">Twelvth edit</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Weaving cult" style="background-image: url("https://cdn.shopify.com/s/files/1/0664/1850/7955/files/IMG_3666.jpg?v=1775039956");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://www.weavingcult.com/cdn/shop/files/Weaving_Cult_logo.png?v=1770410433&amp;width=563" class="brand-grid-logo" alt="Weaving cult">
+                <div class="brand-grid-name">Weaving cult</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Endless summer" style="background-image: url("https://cdn.shopify.com/s/files/1/0688/3390/2905/files/ES_8340.jpg?v=1781260992");">
+                <div class="brand-grid-overlay"></div>
+                <img src="http://www.endlesssummershop.com/cdn/shop/files/endless_summer_brand_doc-15.jpg?v=1682950880" class="brand-grid-logo" alt="Endless summer">
+                <div class="brand-grid-name">Endless summer</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Outdated official" style="background-image: url("https://cdn.shopify.com/s/files/1/0799/2282/3464/files/41C9DEA9-E7DE-45A2-BB5F-5A161A04222E.jpg?v=1784617119");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://placehold.co/400x400/fdfbf7/333333/png?text=Outdated%20Official" class="brand-grid-logo" alt="Outdated official">
+                <div class="brand-grid-name">Outdated official</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="The clothing factory" style="background-image: url("https://cdn.shopify.com/s/files/1/0555/4195/6677/files/THECLOTHINGFACTORY-09-02-2410654.jpg?v=1708503387");">
+                <div class="brand-grid-overlay"></div>
+                <img src="http://theclothingfactory.in/cdn/shop/files/Petals-and-day-dream.webp?v=1744952893&width=1024" class="brand-grid-logo" alt="The clothing factory">
+                <div class="brand-grid-name">The clothing factory</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Outzidr" style="background: linear-gradient(135deg, hsl(30, 30%, 80%), hsl(60, 40%, 70%));">
+                
+                <div class="brand-grid-name">Outzidr</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Couch days" style="background-image: url("https://cdn.shopify.com/s/files/1/0785/3604/8892/files/Thelayoverset01.jpg?v=1769409423");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://couchdays.in/cdn/shop/files/logo-removebg-preview.png?height=50&amp;v=1769236740" class="brand-grid-logo" alt="Couch days">
+                <div class="brand-grid-name">Couch days</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Core cotton" style="background-image: url("https://cdn.shopify.com/s/files/1/0616/3224/9925/files/DEAC9297-FC9B-4DF3-84DF-E90A78AF81CE.png?v=1782245070");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://www.corecotton.in/cdn/shop/files/GQ-Logo.png?crop=center&amp;height=112&amp;v=1734762940&amp;width=200" class="brand-grid-logo" alt="Core cotton">
+                <div class="brand-grid-name">Core cotton</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Kuuky" style="background-image: url("https://cdn.shopify.com/s/files/1/0661/8493/7642/files/IMG_5364.jpg?v=1782383213");">
+                <div class="brand-grid-overlay"></div>
+                <img src="https://kuuky.in/cdn/shop/files/logoinvert.png?height=20&amp;v=1752149774" class="brand-grid-logo" alt="Kuuky">
+                <div class="brand-grid-name">Kuuky</div>
+            </a>
+            <a href="javascript:void(0)" class="brand-grid-card" data-brand="Bluer" style="background-image: url("https://cdn.shopify.com/s/files/1/0649/9988/2984/files/BLR6jeans2_4c5f07c4-7634-49c8-a7ed-2fa68b9627ee.webp?v=1769144614");">
+                <div class="brand-grid-overlay"></div>
+                <img src="http://bluer.co.in/cdn/shop/files/logo-_zelltin-08_1.png?v=1735914883&width=1024" class="brand-grid-logo" alt="Bluer">
+                <div class="brand-grid-name">Bluer</div>
+            </a>
+        </div>
+        
+
+        <!-- Product Page (Hidden by Default) -->
+        <section id="product-page" class="product-page" style="display: none; margin-top: 2rem;">
+            <div class="product-page-header">
+                <button id="back-btn" class="back-btn">← Back to Brands</button>
+                <div class="price-filter">
+                    <label>Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All</option>
+                        <option value="tops">Tops</option>
+                        <option value="bottoms">Bottoms</option>
+                        <option value="dresses">Dresses</option>
+                        <option value="coords">Co-ords</option>
+                        <option value="footwear">Footwear</option>
+                    </select>
+                    <label style="margin-left: 10px;">Price:</label>
+                    <input type="number" id="min-price" placeholder="Min ₹">
+                    <span>-</span>
+                    <input type="number" id="max-price" placeholder="Max ₹">
+                    <button id="apply-filter-btn" class="filter-btn">Apply</button>
+                </div>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <!-- Product placeholders injected by JS -->
+            </div>
+            <div class="load-more-container">
+                <button id="load-more-btn" class="load-more-btn" style="display: none;">Load More</button>
+            </div>
+        </section>
+
+    </main>
+    <script src="favorites.js?v=1"></script>
+    <script src="app.js?v=28"></script>
+    <script src="grid.js?v=2"></script>
+</body>
+</html>
