@@ -1436,6 +1436,12 @@ body {
         justify-content: center;
         text-align: center;
     }
+    .brands-dropdown .dropdown-content {
+        left: auto !important;
+        right: 0 !important;
+        transform: none !important;
+        max-width: 90vw;
+    }
     .nav-left, .nav-right {
         flex: none;
     }
