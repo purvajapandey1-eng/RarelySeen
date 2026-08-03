@@ -35,3 +35,7 @@ Then, you can view the site by navigating to [http://localhost:8000](http://loca
 - Added a delicate gradient divider (`<hr>`) at the bottom of the content structure.
 - Appended a structured `<footer>` containing the "Rarely Seen" mission statement and contact information. 
 - Because it is placed at the root layout level, this elegant footer remains visible whether the user is playing with the honeycomb or scrolling through a brand's products!
+
+## 4. Mobile Responsiveness Optimization
+- **Navigation & Layout**: Added CSS media queries (`@media (max-width: 768px)`) to `styles.css`. This hides the sidebars on mobile to prioritize the honeycomb, reduces padding on navigation bars and product pages, and correctly stacks product grid columns.
+- **D3 Physics Engine**: Updated `app.js` to dynamically detect if the user is on a mobile device (`window.innerWidth <= 768`). If on a phone, the container height is reduced from `850px` to `500px` and bubble radiuses are scaled down by 40% so that they don't clutter the screen or fly off the edges.

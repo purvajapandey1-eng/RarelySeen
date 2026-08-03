@@ -62,11 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const container = document.getElementById('honeycomb-container');
     const width = document.querySelector('.honeycomb-container').clientWidth;
-    const height = 850;
+    const isMobile = window.innerWidth <= 768;
+    const height = isMobile ? 500 : 850;
     const TOTAL_BRANDS = brandNames.length;
-    const BASE_RADIUS = 60;  // 120px diameter
-    const HOVER_RADIUS = 130; // 260px diameter
-    const SHRINK_RADIUS = 40; // 80px diameter
+    const BASE_RADIUS = isMobile ? 35 : 60;
+    const HOVER_RADIUS = isMobile ? 80 : 130;
+    const SHRINK_RADIUS = isMobile ? 25 : 40;
     const GAP = 2;
 
     // --- Hero Sidebars Logic ---
