@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('honeycomb-container');
     const width = document.querySelector('.honeycomb-container').clientWidth;
     const isMobile = window.innerWidth <= 768;
-    const height = isMobile ? 550 : 850;
+    const height = isMobile ? 600 : 850;
     const TOTAL_BRANDS = brandNames.length;
-    const BASE_RADIUS = isMobile ? 28 : 60;
-    const HOVER_RADIUS = isMobile ? 70 : 130;
-    const SHRINK_RADIUS = isMobile ? 20 : 40;
+    const BASE_RADIUS = isMobile ? 24 : 60;
+    const HOVER_RADIUS = isMobile ? 60 : 130;
+    const SHRINK_RADIUS = isMobile ? 18 : 40;
     const GAP = 2;
 
     // --- Hero Sidebars Logic ---
@@ -457,7 +457,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cols = 7;
         const row = Math.floor(i / cols);
         const col = i % cols;
-        const startYCenter = isMobile ? 320 : height / 2;
+        const startYCenter = isMobile ? 300 : height / 2;
         return {
             id: i,
             brand: brandName,
@@ -470,12 +470,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Create D3 physics simulation
-    const yForceCenter = isMobile ? 320 : height / 2;
+    const yForceCenter = isMobile ? 300 : height / 2;
     window.simulation = d3.forceSimulation(nodes)
         .force('center', d3.forceCenter(width / 2, yForceCenter).strength(0.05))
         .force('x', d3.forceX(width / 2).strength(0.005))
         .force('y', d3.forceY(yForceCenter).strength(0.08))
-        .force('collide', d3.forceCollide().radius(d => d.radius + GAP).iterations(4))
+        .force('collide', d3.forceCollide().radius(d => d.radius + GAP).iterations(8))
         .force('charge', d3.forceManyBody().strength(-15))
         .alphaDecay(0.02); // Slower decay for smoother settling
 
@@ -712,8 +712,8 @@ document.addEventListener('DOMContentLoaded', () => {
         nodes.forEach(d => {
             // Strictly constrain to container bounds to perfectly touch the edges
             d.x = Math.max(d.radius, Math.min(width - d.radius, d.x));
-            // On mobile, keep bubbles below the header (y > 90) so they don't cover the logo
-            const topBoundary = isMobile ? 90 : d.radius;
+            // On mobile, keep bubbles below the header (y > 20) so they don't cover the logo
+            const topBoundary = isMobile ? 20 : d.radius;
             d.y = Math.max(topBoundary, Math.min(height - d.radius, d.y));
         });
         
