@@ -1,0 +1,133 @@
+privacy_html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy & Cookies - Rarely Seen</title>
+    <link rel="stylesheet" href="styles.css?v=44">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Sarina&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #fdfbf7; color: #111;">
+    <!-- Minimal Header -->
+    <header style="padding: 2rem; text-align: center;">
+        <a href="index.html" style="font-family: 'Sarina', cursive; font-size: 2.5rem; color: #670527; text-decoration: none;">Rarely Seen</a>
+    </header>
+
+    <main class="main-content" style="max-width: 800px; margin: 0 auto; padding: 2rem; font-family: 'Montserrat', sans-serif; line-height: 1.8;">
+        <h1 style="font-size: 2rem; margin-bottom: 2rem; color: #670527;">Privacy & Cookie Policy</h1>
+        
+        <p><strong>Effective Date: 03/08/2026</strong></p>
+
+        <p>Welcome to Rarely Seen. We respect your privacy and are committed to protecting your personal data in compliance with India's Digital Personal Data Protection (DPDP) Act.</p>
+
+        <h2 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: #670527;">1. What Data We Collect</h2>
+        <p>When you visit our platform, we may collect:</p>
+        <ul style="margin-left: 20px; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;"><strong>Voluntary Data:</strong> Information you provide when creating an account, subscribing to our newsletter, or contacting us (e.g., name, email address, phone number).</li>
+            <li><strong>Automated Data (Cookies):</strong> We use analytics tools to act as a "digital bouncer," helping us understand how users interact with our site. This tracks metrics like button clicks, page views, and outbound links to our partner brands.</li>
+        </ul>
+
+        <h2 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: #670527;">2. How We Use Your Data</h2>
+        <p>We use your data purely to improve your experience on Rarely Seen, analyze website traffic, and, if you consent, send you updates about new homegrown brands and drops.</p>
+
+        <h2 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: #670527;">3. Your Rights Under the DPDP Act</h2>
+        <p>You have complete control over your data.</p>
+        <ul style="margin-left: 20px; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;">You have the right to request access to the data we have collected, ask us to correct inaccuracies, or request the deletion of your personal data entirely.</li>
+            <li>You may also opt-out of cookie tracking at any time via your browser settings.</li>
+        </ul>
+
+        <h2 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: #670527;">4. Contact Us / Grievance Officer</h2>
+        <p>If you have any questions, concerns, or wish to exercise your data rights, please reach out to our Grievance Officer:</p>
+        <p>Email: [hello.rarelyseen@gmail.com]</p>
+    </main>
+
+    <footer class="global-footer" style="padding: 2rem; background-color: #fdfbf7; border-top: 1px solid #eaeaea; text-align: center; font-family: 'Montserrat', sans-serif;">
+        <div class="footer-content" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <div class="footer-mission" style="font-size: 0.9rem; color: #333;">
+                <strong style="color: #670527;">Our Mission</strong><br>
+                We are here to cure your shopping fatigue. We are cutting through the boring fast fashion and the endless scrolling to bring you a curated catalogue of the hardest homegrown brands, all in one place.
+            </div>
+            <div class="footer-contact" style="font-size: 0.9rem; color: #333;">
+                <strong style="color: #670527;">Contact Us</strong><br>
+                hello@rarelyseen.com<br>
+                Follow our journey on Instagram @rarelyseen
+            </div>
+            <div class="footer-legal" style="font-size: 0.75rem; display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; border-top: 1px solid #ddd; padding-top: 1rem; width: 100%;">
+                <a href="terms.html" style="color: #666; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Terms of Use</a>
+                <a href="privacy.html" style="color: #666; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Privacy & Cookies</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+"""
+
+terms_html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Rarely Seen</title>
+    <link rel="stylesheet" href="styles.css?v=44">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Sarina&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: #fdfbf7; color: #111;">
+    <!-- Minimal Header -->
+    <header style="padding: 2rem; text-align: center;">
+        <a href="index.html" style="font-family: 'Sarina', cursive; font-size: 2.5rem; color: #670527; text-decoration: none;">Rarely Seen</a>
+    </header>
+
+    <main class="main-content" style="max-width: 800px; margin: 0 auto; padding: 2rem; font-family: 'Montserrat', sans-serif; line-height: 1.8;">
+        <h1 style="font-size: 2rem; margin-bottom: 2rem; color: #670527;">Terms of Use</h1>
+        
+        <p><strong>Effective Date: 03/08/2026</strong></p>
+
+        <p>Welcome to Rarely Seen. By browsing our curated catalogue, you agree to the following basic rules.</p>
+
+        <h2 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: #670527;">1. How Our Platform Works</h2>
+        <p>Currently, Rarely Seen operates as a discovery catalogue. We exist to spotlight amazing independent creators. At this stage, we do not hold inventory or process payments directly on our website for the items featured.</p>
+
+        <h2 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: #670527;">2. Third-Party Links & Disclaimer</h2>
+        <ul style="margin-left: 20px; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.5rem;">When you click "Explore on Brand's Website," you are redirected to a third-party partner.</li>
+            <li style="margin-bottom: 0.5rem;">We are a curated catalogue, meaning when you click 'Explore', you are buying directly from the brand, not us.</li>
+            <li style="margin-bottom: 0.5rem;">This page limits our legal liability regarding the external links. We are not responsible for the privacy practices, shipping times, or product quality of these external websites.</li>
+            <li>Any customer service inquiries regarding an order must be taken up directly with the brand you purchased from.</li>
+        </ul>
+
+        <h2 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: #670527;">3. Intellectual Property</h2>
+        <p>The curation, design, and original text on Rarely Seen are owned by us. Product images and brand names belong to their respective independent creators and are featured on our site to drive discovery and traffic to their stores.</p>
+
+        <h2 style="font-size: 1.2rem; margin-top: 2rem; margin-bottom: 1rem; color: #670527;">4. Contact Us</h2>
+        <p>If you find a broken link or have a general inquiry, drop us a line at [hello@rarelyseen@gmail.com].</p>
+    </main>
+
+    <footer class="global-footer" style="padding: 2rem; background-color: #fdfbf7; border-top: 1px solid #eaeaea; text-align: center; font-family: 'Montserrat', sans-serif;">
+        <div class="footer-content" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <div class="footer-mission" style="font-size: 0.9rem; color: #333;">
+                <strong style="color: #670527;">Our Mission</strong><br>
+                We are here to cure your shopping fatigue. We are cutting through the boring fast fashion and the endless scrolling to bring you a curated catalogue of the hardest homegrown brands, all in one place.
+            </div>
+            <div class="footer-contact" style="font-size: 0.9rem; color: #333;">
+                <strong style="color: #670527;">Contact Us</strong><br>
+                hello@rarelyseen.com<br>
+                Follow our journey on Instagram @rarelyseen
+            </div>
+            <div class="footer-legal" style="font-size: 0.75rem; display: flex; gap: 1.5rem; justify-content: center; margin-top: 1rem; border-top: 1px solid #ddd; padding-top: 1rem; width: 100%;">
+                <a href="terms.html" style="color: #666; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Terms of Use</a>
+                <a href="privacy.html" style="color: #666; text-decoration: none; text-transform: uppercase; letter-spacing: 1px;">Privacy & Cookies</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+"""
+
+with open("privacy.html", "w", encoding="utf-8") as f:
+    f.write(privacy_html)
+
+with open("terms.html", "w", encoding="utf-8") as f:
+    f.write(terms_html)
+
+print("Created privacy.html and terms.html")
