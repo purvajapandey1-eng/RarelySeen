@@ -479,6 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const cols = 7;
         const row = Math.floor(i / cols);
         const col = i % cols;
+        const startYCenter = isMobile ? 340 : height / 2;
         return {
             id: i,
             brand: brandName,
@@ -486,15 +487,16 @@ document.addEventListener('DOMContentLoaded', () => {
             radius: BASE_RADIUS,
             targetRadius: BASE_RADIUS,
             x: width / 2 + (col - cols/2) * (BASE_RADIUS * 2),
-            y: height / 2 + (row - 2) * (BASE_RADIUS * 2)
+            y: startYCenter + (row - 2) * (BASE_RADIUS * 2)
         };
     });
 
     // Create D3 physics simulation
+    const yForceCenter = isMobile ? 340 : height / 2;
     window.simulation = d3.forceSimulation(nodes)
-        .force('center', d3.forceCenter(width / 2, height / 2).strength(0.05))
+        .force('center', d3.forceCenter(width / 2, yForceCenter).strength(0.05))
         .force('x', d3.forceX(width / 2).strength(0.005))
-        .force('y', d3.forceY(height / 2).strength(0.08))
+        .force('y', d3.forceY(yForceCenter).strength(0.08))
         .force('collide', d3.forceCollide().radius(d => d.radius + GAP).iterations(4))
         .force('charge', d3.forceManyBody().strength(-15))
         .alphaDecay(0.02); // Slower decay for smoother settling
