@@ -36,29 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Nete", "Birdhouse", "House of Prisca", "Mazikien", "Qua", "Nishorama", "ButterBawd", "Everdion", "Mile collective", "Endless summer", "Outdated official", "The clothing factory", "Couch days", "Core cotton", "Kuuky", "Studio Picante", "Bluer", "Living in surma"
     ];
 
-    // Splash Screen Logic
-    const splashOverlay = document.getElementById('splash-overlay');
-    const splashBrandsContainer = document.getElementById('splash-brands');
 
-    if (!sessionStorage.getItem('splashShown')) {
-        // Pick 3 random brands
-        const shuffled = [...brandNames].sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, 3);
-        
-        splashBrandsContainer.innerHTML = selected.map(b => `<div>${b}</div>`).join('');
-        
-        splashOverlay.addEventListener('click', () => {
-            splashOverlay.style.opacity = '0';
-            setTimeout(() => {
-                splashOverlay.style.display = 'none';
-                // Small bump to the physics engine when entering
-                if (window.simulation) window.simulation.alpha(0.8).restart();
-            }, 500);
-            sessionStorage.setItem('splashShown', 'true');
-        });
-    } else {
-        splashOverlay.style.display = 'none';
-    }
 
     const container = document.getElementById('honeycomb-container');
     const width = document.querySelector('.honeycomb-container').clientWidth;
