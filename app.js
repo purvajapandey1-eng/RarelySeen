@@ -732,6 +732,9 @@ document.addEventListener('DOMContentLoaded', () => {
         nodes.forEach(d => {
             // Strictly constrain to container bounds to perfectly touch the edges
             d.x = Math.max(d.radius, Math.min(width - d.radius, d.x));
+            // On mobile, keep bubbles below the header (y > 150) so they don't cover the logo
+            const topBoundary = isMobile ? 180 : d.radius;
+            d.y = Math.max(topBoundary, Math.min(height - d.radius, d.y));
         });
         
         // Update the physical DOM elements to match the physics engine calculations
