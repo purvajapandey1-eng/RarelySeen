@@ -49,9 +49,9 @@ export const designs: Design[] = brands.flatMap((b, bi) =>
   [0, 1, 2].map((i) => ({
     id: `${b.slug}-${i}`,
     brand: b.slug,
-    name: names[(bi + i) % names.length],
+    name: names[(bi + i) % names.length]!,
     price: 999 + ((bi * 3 + i) * 437) % 4000,
-    color: (["lime", "pink", "sky", "sun", "ink"] as const)[(bi + i) % 5],
+    color: (["lime", "pink", "sky", "sun", "ink"] as const)[(bi + i) % 5]!,
   })),
 );
 
