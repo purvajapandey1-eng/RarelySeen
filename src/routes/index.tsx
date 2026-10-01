@@ -62,6 +62,7 @@ function Index() {
           {designs.filter((_, i) => i % 3 === 0).slice(0, 8).map((d) => <DesignCard key={d.id} d={d} />)}
         </div>
       </section>
-    </main>
+      </main>
+    </>
   );
 }
