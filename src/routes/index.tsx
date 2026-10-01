@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { brands, collections, designs } from "@/lib/catalog";
 import { DesignCard, swatch } from "@/components/ui-bits";
+import { Intro } from "@/components/Intro";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,7 +18,9 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main>
+    <>
+      <Intro />
+      <main>
       <section className="mx-auto max-w-6xl px-4 pt-16 pb-12">
         <p className="inline-block rounded-full bg-pink border-2 border-ink px-3 py-1 text-xs font-bold uppercase tracking-widest -rotate-2">made in india, obviously</p>
         <h1 className="font-display mt-6 text-6xl md:text-[8.5rem] font-extrabold leading-[0.85] tracking-tighter">
