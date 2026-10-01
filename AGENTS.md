@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Catalogue data (brands, collections, designs) lives in a static TS module; swap to a database when admin editing is needed.
+- Loved designs persist in browser localStorage (no accounts yet).
