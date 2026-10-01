@@ -3,8 +3,8 @@ import { useEffect, useLayoutEffect, useState } from "react";
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 let playedThisSession: boolean | null = null;
-const LEAVE_AT = 3900;
-const DONE_AT = 4900;
+const LEAVE_AT = 4300;
+const DONE_AT = 5800;
 
 export function Intro() {
   const [phase, setPhase] = useState<"play" | "leave" | "done">("play");
@@ -63,7 +63,7 @@ export function Intro() {
             </span>
           </span>
         </h1>
-        <p className="intro-tag mt-8 max-w-md text-base md:text-xl text-cream/75 font-medium">
+        <p className="intro-tag mt-8 max-w-lg text-2xl md:text-3xl text-cream font-medium tracking-tight">
           all Indian homegrown brands in <span className="text-lime font-bold">one place</span>
         </p>
       </div>
