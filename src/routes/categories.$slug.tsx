@@ -22,23 +22,26 @@ function CollectionPage() {
   return (
     <main className="pb-20">
       <PageHead kicker="collection" title={collection.title}>{collection.blurb}</PageHead>
-      <ol className="mx-auto max-w-6xl px-4 space-y-3">
-        {collection.brands.map((s, i) => {
-          const b = getBrand(s)!;
-          return (
-            <li key={s}>
-              <Link to="/brands/$slug" params={{ slug: s }} className="flex items-center gap-5 rounded-3xl border-2 border-ink bg-card p-4 shadow-brut hover:-translate-y-0.5 transition">
-                <span className={`${swatch[b.color]} size-16 shrink-0 rounded-2xl border-2 border-ink grid place-items-center font-display text-2xl font-extrabold`}>{i + 1}</span>
-                <div className="flex-1">
-                  <h3 className="font-display text-2xl font-extrabold">{b.name}</h3>
-                  <p className="text-ink/70">{b.tagline}</p>
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {collection.brands.map((s) => {
+            const b = getBrand(s);
+            if (!b) return null;
+            return (
+              <Link key={b.slug} to="/brands/$slug" params={{ slug: b.slug }} className="rounded-3xl border-2 border-ink bg-card overflow-hidden shadow-brut hover:-translate-y-1 transition">
+                <div className={`${swatch[b.color]} h-32 grid place-items-center font-display text-5xl font-extrabold overflow-hidden`}>
+                  {b.logo ? <img src={b.logo} alt={b.name} className="h-full w-full object-cover bg-white" /> : b.name[0]}
                 </div>
-                <span className="hidden sm:block font-semibold">{b.priceRange}</span>
+                <div className="p-5">
+                  <div className="flex justify-between"><h3 className="font-display text-2xl font-extrabold">{b.name}</h3><span className="text-sm text-ink/60">{b.city}</span></div>
+                  <p className="text-ink/70 mt-1">{b.tagline}</p>
+                  <div className="mt-3 flex flex-wrap gap-1">{b.vibe.map((v) => <span key={v} className="text-xs rounded-full border border-ink px-2 py-0.5">{v}</span>)}</div>
+                </div>
               </Link>
-            </li>
-          );
-        })}
-      </ol>
+            );
+          })}
+        </div>
+      </div>
     </main>
   );
 }

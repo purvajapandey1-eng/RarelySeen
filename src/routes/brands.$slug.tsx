@@ -21,7 +21,7 @@ function BrandPage() {
   const { brand } = Route.useLoaderData();
   return (
     <main className="pb-20">
-      <PageHead kicker={`${brand.city} · ${brand.priceRange}`} title={brand.name}>{brand.tagline}</PageHead>
+      <PageHead kicker={`${brand.city} · ${brand.priceRange}`} title={brand.name} logo={brand.logo}>{brand.tagline}</PageHead>
       <div className="mx-auto max-w-6xl px-4 grid grid-cols-2 md:grid-cols-3 gap-4">
         {designs.filter((d) => d.brand === brand.slug).map((d) => <DesignCard key={d.id} d={d} />)}
       </div>

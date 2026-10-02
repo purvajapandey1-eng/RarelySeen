@@ -34,12 +34,15 @@ export function Nav() {
   );
 }
 
-export function PageHead({ kicker, title, children }: { kicker: string; title: ReactNode; children?: ReactNode }) {
+export function PageHead({ kicker, title, children, logo }: { kicker: string; title: ReactNode; children?: ReactNode; logo?: string }) {
   return (
-    <section className="mx-auto max-w-6xl px-4 pt-14 pb-8">
-      <p className="inline-block rounded-full bg-lime border-2 border-ink px-3 py-1 text-xs font-bold uppercase tracking-widest">{kicker}</p>
-      <h1 className="font-display mt-4 text-5xl md:text-7xl font-extrabold leading-[0.95] tracking-tight">{title}</h1>
-      {children && <p className="mt-4 max-w-xl text-lg text-ink/70">{children}</p>}
+    <section className="mx-auto max-w-6xl px-4 pt-14 pb-8 flex flex-col md:flex-row gap-6 justify-between items-start md:items-center">
+      <div>
+        <p className="inline-block rounded-full bg-lime border-2 border-ink px-3 py-1 text-xs font-bold uppercase tracking-widest">{kicker}</p>
+        <h1 className="font-display mt-4 text-5xl md:text-7xl font-extrabold leading-[0.95] tracking-tight">{title}</h1>
+        {children && <p className="mt-4 max-w-xl text-lg text-ink/70">{children}</p>}
+      </div>
+      {logo && <img src={logo} alt="Brand Logo" className="w-24 h-24 object-contain rounded-2xl border-2 border-ink bg-white shadow-brut" />}
     </section>
   );
 }
@@ -50,8 +53,23 @@ export function DesignCard({ d }: { d: Design }) {
   const on = has(d.id);
   return (
     <div className="group rounded-3xl border-2 border-ink bg-card overflow-hidden shadow-brut hover:-translate-y-1 transition">
-      <div className={`relative aspect-[4/5] ${swatch[d.color]} flex items-end p-4`}>
-        <span className="font-serif italic text-4xl leading-none opacity-90">{d.name}</span>
+      <div className={`relative aspect-[4/5] ${swatch[d.color]} flex items-end p-4 overflow-hidden`}>
+        {d.url ? (
+          <a href={d.url} target="_blank" rel="noreferrer" className="absolute inset-0 z-0">
+            {d.image && <img src={d.image} alt={d.name} className="h-full w-full object-cover" />}
+          </a>
+        ) : (
+          d.image && <img src={d.image} alt={d.name} className="absolute inset-0 h-full w-full object-cover z-0" />
+        )}
+        
+        {!d.image && (
+          d.url ? (
+             <a href={d.url} target="_blank" rel="noreferrer" className="z-10 relative font-serif italic text-4xl leading-none opacity-90 hover:underline hover:text-ink/80">{d.name}</a>
+          ) : (
+             <span className="font-serif italic text-4xl leading-none opacity-90 z-10 relative pointer-events-none">{d.name}</span>
+          )
+        )}
+
         <button
           onClick={() => toggle(d.id)}
           aria-label={on ? "Remove from loved" : "Love this design"}
