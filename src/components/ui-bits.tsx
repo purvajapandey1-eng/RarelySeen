@@ -1,7 +1,8 @@
-import { Link } from "@tanstack/react-router";
-import { Heart } from "lucide-react";
+import { Link, useRouter } from "@tanstack/react-router";
+import { Heart, ArrowLeft } from "lucide-react";
 import { getBrand, type Design } from "@/lib/catalog";
 import { useLoved } from "@/lib/loved";
+import { useLovedBrands } from "@/lib/loved-brands";
 import type { ReactNode } from "react";
 
 export const swatch: Record<string, string> = {
@@ -14,17 +15,31 @@ export const swatch: Record<string, string> = {
 
 export function Nav() {
   const { loved } = useLoved();
-  const link = "px-4 py-2 rounded-full border-2 border-ink font-semibold text-sm hover:bg-ink hover:text-cream transition";
+  const { lovedBrands } = useLovedBrands();
+  const router = useRouter();
+  const isHome = router.state.location.pathname === "/";
+
+  const link = "px-4 py-2 rounded-full border-2 border-ink font-semibold text-sm hover:bg-ink hover:text-cream whitespace-nowrap transition flex-shrink-0";
   const active = { className: "bg-ink text-cream" };
   return (
     <header className="sticky top-0 z-40 bg-cream/90 backdrop-blur border-b-2 border-ink">
       <div className="mx-auto max-w-6xl flex items-center justify-between px-4 py-3 gap-3">
-        <Link to="/" className="font-display text-2xl font-extrabold tracking-tight">
-          rarely<span className="font-serif italic font-normal text-pink-deep"> seen</span>
-        </Link>
-        <nav className="flex gap-2 overflow-x-auto">
+        <div className="flex items-center gap-3">
+          {!isHome && (
+            <button onClick={() => router.history.back()} className="size-10 grid flex-shrink-0 place-items-center rounded-full border-2 border-ink hover:bg-ink hover:text-cream transition" aria-label="Go back">
+              <ArrowLeft className="size-5" />
+            </button>
+          )}
+          <Link to="/" className="font-display text-2xl font-extrabold tracking-tight whitespace-nowrap">
+            rarely<span className="font-serif italic font-normal text-pink-deep"> seen</span>
+          </Link>
+        </div>
+        <nav className="flex gap-2 overflow-x-auto pb-1 md:pb-0 items-center">
           <Link to="/brands" className={link} activeProps={active}>brands</Link>
           <Link to="/categories" className={link} activeProps={active}>categories</Link>
+          <Link to="/fav-brands" className={link + " flex items-center gap-1"} activeProps={active}>
+             fav brands {lovedBrands.length > 0 && <span>({lovedBrands.length})</span>}
+          </Link>
           <Link to="/loved" className={link + " flex items-center gap-1"} activeProps={active}>
             <Heart className="size-4" /> loved {loved.length > 0 && <span>({loved.length})</span>}
           </Link>

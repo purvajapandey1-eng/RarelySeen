@@ -129,25 +129,37 @@ for u in urls:
         except Exception:
             pass
 
-        fetch_url = f"{base_url}/products.json?limit=20" 
-        
-        req = urllib.request.Request(fetch_url, headers={'User-Agent': 'Mozilla/5.0'})
-        res = urllib.request.urlopen(req, timeout=10)
-        data = json.loads(res.read())
+        fetch_url = f"{base_url}/products.json?limit=250&page=" 
         
         products = []
-        for p in data.get('products', []):
+        page = 1
+        while True:
             try:
-                price = p.get('variants', [{}])[0].get('price', "0")
-                img = p.get('images', [{}])[0].get('src') if p.get('images') else None
-                products.append({
-                    'title': p['title'],
-                    'price': price,
-                    'image': img,
-                    'handle': p['handle']
-                })
-            except Exception:
-                pass
+                req = urllib.request.Request(f"{fetch_url}{page}", headers={'User-Agent': 'Mozilla/5.0'})
+                res = urllib.request.urlopen(req, timeout=10)
+                data = json.loads(res.read())
+                
+                page_products = data.get('products', [])
+                if not page_products: break
+                
+                for p in page_products:
+                    try:
+                        price = p.get('variants', [{}])[0].get('price', "0")
+                        img = p.get('images', [{}])[0].get('src') if p.get('images') else None
+                        products.append({
+                            'title': p['title'],
+                            'price': price,
+                            'image': img,
+                            'handle': p['handle']
+                        })
+                    except Exception:
+                        pass
+                
+                if len(page_products) < 250:
+                    break
+                page += 1
+            except Exception as e:
+                break
                 
         output[slug] = {
             'name': name,

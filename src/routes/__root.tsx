@@ -80,10 +80,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Rarely Seen" },
-      { name: "description", content: "A catalogue of Indian homegrown brands." },
+      {
+        name: "description",
+        content: "Discover Indian homegrown brands and unique fashion finds.",
+      },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Rarely Seen" },
+      { property: "og:title", content: "Rarely Seen" },
+      {
+        property: "og:description",
+        content: "Discover Indian homegrown brands and unique fashion finds.",
+      },
+      {
+        property: "og:image",
+        content: "https://www.rarelyseen.store/rarelyseen-preview.png",
+      },
+      {
+        property: "og:image:alt",
+        content: "Rarely Seen — Indian homegrown brands",
+      },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Rarely Seen" },
+      {
+        name: "twitter:description",
+        content: "Discover Indian homegrown brands and unique fashion finds.",
+      },
+      {
+        name: "twitter:image",
+        content: "https://www.rarelyseen.store/rarelyseen-preview.png",
+      },
     ],
     links: [
       {
@@ -92,7 +117,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&display=swap" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/rarelyseen-icon.png", type: "image/png" },
     ],
   }),
   shellComponent: RootShell,
