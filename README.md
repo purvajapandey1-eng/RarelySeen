@@ -1,4 +1,4 @@
-# Rarely Seen Finds
+
 
 
 ## Build with Lovable
