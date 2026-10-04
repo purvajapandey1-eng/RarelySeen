@@ -6,6 +6,11 @@ import { useLovedBrands } from "@/lib/loved-brands";
 import { Heart } from "lucide-react";
 
 export const Route = createFileRoute("/brands/$slug")({
+  validateSearch: (search: Record<string, unknown>) => {
+    return {
+      from: search.from as string | undefined,
+    };
+  },
   loader: ({ params }) => {
     const brand = getBrand(params.slug);
     if (!brand) throw notFound();
@@ -20,13 +25,23 @@ export const Route = createFileRoute("/brands/$slug")({
   component: BrandPage,
 });
 
-const CATEGORIES = ["All", "Tops", "Dresses", "Indianwear", "Nightwear", "Skirt", "Shorts", "Pants"];
+const CATEGORIES = ["All", "Tops", "Dresses", "Indianwear", "Nightwear", "Skirt", "Shorts", "Pants", "Swimwear", "Bags", "Jewellery", "Footwear"];
 
 function BrandPage() {
   const { brand } = Route.useLoaderData();
-  const [category, setCategory] = useState("All");
+  const search = Route.useSearch();
+  
+  const initialCategory = search.from === "beachwear" ? "Swimwear" 
+                        : search.from === "tops-under-3k" ? "Tops" 
+                        : search.from === "bags" ? "Bags"
+                        : search.from === "footwear" ? "Footwear"
+                        : search.from === "jewellery" ? "Jewellery"
+                        : "All";
+  const initialMaxPrice = search.from === "tops-under-3k" ? "3000" : "";
+
+  const [category, setCategory] = useState(initialCategory);
   const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState(initialMaxPrice);
   const [displayCount, setDisplayCount] = useState(24);
   const { hasBrand, toggleBrand } = useLovedBrands();
   const on = hasBrand(brand.slug);
@@ -66,6 +81,14 @@ function BrandPage() {
         if (!nameLower.includes("short")) return false;
       } else if (catLower === "pants") {
         if (!nameLower.includes("pant") && !nameLower.includes("trouser") && !nameLower.includes("jeans") && !nameLower.includes("denim")) return false;
+      } else if (catLower === "swimwear") {
+        if (!nameLower.includes("swim") && !nameLower.includes("bikini") && !nameLower.includes("beach")) return false;
+      } else if (catLower === "bags") {
+        if (!nameLower.includes("bag") && !nameLower.includes("tote") && !nameLower.includes("purse") && !nameLower.includes("clutch") && !nameLower.includes("sling")) return false;
+      } else if (catLower === "jewellery") {
+        if (!nameLower.includes("earring") && !nameLower.includes("necklace") && !nameLower.includes("ring") && !nameLower.includes("bracelet") && !nameLower.includes("pendant") && !nameLower.includes("jewel") && !nameLower.includes("bangle")) return false;
+      } else if (catLower === "footwear") {
+        if (!nameLower.includes("shoe") && !nameLower.includes("heel") && !nameLower.includes("sandal") && !nameLower.includes("flat") && !nameLower.includes("sneaker") && !nameLower.includes("boot") && !nameLower.includes("wedge")) return false;
       } else {
         if (!nameLower.includes(catLower)) return false;
       }

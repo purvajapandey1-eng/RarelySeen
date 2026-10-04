@@ -28,7 +28,7 @@ function CollectionPage() {
             const b = getBrand(s);
             if (!b) return null;
             return (
-              <Link key={b.slug} to="/brands/$slug" params={{ slug: b.slug }} className="rounded-3xl border-2 border-ink bg-card overflow-hidden shadow-brut hover:-translate-y-1 transition">
+              <Link key={b.slug} to="/brands/$slug" params={{ slug: b.slug }} search={{ from: collection.slug }} className="rounded-3xl border-2 border-ink bg-card overflow-hidden shadow-brut hover:-translate-y-1 transition">
                 <div className={`${swatch[b.color]} h-32 grid place-items-center font-display text-5xl font-extrabold overflow-hidden`}>
                   {b.logo ? <img src={b.logo} alt={b.name} className="h-full w-full object-cover bg-white" /> : b.name[0]}
                 </div>
