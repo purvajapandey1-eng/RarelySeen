@@ -1,7 +1,7 @@
 
 
 
-## Build with Lovable
+
 
 Continue developing this project in the [Lovable editor](https://lovable.dev/projects/529d45f4-0bc6-4db0-9d6e-493a651c5a43).
 
