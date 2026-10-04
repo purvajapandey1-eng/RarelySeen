@@ -25,7 +25,7 @@ export const Route = createFileRoute("/brands/$slug")({
   component: BrandPage,
 });
 
-const CATEGORIES = ["All", "Tops", "Dresses", "Indianwear", "Nightwear", "Skirt", "Shorts", "Pants", "Swimwear", "Bags", "Jewellery", "Footwear"];
+const CATEGORIES = ["All", "Tops", "Dresses", "Indianwear", "Nightwear", "Skirt", "Shorts", "Pants", "Co-ords", "Swimwear", "Bags", "Jewellery", "Footwear"];
 
 function BrandPage() {
   const { brand } = Route.useLoaderData();
@@ -36,6 +36,10 @@ function BrandPage() {
                         : search.from === "bags" ? "Bags"
                         : search.from === "footwear" ? "Footwear"
                         : search.from === "jewellery" ? "Jewellery"
+                        : search.from === "birthday-dresses" ? "Dresses"
+                        : search.from === "co-ord-brands" ? "Co-ords"
+                        : search.from === "handloom-heroes" ? "Indianwear"
+                        : search.from === "vacay-fits" ? "Dresses"
                         : "All";
   const initialMaxPrice = search.from === "tops-under-3k" ? "3000" : "";
 
@@ -81,6 +85,8 @@ function BrandPage() {
         if (!nameLower.includes("short")) return false;
       } else if (catLower === "pants") {
         if (!nameLower.includes("pant") && !nameLower.includes("trouser") && !nameLower.includes("jeans") && !nameLower.includes("denim")) return false;
+      } else if (catLower === "co-ords") {
+        if (!nameLower.includes("co-ord") && !nameLower.includes("coord") && !nameLower.includes("set") && !nameLower.includes("suit")) return false;
       } else if (catLower === "swimwear") {
         if (!nameLower.includes("swim") && !nameLower.includes("bikini") && !nameLower.includes("beach")) return false;
       } else if (catLower === "bags") {
@@ -129,7 +135,12 @@ function BrandPage() {
         <div className="flex flex-wrap gap-2 items-center">
           <span className="text-sm font-bold uppercase mr-2 opacity-60">Category:</span>
           {CATEGORIES.map((c) => (
-            <button key={c} onClick={() => setCategory(c)} className={`px-3 py-1.5 rounded-full border-2 border-ink text-sm font-semibold transition ${category === c ? "bg-ink text-cream" : "bg-cream text-ink hover:bg-ink/10"}`}>
+            <button key={c} onClick={() => {
+              setCategory(c);
+              if (search.from === "tops-under-3k" && c !== "Tops" && maxPrice === "3000") {
+                setMaxPrice("");
+              }
+            }} className={`px-3 py-1.5 rounded-full border-2 border-ink text-sm font-semibold transition ${category === c ? "bg-ink text-cream" : "bg-cream text-ink hover:bg-ink/10"}`}>
               {c}
             </button>
           ))}
