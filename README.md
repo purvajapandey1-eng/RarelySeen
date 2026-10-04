@@ -1,8 +1,5 @@
-# Rarely Seen Finds
 
-i wanna create a website called rarely seen, it should be very modern and genz ui/ux and it's basically a catalogue of all the indian homegrown brands, so there should be sections for brands, in that different homegrownbrands, another section of categories, in there should be different colections like tops under 3k brands or co-ord brands, best birthday dress brands, etc and there should be anpther section for loved, where people can love designs and put there
 
-This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
