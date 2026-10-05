@@ -59,7 +59,7 @@ scrapedBrandEntries.forEach(([slug, brand]: [string, any], i) => {
     priceRange: "₹1k–5k",
     color: (["lime", "pink", "sky", "sun", "ink"] as const)[i % 5],
     logo: brand.logo,
-    coverImage: brand.products?.[0]?.image,
+    coverImage: brand.coverImage || brand.products?.[0]?.image,
   });
 });
 

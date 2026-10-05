@@ -34,7 +34,7 @@ function FavBrandsPage() {
               return (
                 <Link key={b.slug} to="/brands/$slug" params={{ slug: b.slug }} className="group relative rounded-3xl border-2 border-ink bg-card overflow-hidden shadow-brut hover:-translate-y-1 transition block">
                   <div className={`${swatch[b.color] || "bg-pink"} h-40 grid place-items-center font-display text-5xl font-extrabold overflow-hidden relative bg-white`}>
-                    {(b.coverImage || b.logo) ? <img src={b.coverImage || b.logo} alt={b.name} className="h-full w-full object-cover" /> : b.name[0]}
+                    {(b.coverImage || b.logo) ? <img src={b.coverImage || b.logo} alt={b.name} className="h-full w-full object-cover object-[center_25%]" /> : b.name[0]}
                     <button
                       onClick={(e) => {
                         e.preventDefault();
