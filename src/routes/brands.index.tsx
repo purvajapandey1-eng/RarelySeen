@@ -29,7 +29,7 @@ function BrandsPage() {
           {list.map((b) => (
             <Link key={b.slug} to="/brands/$slug" params={{ slug: b.slug }} className="rounded-3xl border-2 border-ink bg-card overflow-hidden shadow-brut hover:-translate-y-1 transition">
               <div className={`${swatch[b.color]} h-40 grid place-items-center font-display text-5xl font-extrabold overflow-hidden bg-white`}>
-                {(b.coverImage || b.logo) ? <img src={b.coverImage || b.logo} alt={b.name} className="h-full w-full object-cover object-[center_25%]" /> : b.name[0]}
+                {(b.coverImage || b.logo) ? <img src={b.coverImage || b.logo} alt={b.name} className="h-full w-full object-cover object-center" /> : b.name[0]}
               </div>
               <div className="p-5">
                 <div className="flex justify-between"><h3 className="font-display text-2xl font-extrabold">{b.name}</h3><span className="text-sm text-ink/60">{b.city}</span></div>

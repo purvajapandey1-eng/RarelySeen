@@ -29,7 +29,7 @@ export type Collection = {
 };
 
 export const brands: Brand[] = [
-  { slug: "naina-jain", name: "Okhai", city: "Gujarat", tagline: "Handcrafted by artisan women", vibe: ["handloom", "kurtas"], priceRange: "₹1k–3.5k", color: "lime" },
+  { slug: "naina-jain", name: "Okhai", city: "Gujarat", tagline: "Handcrafted by artisan women", vibe: ["handloom", "kurtas"], priceRange: "₹1k–3.5k", color: "lime", coverImage: "/brands/naina-jain.jpg" },
 ];
 
 export const collections: Collection[] = [
