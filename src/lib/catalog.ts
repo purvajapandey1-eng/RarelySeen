@@ -7,6 +7,7 @@ export type Brand = {
   priceRange: string;
   color: "lime" | "pink" | "sky" | "sun" | "ink";
   logo?: string;
+  coverImage?: string;
 };
 
 export type Design = {
@@ -58,6 +59,7 @@ scrapedBrandEntries.forEach(([slug, brand]: [string, any], i) => {
     priceRange: "₹1k–5k",
     color: (["lime", "pink", "sky", "sun", "ink"] as const)[i % 5],
     logo: brand.logo,
+    coverImage: brand.products?.[0]?.image,
   });
 });
 

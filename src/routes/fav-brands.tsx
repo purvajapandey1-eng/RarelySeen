@@ -32,11 +32,9 @@ function FavBrandsPage() {
             {favBrandsData.map((b) => {
               const on = hasBrand(b.slug);
               return (
-                <Link key={b.slug} to="/brands/$slug" params={{ slug: b.slug }} className="group relative rounded-3xl border-2 border-ink bg-card p-6 shadow-brut hover:-translate-y-1 transition block">
-                  <div className="flex justify-between items-start mb-4">
-                    <span className="text-2xl font-serif italic group-hover:underline">
-                      {b.name}
-                    </span>
+                <Link key={b.slug} to="/brands/$slug" params={{ slug: b.slug }} className="group relative rounded-3xl border-2 border-ink bg-card overflow-hidden shadow-brut hover:-translate-y-1 transition block">
+                  <div className={`${swatch[b.color] || "bg-pink"} h-40 grid place-items-center font-display text-5xl font-extrabold overflow-hidden relative bg-white`}>
+                    {(b.coverImage || b.logo) ? <img src={b.coverImage || b.logo} alt={b.name} className="h-full w-full object-cover" /> : b.name[0]}
                     <button
                       onClick={(e) => {
                         e.preventDefault();
@@ -44,13 +42,20 @@ function FavBrandsPage() {
                         toggleBrand(b.slug);
                       }}
                       aria-label={on ? "Remove from loved brands" : "Love this brand"}
-                      className={`relative z-10 size-10 grid place-items-center rounded-full border-2 border-ink transition active:scale-90 ${on ? "bg-pink-deep text-cream" : "bg-cream text-ink"}`}
+                      className={`absolute top-4 right-4 z-10 size-10 grid place-items-center rounded-full border-2 border-ink transition active:scale-90 ${on ? "bg-pink-deep text-cream" : "bg-cream text-ink"}`}
                     >
                       <Heart className={`size-5 ${on ? "fill-current" : ""}`} />
                     </button>
                   </div>
-                  <p className="text-sm font-bold uppercase tracking-wider text-ink/60 mb-2">{b.city} · {b.priceRange}</p>
-                  <p className="font-medium">{b.tagline}</p>
+                  <div className="p-6">
+                    <div className="flex justify-between items-start mb-4">
+                      <span className="text-2xl font-serif italic group-hover:underline">
+                        {b.name}
+                      </span>
+                    </div>
+                    <p className="text-sm font-bold uppercase tracking-wider text-ink/60 mb-2">{b.city} · {b.priceRange}</p>
+                    <p className="font-medium">{b.tagline}</p>
+                  </div>
                 </Link>
               );
             })}
