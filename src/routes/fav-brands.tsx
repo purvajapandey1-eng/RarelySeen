@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLovedBrands } from "@/lib/loved-brands";
 import { brands } from "@/lib/catalog";
-import { PageHead } from "@/components/ui-bits";
+import { PageHead, swatch } from "@/components/ui-bits";
 import { Link } from "@tanstack/react-router";
 import { Heart } from "lucide-react";
 
