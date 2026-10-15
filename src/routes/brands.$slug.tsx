@@ -41,10 +41,13 @@ function BrandPage() {
                         : search.from === "handloom-heroes" ? "Indianwear"
                         : search.from === "vacay-fits" ? "Dresses"
                         : "All";
-  const initialMaxPrice = search.from === "tops-under-3k" ? "3000" : "";
+  const initialMinPrice = search.from === "chic-diwali-on-budget" ? "2000" : "";
+  const initialMaxPrice = search.from === "tops-under-3k" ? "3000"
+                        : search.from === "chic-diwali-on-budget" ? "10000"
+                        : "";
 
   const [category, setCategory] = useState(initialCategory);
-  const [minPrice, setMinPrice] = useState("");
+  const [minPrice, setMinPrice] = useState(initialMinPrice);
   const [maxPrice, setMaxPrice] = useState(initialMaxPrice);
   const [displayCount, setDisplayCount] = useState(24);
   const { hasBrand, toggleBrand } = useLovedBrands();
@@ -63,53 +66,85 @@ function BrandPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const filteredDesigns = designs.filter((d) => {
-    if (d.brand !== brand.slug) return false;
-    
-    // Category match
-    if (category !== "All") {
-      const nameLower = d.name.toLowerCase();
-      const catLower = category.toLowerCase();
-      
-      if (catLower === "indianwear") {
-        if (!nameLower.includes("kurta") && !nameLower.includes("saree") && !nameLower.includes("suit") && !nameLower.includes("lehenga") && !nameLower.includes("kurti") && !nameLower.includes("anarkali")) return false;
-      } else if (catLower === "tops") {
-        if (!nameLower.includes("top") && !nameLower.includes("shirt") && !nameLower.includes("blouse") && !nameLower.includes("tee") && !nameLower.includes("tunic")) return false;
-      } else if (catLower === "dresses") {
-        if (!nameLower.includes("dress") && !nameLower.includes("gown") && !nameLower.includes("midi") && !nameLower.includes("maxi") && !nameLower.includes("mini")) return false;
-      } else if (catLower === "nightwear") {
-        if (!nameLower.includes("night") && !nameLower.includes("pyjama") && !nameLower.includes("pajama") && !nameLower.includes("sleep")) return false;
-      } else if (catLower === "skirt") {
-        if (!nameLower.includes("skirt")) return false;
-      } else if (catLower === "shorts") {
-        if (!nameLower.includes("short")) return false;
-      } else if (catLower === "pants") {
-        if (!nameLower.includes("pant") && !nameLower.includes("trouser") && !nameLower.includes("jeans") && !nameLower.includes("denim")) return false;
-      } else if (catLower === "co-ords") {
-        if (!nameLower.includes("co-ord") && !nameLower.includes("coord") && !nameLower.includes("set") && !nameLower.includes("suit")) return false;
-      } else if (catLower === "swimwear") {
-        if (!nameLower.includes("swim") && !nameLower.includes("bikini") && !nameLower.includes("beach")) return false;
-      } else if (catLower === "bags") {
-        if (!nameLower.includes("bag") && !nameLower.includes("tote") && !nameLower.includes("purse") && !nameLower.includes("clutch") && !nameLower.includes("sling")) return false;
-      } else if (catLower === "jewellery") {
-        if (!nameLower.includes("earring") && !nameLower.includes("necklace") && !nameLower.includes("ring") && !nameLower.includes("bracelet") && !nameLower.includes("pendant") && !nameLower.includes("jewel") && !nameLower.includes("bangle")) return false;
-      } else if (catLower === "footwear") {
-        if (!nameLower.includes("shoe") && !nameLower.includes("heel") && !nameLower.includes("sandal") && !nameLower.includes("flat") && !nameLower.includes("sneaker") && !nameLower.includes("boot") && !nameLower.includes("wedge")) return false;
-      } else {
-        if (!nameLower.includes(catLower)) return false;
+  // Keywords that signal festive / Indianwear aesthetic
+  const INDIAN_KEYWORDS = [
+    "kurta", "kurti", "saree", "sari", "lehenga", "anarkali", "sharara",
+    "dhoti", "farshi", "dupatta", "palazzo", "suit", "kaaftan", "kaftan",
+    "indowestern", "indo western", "embroidery", "hand work", "handwork",
+    "ethnic", "festive", "choga", "resham", "zari", "gharara", "potli",
+    "bandhani", "ghumar",
+  ];
+
+  const isIndianwear = (name: string) =>
+    INDIAN_KEYWORDS.some((kw) => name.toLowerCase().includes(kw));
+
+  const filteredDesigns = designs
+    .filter((d) => {
+      if (d.brand !== brand.slug) return false;
+
+      // Category match
+      if (category !== "All") {
+        const nameLower = d.name.toLowerCase();
+        const catLower = category.toLowerCase();
+
+        if (catLower === "indianwear") {
+          if (!isIndianwear(d.name)) return false;
+        } else if (catLower === "tops") {
+          if (!nameLower.includes("top") && !nameLower.includes("shirt") && !nameLower.includes("blouse") && !nameLower.includes("tee") && !nameLower.includes("tunic") && !nameLower.includes("corset")) return false;
+        } else if (catLower === "dresses") {
+          if (!nameLower.includes("dress") && !nameLower.includes("gown") && !nameLower.includes("midi") && !nameLower.includes("maxi") && !nameLower.includes("mini")) return false;
+        } else if (catLower === "nightwear") {
+          if (!nameLower.includes("night") && !nameLower.includes("pyjama") && !nameLower.includes("pajama") && !nameLower.includes("sleep")) return false;
+        } else if (catLower === "skirt") {
+          if (!nameLower.includes("skirt")) return false;
+        } else if (catLower === "shorts") {
+          if (!nameLower.includes("short")) return false;
+        } else if (catLower === "pants") {
+          if (!nameLower.includes("pant") && !nameLower.includes("trouser") && !nameLower.includes("jeans") && !nameLower.includes("denim")) return false;
+        } else if (catLower === "co-ords") {
+          // Broad set/coord match — catches "set", "co-ord", "coord", "shrug", "jumpsuit"
+          if (
+            !nameLower.includes("co-ord") &&
+            !nameLower.includes("coord") &&
+            !nameLower.includes(" set") &&
+            !nameLower.includes("set ") &&
+            !nameLower.includes("sets") &&
+            !nameLower.includes("shrug") &&
+            !nameLower.includes("jumpsuit") &&
+            !nameLower.includes("suit")
+          ) return false;
+        } else if (catLower === "swimwear") {
+          if (!nameLower.includes("swim") && !nameLower.includes("bikini") && !nameLower.includes("beach")) return false;
+        } else if (catLower === "bags") {
+          if (!nameLower.includes("bag") && !nameLower.includes("tote") && !nameLower.includes("purse") && !nameLower.includes("clutch") && !nameLower.includes("sling")) return false;
+        } else if (catLower === "jewellery") {
+          if (!nameLower.includes("earring") && !nameLower.includes("necklace") && !nameLower.includes("ring") && !nameLower.includes("bracelet") && !nameLower.includes("pendant") && !nameLower.includes("jewel") && !nameLower.includes("bangle") && !nameLower.includes("cuff") && !nameLower.includes("chandbali") && !nameLower.includes("jhumka") && !nameLower.includes("studs") && !nameLower.includes("drops") && !nameLower.includes("hoops")) return false;
+        } else if (catLower === "footwear") {
+          if (!nameLower.includes("shoe") && !nameLower.includes("heel") && !nameLower.includes("sandal") && !nameLower.includes("flat") && !nameLower.includes("sneaker") && !nameLower.includes("boot") && !nameLower.includes("wedge")) return false;
+        } else {
+          if (!nameLower.includes(catLower)) return false;
+        }
       }
-    }
 
-    // Price match
-    if (minPrice && !isNaN(Number(minPrice))) {
-      if (d.price < Number(minPrice)) return false;
-    }
-    if (maxPrice && !isNaN(Number(maxPrice))) {
-      if (d.price > Number(maxPrice)) return false;
-    }
+      // Price match
+      if (minPrice && !isNaN(Number(minPrice))) {
+        if (d.price < Number(minPrice)) return false;
+      }
+      if (maxPrice && !isNaN(Number(maxPrice))) {
+        if (d.price > Number(maxPrice)) return false;
+      }
 
-    return true;
-  });
+      return true;
+    })
+    .sort((a, b) => {
+      // When arriving from Chic Diwali, float festive/Indianwear items to top
+      if (search.from === "chic-diwali-on-budget") {
+        const aIndian = isIndianwear(a.name) ? 0 : 1;
+        const bIndian = isIndianwear(b.name) ? 0 : 1;
+        return aIndian - bIndian;
+      }
+      return 0;
+    });
 
   return (
     <main className="pb-20">
@@ -138,6 +173,10 @@ function BrandPage() {
             <button key={c} onClick={() => {
               setCategory(c);
               if (search.from === "tops-under-3k" && c !== "Tops" && maxPrice === "3000") {
+                setMaxPrice("");
+              }
+              if (search.from === "chic-diwali-on-budget" && c !== "All") {
+                setMinPrice("");
                 setMaxPrice("");
               }
             }} className={`px-3 py-1.5 rounded-full border-2 border-ink text-sm font-semibold transition ${category === c ? "bg-ink text-cream" : "bg-cream text-ink hover:bg-ink/10"}`}>
