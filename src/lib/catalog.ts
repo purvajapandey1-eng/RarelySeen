@@ -42,6 +42,7 @@ export const collections: Collection[] = [
   { slug: "footwear", title: "Footwear", blurb: "Step up your shoe game.", brands: ["summeraway", "pariparilife", "houseofprisca", "thedisobedience", "birdhouse"], color: "lime" },
   { slug: "bags", title: "Bags", blurb: "Carry your world in style.", brands: ["theclothingfactory", "dhoraindia", "everpret", "lovetobag", "nefsfinds", "nete", "palay", "rerunn", "themissyco", "noticeme"], color: "sun" },
   { slug: "jewellery", title: "Jewellery", blurb: "The final touch to every fit.", brands: ["upakarna", "nonamejewelry", "nete", "mnsh", "shopmaya", "jewelsmars", "dhoraindia", "iblamebeads", "alittleextra", "autumnsummer", "thefuncompany"], color: "pink" },
+  { slug: "chic-diwali-on-budget", title: "Chic Diwali on Budget", blurb: "Festive fits that look expensive, spend less.", brands: ["houseofayuda", "weartag", "diyaribydivish", "muskhaveshop", "dashanddot", "kelin", "alayabystage3", "studiopicante", "oyela", "miraiindia", "poshakhub", "basata", "wabisabistyles", "qunic", "dionne", "pastmodern"], color: "sun" },
 ];
 
 import scrapedBrandsData from "./scraped_brands.json";

@@ -51,6 +51,14 @@ export function Chatbot() {
             which features brands like Kuuky and Bluer that won't break the bank!
           </span>
         );
+      } else if (q.includes("diwali") || q.includes("festive") || q.includes("ethnic") || q.includes("kurta") || q.includes("indian")) {
+        responseContent = (
+          <span>
+            Festive season? Check out our{" "}
+            <Link to="/categories/$slug" params={{ slug: "chic-diwali-on-budget" }} className="underline font-bold text-pink-deep">Chic Diwali on Budget</Link>{" "}
+            collection — gorgeous festive fits from brands like Mirai India, Basata & House of Ayuda, all looking expensive without the price tag!
+          </span>
+        );
       } else if (q.includes("goa") || q.includes("vacay") || q.includes("beach")) {
         responseContent = (
           <span>
